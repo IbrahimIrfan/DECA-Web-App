@@ -1,0 +1,18 @@
+#logo, #center-text {
+    display: block;
+    top: 50%;
+}
+
+#logo {
+  z-index: 1;
+  position: relative;
+  transform: translateY(-50%);
+      margin-left: auto;
+      margin-right: auto;
+}
+
+#center-text {
+  z-index: 0;
+  transform: translateY(-40%);
+  padding-left: 48%;
+}
