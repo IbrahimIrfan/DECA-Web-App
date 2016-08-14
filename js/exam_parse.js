@@ -12,7 +12,7 @@ for (var i = 1; i < 101; i++) {
     exam[i].ans = "";
 }
 
-fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.txt', 'utf8', function(err, data) {
+fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function(err, data) {
     if (err) {
         return console.log(err);
     }
@@ -166,18 +166,18 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.txt', 'utf8', functi
     }
 
 
-    for (var i = 1; i < 101; i++) { // for every question
+    for (var i = 1; i < 100; i++) { // for every question
         exam[i].q = parse(i + ".", "A.", "A.", "A.", 0);
         exam[i].a = parse("A.", "C.", "B.", "B.", i - 1);
         exam[i].c = parse("C.", "B.", "D.", "D.", i - 1);
         exam[i].b = parse("B.", "D.", "C.", "C.", i - 1);
         exam[i].d = parse("D.", (i + 1) + ".", "Copyright", "2011", i - 1);
 
-        /*    console.log(i + ". " + exam[i].q);
+            console.log(i + ". " + exam[i].q);
         console.log("    A. " + exam[i].a);
         console.log("    B. " + exam[i].b);
         console.log("    C. " + exam[i].c);
-        console.log("    D. " + exam[i].d);*/
+        console.log("    D. " + exam[i].d);
 
         if (i < 10) {
             var skip = 10;
@@ -186,32 +186,19 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.txt', 'utf8', functi
         }
         exam[i].ans = parse_ans(i + ".", skip);
 
-      // console.log("Correct Answer: " + exam[i].ans);
+       console.log("Correct Answer: " + exam[i].ans);
 
         exam[i].exp = parse_exp(exam[i].ans, i);
 
-        //  console.log(i + ". " +exam[i].exp);
+         console.log(i + ". " +exam[i].exp);
 
-      /*  var $form = $('#myform');
 
-        $form.html('');
-
-        var question = $(exam[i].q);
-
-        $form.append(question);
-
-        var options = $('<select><option>A. ' + exam[i].a + '</opition>' +
-            '<option>B. ' + exam[i].b + '</opition>' +
-            '<option>C. ' + exam[i].c + '</opition>' +
-            '<option>D. ' + exam[i].d + '</opition></select>');
-        $form.append(options); */
-
-      /*  fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.json', JSON.stringify(exam), function(err, data) {
+        fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.json', JSON.stringify(exam), function(err, data) {
           if (err) {
               return console.log(err);
           };
           console.log("SAVED");
-        }); */
+        });
     }
 
 
