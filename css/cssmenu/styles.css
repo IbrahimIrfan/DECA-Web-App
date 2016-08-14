@@ -2,6 +2,7 @@
 #cssmenu {
   background: #ffffff;
   width: auto;
+  position: absolute;
 }
 #cssmenu ul {
   list-style: none;
