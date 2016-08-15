@@ -18,12 +18,38 @@
 }
 
 .content {
-  padding-left: 25%;
-  padding-right: 25%;
+  padding-left: 22%;
+  padding-right: 22%;
   padding-top: 2%;
 }
 
-body {
+#altlogo {
+  margin-left:100px;
+  margin-top: 10px;
+}
+
+#fbimg {
+  margin-right:100px;
+  margin-top: 10px;
+}
+
+.footer {
   position: relative;
-  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 20%;
+  padding: 1rem;
+  background-color: #000000;
+  text-align: center;
+  color: white;
+}
+
+#exam_link{
+  margin-top: 40px;
+}
+
+#complete{
+  margin-top: 18px;
+  margin-right: 200px;
 }
