@@ -1,10 +1,13 @@
 <html>
 
 <head>
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="plugins/materialize/css/materialize.min.css" />
     <title> IRHS DECA </title>
     <!-- Add jQuery library -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
- <link rel="icon" href="img/favicon.ico" sizes="16x16">
+    <link rel="icon" href="img/favicon.ico" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script type="text/javascript" src="plugins/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/dropdown.js"></script>
 
-
-
-    <script type="text/javascript" src="js/select.js"></script>
-
-    <!--getmdl-select-->
-    <script src="getmdl-select.min.js"></script>
-    <link rel="stylesheet" href="getmdl-select.min.css">
 </head>
 
 <body>
@@ -28,7 +26,7 @@
     <div id='cssmenu'>
         <ul>
             <li><a href='index.html'><span>Home</span></a></li>
-            <li><a href='resources.html'><span>Resources</span></a></li>
+            <li><a href='events.html'><span>Events</span></a></li>
             <li><a href='dashboard.html'><span>Dashboard</span></a></li>
             <li><a href='about.html'><span>About Us</span></a></li>
             <li class='last active'><a href='register.html'><span>Register</span></a></li>
@@ -36,51 +34,73 @@
     </div>
     </br>
 
-<div class="content">
-    <form id="reg">
+    <div class="content">
+        <form id="reg">
 
-        <h4>Register for IRHS DECA 2016/2017</h4>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="firstname">
-            <label class="mdl-textfield__label" for="firstname">First Name</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="lastname">
-            <label class="mdl-textfield__label" for="lastname">Last Name</label>
-        </div>
-        </br>
-        </br>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="email">
-            <label class="mdl-textfield__label" for="email">Email</label>
-        </div>
-        </br>
-        </br>
+            <h4>Register for IRHS DECA 2016/2017</h4>
+            <h6>Personal Information:</h6>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="firstname">
+                <label class="mdl-textfield__label" for="firstname">First Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="lastname">
+                <label class="mdl-textfield__label" for="lastname">Last Name</label>
+            </div>
+            </br>
+            </br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="email">
+                <label class="mdl-textfield__label" for="email">Email</label>
+            </div>
+            </br>
+            </br>
 
-        <!-- Simple Select -->
-       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" id="select1">
-           <input class="mdl-textfield__input" type="text" id="sample1" readonly tabIndex="-1">
-           <label for="sample1" class="mdl-textfield__label">First Choice Event</label>
-           <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-               <li class="mdl-menu__item">ABC</li>
-               <li class="mdl-menu__item">DEF</li>
-               <li class="mdl-menu__item">GHI</li>
-           </ul>
-       </div>
+            <h6>Event choices:</h6>
 
-        <br/>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>1st Choice</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+            <br/>
 
-        <button id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button">
-            Register
-        </button>
-    </form>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>2nd Choice</option>
+                    <option value="1">Option 4</option>
+                    <option value="2">Option 5</option>
+                    <option value="3">Option 6</option>
+                </select>
+            </div>
+            <br/>
 
-</div>
-<div class="footer">
-  <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>
-  <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
-<h6><a href="irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
-</div>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>3rd Choice</option>
+                    <option value="1">Option 7</option>
+                    <option value="2">Option 8</option>
+                    <option value="3">Option 9</option>
+                </select>
+            </div>
+            <br/>
+
+
+
+            <button id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button">
+                Register
+            </button>
+        </form>
+
+    </div>
+    <div class="footer">
+        <img id="altlogo" src="img/logo_alt.png" width="100" align="left" />
+        <img id="fbimg" src="img/facebook-box.png" width="45" align="right" />
+        <h6><a href="irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+    </div>
 
 </body>
 
