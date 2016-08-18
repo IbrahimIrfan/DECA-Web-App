@@ -22,7 +22,7 @@ var string = '<html><head><title>IRHS DECA</title>' +
         "<li class='last'><a href='register.html'><span>Register</span></a></li></ul></div><br/><br/>" +
 '<div class="content" style="font-size: large;"><h6 style="color: red;">IRHS DECA does not own any of these exams.</h6><h6>PBM_Exam_01</h6> <form id="myform">';
 var fs = require('fs');
-var exam = require('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.json');
+var exam = require('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.json');
 
 for (var i in exam) {
 

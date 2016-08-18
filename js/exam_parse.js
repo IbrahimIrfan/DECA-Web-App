@@ -12,14 +12,14 @@ for (var i = 1; i < 101; i++) {
     exam[i].ans = "";
 }
 
-fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function(err, data) {
+fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.txt', 'utf8', function(err, data) {
     if (err) {
         return console.log(err);
     }
 
     var data_split = data.split(" ");
 
-    function parse(start, end, end2, end3, idx) {
+    function parse(start, end, end2, end3, end4, idx) {
         var obj = "";
         var skip_count = -1;
         for (var j = 0; j < data_split.length; j++) { // for every word
@@ -47,6 +47,11 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
                             wordend3 += data_split[k][data_split[k].length - l];
                         }
 
+                        var wordend4 = "";
+                        for (var l = end4.length; l > 0; l--) {
+                            wordend4 += data_split[k][data_split[k].length - l];
+                        }
+
                         if (wordend == end) {
                             obj += data_split[k].substr(0, data_split[k].length - end.length - 1);
                             endofobj = false; // question end
@@ -55,6 +60,9 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
                             endofobj = false; // question end
                         } else if (wordend3 == end3) {
                             obj += data_split[k].substr(0, data_split[k].length - end3.length - 1);
+                            endofobj = false; // question end
+                        } else if (wordend4 == end4) {
+                            obj += data_split[k].substr(0, data_split[k].length - end4.length - 1);
                             endofobj = false; // question end
                         } else {
                             obj += data_split[k] + " ";
@@ -76,12 +84,12 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
             if (endofstart == start) { // found answer start
                 skip_count++;
                 if (skip_count == idx) {
+                //  console.log(data_split[j]);
                     return data_split[j + 1][0];
                 }
             }
         }
     } // end of parse_ans()
-
 
     function parse_exp(obj, idx) {
         var exp = "";
@@ -101,8 +109,12 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
         var start2_split = start2.split(" ");
 
         if (start_split.length == 1) {
+            var message = start_split[0][0] + "\n";
+            for (var i = 1; i < start_split[0].length; i++) {
+                message += start_split[0][i];
+            }
             for (var j = 0; j < data_split.length; j++) { // for every word (start)
-                if (data_split[j].includes(start_split[0])) {
+                if ((data_split[j].toUpperCase()).includes(message.toUpperCase())) {
                     var not_done = true;
                     for (var k = j + 1; not_done; k++) { // for every word in exp
                         var wordend = "";
@@ -119,7 +131,6 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
                     return exp;
                 }
             }
-
         } else {
             for (var j = 0; j < data_split.length; j++) { // for every word (start)
                 var correct_count = 0;
@@ -187,12 +198,12 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
     }
 
 
-    for (var i = 1; i < 100; i++) { // for every question
-        exam[i].q = parse(i + ".", "A.", "A.", "A.", 0);
-        exam[i].a = parse("A.", "C.", "B.", "B.", i - 1);
-        exam[i].c = parse("C.", "B.", "D.", "D.", i - 1);
-        exam[i].b = parse("B.", "D.", "C.", "C.", i - 1);
-        exam[i].d = parse("D.", (i + 1) + ".", "Copyright", "2011", i - 1);
+    for (var i = 1; i < 101; i++) { // for every question
+        exam[i].q = parse(i + ".", "A.", "A.", "A.", "A.", 0);
+        exam[i].a = parse("A.", "C.", "B.", "B.", "B.", i - 1);
+        exam[i].c = parse("C.", "B.", "D.", "D.", "D.", i - 1);
+        exam[i].b = parse("B.", "D.", "C.", "C.", "C.", i - 1);
+        exam[i].d = parse("D.", (i + 1) + ".", "Copyright", "2011", "Test", i - 1);
 
         /*       console.log(i + ". " + exam[i].q);
             console.log("    A. " + exam[i].a);
@@ -205,21 +216,22 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
         } else {
             var skip = 1;
         }
-        exam[i].ans = parse_ans(i + ".", skip);
+        exam[i].ans = parse_ans ("\n" + i + ".", 1);
 
-        //      console.log("Correct Answer: " + exam[i].ans);
+    //   console.log("Correct Answer: " + exam[i].ans);
+
 
         exam[i].exp = parse_exp(exam[i].ans, i);
 
       //  console.log(i + ". " + exam[i].exp);
 
 
-        /*  fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.json', JSON.stringify(exam), function(err, data) {
+        fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.json', JSON.stringify(exam), function(err, data) {
             if (err) {
                 return console.log(err);
             };
-            csole.log("SAVED");
-          });*/
+            console.log("SAVED");
+          });
     }
 
 
