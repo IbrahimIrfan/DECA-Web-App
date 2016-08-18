@@ -35,22 +35,22 @@
     </br>
 
     <div class="content">
-        <form id="reg">
+        <form id="reg" action='php/register.php' method='post'>
 
             <h4>Register for IRHS DECA 2016/2017</h4>
             <h6>Personal Information:</h6>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="firstname">
+                <input class="mdl-textfield__input" type="text" id="firstname" name="firstname">
                 <label class="mdl-textfield__label" for="firstname">First Name</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="lastname">
+                <input class="mdl-textfield__input" type="text" id="lastname" name="lastname">
                 <label class="mdl-textfield__label" for="lastname">Last Name</label>
             </div>
             </br>
             </br>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="email">
+                <input class="mdl-textfield__input" type="text" id="email" name="email">
                 <label class="mdl-textfield__label" for="email">Email</label>
             </div>
             </br>
@@ -59,7 +59,7 @@
             <h6>Event choices:</h6>
 
             <div class="input-field col s12">
-                <select>
+                <select id="event1" name="event1">
                     <option value="" disabled selected>1st Choice</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -69,7 +69,7 @@
             <br/>
 
             <div class="input-field col s12">
-                <select>
+                <select id="event2" name="event2">
                     <option value="" disabled selected>2nd Choice</option>
                     <option value="1">Option 4</option>
                     <option value="2">Option 5</option>
@@ -79,7 +79,7 @@
             <br/>
 
             <div class="input-field col s12">
-                <select>
+                <select id="event3" name="event3">
                     <option value="" disabled selected>3rd Choice</option>
                     <option value="1">Option 7</option>
                     <option value="2">Option 8</option>
@@ -90,9 +90,8 @@
 
 
 
-            <button id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button">
-                Register
-            </button>
+            <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
+            </input>
         </form>
 
     </div>

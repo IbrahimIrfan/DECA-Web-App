@@ -100,67 +100,88 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
         var start_split = start.split(" ");
         var start2_split = start2.split(" ");
 
-        for (var j = 0; j < data_split.length; j++) { // for every word (start)
-            var correct_count = 0;
-            for (var i = 0; i < start2_split.length; i++) { // for every word in message
-                if ((j + i) < data_split.length) {
-                    if (data_split[j + i].toUpperCase() == start2_split[i].toUpperCase()) { // found matching word
-                        correct_count++;
-                    }
-                    if (i !== 0 && i == start2_split.length - 1 && (data_split[j + i].toUpperCase()).includes(start2_split[i].toUpperCase())) {
-                        correct_count++;
-                    }
-                    if (correct_count == start2_split.length) { // found exp
-                        var not_done = true;
-                        for (var k = j + start2_split.length; not_done; k++) { // for every word in exp
-                            var wordend = "";
-                            for (var m = 7; m > 0; m--) {
-                                wordend += data_split[k][data_split[k].length - m];
-                            }
-                            if (wordend == "SOURCE:") {
-                                exp += data_split[k].substr(0, data_split[k].length - 7 - m);
-                                not_done = false; // exp end
-                            } else {
-                                exp += data_split[k] + " ";
-                            };
+        if (start_split.length == 1) {
+            for (var j = 0; j < data_split.length; j++) { // for every word (start)
+                if (data_split[j].includes(start_split[0])) {
+                    var not_done = true;
+                    for (var k = j + 1; not_done; k++) { // for every word in exp
+                        var wordend = "";
+                        for (var m = 7; m > 0; m--) {
+                            wordend += data_split[k][data_split[k].length - m];
                         }
-                        return exp;
+                        if (wordend == "SOURCE:") {
+                            exp += data_split[k].substr(0, data_split[k].length - 7 - m);
+                            not_done = false; // exp end
+                        } else {
+                            exp += data_split[k] + " ";
+                        };
+                    }
+                    return exp;
+                }
+            }
+
+        } else {
+            for (var j = 0; j < data_split.length; j++) { // for every word (start)
+                var correct_count = 0;
+                for (var i = 0; i < start2_split.length; i++) { // for every word in message
+                    if ((j + i) < data_split.length) {
+                        if (data_split[j + i].toUpperCase() == start2_split[i].toUpperCase() && start2_split.length !== 1) { // found matching word
+                            correct_count++;
+                        }
+                        if (i !== 0 && i == start2_split.length - 1 && (data_split[j + i].toUpperCase()).includes(start2_split[i].toUpperCase())) {
+                            correct_count++;
+                        }
+                        if (correct_count == start2_split.length || start2_split.length == 1 && data_split[j + i].toUpperCase() == start2_split[i].toUpperCase()) { // found exp
+                            var not_done = true;
+                            for (var k = j + start2_split.length; not_done; k++) { // for every word in exp
+                                var wordend = "";
+                                for (var m = 7; m > 0; m--) {
+                                    wordend += data_split[k][data_split[k].length - m];
+                                }
+                                if (wordend == "SOURCE:") {
+                                    exp += data_split[k].substr(0, data_split[k].length - 7 - m);
+                                    not_done = false; // exp end
+                                } else {
+                                    exp += data_split[k] + " ";
+                                };
+                            }
+                            return exp;
+                        }
+                    }
+                }
+            }
+
+            var exp = "";
+            for (var j = 0; j < data_split.length; j++) { // for every word (start)
+                var correct_count = 0;
+                for (var i = 0; i < start_split.length; i++) { // for every word in message
+                    if ((j + i) < data_split.length) { // doesn't go over
+                        if (data_split[j + i].toUpperCase() == start_split[i].toUpperCase() && start_split.length !== 1) { // found matching word
+                            correct_count++;
+                        }
+                        if (i !== 0 && i == start_split.length - 1 && (data_split[j + i].toUpperCase()).includes(start_split[i].toUpperCase())) {
+                            correct_count++;
+                        }
+                        if (correct_count == start_split.length || start_split.length == 1 && data_split[j + i].toUpperCase() == start2_split[i].toUpperCase()) { // found exp
+                            var not_done = true;
+                            for (var k = j + start_split.length; not_done; k++) { // for every word in exp
+                                var wordend = "";
+                                for (var m = 7; m > 0; m--) {
+                                    wordend += data_split[k][data_split[k].length - m];
+                                }
+                                if (wordend == "SOURCE:") {
+                                    exp += data_split[k].substr(0, data_split[k].length - 7 - m);
+                                    not_done = false; // exp end
+                                } else {
+                                    exp += data_split[k] + " ";
+                                };
+                            }
+                            return exp;
+                        }
                     }
                 }
             }
         }
-
-        var exp = "";
-        for (var j = 0; j < data_split.length; j++) { // for every word (start)
-            var correct_count = 0;
-            for (var i = 0; i < start_split.length; i++) { // for every word in message
-                if ((j + i) < data_split.length) { // doesn't go over
-                    if (data_split[j + i].toUpperCase() == start_split[i].toUpperCase()) { // found matching word
-                        correct_count++;
-                    }
-                    if (i !== 0 && i == start_split.length - 1 && (data_split[j + i].toUpperCase()).includes(start_split[i].toUpperCase())) {
-                        correct_count++;
-                    }
-                    if (correct_count == start_split.length) { // found exp
-                        var not_done = true;
-                        for (var k = j + start_split.length; not_done; k++) { // for every word in exp
-                            var wordend = "";
-                            for (var m = 7; m > 0; m--) {
-                                wordend += data_split[k][data_split[k].length - m];
-                            }
-                            if (wordend == "SOURCE:") {
-                                exp += data_split[k].substr(0, data_split[k].length - 7 - m);
-                                not_done = false; // exp end
-                            } else {
-                                exp += data_split[k] + " ";
-                            };
-                        }
-                        return exp;
-                    }
-                }
-            }
-        }
-
 
 
     }
@@ -173,11 +194,11 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
         exam[i].b = parse("B.", "D.", "C.", "C.", i - 1);
         exam[i].d = parse("D.", (i + 1) + ".", "Copyright", "2011", i - 1);
 
-            console.log(i + ". " + exam[i].q);
-        console.log("    A. " + exam[i].a);
-        console.log("    B. " + exam[i].b);
-        console.log("    C. " + exam[i].c);
-        console.log("    D. " + exam[i].d);
+        /*       console.log(i + ". " + exam[i].q);
+            console.log("    A. " + exam[i].a);
+          console.log("    B. " + exam[i].b);
+            console.log("    C. " + exam[i].c);
+            console.log("    D. " + exam[i].d); */
 
         if (i < 10) {
             var skip = 10;
@@ -186,19 +207,19 @@ fs.readFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.txt', 'utf8', function
         }
         exam[i].ans = parse_ans(i + ".", skip);
 
-       console.log("Correct Answer: " + exam[i].ans);
+        //      console.log("Correct Answer: " + exam[i].ans);
 
         exam[i].exp = parse_exp(exam[i].ans, i);
 
-         console.log(i + ". " +exam[i].exp);
+      //  console.log(i + ". " + exam[i].exp);
 
 
-        fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.json', JSON.stringify(exam), function(err, data) {
-          if (err) {
-              return console.log(err);
-          };
-          console.log("SAVED");
-        });
+        /*  fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/Exam_2.json', JSON.stringify(exam), function(err, data) {
+            if (err) {
+                return console.log(err);
+            };
+            csole.log("SAVED");
+          });*/
     }
 
 
