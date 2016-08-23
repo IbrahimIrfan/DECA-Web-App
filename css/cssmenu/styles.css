@@ -1,8 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
+  -webkit-box-shadow: 0 8px 6px -6px #cacaca;
+    -moz-box-shadow: 0 8px 6px -6px #cacaca;
+    box-shadow: 0 8px 6px -6px #cacaca;
   background: #ffffff;
-  width: auto;
-  position: absolute;
+  width: 100%;
+  position: fixed;
+  z-index: 100 !important;
+}
+#cssmenu ul li :hover {
+  cursor: pointer;
 }
 #cssmenu ul {
   list-style: none;
@@ -39,7 +46,7 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 18px;
   position: relative;
   -webkit-transition: color .25s;
   -moz-transition: color .25s;

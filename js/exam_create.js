@@ -1,5 +1,13 @@
+var q = 1;
+var cluster = "Principles"
+
+var jsonfilelocation = '/Users/ibrahimirfan/Desktop/DECA-Web-App/exams/' + cluster + '/' + cluster + '_' + q + '_Whole.json';
+var htmlfilelocation = '/Users/ibrahimirfan/Desktop/DECA-Web-App/exams/' + cluster + '/' + cluster + '_' + q + '_Whole.html';
+var jsfilelocation = '/Users/ibrahimirfan/Desktop/DECA-Web-App/exams/' + cluster + '/' + cluster + '_' +  q + '_Whole.js';
+var jsfile = 'exams/' + cluster + '/' + cluster + '_' + q + '_Whole.js';
+var examtitle = cluster + "_Exam_" + q;
+
 var string = '<html><head><title>IRHS DECA</title>' +
-    '<link type="text/css" rel="stylesheet" href="plugins/materialize/css/materialize.min.css" />' +
     '<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>' +
     '<link rel="icon" href="img/favicon.ico" sizes="16x16">' +
     '<link rel="stylesheet" type="text/css" href="css/main.css"></link>' +
@@ -10,49 +18,77 @@ var string = '<html><head><title>IRHS DECA</title>' +
     '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">' +
     '<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css">' +
     '<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>' +
-    '<script src="getmdl-select.min.js"></script>' +
-    '<link rel="stylesheet" href="getmdl-select.min.css">' +
-    '<script type="text/javascript" src="plugins/materialize/js/materialize.min.js"></script>' +
-    '<script type="text/javascript" src="js/dropdown.js"></script>' +
-    '</head><body>' +
-    "<div id='cssmenu'><ul><li><a href='index.html'><span>Home</span></a></li>" +
-    "  <li><a href='events.html'><span>Events</span></a></li>" +
-    "  <li class='active'><a href='dashboard.html'><span>Dashboard</span></a></li>" +
-    "  <li><a href='about.html'><span>About Us</span></a></li>" +
-    "<li class='last'><a href='register.html'><span>Register</span></a></li></ul></div><br/><br/>" +
-    '<div class="content" style="font-size: large;"><h6 style="color: red;">IRHS DECA does not own any of these exams.</h6><h6>PBM_Exam_01</h6> <form id="myform">';
+    '</head><body>' + "<div id='cssmenu'>" +
+    "<ul><li><a href='index.html'><span>Home</span></a></li>" +
+    "<li><a href='about.html'><span>About DECA</span></a></li>" +
+    "<li><a href='events.html'><span>Events</span></a></li>" +
+    "<li class='active'><a href='dashboard.html'><span>Dashboard</span></a></li>" +
+    "  <li><a href='announcements.html'><span>Announcements</span></a></li>" +
+    "<li><a href='dates.html'><span>Schedules</span></a></li>" +
+    "  <li class='last'><a href='register.html'><span>Register</span></a></li></ul></div></br>" +
+    '<div class="content"><h4 style="color: red;">IRHS DECA does not own any of these exams.</h4><h4>'+ examtitle + '</h4><h4 id="score" style="color: blue;"></h4><form id="myform">';
 var fs = require('fs');
-var exam = require('C:/Users/Ibrahim/Desktop/DECA-Web-App/PBM_exam.json');
+var exam = require(jsonfilelocation);
 
 for (var i in exam) {
-    string += i + ". " + exam[i].q;
+    string += "<h5 id='q" + i + "'>" + i + ". " + exam[i].q + "</h5>";
 
-    string += '</br></br><div class="input-field col s12"><select><option disabled selected>Select</option><option>A. ' + exam[i].a + '</opition>' +
-        '<option>B. ' + exam[i].b + '</opition>' +
-        '<option>C. ' + exam[i].c + '</opition>' +
-        '<option>D. ' + exam[i].d + '</opition></select></div></br></br>' +
-        'Correct: ' + exam[i].ans + '. </br></br>' +
-        'Explanation: ' + exam[i].exp + '</br></br></br>';
+    string += '<select class="select-style" id="_' + i + '"><option value="def" disabled selected>Select</option><option value="A">A. ' + exam[i].a + '</option>' +
+        '<option value="B">B. ' + exam[i].b + '</option>' +
+        '<option value="C">C. ' + exam[i].c + '</option>' +
+        '<option value="D">D. ' + exam[i].d + '</option></select></br></br>' +
+        '<div id="' + i + 'answer" style="display: none;"><h5>Incorrect. The correct answer is ' + exam[i].ans + ': ';
+    if (exam[i].ans == "A") {
+        string += exam[i].a;
+    } else if (exam[i].ans == "B") {
+        string += exam[i].b;
+    } else if (exam[i].ans == "C") {
+        string += exam[i].c;
+    } else {
+        string += exam[i].d;
+    }
+    string += '</h5><h5>' + exam[i].exp + '</h5></div>';
 }
 
 
 
-string += '<button id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button">Submit</button>' +
-    '</button></form></div><script> var exam = {}';
+string += '<input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit"></input>' +
+    '</form></div>'
+string += '</body><script src="' + jsfile +'"></script></html>';
+
+var string2 = "$('#myform').on('submit', function(e){\n"
+string2 += "e.preventDefault();\n";
+string2 += "window.scrollTo(0, 0);\n";
+string2 += "$('.select-style').prop('disabled', 'true');\n"
+string2 += "$('#submit').css('display', 'none');\n";
+string2 += "var exam = {};\n";
 
 for (var i in exam) {
-    string += 'exam[' + i + '].q =' + exam[i].q;
-    string += 'exam[' + i + '].a =' + exam[i].a;
-    string += 'exam[' + i + '].b =' + exam[i].b;
-    string += 'exam[' + i + '].c =' + exam[i].c;
-    string += 'exam[' + i + '].d =' + exam[i].d;
-    string += 'exam[' + i + '].ans =' + exam[i].ans;
-    string += 'exam[' + i + '].exp =' + exam[i].exp;
+    string2 += 'exam[' + i + '] = {};\n';
+    string2 += 'exam[' + i + '].ans ="' + exam[i].ans + '";\n';
 }
+string2 += "var score = 0;\n"
+string2 += 'for (var i in exam) {\n'
+string2 += "if ($('#_' + i).val() == exam[i].ans){\n"
+string2 += "score++;\n"
+string2 += "document.getElementById('q' + i).style.color = '#00cc00';\n"
+string2 += "}else{\n"
+string2 += "document.getElementById('q' + i).style.color = 'red';\n"
+string2 += "document.getElementById(i + 'answer').style.display = 'block';\n"
+string2 += "}\n}\n"
 
-string += '</script></body></html>';
+string2 += "document.getElementById('score').innerHTML = 'Score: ' + score + '/100';\n";
 
-fs.writeFile('C:/Users/Ibrahim/Desktop/DECA-Web-App/exam_example.html', string, function(err, data) {
+string2 += "});\n"
+
+fs.writeFile(htmlfilelocation, string, function(err, data) {
+    if (err) {
+        return console.log(err);
+    };
+    console.log("SAVED");
+});
+
+fs.writeFile(jsfilelocation, string2, function(err, data) {
     if (err) {
         return console.log(err);
     };
