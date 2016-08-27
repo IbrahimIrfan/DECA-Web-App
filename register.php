@@ -1,6 +1,8 @@
 <?php
 ob_start();
 session_start();
+
+//if logged in, redirect to dashboard
 if( isset($_SESSION['user'])!="" ){
  header("Location: dashboard.php");
 }
@@ -8,21 +10,13 @@ include_once 'dbconnect.php';
 
 if(isset($_POST['submit'])) {
 
- $email = trim($_POST['email']);
- $upass = trim($_POST['pass']);
- $fname = trim($_POST['firstname']);
- $lname = trim($_POST['lastname']);
- $event1 = trim($_POST['event1']);
- $event2 = trim($_POST['event2']);
- $event3 = trim($_POST['event3']);
-
- $email = strip_tags($email);
- $upass = strip_tags($upass);
- $fname = strip_tags($fname);
- $lname = strip_tags($lname);
- $event1 = strip_tags($event1);
- $event2 = strip_tags($event2);
- $event3 = strip_tags($event3);
+ $email = strip_tags(trim($_POST['email']));
+ $upass = strip_tags(trim($_POST['pass']));
+ $fname = strip_tags(trim($_POST['firstname']));
+ $lname = strip_tags(trim($_POST['lastname']));
+ $event1 = strip_tags(trim($_POST['event1']));
+ $event2 = strip_tags(trim($_POST['event2']));
+ $event3 = strip_tags(trim($_POST['event3']));
 
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
@@ -31,25 +25,54 @@ if(isset($_POST['submit'])) {
  $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
  $result = mysql_query($query);
 
- $count = mysql_num_rows($result); // if email not found then proceed
+ $count = mysql_num_rows($result);
 
- if ($count==0) {
+ // if email not found then proceed
+ if ($count==0 && $event1 !== $event2 && $event2 !== $event3 && $event1 !== $event3) {
 
-  $query = "INSERT INTO users(userFName, userLName,userEmail,userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email','$password', '$event1', '$event2', '$event3')";
-  $res = mysql_query($query);
+    $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
+    $res = mysql_query($query);
 
-  if ($res) {
-   $errTyp = "success";
-   $errMSG = "successfully registered, you may login now";
+    if ($res) {
+      $errMSG = "Successfully registered, you may login now. Check your email for details.";
+
+      // send confirmation email
+
+      require 'PHPMailer/PHPMailerAutoload.php';
+
+      $mail = new PHPMailer;
+
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'irhsdeca2016@gmail.com';                 // SMTP username
+      $mail->Password = 'DECA2016';                           // SMTP password
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP port to connect to
+
+      $mail->setFrom('irhsdeca@gmail.com', 'Mailer');
+      $mail->addAddress($email);               // recipient
+
+      $mail->isHTML(true);           // Set email format to HTML
+
+      $mail->Subject = 'IRHS DECA Registration Confirmation';
+      $mail->Body    = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your event choices are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date). Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
+
+    /*  if(!$mail->send()) {
+        echo 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+        echo 'Message has been sent';
+      } */
+    } else {
+      $errMSG = "Something went wrong, try again later";
+    }
+
+  } else if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
+      $errMSG = "Event choices must be unique";
   } else {
-   $errTyp = "danger";
-   $errMSG = "Something went wrong, try again later...";
+      $errMSG = "Email already in use";
   }
-
- } else {
-  $errTyp = "warning";
-  $errMSG = "Sorry Email already in use ...";
- }
 
 }
 ?>
@@ -74,13 +97,14 @@ if(isset($_POST['submit'])) {
 <body>
   <div id='cssmenu'>
       <ul>
-          <li><a href='index.html'><span>Home</span></a></li>
-          <li><a href='about.html'><span>About DECA</span></a></li>
-          <li><a href='events.html'><span>Events</span></a></li>
-          <li><a href='dashboard.html'><span>Dashboard</span></a></li>
-          <li><a href='announcements.html'><span>Announcements</span></a></li>
-          <li><a href='dates.html'><span>Schedules</span></a></li>
-          <li class='active last'><a href='register.html'><span>Register</span></a></li>
+          <li><a href='index.php'><span>Home</span></a></li>
+          <li><a href='about.php'><span>About DECA</span></a></li>
+          <li><a href='events.php'><span>Events</span></a></li>
+          <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+          <li><a href='announcements.php'><span>Announcements</span></a></li>
+          <li><a href='dates.php'><span>Schedules</span></a></li>
+          <li class='active'><a href='register.php'><span>Register</span></a></li>
+          <li class='last'><a href='login.php'><span>Login</span></a></li>
       </ul>
   </div>
   </br>
@@ -91,13 +115,13 @@ if(isset($_POST['submit'])) {
             <h4>Register for IRHS DECA 2016/2017</h4>
 
 
-        <?php
-               if ( isset($errMSG) ) {
-        ?>
-                <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+            <?php
+            if ( isset($errMSG) ) {
+            ?>
+                <div class="alert">
                   <?php echo $errMSG; ?>
                    </div>
-                   <?php
+             <?php
                  }
             ?>
 
@@ -123,30 +147,24 @@ if(isset($_POST['submit'])) {
                 <label class="mdl-textfield__label" for="password">Password</label>
             </div>
 
-            <h5>Event choices:</h5>
+            <h5>Event choices: (Must be unique)</h5>
 
                 <select id="event1" name="event1" class="select-style">
                     <option value="" disabled selected>1st Choice</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+
                 </select>
 
             <br/><br/>
 
                 <select id="event2" name="event2" class="select-style">
                     <option value="" disabled selected>2nd Choice</option>
-                    <option value="1">Option 4</option>
-                    <option value="2">Option 5</option>
-                    <option value="3">Option 6</option>
+
                 </select>
             <br/><br/>
 
                 <select id="event3" name="event3" class="select-style">
                     <option value="" disabled selected>3rd Choice</option>
-                    <option value="1">Option 7</option>
-                    <option value="2">Option 8</option>
-                    <option value="3">Option 9</option>
+
                 </select>
 
             <br/><br/>
@@ -167,6 +185,6 @@ if(isset($_POST['submit'])) {
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-<script type="text/javascript" src="js/dropdown.js"></script>
+<script type="text/javascript" src="js/events.js"></script>
 
 </html>

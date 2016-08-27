@@ -1,9 +1,7 @@
 <?php
 
- error_reporting( ~E_ALL & ~E_DEPRECATED &  ~E_NOTICE );
-
  define('DBHOST', 'irhsdeca.com');
- define('DBUSER', 'root');
+ define('DBUSER', '');
  define('DBPASS', '');
  define('DBNAME', 'members2016');
 
@@ -16,4 +14,6 @@
 
  if ( !$dbcon ) {
   die("Database Connection failed : " . mysql_error());
- }
+}
+
+?>

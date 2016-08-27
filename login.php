@@ -3,14 +3,13 @@
  session_start();
  require_once 'dbconnect.php';
 
- // it will never let you open index(login) page if session is set
+ //if already logged in, redirect to dashboard
  if ( isset($_SESSION['user'])!="" ) {
   header("Location: dashboard.php");
   exit;
  }
 
  if( isset($_POST['btn-login']) ) {
-
   $email = $_POST['email'];
   $upass = $_POST['pass'];
 
@@ -19,7 +18,7 @@
 
   $password = hash('sha256', $upass); // password hashing using SHA256
 
-  $res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
+  $res=mysql_query("SELECT userId, userPass FROM users WHERE userEmail='$email'");
 
   $row=mysql_fetch_array($res);
 
@@ -29,7 +28,7 @@
    $_SESSION['user'] = $row['userId'];
    header("Location: dashboard.php");
   } else {
-   $errMSG = "Wrong Credentials, Try again...";
+   $errMSG = "Wrong Credentials, Try again. If you forgot your password, check the confirmation email you recieved when you registered.";
   }
  }
 ?>
@@ -51,15 +50,17 @@
 </head>
 
 <body>
+
   <div id='cssmenu'>
       <ul>
-          <li><a href='index.html'><span>Home</span></a></li>
-          <li><a href='about.html'><span>About DECA</span></a></li>
-          <li><a href='events.html'><span>Events</span></a></li>
-          <li><a href='dashboard.html'><span>Dashboard</span></a></li>
-          <li><a href='announcements.html'><span>Announcements</span></a></li>
-          <li><a href='dates.html'><span>Schedules</span></a></li>
-          <li class='active last'><a href='register.html'><span>Register</span></a></li>
+          <li><a href='index.php'><span>Home</span></a></li>
+          <li><a href='about.php'><span>About DECA</span></a></li>
+          <li><a href='events.php'><span>Events</span></a></li>
+          <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+          <li><a href='announcements.php'><span>Announcements</span></a></li>
+          <li><a href='dates.php'><span>Schedules</span></a></li>
+          <li><a href='register.php'><span>Register</span></a></li>
+          <li class='active last'><a href='login.php'><span>Login</span></a></li>
       </ul>
   </div>
   </br>

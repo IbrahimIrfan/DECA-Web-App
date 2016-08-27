@@ -124,7 +124,22 @@ padding-right: 10px;
 .fancybox-skin{
   padding: 30px !important;
 }
-
 #score{
   font-weight: bold;
+}
+#timer-label{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.timer{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.timer, #timer-label{
+  font-size: 30px;
+  color: blue;
+  position: fixed;
+}
+.hours, .minutes, .seconds, .timer, #timer-label{
+  display: inline-block;
 }

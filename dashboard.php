@@ -3,11 +3,12 @@
  session_start();
  require_once 'dbconnect.php';
 
+// redirect to login if not logged in
  if( !isset($_SESSION['user']) ) {
   header("Location: login.php");
   exit;
  }
- // select loggedin users detail
+ // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
 ?>
@@ -29,17 +30,17 @@
 
 <body>
 
-    <div id='cssmenu'>
-        <ul>
-            <li><a href='index.html'><span>Home</span></a></li>
-            <li><a href='about.html'><span>About DECA</span></a></li>
-            <li><a href='events.html'><span>Events</span></a></li>
-            <li class="active"><a href='dashboard.html'><span>Dashboard</span></a></li>
-            <li><a href='announcements.html'><span>Announcements</span></a></li>
-            <li><a href='dates.html'><span>Schedules</span></a></li>
-            <li class='last'><a href='register.html'><span>Register</span></a></li>
-        </ul>
-    </div>
+  <div id='cssmenu'>
+      <ul>
+          <li><a href='index.php'><span>Home</span></a></li>
+          <li><a href='about.php'><span>About DECA</span></a></li>
+          <li><a href='events.php'><span>Events</span></a></li>
+          <li class="active"><a href='dashboard.php'><span>Dashboard</span></a></li>
+          <li><a href='announcements.php'><span>Announcements</span></a></li>
+          <li><a href='dates.php'><span>Schedules</span></a></li>
+          <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
+      </ul>
+  </div>
     </br>
 
     <br/>
@@ -47,9 +48,8 @@
     <div class="content">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="120"/>
-        <h3><?php echo $userRow['userFName']; echo $userRow['userLName'] ?> /h3>
-        <h5><a href="php/logout.php?logout">Logout</a></h5>
-</div>
+        <h3><?php echo $userRow['userFName']; echo $userRow['userLName'] ?> </h3>
+      </div>
 
         <br/>
         <br/>
