@@ -7,7 +7,7 @@
     margin-left: 40%;
     margin-right: auto;
 }
-a, #fbimg, #altlogo, #allTypes, #type, #cluster, .eventTrigger, #table, #date1, #date2, #date3:hover {
+a, #fbimg, #altlogo, #allTypes, #type, #cluster, .eventTrigger, #table:hover {
   cursor: pointer;
 }
 #center-text {
@@ -55,7 +55,7 @@ a, #fbimg, #altlogo, #allTypes, #type, #cluster, .eventTrigger, #table, #date1, 
 #homework, .announce, .profile{
   padding: 10px;
 }
-.mdl-data-table.mdl-js-data-table, .select-style, #quote-thing, #homework, .announce, #date1, #date2, #date3, .profile {
+.mdl-data-table.mdl-js-data-table, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
     -webkit-box-shadow: 0 8px 6px -6px #cacaca;
       -moz-box-shadow: 0 8px 6px -6px #cacaca;
       box-shadow: 0 8px 8px 0px #cacaca;
@@ -68,18 +68,7 @@ a, #fbimg, #altlogo, #allTypes, #type, #cluster, .eventTrigger, #table, #date1, 
 .mdl-data-table.mdl-js-data-table thead {
   font-weight: bolder;
 }
-#date1, #date2, #date3{
-display: inline;
-padding-right: 10px;
-}
-#date1{
-  margin-left: 5px;
-}
-#date2{
-  margin-left: 55px;
-  margin-right: 50px;
-}
-.imgcontainer, .breadcrumb {
+.breadcrumb {
   margin-top: 20px;
 }
 .breadcrumb tr td{
@@ -142,4 +131,11 @@ padding-right: 10px;
 }
 .hours, .minutes, .seconds, .timer, #timer-label{
   display: inline-block;
+}
+.regionals, .provincials, .icdc {
+  padding: 15px;
+  margin-top: 30px;
+}
+#meetings tbody tr td, #meetings thead tr td{
+  font-size: 20px;
 }

@@ -89,6 +89,7 @@ $(document).on('ready', function() {
                     "TTDM": {
                         "name": "Travel and Tourism",
                         "code": "TTDM",
+                        "type": "Team Decision",
                         "desc": "Travel and tourism includes marketing and management functions and tasks that can be applied in enterprises engaged in passenger transportation, travel service, attracting and serving the traveling public, arranging tours or acting as independent ticket agencies, and other services incidental to the travel or tourism industry.",
                         "res": "https://drive.google.com/folderview?id=0B79AcfigTjIBYzBPUExERE80SnM&usp=sharing"
                     }

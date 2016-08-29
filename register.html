@@ -1,91 +1,3 @@
-<?php
-ob_start();
-session_start();
-
-//if logged in, redirect to dashboard
-if( isset($_SESSION['user'])!="" ){
- header("Location: dashboard.php");
-}
-include_once 'dbconnect.php';
-
-if(isset($_POST['submit'])) {
-
- $email = strip_tags(trim($_POST['email']));
- $upass = strip_tags(trim($_POST['pass']));
- $fname = strip_tags(trim($_POST['firstname']));
- $lname = strip_tags(trim($_POST['lastname']));
- $event1 = strip_tags(trim($_POST['event1']));
- $event2 = strip_tags(trim($_POST['event2']));
- $event3 = strip_tags(trim($_POST['event3']));
-
- // password encrypt using SHA256();
- $password = hash('sha256', $upass);
-
- // check email exist or not
- $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
- $result = mysql_query($query);
-
- $count = mysql_num_rows($result);
-
- // if email not found then proceed
- if ($count==0 && $event1 !== $event2 && $event2 !== $event3 && $event1 !== $event3) {
-
-    $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
-    $res = mysql_query($query);
-
-    if ($res) {
-      $errMSG = "Successfully registered, you may login now. Check your email for details.";
-
-      // confirmation email body
-      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your event choices are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
-
-      if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
-        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email the name of your selected partner, or if you would like to be paired with someone.\n '
-      }
-
-      $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
-
-      // send confirmation email
-
-      require 'PHPMailer/PHPMailerAutoload.php';
-
-      $mail = new PHPMailer;
-
-      $mail->isSMTP();                                      // Set mailer to use SMTP
-      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-      $mail->SMTPAuth = true;                               // Enable SMTP authentication
-      $mail->Username = 'irhsdeca2016@gmail.com';                 // SMTP username
-      $mail->Password = 'DECA2016';                           // SMTP password
-      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-      $mail->Port = 587;                                    // TCP port to connect to
-
-      $mail->setFrom('irhsdeca2016@gmail.com', 'Mailer');
-      $mail->addAddress($email);               // recipient
-
-      $mail->isHTML(true);           // Set email format to HTML
-
-      $mail->Subject = 'IRHS DECA Registration Confirmation';
-      $mail->Body    = $emailbody
-
-    /*  if(!$mail->send()) {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-      } else {
-        echo 'Message has been sent';
-      } */
-    } else {
-      $errMSG = "Something went wrong, try again later";
-    }
-
-  } else if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
-      $errMSG = "Event choices must be unique";
-  } else {
-      $errMSG = "Email already in use";
-  }
-
-}
-?>
-
 <html>
 
 <head>
@@ -124,15 +36,6 @@ if(isset($_POST['submit'])) {
             <h4>Register for IRHS DECA 2016/2017</h4>
 
 
-            <?php
-            if ( isset($errMSG) ) {
-            ?>
-                <div class="alert">
-                  <?php echo $errMSG; ?>
-                   </div>
-             <?php
-                 }
-            ?>
 
             <h5>Personal Information:</h5>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

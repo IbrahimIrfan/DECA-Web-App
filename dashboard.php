@@ -55,52 +55,35 @@
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="exam_example.html" style="color: black;">Finance Exam 2012</a></u></h5>
+        <h5 id="exam_link"><u><a href="exam_example.html" style="color: black;"><?php echo $userRow['userCluster'] ?> Exam</a></u></h5>
       </div>
 
         <br/>
         <br/>
-        <div class="announce">
+
             <h4>Cluster-Wide Announcements:</h4>
-            <!-- Three Line List with secondary info and action -->
-            <style>
-                .demo-list-three {
-                    width: 650px;
-                }
-            </style>
+<script type="text/javascript">
+var clutser = <?php echo $_SESSION['user'] ?>;
+</script>
 
-            <ul class="demo-list-three mdl-list">
-                <li class="mdl-list__item mdl-list__item--three-line">
-                    <span class="mdl-list__item-primary-content">
-      <img src="img/announce.png" height="50" align="left" style="margin-right: 10px;"/>
-      <span>Test</span>
-                    <span class="mdl-list__item-text-body">
-        Test test test test test test test test test test test test test test.
-      </span>
-                    </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line">
-                    <span class="mdl-list__item-primary-content">
-      <img src="img/assess.png" height="50" align="left" style="margin-right: 10px;"/>
-      <span>Test</span>
-                    <span class="mdl-list__item-text-body">
-          Test test test test test test test test test test test test test test.
-      </span>
-                    </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line">
-                    <span class="mdl-list__item-primary-content">
-      <img src="img/assign.png" height="50" align="left" style="margin-right: 10px;"/>
-      <span>Test</span>
-                    <span class="mdl-list__item-text-body">
-          Test test test test test test test test test test test test test test.
-      </span>
-                    </span>
-                </li>
-            </ul>
-        </div>
+            <!--ANNOUNCEMENTS-->
+            <div class="announce">
+            <h4 id="ann-title">Title</h4>
+            <h5 id="ann-body">Body</h5>
+            </div>
+            <div class="announce">
+            <h4 id="ann-title">Title</h4>
+            <h5 id="ann-body">Body</h5>
+            </div>
+            <div class="announce">
+            <h4 id="ann-title">Title</h4>
+            <h5 id="ann-body">Body</h5>
+            </div>
+            <div class="announce">
+            <h4 id="ann-title">Title</h4>
+            <h5 id="ann-body">Body</h5>
+            </div>
 
-    </div>
     <div class="footer">
         <img id="altlogo" src="img/logo_alt.png" width="100" align="left" />
         <img id="fbimg" src="img/facebook-box.png" width="45" align="right" />
