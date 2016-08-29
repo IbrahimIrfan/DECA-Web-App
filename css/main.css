@@ -7,7 +7,7 @@
     margin-left: 40%;
     margin-right: auto;
 }
-a, #fbimg, #altlogo, #allTypes, #type, #cluster, .eventTrigger, #table:hover {
+a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, #table:hover {
   cursor: pointer;
 }
 #center-text {
@@ -79,7 +79,7 @@ padding-right: 10px;
   font-size:30px;
   margin-bottom: 30px;
 }
-#allTypes, #type, #cluster{
+#allTypes, #type, #cluster, #clusterClicked{
   text-decoration: underline;
 }
 #clusterpic{
@@ -138,4 +138,7 @@ padding-right: 10px;
 }
 #meetings tbody tr td, #meetings thead tr td{
   font-size: 20px;
+}
+#ann-title, #ann-body {
+   padding-left: 15px;
 }
