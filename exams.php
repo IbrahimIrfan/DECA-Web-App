@@ -1,8 +1,4 @@
-<?php
- ob_start();
- session_start();
- require_once 'dbconnect.php';
-?>
+
 
 <html>
 
@@ -27,37 +23,26 @@
 <body>
 
   <div id='cssmenu'>
-      <ul>
-          <li><a href='index.php'><span>Home</span></a></li>
-          <li><a href='about.php'><span>About DECA</span></a></li>
-          <li class="active"><a href='events.php'><span>Events</span></a></li>
-          <li><a href='dashboard.php'><span>Dashboard</span></a></li>
-          <li><a href='announcements.php'><span>Announcements</span></a></li>
-          <li><a href='dates.php'><span>Schedules</span></a></li>
-          <?php if( !isset($_SESSION['user']) ) { ?>
-             <li><a href='register.php'><span>Register</span></a></li>
-             <li class='last'><a href='login.php'><span>Login</span></a></li>
-             <?php } else { ?>
-                <li><a href='exams.php'><span>Exams</span></a></li>
-               <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
-            <?php
-          }
-          ?>
-      </ul>
+    <ul>
+        <li><a href='index.php'><span>Home</span></a></li>
+        <li><a href='about.php'><span>About DECA</span></a></li>
+        <li><a href='events.php'><span>Events</span></a></li>
+        <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+        <li><a href='announcements.php'><span>Announcements</span></a></li>
+        <li><a href='dates.php'><span>Schedules</span></a></li>
+        <li class="active"><a href='exams.php'><span>Exams</span></a></li>
+        <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
+    </ul>
   </div>
-    </br>
-
+</br>
 
     <div class="content">
 
         <div class="breadcrumb">
             <table class="breadcrumb">
                 <tr>
-                    <td id="allTypes"> </td>
+                    <td id="clusterClicked"> </td>
                     <td id="slash1" style="display: none;">/</td>
-                    <td id="type"></td>
-                    <td id="slash2" style="display: none;">/</td>
-                    <td id="cluster"> </td>
                 </tr>
             </table>
         </div>
@@ -66,7 +51,7 @@
 
         <table class="mdl-data-table mdl-js-data-table" id="table" width="500">
             <tbody>
-                <div class="fancybox" rel="group" id="event_popup"> </div>
+
             </tbody>
         </table>
 
@@ -83,12 +68,7 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-<script type="text/javascript" src="js/resources.js"></script>
+<script type="text/javascript" src="js/exams.js"></script>
 
-<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
 </html>
