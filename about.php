@@ -75,10 +75,14 @@
     role-play case study. The written exam is a 100 question multiple choice test and every
     student takes one based on their cluster - we'll go over that in a minute. The case study,
     however, is different for every event, of which there are a lot to choose from. To find out
-     more about each event, please take a look at the Competitive Events page on this website
+     more about each event, please take a look at the Events page on this website
      where there is a short description and a link for resources for each event where you can
-     look at past exams and case studies. The executives will also provide more information and
-     tips during cluster meetings. Whether or not you advance to the next level of competitions
+     look at past exams and case studies. The exams are also available to be taken online -
+     right on this website. Once you are registered, you will have to complete one online practice exam a week,
+     which you will see in the 'Your Homework' section of the Dashboard. You can also view a list of all the
+     exams in 'Exams' and take them as many times as you wish.
+      The executives will also provide more information and tips during cluster meetings. Whether or not you
+      advance to the next level of competitions
       depends on the total score of your written exam and case study, but this is often a form
       of insurance - even if you do poorly on your case study, for example, a good written exam
       mark (which people tend to do more poorly in) might be able to boost you up.</h6>
@@ -104,7 +108,7 @@ rather, there is a separate Business Administration Core exam that is taken by a
 <h6>Every case study is basically a role-play interview; you are given a specific situation with
   a role you have to undertake and a task to complete or questions to answer. Even within the same
   event, case studies can be drastically different and so it is vital that time is spent preparing
-  and practicing for them.You are given the case study, some time to prepare your content, and then
+  and practicing for them. You are given the case study, some time to prepare your content, and then
   comes the interview. The specific times depend on what type of event you're participating in. You
    will sit across from the judge (who will also be role-playing as defined by the case study) from
    where your presentation will be conducted. The judges are not allowed to communicate with you

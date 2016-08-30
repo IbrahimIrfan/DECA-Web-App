@@ -1,12 +1,12 @@
 <?php
 ob_start();
 session_start();
+require_once 'dbconnect.php';
 
 //if logged in, redirect to dashboard
 if( isset($_SESSION['user'])!="" ){
  header("Location: dashboard.php");
 }
-include_once 'dbconnect.php';
 
 if(isset($_POST['submit'])) {
 
