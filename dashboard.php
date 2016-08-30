@@ -56,7 +56,7 @@
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="exam_example.html" style="color: black;"><?php echo $userRow['userCluster'] ?> Exam</a></u></h5>
+        <h5 id="exam_link"><u><a href="exams/Finance/Finance_1_Whole.html" style="color: black;"><?php echo $userRow['userCluster'] ?> Exam</a></u></h5>
       </div>
 
         <br/>

@@ -27,7 +27,7 @@
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
-          <li class="active"><a href='about.php'><span>About DECA</span></a></li>
+          <li><a href='about.php'><span>About DECA</span></a></li>
           <li><a href='events.php'><span>Events</span></a></li>
           <li><a href='dashboard.php'><span>Dashboard</span></a></li>
           <li><a href='announcements.php'><span>Announcements</span></a></li>

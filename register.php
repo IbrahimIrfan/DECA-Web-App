@@ -119,11 +119,9 @@ if(isset($_POST['submit'])) {
   </br>
 
       <div class="content">
-          <form id="reg" action='php/register.php' method='post'>
+          <form id="reg" method='post'>
 
               <h4>Register for IRHS DECA 2016/2017</h4>
-
-
 
               <h5>Personal Information:</h5>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
