@@ -21,10 +21,10 @@
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
-          <li class="active"><a href='about.php'><span>About DECA</span></a></li>
+          <li><a href='about.php'><span>About DECA</span></a></li>
           <li><a href='events.php'><span>Events</span></a></li>
           <li><a href='dashboard.php'><span>Dashboard</span></a></li>
-          <li><a href='announcements.php'><span>Announcements</span></a></li>
+          <li class="active"><a href='announcements.php'><span>Announcements</span></a></li>
           <li><a href='dates.php'><span>Schedules</span></a></li>
           <?php if( !isset($_SESSION['user']) ) { ?>
              <li><a href='register.php'><span>Register</span></a></li>
@@ -67,7 +67,7 @@
 <div class="footer">
   <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>
   <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
-<h6><a href="irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+<h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
 </div>
 </body>
 

@@ -102,7 +102,7 @@
   <div class="footer">
     <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>
     <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
-  <h6><a href="irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+  <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
   </div>
   </body>
 

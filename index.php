@@ -35,7 +35,7 @@
              <li><a href='register.php'><span>Register</span></a></li>
              <li class='last'><a href='login.php'><span>Login</span></a></li>
              <?php } else { ?>
-             <li class="active"><a href='exams.php'><span>Exams</span></a></li>
+             <li><a href='exams.php'><span>Exams</span></a></li>
                <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
             <?php
           }
@@ -50,7 +50,7 @@
 <div class="footer">
   <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>
   <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
-<h6><a href="irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+<h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
 </div>
 
 
