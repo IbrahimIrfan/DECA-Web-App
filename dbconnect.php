@@ -1,9 +1,12 @@
 <?php
 
- $host = $_GET["host"];
- $user = $_GET["user"];
- $pass = $_GET["pass"];
- $name = $_GET["name"];
+  $json = file_get_contents('http://www.irhsdeca.com/config.json');
+  $details = json_decode($json, true);
+
+ $host = $details["dbhost"];
+ $user = $details["dbuser"];
+ $pass = $details["dbpass"];
+ $name = $details["dbname"];
 
  $conn = mysql_connect($host,$user,$pass);
  $dbcon = mysql_select_db($name);
@@ -17,13 +20,3 @@
 }
 
 ?>
-<html>
-<head>
-<script type="text/javascript">
-  $.get('/config.json', function(r){
-    var db = r;
-    window.location.href="/dbconnect.php?pass=" + db["dbpass"] + "&user=" + db["dbuser"] + "&name=" + db["dbname"] + "&host=" + db["dbhost"];
-  });
-</script>
-</head>
-</html>
