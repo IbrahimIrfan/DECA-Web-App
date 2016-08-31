@@ -181,7 +181,8 @@ if(isset($_POST['submit'])) {
               <br/><br/>
 
               <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
-
+              <h5 style="color: green;"> <?php echo $successMSG ?> </h5>
+              <h6> <?php echo $emailbody ?> </h6>
 
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
