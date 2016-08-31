@@ -62,13 +62,13 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = "Hello " . $fname . ",<br>Thank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:<br>Event Choice 1. " . $event1 . "<br>Event Choice 2. " . $event2 . "<br>Event Choice 3. " . $event3 . "<br>Your email: " . $email . "<br>Password: " . $upass . "<br>You will be assigned an event by (date).";
+      $emailbody = "Hello " . $fname . ",<br><br>Thank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:<br><br>Event Choice 1. " . $event1 . "<br>Event Choice 2. " . $event2 . "<br>Event Choice 3. " . $event3 . "<br>Your email: " . $email . "<br>Password: " . $upass . "<br><br>You will be assigned an event by (date).";
 
       if (strpos($event1, "partner") !== false || strpos($event2, "partner") !== false || strpos($event3, "partner") !== false){
-        $emailbody = $emailbody . " One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.<br> ";
+        $emailbody = $emailbody . "<br><br>One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.";
       }
 
-      $emailbody = $emailbody . "Please reply to this email if there are any problems.<br><br>- The IRHS DECA team";
+      $emailbody = $emailbody . "<br><br>Please reply to this email or talk to one of the executives if there are any problems.<br><br>- The IRHS DECA team";
 
       // send confirmation email
 
@@ -186,8 +186,6 @@ if(isset($_POST['submit'])) {
 
               <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
               <h5 style="color: green;"> <?php echo $successMSG ?> </h5>
-              <h6> <?php echo $emailbody ?> </h6>
-
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
               </input>
