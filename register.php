@@ -184,12 +184,12 @@ if(isset($_POST['submit'])) {
 
               <br/><br/>
 
-              <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
-              <h5 style="color: green;"> <?php echo $successMSG ?> </h5>
-
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
               </input>
           </form>
+
+                        <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
+                        <h5 style="color: green;" id="success"> <?php echo $successMSG ?> </h5>
 
       </div>
       <div class="footer">
@@ -202,5 +202,10 @@ if(isset($_POST['submit'])) {
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script type="text/javascript" src="js/events.js"></script>
+  <script type="text/javascript">
+  if (document.getElementById('success').innerHTML == "Successfully registered, you may login now. Check your email for details."){
+    $('#reg').hide();
+  }
+  </script>
 
   </html>
