@@ -62,13 +62,13 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\nEvent Choice 1. ' . $event1 . '\nEvent Choice 2. ' . $event2 . '\nEvent Choice 3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
+      $emailbody = "Hello " . $fname . ".\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\nEvent Choice 1. " . $event1 . "\nEvent Choice 2. " . $event2 . "\nEvent Choice 3. " . $event3 . "\nYour email: " . $email . "\nPassword: " . $upass . "\nYou will be assigned an event by (date).";
 
-      if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
-        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.\n ';
+      if (str.pos($event1, "partner") !== false || str.pos($event2, "partner") !== false || str.pos($event3, "partner") !== false){
+        $emailbody = $emailbody . " One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.\n ";
       }
 
-      $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
+      $emailbody = $emailbody . "Please reply to this email if there are any problems.\n\n- The IRHS DECA team";
 
       // send confirmation email
 
@@ -95,7 +95,7 @@ if(isset($_POST['submit'])) {
       if(!$mail->send()) {
         $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
       } else {
-        $errMSG = 'Message has been sent';
+        $successMSG = 'Message has been sent';
       }
 
     } else {
