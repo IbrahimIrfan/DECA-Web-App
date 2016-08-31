@@ -20,13 +20,27 @@ if(isset($_POST['submit'])) {
 
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
-/*
+
  // check email exist or not
- $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
- $result = mysql_query($query);
+ //$query = "SELECT userEmail FROM users WHERE userEmail='$email'";
+ //$result = mysql_query($query);
 
- $count = mysql_num_rows($result);
+ //$count = mysql_num_rows($result);
+ //$count = 1;
 
+ if (empty($email) || empty($upass) || empty($fname) || empty($lname) || empty($event1) || empty($event2) || empty($event3)){
+   $errMSG = "You must complete all fields.";
+ }
+
+ if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+   $errMSG = "Please enter valid email address.";
+  }
+
+  if(strlen($pass) < 6) {
+   $errMSG = "Password must have atleast 6 characters.";
+  }
+
+/*
  // if email not found then proceed
  if ($count==0 && $event1 !== $event2 && $event2 !== $event3 && $event1 !== $event3) {
 
@@ -81,8 +95,8 @@ if(isset($_POST['submit'])) {
       $errMSG = "Event choices must be unique";
   } else {
       $errMSG = "Email already in use";
-  }*/
-
+  }
+ */
 }
 ?>
 
@@ -164,6 +178,8 @@ if(isset($_POST['submit'])) {
                   </select>
 
               <br/><br/>
+
+<h5 style="color: red;"> <?php echo $errMSG ?> </h5>
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
               </input>

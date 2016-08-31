@@ -376,11 +376,12 @@ $(document).on('ready', function() {
                         if (currentEvent.code == "PFL") {
                           this.content += "<h5 style='color: red;'>*This event was introduced two years ago and therefore resources are extremely limited in terms of past events.</h5>";
                             this.content += "<h5>Principles of Finance MC exam (100 Q's)</h5>";
-                        } else {
+                        } else if (currentEvent.type !== "Principles") {
                             this.content += "<h5>Cluster-wide " + currentCluster.name + " MC exam (100 Q's)</h5>";
                         }
 
                         if (currentEvent.type == "Principles") {
+                            this.content += "<h5>Business Admin Core MC exam (100 Q's)</h5>";
                             this.content += "<h5>1 Content Interview</h5>";
                             this.content += "<h5>Preparation Time: 10 min</h5>";
                             this.content += "<h5>Interview Time: 10 min</h5>";
