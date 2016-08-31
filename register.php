@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
     $error = true;
    $errMSG = "Please enter valid email address.";
- } elseif (0 != 0){ //count
+ } elseif (false){ //count!==0
     $error = true;
    $errMSG = "Email already in use."
  }
