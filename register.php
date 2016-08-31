@@ -7,7 +7,7 @@ require_once 'dbconnect.php';
 if( isset($_SESSION['user'])!="" ){
  header("Location: dashboard.php");
 }
-
+/*
 if(isset($_POST['submit'])) {
 
  $email = strip_tags(trim($_POST['email']));
@@ -67,12 +67,12 @@ if(isset($_POST['submit'])) {
       $mail->Subject = 'IRHS DECA Registration Confirmation';
       $mail->Body    = $emailbody
 
-    /*  if(!$mail->send()) {
+      if(!$mail->send()) {
         echo 'Message could not be sent.';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
       } else {
         echo 'Message has been sent';
-      } */
+      }
     } else {
       $errMSG = "Something went wrong, try again later";
     }
@@ -83,7 +83,7 @@ if(isset($_POST['submit'])) {
       $errMSG = "Email already in use";
   }
 
-}
+}*/
 ?>
 
 <html>
@@ -164,8 +164,6 @@ if(isset($_POST['submit'])) {
                   </select>
 
               <br/><br/>
-
-
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
               </input>

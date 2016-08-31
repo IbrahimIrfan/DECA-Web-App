@@ -37,7 +37,7 @@
              <li class='last'><a href='login.php'><span>Login</span></a></li>
              <?php } else { ?>
                 <li><a href='exams.php'><span>Exams</span></a></li>
-               <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
+               <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
             <?php
           }
           ?>
