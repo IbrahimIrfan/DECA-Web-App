@@ -44,8 +44,8 @@
   </div>
 
 
-<img id="logo" src="img/logo2.png" width="23%"/>
-  <img id="center-text" src="img/title.PNG" width="23%"/>
+<img id="logo" src="img/logo2.png" width="22%"/>
+  <img id="center-text" src="img/title.PNG" width="22%"/>
 
 <div class="footer">
   <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>

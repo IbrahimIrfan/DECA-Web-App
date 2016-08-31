@@ -25,7 +25,7 @@
    $_SESSION['user'] = $row['userId'];
    header("Location: dashboard.php");
   } else {
-   $errMSG = "Wrong Credentials, Try again. If you forgot your password, check the confirmation email you recieved when you registered.";
+   $errMSG = "Wrong Credentials, try again. If you forgot your password, check the confirmation email you recieved when you registered.";
   }
  }
 ?>
