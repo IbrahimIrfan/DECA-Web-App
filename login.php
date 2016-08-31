@@ -10,11 +10,8 @@
  }
 
  if( isset($_POST['btn-login']) ) {
-  $email = $_POST['email'];
-  $upass = $_POST['pass'];
-
-  $email = strip_tags(trim($email));
-  $upass = strip_tags(trim($upass));
+  $email = strip_tags(trim($_POST['email']));
+  $upass = strip_tags(trim($_POST['pass']));
 
   $password = hash('sha256', $upass); // password hashing using SHA256
 
@@ -74,12 +71,13 @@
                 <label class="mdl-textfield__label" for="email">Email</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="pass" name="pass">
+                <input class="mdl-textfield__input" type="password" id="pass" name="pass">
                 <label class="mdl-textfield__label" for="lastname">Password</label>
             </div>
             </br>
             </br>
 
+            <h5 style="color: red;"><?php echo $errMSG ?></h5>
 
             <input id="submit" name="btn-login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Login">
             </input>

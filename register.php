@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
 
  if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
      $error = true;
-      $errMSG = "Event choices must be unique";
+      $errMSG = "Event choices must be different";
   }
 
  if (!$error) {
@@ -162,7 +162,7 @@ if(isset($_POST['submit'])) {
                   <label class="mdl-textfield__label" for="password">Password</label>
               </div>
 
-              <h5>Event choices: (Must be unique)</h5>
+              <h5>Event choices: (Must be different)</h5>
 
                   <select id="event1" name="event1" class="select-style">
                       <option value="" disabled selected>1st Choice</option>

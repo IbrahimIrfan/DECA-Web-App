@@ -244,7 +244,7 @@ $(document).on('ready', function() {
         }
     };
 
-    document.getElementById("table-title").innerHTML = "Select Your Event Type";
+    document.getElementById("table-title").innerHTML = "Select An Event Type";
 
     var EVENT_TYPE_KEY = 'event-type',
         CLUSTER_KEY = 'cluster',
@@ -268,7 +268,7 @@ $(document).on('ready', function() {
         var $slash2 = $("#slash2");
 
         if (datum === EVENT_TYPE_KEY) {
-            $tableHeading.html("Select Your Event Type");
+            $tableHeading.html("Select An Event Type");
 
             $allTypes.html('All Types');
             $type.html('');
