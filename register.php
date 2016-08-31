@@ -7,7 +7,7 @@ require_once 'dbconnect.php';
 if( isset($_SESSION['user'])!="" ){
  header("Location: dashboard.php");
 }
-/*
+
 if(isset($_POST['submit'])) {
 
  $email = strip_tags(trim($_POST['email']));
@@ -20,7 +20,7 @@ if(isset($_POST['submit'])) {
 
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
-
+/*
  // check email exist or not
  $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
  $result = mysql_query($query);
@@ -81,9 +81,9 @@ if(isset($_POST['submit'])) {
       $errMSG = "Event choices must be unique";
   } else {
       $errMSG = "Email already in use";
-  }
+  }*/
 
-}*/
+}
 ?>
 
 <html>
