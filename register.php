@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
  //$result = mysql_query($query);
 
  //$count = mysql_num_rows($result);
- $count = 1;
+ $count = 0;
 
  if (empty($email) || empty($upass) || empty($fname) || empty($lname) || empty($event1) || empty($event2) || empty($event3)){
    $error = true;
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])) {
 
   //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
   //  $res = mysql_query($query);
-$res = true;
+    $res = true;
     if ($res) {
       $errMSG = "Successfully registered, you may login now. Check your email for details.";
 
@@ -63,7 +63,7 @@ $res = true;
       $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your event choices are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
 
       if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
-        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email the name of your selected partner, or if you would like to be paired with someone.\n '
+        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email the name of your selected partner, or if you would like to be paired with someone.\n ';
       }
 
       $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
