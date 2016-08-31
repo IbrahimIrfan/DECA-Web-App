@@ -69,7 +69,7 @@ $res = true;
       $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
 
       // send confirmation email
-
+/*
       require 'PHPMailer/PHPMailerAutoload.php';
 
       $mail = new PHPMailer;
@@ -89,13 +89,7 @@ $res = true;
 
       $mail->Subject = 'IRHS DECA Registration Confirmation';
       $mail->Body    = $emailbody
-
-      if(!$mail->send()) {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-      } else {
-        echo 'Message has been sent';
-      }
+*/
     } else {
       $errMSG = "Something went wrong, try again later";
     }
@@ -184,7 +178,10 @@ $res = true;
 
               <br/><br/>
 
-<h5 style="color: red;"> <?php echo $errMSG ?> </h5>
+              <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
+              <h5 style="color: green;"> <?php echo $successMSG ?> </h5>
+              <h6><?php echo $emailbody ?></h6>
+
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
               </input>
