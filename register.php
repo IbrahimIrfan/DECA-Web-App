@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
      $error = true;
       $errMSG = "Event choices must be unique";
   }
-/*
+
  if (!$error) {
 
   //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
@@ -62,10 +62,10 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
+      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\nEvent Choice 1. ' . $event1 . '\nEvent Choice 2. ' . $event2 . '\nEvent Choice 3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
 
       if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
-        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email the name of your selected partner, or if you would like to be paired with someone.\n ';
+        $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.\n ';
       }
 
       $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
@@ -90,13 +90,13 @@ if(isset($_POST['submit'])) {
       $mail->isHTML(true);           // Set email format to HTML
 
       $mail->Subject = 'IRHS DECA Registration Confirmation';
-      $mail->Body    = $emailbody
+      $mail->Body    = $emailbody;
 
     } else {
       $errMSG = "Something went wrong, try again later";
     }
 
-  } */
+  }
 
 }
 ?>
