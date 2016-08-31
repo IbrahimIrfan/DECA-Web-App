@@ -26,7 +26,6 @@ if(isset($_POST['submit'])) {
  //$result = mysql_query($query);
 
  //$count = mysql_num_rows($result);
- $count = 0;
 
  $error = false;
 
@@ -38,7 +37,7 @@ if(isset($_POST['submit'])) {
  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
     $error = true;
    $errMSG = "Please enter valid email address.";
- } else if ($count != 0){
+ } elseif (0 != 0){ //count
     $error = true;
    $errMSG = "Email already in use."
  }
@@ -48,11 +47,11 @@ if(isset($_POST['submit'])) {
    $errMSG = "Password must have atleast 6 characters.";
   }
 
-  if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
+ if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
      $error = true;
       $errMSG = "Event choices must be unique";
   }
-/*
+
  if (!$error) {
 
   //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
@@ -96,7 +95,7 @@ if(isset($_POST['submit'])) {
       $errMSG = "Something went wrong, try again later";
     }
 
-  }*/
+  }
 
 }
 ?>
