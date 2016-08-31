@@ -26,27 +26,36 @@ if(isset($_POST['submit'])) {
  //$result = mysql_query($query);
 
  //$count = mysql_num_rows($result);
- //$count = 1;
+ $count = 1;
 
  if (empty($email) || empty($upass) || empty($fname) || empty($lname) || empty($event1) || empty($event2) || empty($event3)){
+   $error = true;
    $errMSG = "You must complete all fields.";
  }
 
  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+    $error = true;
    $errMSG = "Please enter valid email address.";
-  }
+ } else if ($count != 0){
+    $error = true;
+   $errMSG = "Email already in use."
+ }
 
-  if(strlen($pass) < 6) {
+  if(strlen($upass) < 6) {
+     $error = true;
    $errMSG = "Password must have atleast 6 characters.";
   }
 
-/*
- // if email not found then proceed
- if ($count==0 && $event1 !== $event2 && $event2 !== $event3 && $event1 !== $event3) {
+  if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
+     $error = true;
+      $errMSG = "Event choices must be unique";
+  }
 
-    $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
-    $res = mysql_query($query);
+ if (!$error) {
 
+  //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
+  //  $res = mysql_query($query);
+$res = true;
     if ($res) {
       $errMSG = "Successfully registered, you may login now. Check your email for details.";
 
@@ -91,12 +100,8 @@ if(isset($_POST['submit'])) {
       $errMSG = "Something went wrong, try again later";
     }
 
-  } else if ($event1 == $event2 || $event2 == $event3 || $event1 == $event3){
-      $errMSG = "Event choices must be unique";
-  } else {
-      $errMSG = "Email already in use";
   }
- */
+
 }
 ?>
 
