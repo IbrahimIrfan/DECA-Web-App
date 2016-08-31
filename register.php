@@ -37,9 +37,10 @@ if(isset($_POST['submit'])) {
  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
     $error = true;
    $errMSG = "Please enter valid email address.";
- } elseif (false){ //count!==0
+ }
+ if (false){ //count!==0
     $error = true;
-   $errMSG = "Email already in use."
+   $errMSG = "Email already in use.";
  }
 
   if(strlen($upass) < 6) {
@@ -51,7 +52,7 @@ if(isset($_POST['submit'])) {
      $error = true;
       $errMSG = "Event choices must be unique";
   }
-
+/*
  if (!$error) {
 
   //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
@@ -95,7 +96,7 @@ if(isset($_POST['submit'])) {
       $errMSG = "Something went wrong, try again later";
     }
 
-  }
+  } */
 
 }
 ?>
