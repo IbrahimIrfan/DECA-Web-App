@@ -1,4 +1,14 @@
+<?php
+ ob_start();
+ session_start();
+ require_once 'dbconnect.php';
 
+// redirect to login if not logged in
+ if( !isset($_SESSION['user']) ) {
+  header("Location: login.php");
+  exit;
+ }
+?>
 
 <html>
 
@@ -31,7 +41,7 @@
         <li><a href='announcements.php'><span>Announcements</span></a></li>
         <li><a href='dates.php'><span>Schedules</span></a></li>
         <li class="active"><a href='exams.php'><span>Exams</span></a></li>
-        <li class='last'><a href='login.php?logout'><span>Logout</span></a></li>
+        <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
     </ul>
   </div>
 </br>
