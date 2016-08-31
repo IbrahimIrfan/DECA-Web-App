@@ -84,13 +84,19 @@ if(isset($_POST['submit'])) {
       $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 587;                                    // TCP port to connect to
 
-      $mail->setFrom('irhsdeca2016@gmail.com', 'Mailer');
+      $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
       $mail->addAddress($email);               // recipient
 
       $mail->isHTML(true);           // Set email format to HTML
 
       $mail->Subject = 'IRHS DECA Registration Confirmation';
       $mail->Body    = $emailbody;
+
+      if(!$mail->send()) {
+        $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+        $errMSG = 'Message has been sent';
+      }
 
     } else {
       $errMSG = "Something went wrong, try again later";
