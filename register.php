@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
      $error = true;
       $errMSG = "Event choices must be unique";
   }
-
+/*
  if (!$error) {
 
   //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
@@ -62,16 +62,16 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your event choices are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
+      $emailbody = 'Hello ' . $fname . '.\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\n1. ' . $event1 . '\n2. ' . $event2 . '\n3. ' . $event3 . '\nYour email: ' . $email . '\nPassword: ' . $upass . '\nYou will be assigned an event by (date).';
 
-    /*  if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
+      if (str.pos($event1, 'partner') !== false || str.pos($event2, 'partner') !== false || str.pos($event3, 'partner') !== false){
         $emailbody = $emailbody . ' One or more of the events you selected are partner events. Reply to this email the name of your selected partner, or if you would like to be paired with someone.\n ';
-      } */
+      }
 
       $emailbody = $emailbody . 'Please reply to this email if there are any problems.\n\n- The IRHS DECA team';
 
       // send confirmation email
-/*
+
       require 'PHPMailer/PHPMailerAutoload.php';
 
       $mail = new PHPMailer;
@@ -91,12 +91,12 @@ if(isset($_POST['submit'])) {
 
       $mail->Subject = 'IRHS DECA Registration Confirmation';
       $mail->Body    = $emailbody
-*/
+
     } else {
       $errMSG = "Something went wrong, try again later";
     }
 
-  }
+  }*/
 
 }
 ?>
@@ -181,8 +181,7 @@ if(isset($_POST['submit'])) {
               <br/><br/>
 
               <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
-              <h5 style="color: green;"> <?php echo $successMSG ?> </h5>
-              <h6><?php echo $emailbody ?></h6>
+
 
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
