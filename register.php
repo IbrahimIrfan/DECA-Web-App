@@ -12,6 +12,7 @@ if(isset($_POST['submit'])) {
 
  $email = strip_tags(trim($_POST['email']));
  $upass = strip_tags(trim($_POST['pass']));
+ $ucpass = strip_tags(trim($_POST['cpass']));
  $fname = strip_tags(trim($_POST['firstname']));
  $lname = strip_tags(trim($_POST['lastname']));
  $event1 = strip_tags(trim($_POST['event1']));
@@ -32,6 +33,11 @@ if(isset($_POST['submit'])) {
  if (empty($email) || empty($upass) || empty($fname) || empty($lname) || empty($event1) || empty($event2) || empty($event3)){
    $error = true;
    $errMSG = "You must complete all fields.";
+ }
+
+ if ($upass !== $ucpass){
+   $error = true;
+   $errMSG = "Passwords do not match.";
  }
 
  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
@@ -157,9 +163,15 @@ if(isset($_POST['submit'])) {
                   <input class="mdl-textfield__input" type="text" id="email" name="email">
                   <label class="mdl-textfield__label" for="email">Email</label>
               </div>
+              </br>
+              </br>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="password" id="password" name="pass">
                   <label class="mdl-textfield__label" for="password">Password</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="password" id="cpassword" name="cpass">
+                  <label class="mdl-textfield__label" for="cpassword">Confirm Password</label>
               </div>
 
               <h5>Event choices: (Must be different)</h5>
