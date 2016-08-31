@@ -62,13 +62,13 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = "Hello " . $fname . ".\r\nThank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:\r\nEvent Choice 1. " . $event1 . "\r\nEvent Choice 2. " . $event2 . "\r\nEvent Choice 3. " . $event3 . "\r\nYour email: " . $email . "\r\nPassword: " . $upass . "\r\nYou will be assigned an event by (date).";
+      $emailbody = "Hello " . $fname . ",<br>Thank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:<br>Event Choice 1. " . $event1 . "<br>Event Choice 2. " . $event2 . "<br>Event Choice 3. " . $event3 . "<br>Your email: " . $email . "<br>Password: " . $upass . "<br>You will be assigned an event by (date).";
 
-      if (str.pos($event1, "partner") !== false || str.pos($event2, "partner") !== false || str.pos($event3, "partner") !== false){
-        $emailbody = $emailbody . " One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.\r\n ";
+      if (strpos($event1, "partner") !== false || strpos($event2, "partner") !== false || strpos($event3, "partner") !== false){
+        $emailbody = $emailbody . " One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.<br> ";
       }
 
-      $emailbody = $emailbody . "Please reply to this email if there are any problems.\r\n\r\n- The IRHS DECA team";
+      $emailbody = $emailbody . "Please reply to this email if there are any problems.<br><br>- The IRHS DECA team";
 
       // send confirmation email
 
@@ -76,26 +76,24 @@ if(isset($_POST['submit'])) {
 
       $mail = new PHPMailer;
 
-      $mail->isSMTP();                                      // Set mailer to use SMTP
-      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-      $mail->SMTPAuth = true;                               // Enable SMTP authentication
-      $mail->Username = 'irhsdeca2016@gmail.com';                 // SMTP username
-      $mail->Password = 'DECA2016';                           // SMTP password
-      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-      $mail->Port = 587;                                    // TCP port to connect to
+      $mail->isSMTP();
+      $mail->Host = 'smtp.gmail.com';
+      $mail->SMTPAuth = true;
+      $mail->Username = 'irhsdeca2016@gmail.com';
+      $mail->Password = 'DECA2016';
+      $mail->SMTPSecure = 'tls';
+      $mail->Port = 587;
 
       $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
       $mail->addAddress($email);               // recipient
 
       $mail->isHTML(true);           // Set email format to HTML
 
-      $mail->Subject = 'IRHS DECA Registration Confirmation';
+      $mail->Subject = 'Registration Confirmation';
       $mail->Body    = $emailbody;
 
       if(!$mail->send()) {
         $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
-      } else {
-        $successMSG = 'Message has been sent';
       }
 
     } else {
