@@ -2,8 +2,8 @@
     .mdl-data-table.mdl-js-data-table tr td {
         padding: 18px !important;
     }
-    #mobile_menu{
-      display: none;
+    #mobile_menu {
+        display: none;
     }
     #altlogo {
         margin-left: 100px;
@@ -224,33 +224,33 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-top: 10px;
         width: 25%;
     }
-    #mobile_menu{
-      position: absolute;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      margin-bottom: 2%;
+    #mobile_menu {
+        position: absolute;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 2%;
     }
-    #mobile_dropdown{
-      display: inline-block;
-      position: absolute;
+    #mobile_dropdown {
+        display: inline-block;
+        position: absolute;
         float: right;
-      background-color: white;
-      top: 5%;
-      padding: 5% !important;
-      list-style-type: none;
-      margin-right: 15px;
+        background-color: white;
+        top: 5%;
+        padding: 5% !important;
+        list-style-type: none;
+        margin-right: 15px;
     }
     #mobile_dropdown li a {
-      color: black;
-      text-decoration: none;
+        color: black;
+        text-decoration: none;
     }
     #mobile_dropdown li {
-      margin-top: 7%;
+        margin-top: 10px;
     }
-    #menu-bars{
-      margin-right: 5px;
+    #menu-bars {
+        margin-right: 5px;
     }
-    #menu-logo{
-      margin-left: 5px;
+    #menu-logo {
+        margin-left: 5px;
     }
 }

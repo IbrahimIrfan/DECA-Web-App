@@ -24,8 +24,8 @@
 <div id="wrapper">
 
 <div id="mobile_menu">
-  <img id="menu-logo" src="img/logo2.png" width="10%" align="left">
-  <img id="menu-bars" src="img/menu_bars.png" width="10%" align="right">
+  <img id="menu-logo" src="img/logo2.png" width="40" align="left">
+  <img id="menu-bars" src="img/menu_bars.png" width="40" align="right">
 </div>
 
 <ul id="mobile_dropdown" style="display: none;">
