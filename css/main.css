@@ -188,13 +188,13 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       padding: 5px !important;
     }
     #clusterpic {
-        width: 10%;
+        width: 12%;
         position: absolute;
         display: inline-block;
-        margin-left: 92%;
-        bottom: 88%;
+        margin-left: 82%;
+        bottom: 82%;
     }
-    #res {
+    #folder {
       width: 10% !important;
     }
 }
