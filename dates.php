@@ -48,10 +48,10 @@
   <div class="content">
 
   <h4>Meeting Schedule</h4>
-    <table class="mdl-data-table mdl-js-data-table" id="meetings">
+    <table class="mdl-data-table mdl-js-data-table" id="meetings" width="100%">
       <thead id="table-heading">
         <tr>
-            <td witdh="540">Cluster</td><td width="215">Day of Week</td><td width="290">Executives</td>
+            <td witdh="65%">Cluster</td><td width="20%">Day of Week</td><td width="25%">Executives</td>
         </tr>
       </thead>
       <tbody>

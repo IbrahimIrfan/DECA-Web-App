@@ -214,10 +214,5 @@ if(isset($_POST['submit'])) {
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script type="text/javascript" src="js/events.js"></script>
-  <script type="text/javascript">
-  if (document.getElementById('success').innerHTML == "Successfully registered, you may login now. Check your email for details."){
-    $('#reg').hide();
-  }
-  </script>
 
   </html>

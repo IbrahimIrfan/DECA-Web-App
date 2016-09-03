@@ -64,7 +64,7 @@
 
         <h4 id="table-title"></h4>
 
-        <table class="mdl-data-table mdl-js-data-table" id="table" width="500">
+        <table class="mdl-data-table mdl-js-data-table" id="table" width="100%">
             <tbody>
                 <div class="fancybox" rel="group" id="event_popup"> </div>
             </tbody>
