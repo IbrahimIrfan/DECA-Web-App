@@ -1,6 +1,6 @@
 $(document).on('ready', function() {
     $('#menu-bars').on('click', function() {
-        if ($('#mobile_dropdown').is(':visible') {
+        if ($('#mobile_dropdown').is(':visible')) {
             $('#mobile_dropdown').fadeOut(250);
         } else
             $('#mobile_dropdown').fadeIn(250);
