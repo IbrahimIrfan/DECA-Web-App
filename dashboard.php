@@ -46,27 +46,33 @@
 
     <br/>
 
+    <script type="text/javascript">
+  //  var user_event_assigned = <?php echo $_SESSION['userEventAssigned'] ?>;
+    var user_event_1 = <?php echo $userRow['userEvent1']; ?>;
+    var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
+
+    document.getElementById('event_assigned_code').innerHTML = user_event_code;
+    </script>
+
     <div class="content">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="120"/>
         <h3><?php echo $userRow['userFName']; echo " "; echo $userRow['userLName'] ?> </h3>
-        <h4><?php echo $userRow['userEvent1']; ?></h4>
+        <h4 id="event_assigned_code"></h4>
       </div>
 
         <br/>
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="exams/Finance/Finance_1_Whole.html" style="color: black;"><?php echo $userRow['userEventAssigned'] ?> Exam</a></u></h5>
+        <h5 id="exam_link"><u><a href="/Principles_1_Whole_Master.php" style="color: black;"><?php echo $userRow['userEventAssigned'] ?> Exam</a></u></h5>
       </div>
 
         <br/>
         <br/>
 
             <h4>Cluster-Wide Announcements:</h4>
-<script type="text/javascript">
-var clutser = <?php echo $_SESSION['user'] ?>;
-</script>
+
 
             <!--ANNOUNCEMENTS-->
             <div class="announce">
