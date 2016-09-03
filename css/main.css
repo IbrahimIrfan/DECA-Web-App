@@ -234,8 +234,8 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #mobile_dropdown {
         display: inline-block;
         position: absolute;
-        width: 20%;
-        margin-left: 60%;
+        width: 23%;
+        margin-left: 62%;
         background-color: white;
         top: 5%;
         padding: 5% !important;
@@ -246,7 +246,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         text-decoration: none;
     }
     #mobile_dropdown li a span {
-        font-size: 3vw;
+        font-size: 3.vw;
     }
     #mobile_dropdown li {
         margin-top: 10px;
