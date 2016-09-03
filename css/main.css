@@ -235,6 +235,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         width: 100%;
     }
     #mobile_dropdown {
+      z-index: 999 !important;
         display: inline-block;
         position: absolute;
         width: 25%;
