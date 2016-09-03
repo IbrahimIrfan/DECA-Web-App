@@ -215,14 +215,14 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         display: none;
     }
     #fbimg {
-        margin-right: 2%;
+        margin-right: 5px;
         margin-top: 10px;
-        width: 10%;
+        width: 7%;
     }
     #altlogo {
         margin-left: 2%;
         margin-top: 10px;
-        width: 25%;
+        width: 22%;
     }
     #mobile_menu {
         position: absolute;
