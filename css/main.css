@@ -22,6 +22,11 @@
         margin-left: 92%;
         bottom: 88%;
     }
+    #res {
+        position: absolute;
+        right: 1%;
+        top: 86%;
+    }
 }
 #logo {
     z-index: 1;
@@ -106,11 +111,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     color: #0000b3;
     text-decoration: none;
 }
-#res {
-    position: absolute;
-    right: 1%;
-    top: 86%;
-}
 #folder {
     margin-left: 7px;
 }
@@ -193,6 +193,10 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         display: inline-block;
         margin-left: 82%;
         bottom: 82%;
+    }
+    #res {
+        position: relative;;
+        margin-top: 5%;
     }
     #folder {
       width: 10% !important;
