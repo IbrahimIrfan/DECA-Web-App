@@ -156,8 +156,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
-        padding-bottom: 10% !important;
-         min-height: calc(100vh - 10%);
+        min-height: calc(100vh - 10%);
     }
     .mdl-data-table {
         white-space: normal !important;
