@@ -248,7 +248,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-top: 10px;
     }
     #menu-bars {
-        margin-right: 5px;
+        margin-left: 90%;
     }
     #menu-logo {
         margin-left: 5px;
