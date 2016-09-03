@@ -25,6 +25,7 @@
 
 <body>
 
+  <div id="wrapper">
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
@@ -75,6 +76,7 @@
   <img id="altlogo" src="img/logo_alt.png" width="100" align="left"/>
   <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
 <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+</div>
 </div>
 </body>
 

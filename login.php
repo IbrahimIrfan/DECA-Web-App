@@ -48,6 +48,7 @@
 
 <body>
 
+  <div id="wrapper">
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
@@ -89,7 +90,7 @@
         <img id="fbimg" src="img/facebook-box.png" width="45" align="right" />
         <h6><a href="http://www.irhsdeca.com" style="color: white;"><u>irhsdeca.com</u></a></h6>
     </div>
-
+</div>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>

@@ -23,6 +23,7 @@
 
 <body>
 
+  <div id="wrapper">
   <div id='cssmenu'>
       <ul>
           <li class="active"><a href='index.php'><span>Home</span></a></li>
@@ -53,7 +54,7 @@
 <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
 </div>
 
-
+</div>
 
 </body>
 

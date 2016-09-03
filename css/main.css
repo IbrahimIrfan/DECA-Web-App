@@ -156,13 +156,14 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
+        padding-bottom: 10% !important;
     }
-    .mdl-data-table{
-      white-space: normal !important;
-      padding-left: 0px !important;
-      padding-bottom: 0px !important;
-      padding-top: 0px !important;
-      padding-right: 6% !important;
+    .mdl-data-table {
+        white-space: normal !important;
+        padding-left: 0px !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        padding-right: 6% !important;
     }
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 120% !important;
@@ -178,11 +179,11 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-bottom: 20px !important;
         width: 85% !important;
     }
-    body > div.fancybox-overlay.fancybox-overlay-fixed > div > div > div > div > h5 {
-      font-size: 15px !important;
+    body>div.fancybox-overlay.fancybox-overlay-fixed>div>div>div>div>h5 {
+        font-size: 15px !important;
     }
     fancybox-skin {
-      padding: 5px !important;
+        padding: 5px !important;
     }
     #clusterpic {
         width: 15%;
@@ -192,11 +193,12 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         bottom: 84%;
     }
     #res {
-        position: relative;;
+        position: relative;
+        ;
         margin-top: 5%;
     }
     #folder {
-      width: 15% !important;
+        width: 15% !important;
     }
     .footer {
         display: block;
@@ -209,7 +211,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         height: 10%;
     }
     .footer h6 {
-      display: none;
+        display: none;
     }
     #fbimg {
         margin-right: 2%;
@@ -220,5 +222,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-left: 2%;
         margin-top: 10px;
         width: 25%;
+    }
+    #wrapper {
+        min-height: 100%;
+        position: relative;
     }
 }
