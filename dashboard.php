@@ -66,16 +66,6 @@
         <br/>
 
 
-              <script type="text/javascript">
-            //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
-              var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
-              var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
-
-              document.getElementById('event_assigned_code').innerHTML = user_event_code;
-
-              $('#exam_link u a').html(user_event_code + " Exam");
-              </script>
-
             <h4>Cluster-Wide Announcements:</h4>
 
 
@@ -107,6 +97,16 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+              <script type="text/javascript">
+            //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
+              var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
+              var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
+
+              document.getElementById('event_assigned_code').innerHTML = user_event_code;
+
+              $('#exam_link u a').html(user_event_code + " Exam");
+              </script>
 
 
 </html>
