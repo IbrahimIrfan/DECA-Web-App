@@ -51,8 +51,8 @@
   <div id="wrapper">
 
   <div id="mobile_menu">
-    <img id="menu-logo" src="img/logo2.png" align="left">
-    <img id="menu-bars" src="img/menu_bars.png" align="right">
+    <img id="menu-logo" src="img/logo2.png" height="40" align="left">
+    <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
   </div>
 
   <ul id="mobile_dropdown" style="display: none;">
@@ -111,8 +111,8 @@
 
     </div>
     <div class="footer">
-        <img id="altlogo" src="img/logo_alt.png" width="100" align="left" />
-        <img id="fbimg" src="img/facebook-box.png" width="45" align="right" />
+        <img id="altlogo" src="img/logo_alt.png" align="left" />
+        <img id="fbimg" src="img/facebook-box.png" align="right" />
         <h6><a href="http://www.irhsdeca.com" style="color: white;"><u>irhsdeca.com</u></a></h6>
     </div>
 </div>
