@@ -232,9 +232,12 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     #mobile_menu ul{
       background-color: white;
+      margin-top: 5%;
+      padding-bottom: 5%
+    }
+    #mobile_menu ul li span a {
       color: black;
       text-decoration: none;
-      font-size: 12px;
     }
     #menu-bars{
       margin-right: 5px;
