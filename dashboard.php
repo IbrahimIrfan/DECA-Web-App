@@ -46,13 +46,7 @@
 
     <br/>
 
-    <script type="text/javascript">
-  //  var user_event_assigned = <?php echo $_SESSION['userEventAssigned'] ?>;
-    var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
-    var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
 
-    document.getElementById('event_assigned_code').innerHTML = user_event_code;
-    </script>
 
     <div class="content">
       <div class= "profile">
@@ -60,6 +54,14 @@
         <h3><?php echo $userRow['userFName']; echo " "; echo $userRow['userLName'] ?> </h3>
         <h4 id="event_assigned_code"></h4>
       </div>
+
+      <script type="text/javascript">
+    //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
+      var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
+      var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
+
+      document.getElementById('event_assigned_code').innerHTML = user_event_code;
+      </script>
 
         <br/>
         <br/>
