@@ -232,7 +232,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     	position:relative;
     }
     .footer {
-    	position:absolute;
     	bottom:0;
     	left:0;
     }
