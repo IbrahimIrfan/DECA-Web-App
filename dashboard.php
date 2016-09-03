@@ -55,23 +55,26 @@
         <h4 id="event_assigned_code"></h4>
       </div>
 
-      <script type="text/javascript">
-    //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
-      var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
-      var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
-
-      document.getElementById('event_assigned_code').innerHTML = user_event_code;
-      </script>
-
         <br/>
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="/Principles_1_Whole_Master.php" style="color: black;"><?php echo $userRow['userEventAssigned'] ?> Exam</a></u></h5>
+        <h5 id="exam_link"><u><a href="/Principles_1_Whole_Master.php" style="color: black;"></a></u></h5>
       </div>
 
         <br/>
         <br/>
+
+
+              <script type="text/javascript">
+            //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
+              var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
+              var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
+
+              document.getElementById('event_assigned_code').innerHTML = user_event_code;
+
+              $('#exam_link u a').html(user_event_code + " Exam");
+              </script>
 
             <h4>Cluster-Wide Announcements:</h4>
 
