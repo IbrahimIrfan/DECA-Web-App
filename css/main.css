@@ -27,6 +27,17 @@
         right: 1%;
         top: 86%;
     }
+    .footer {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 90%;
+        padding: 1rem;
+        background-color: #000000;
+        text-align: center;
+        color: white;
+    }
 }
 #logo {
     z-index: 1;
@@ -61,17 +72,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #fbimg {
     margin-right: 100px;
     margin-top: 10px;
-}
-.footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 90%;
-    padding: 1rem;
-    background-color: #000000;
-    text-align: center;
-    color: white;
 }
 #exam_link {
     margin-top: 40px;
@@ -156,7 +156,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
-        margin-bottom: 0px !important;
+        margin-bottom: 100px !important;
     }
     .footer {
         display: none !important;
@@ -201,5 +201,16 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     #folder {
       width: 15% !important;
+    }
+    .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 90%;
+        padding: 1rem;
+        background-color: #000000;
+        text-align: center;
+        color: white;
     }
 }
