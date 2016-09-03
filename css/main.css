@@ -218,12 +218,12 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #fbimg {
         margin-right: 5px;
         margin-top: 10px;
-        height: 5%;
+        height: 80%;
     }
     #altlogo {
         margin-left: 2%;
         margin-top: 10px;
-        height: 5%;
+        height: 80%;
     }
     #mobile_menu {
         position: absolute;
