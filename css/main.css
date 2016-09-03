@@ -244,6 +244,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         color: black;
         text-decoration: none;
     }
+    #mobile_dropdown li a span {
+        font-size: 5vw;
+    }
     #mobile_dropdown li {
         margin-top: 10px;
     }
