@@ -235,12 +235,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       position: absolute;
       background-color: white;
       top: 5%;
-      padding-bottom: 2% !important;
-      padding-top: 2% !important;
-      padding-left: 2% !important;
+      padding: 5% !important;
       list-style-type: none;
-      padding-left: 0;
-      margin-left: 70%;
+      margin-left: 60%;
     }
     #mobile_dropdown li a {
       color: black;
