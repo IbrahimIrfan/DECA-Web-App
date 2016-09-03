@@ -206,7 +206,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         padding: 1rem;
         background-color: #000000;
         text-align: center;
-        height: 10%;
     }
     .footer h6 {
         display: none;
