@@ -235,7 +235,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       margin-top: 5%;
       padding-bottom: 5%
     }
-    #mobile_menu ul li span a {
+    #mobile_menu ul li a {
       color: black;
       text-decoration: none;
     }
