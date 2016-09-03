@@ -222,18 +222,18 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         width: 25%;
     }
     html, body {
-    	margin:0;
-    	padding:0;
-    	height:100%;
-    }
-    #wrapper {
-    	min-height:100%;
-    	position:relative;
-    }
-    .footer {
-    	position:absolute;
-    	bottom:0;
-    	left:0;
-    }
+  	margin:0;
+  	padding:0;
+  	height:100%;
+  }
+  #wrapper {
+  	min-height:100%;
+  	position:relative;
+  }
+  .footer {
+  	position:absolute;
+  	bottom:0;
+  	left:0;
+  }
 
 }
