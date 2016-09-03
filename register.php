@@ -23,10 +23,10 @@ if(isset($_POST['submit'])) {
  $password = hash('sha256', $upass);
 
  // check email exist or not
- //$query = "SELECT userEmail FROM users WHERE userEmail='$email'";
- //$result = mysql_query($query);
+ $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
+ $result = mysql_query($query);
 
- //$count = mysql_num_rows($result);
+ $count = mysql_num_rows($result);
 
  $error = false;
 
@@ -44,7 +44,7 @@ if(isset($_POST['submit'])) {
     $error = true;
    $errMSG = "Please enter valid email address.";
  }
- if (false){ //count!==0
+ if ($count == 1){
     $error = true;
    $errMSG = "Email already in use.";
  }
@@ -61,8 +61,8 @@ if(isset($_POST['submit'])) {
 
  if (!$error) {
 
-  //  $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
-  //  $res = mysql_query($query);
+    $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
+    $res = mysql_query($query);
     $res = true;
     if ($res) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
