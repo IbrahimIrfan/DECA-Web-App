@@ -26,24 +26,25 @@
 <div id="mobile_menu">
   <img id="menu-logo" src="img/logo2.png" width="10%" align="left">
   <img id="menu-bars" src="img/menu_bars.png" width="10%" align="right">
-  <ul style="display: none;">
-      <li><a href='index.php'><span>Home</span></a></li>
-      <li class="active"><a href='about.php'><span>About DECA</span></a></li>
-      <li><a href='events.php'><span>Events</span></a></li>
-      <li><a href='dashboard.php'><span>Dashboard</span></a></li>
-      <li><a href='announcements.php'><span>Announcements</span></a></li>
-      <li><a href='dates.php'><span>Schedules</span></a></li>
-      <?php if( !isset($_SESSION['user']) ) { ?>
-         <li><a href='register.php'><span>Register</span></a></li>
-         <li class='last'><a href='login.php'><span>Login</span></a></li>
-         <?php } else { ?>
-            <li><a href='exams.php'><span>Exams</span></a></li>
-           <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
-        <?php
-      }
-      ?>
-  </ul>
 </div>
+
+<ul id="mobile_dropdown" style="display: none;">
+    <li><a href='index.php'><span>Home</span></a></li>
+    <li class="active"><a href='about.php'><span>About DECA</span></a></li>
+    <li><a href='events.php'><span>Events</span></a></li>
+    <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+    <li><a href='announcements.php'><span>Announcements</span></a></li>
+    <li><a href='dates.php'><span>Schedules</span></a></li>
+    <?php if( !isset($_SESSION['user']) ) { ?>
+       <li><a href='register.php'><span>Register</span></a></li>
+       <li class='last'><a href='login.php'><span>Login</span></a></li>
+       <?php } else { ?>
+          <li><a href='exams.php'><span>Exams</span></a></li>
+         <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
+      <?php
+    }
+    ?>
+</ul>
 
   <div id='cssmenu'>
       <ul>

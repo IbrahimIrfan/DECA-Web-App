@@ -88,7 +88,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #homework, .announce, .profile {
     padding: 10px;
 }
-.mdl-data-table.mdl-js-data-table, #mobile_menu, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
+.mdl-data-table.mdl-js-data-table, #mobile_menu, #mobile_dropdown, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
     -webkit-box-shadow: 0 8px 6px -6px #cacaca;
     -moz-box-shadow: 0 8px 6px -6px #cacaca;
     box-shadow: 0 8px 8px 0px #cacaca;
@@ -230,15 +230,18 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       padding-bottom: 5px;
       margin-bottom: 2%;
     }
-    #mobile_menu ul{
+    #mobile_dropdown{
+      display: inline-block;
+      position: absolute;
+      z-index: 900;
       background-color: white;
-      margin-top: 5%;
+      top: 5%;
       padding-bottom: 5%;
       list-style-type: none;
       padding-left: 0;
-      margin-left: 2%;
+      margin-left: 80%;
     }
-    #mobile_menu ul li a {
+    #mobile_dropdown li a {
       color: black;
       text-decoration: none;
     }
