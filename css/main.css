@@ -8,10 +8,12 @@
     #altlogo {
         margin-left: 100px;
         margin-top: 10px;
+        width: 100px;
     }
     #fbimg {
         margin-right: 100px;
         margin-top: 10px;
+        width: 45px;
     }
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 20px;
