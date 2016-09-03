@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php'
+require_once 'http://www.irhsdeca.com/dbconnect.php'
 if( !isset($_SESSION["user"]) ){
   header("Location: login.php");
   exit;
