@@ -233,7 +233,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #mobile_dropdown {
         display: inline-block;
         position: absolute;
-        float: right;
         background-color: white;
         top: 5%;
         padding: 5% !important;
