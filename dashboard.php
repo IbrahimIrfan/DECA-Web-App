@@ -49,14 +49,15 @@
     <div class="content">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="120"/>
-        <h3><?php echo $userRow['userFName']; echo $userRow['userLName'] ?> </h3>
+        <h3><?php echo $userRow['userFName']; echo " "; echo $userRow['userLName'] ?> </h3>
+        <h4><?php echo $userRow['userEvent1']; ?></h4>
       </div>
 
         <br/>
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="exams/Finance/Finance_1_Whole.html" style="color: black;"><?php echo $userRow['userCluster'] ?> Exam</a></u></h5>
+        <h5 id="exam_link"><u><a href="exams/Finance/Finance_1_Whole.html" style="color: black;"><?php echo $userRow['userEventAssigned'] ?> Exam</a></u></h5>
       </div>
 
         <br/>
