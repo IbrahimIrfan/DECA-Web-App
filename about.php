@@ -161,5 +161,6 @@ Communication marks for school assignments - attire, facial expressions, body la
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 
 </html>
