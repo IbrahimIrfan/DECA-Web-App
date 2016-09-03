@@ -51,7 +51,7 @@
     <table class="mdl-data-table mdl-js-data-table" id="meetings" width="100%">
       <thead id="table-heading">
         <tr>
-            <td witdh="65%">Cluster</td><td width="20%">Day of Week</td><td width="25%">Executives</td>
+            <td witdh="45%">Cluster</td><td width="30%">Day of Week</td><td width="25%">Executives</td>
         </tr>
       </thead>
       <tbody>
