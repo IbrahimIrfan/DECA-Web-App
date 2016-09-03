@@ -146,6 +146,12 @@
     #cssmenu {
         display: none !important;
     }
+    .breadcrumb{
+      font-size: 10px !important;
+    }
+    table{
+      padding: 0px !important;
+    }
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
