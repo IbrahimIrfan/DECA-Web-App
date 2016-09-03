@@ -11,6 +11,10 @@
         height: 30px;
         width: 400px;
     }
+    #popup_header {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
 }
 #logo {
     z-index: 1;
@@ -88,10 +92,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     font-weight: bold;
     padding-right: 10px;
 }
-#popup_header {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
 #allTypes, #type, #cluster, #clusterClicked {
     text-decoration: underline;
 }
@@ -166,7 +166,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       padding-left: 0px !important;
       padding-bottom: 0px !important;
       padding-top: 0px !important;
-      padding-right: 4%; !important;
+      padding-right: 4% !important;
     }
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 120%;
@@ -176,5 +176,15 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         -webkit-appearance: menulist-button;
         height: 30px;
         width: 100%;
+    }
+    #popup_header {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    body > div.fancybox-overlay.fancybox-overlay-fixed > div > div > div > div > h5 {
+      font-size: 15px;
+    }
+    fancybox-skin {
+      padding: 5px;
     }
 }
