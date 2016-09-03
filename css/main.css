@@ -156,7 +156,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
-        padding-top: 0% !important;
+        padding-bottom: 0% !important;
         margin-bottom: 0px !important;
         min-height: calc(100vh - 10%);
     }
@@ -165,10 +165,10 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         padding-left: 0px !important;
         padding-bottom: 0px !important;
         padding-top: 0px !important;
-        padding-right: 6% !important;
+        padding-right: 0px !important;
     }
     #meetings tbody tr td, #meetings thead tr td {
-        font-size: 120% !important;
+        font-size: 105% !important;
     }
     .select-style {
         font-size: 14px !important;
