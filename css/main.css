@@ -246,7 +246,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         text-decoration: none;
     }
     #mobile_dropdown li a span {
-        font-size: 3.vw;
+        font-size: 3.5vw;
     }
     #mobile_dropdown li {
         margin-top: 10px;
