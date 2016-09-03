@@ -88,7 +88,7 @@
       mark (which people tend to do more poorly in) might be able to boost you up.</h6>
 
         <h4>What is a Cluster?</h4>
-<img src="img/clusters.png" align="left" width="350"/>
+<img src="img/clusters.png" align="left" width="40%"/>
         <h6>A 'cluster' is how events are categorized within the competition. There are four main
         clusters in DECA, which are Business Management and Administration, Finance, Hospitality and
         Tourism, and Marketing. Every event relates closely to which cluster they are in, so they can
@@ -104,7 +104,7 @@ However, Principle event students do not take their respective cluster written e
 rather, there is a separate Business Administration Core exam that is taken by all Principle students.</h6>
 
 <h4>How do Case Studies work?</h4>
-<img src="img/case_studies.jpg" align="right"/>
+<img src="img/case_studies.jpg" align="right" width="50%"/>
 <h6>Every case study is basically a role-play interview; you are given a specific situation with
   a role you have to undertake and a task to complete or questions to answer. Even within the same
   event, case studies can be drastically different and so it is vital that time is spent preparing

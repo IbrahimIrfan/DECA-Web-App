@@ -2,6 +2,14 @@
     #cssmenu {
         display: none;
     }
+    .content {
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-bottom: 100px;
+    }
+    .footer {
+      display: none;
+    }
 }
 #logo {
     z-index: 1;
