@@ -191,7 +191,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         padding: 5px !important;
     }
     #clusterpic {
-        width: 40px;
+        width: 36px;
         position: absolute;
         display: inline-block;
         margin-left: 85%;
