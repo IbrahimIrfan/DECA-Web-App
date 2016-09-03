@@ -163,7 +163,10 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     .mdl-data-table{
       white-space: normal !important;
-      padding: 0px !important;
+      padding-left: 0px !important;
+      padding-bottom: 0px !important;
+      padding-top: 0px !important;
+      padding-right: 4%; !important;
     }
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 120%;
