@@ -15,6 +15,13 @@
         font-size: 30px;
         margin-bottom: 30px;
     }
+    #clusterpic {
+        width: 50;
+        position: absolute;
+        display: inline-block;
+        margin-left: 92%;
+        bottom: 88%;
+    }
 }
 #logo {
     z-index: 1;
@@ -95,13 +102,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #allTypes, #type, #cluster, #clusterClicked {
     text-decoration: underline;
 }
-#clusterpic {
-    width: 50;
-    position: absolute;
-    display: inline-block;
-    margin-left: 92%;
-    bottom: 88%;
-}
 #res a {
     color: #0000b3;
     text-decoration: none;
@@ -169,22 +169,32 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       padding-right: 4% !important;
     }
     #meetings tbody tr td, #meetings thead tr td {
-        font-size: 120%;
+        font-size: 120% !important;
     }
     .select-style {
-        font-size: 14px;
+        font-size: 14px !important;
         -webkit-appearance: menulist-button;
         height: 30px;
         width: 100%;
     }
     #popup_header {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 22px !important;
+        margin-bottom: 20px !important;
     }
     body > div.fancybox-overlay.fancybox-overlay-fixed > div > div > div > div > h5 {
-      font-size: 15px;
+      font-size: 15px !important;
     }
     fancybox-skin {
-      padding: 5px;
+      padding: 5px !important;
+    }
+    #clusterpic {
+        width: 10%;
+        position: absolute;
+        display: inline-block;
+        margin-left: 92%;
+        bottom: 88%;
+    }
+    #res {
+      width: 10% !important;
     }
 }
