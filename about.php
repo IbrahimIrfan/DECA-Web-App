@@ -132,6 +132,7 @@ Communication marks for school assignments - attire, facial expressions, body la
       <img id="fbimg" src="img/facebook-box.png" width="45" align="right"/>
     <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
     </div>
+    
   </div>
 </body>
 
