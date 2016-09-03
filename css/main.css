@@ -5,6 +5,12 @@
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 20px;
     }
+    .select-style {
+        font-size: 14px;
+        -webkit-appearance: menulist-button;
+        height: 30px;
+        width: 400px;
+    }
 }
 #logo {
     z-index: 1;
@@ -108,12 +114,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #folder {
     margin-left: 7px;
 }
-.select-style {
-    font-size: 14px;
-    -webkit-appearance: menulist-button;
-    height: 30px;
-    width: 400px;
-}
 #quote-thing {
     padding: 20px;
 }
@@ -151,7 +151,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         display: none !important;
     }
     .breadcrumb {
-        font-size: 10px !important;
+        font-size: 14px !important;
     }
     .content {
         padding-left: 4% !important;
@@ -170,5 +170,11 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     #meetings tbody tr td, #meetings thead tr td {
         font-size: 120%;
+    }
+    .select-style {
+        font-size: 14px;
+        -webkit-appearance: menulist-button;
+        height: 30px;
+        width: 100%;
     }
 }
