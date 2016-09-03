@@ -233,7 +233,10 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #mobile_menu ul{
       background-color: white;
       margin-top: 5%;
-      padding-bottom: 5%
+      padding-bottom: 5%;
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 2%;
     }
     #mobile_menu ul li a {
       color: black;
