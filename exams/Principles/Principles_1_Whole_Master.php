@@ -1,11 +1,13 @@
 <?php
-ob_start();
-session_start();
-require_once 'http://www.irhsdeca.com/dbconnect.php';
-if( !isset($_SESSION["user"]) ){
+ ob_start();
+ session_start();
+ require_once 'http://www.irhsdeca.com/dbconnect.php';
+
+// redirect to login if not logged in
+ if( !isset($_SESSION['user']) ) {
   header("Location: http://www.irhsdeca.com/login.php");
   exit;
-};
+ }
 ?>
 <html><head><title>IRHS DECA</title><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><link rel="icon" href="img/favicon.ico" sizes="16x16"><link rel="stylesheet" type="text/css" href="http://www.irhsdeca.com/css/main.css"></link>
   <meta charset='utf-8'><meta http-equiv="X-UA-Compatible" content="IE=edge" ><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="http://www.irhsdeca.com/css/cssmenu/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css"><script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
