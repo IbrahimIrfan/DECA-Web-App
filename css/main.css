@@ -1,4 +1,3 @@
-@media screen and (min-width: 767px) {
     #logo {
         z-index: 1;
         display: inline-block;
@@ -143,17 +142,16 @@
     #ann-title, #ann-body {
         padding-left: 15px;
     }
-}
 @media screen and (max-width: 767px) {
     #cssmenu {
-        display: none;
+        display: none !important;
     }
     .content {
-        padding-left: 4%;
-        padding-right: 4%;
-        margin-bottom: 0px;
+        padding-left: 4% !important;
+        padding-right: 4% !important;
+        margin-bottom: 0px !important;
     }
     .footer {
-        display: none;
+        display: none !important;
     }
 }
