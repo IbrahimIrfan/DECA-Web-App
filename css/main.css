@@ -243,7 +243,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #mobile_dropdown li a {
       color: black;
       text-decoration: none;
-      margin-top: 2%;
+    }
+    #mobile_dropdown li {
+      margin-top: 7%;
     }
     #menu-bars{
       margin-right: 5px;
