@@ -191,7 +191,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         padding: 5px !important;
     }
     #clusterpic {
-        width: 15%;
+        width: 50px;
         position: absolute;
         display: inline-block;
         margin-left: 85%;
@@ -202,7 +202,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-top: 5%;
     }
     #folder {
-        width: 15% !important;
+        width: 50px !important;
     }
     .footer {
         display: block;
