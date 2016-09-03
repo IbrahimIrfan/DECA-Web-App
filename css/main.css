@@ -157,6 +157,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         font-size: 14px !important;
     }
     .content {
+        margin-top: 15px !important;
         padding-left: 4% !important;
         padding-right: 4% !important;
         padding-bottom: 4% !important;
@@ -217,12 +218,12 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #fbimg {
         margin-right: 5px;
         margin-top: 10px;
-        width: 7%;
+        height: 5%;
     }
     #altlogo {
         margin-left: 2%;
         margin-top: 10px;
-        width: 22%;
+        height: 5%;
     }
     #mobile_menu {
         position: absolute;
