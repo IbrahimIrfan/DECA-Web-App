@@ -29,8 +29,8 @@
   <div id="wrapper">
 
   <div id="mobile_menu">
-    <img id="menu-logo" src="img/logo2.png" height="40" align="left">
-    <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
+    <img id="menu-logo" src="img/logo2.png" align="left">
+    <img id="menu-bars" src="img/menu_bars.png" align="right">
   </div>
 
   <ul id="mobile_dropdown" style="display: none;">
@@ -51,7 +51,7 @@
       ?>
   </ul>
 
-    
+
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
@@ -110,6 +110,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 <script type="text/javascript" src="js/resources.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 
 <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
