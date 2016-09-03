@@ -4,11 +4,11 @@ $(document).on('ready', function() {
             "cluster": "Principles",
             "tests": {
                 0: {
-                    "link": "/exams/Principles/Principles_1_Whole_Master.php",
+                    "link": "http://www.irhsdeca.com/exams/Principles/Principles_1_Whole_Master.php",
                     "title": "Principles Exam 01"
                 },
                 1: {
-                    "link": "/exams/Principles/Principles_2_Whole_Master.php",
+                    "link": "exams/Principles/Principles_2_Whole_Master.php",
                     "title": "Principles Exam 02"
                 },
                 2: {
