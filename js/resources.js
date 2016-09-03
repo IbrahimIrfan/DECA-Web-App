@@ -371,7 +371,6 @@ $(document).on('ready', function() {
                             this.content += "<img id='clusterpic' src='img/b-admin.png'/>";
                         }
                         this.content += "<h5>" + currentEvent.desc + "</h5>";
-                        this.content += "<div id='res'><a target='_blank' href='" + currentEvent.res + "'><img id='folder' src='img/folder.png' width='50'/><p id='res-text'>Resources</p></a></div>";
 
                         if (currentEvent.code == "PFL") {
                           this.content += "<h5 style='color: red;'>*This event was introduced two years ago and therefore resources are extremely limited in terms of past events.</h5>";
@@ -398,6 +397,7 @@ $(document).on('ready', function() {
                             this.content += "<h5>Teams of 2</h5>";
                             this.content += "<h5>7 Performance Indicators on Case Study</h5>";
                         }
+                        this.content += "<div id='res'><a target='_blank' href='" + currentEvent.res + "'><img id='folder' src='img/folder.png' width='50'/><p id='res-text'>Resources</p></a></div>";
                     }
                 });
             });
