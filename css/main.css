@@ -156,6 +156,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
+        padding-top: 0% !important;
         margin-bottom: 0px !important;
         min-height: calc(100vh - 10%);
     }
@@ -195,7 +196,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     #res {
         position: relative;
-        ;
         margin-top: 5%;
     }
     #folder {
@@ -203,7 +203,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     .footer {
         display: block;
-        margin-top: 25px;
         padding: 1rem;
         background-color: #000000;
         text-align: center;
