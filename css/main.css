@@ -85,7 +85,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #homework, .announce, .profile {
     padding: 10px;
 }
-.mdl-data-table.mdl-js-data-table, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
+.mdl-data-table.mdl-js-data-table, #mobile_menu, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
     -webkit-box-shadow: 0 8px 6px -6px #cacaca;
     -moz-box-shadow: 0 8px 6px -6px #cacaca;
     box-shadow: 0 8px 8px 0px #cacaca;
@@ -220,5 +220,15 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-left: 2%;
         margin-top: 10px;
         width: 25%;
+    }
+    #mobile_menu{
+      position: absolute:
+      margin-bottom: 2%;
+    }
+    #menu-bars{
+      margin-right: 5px;
+    }
+    #menu-logo{
+      margin-left: 5px;
     }
 }
