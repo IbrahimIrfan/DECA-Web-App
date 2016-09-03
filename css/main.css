@@ -202,7 +202,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     .footer {
         display: block;
-        position: relative;
         margin-top: 25px;
         padding: 1rem;
         background-color: #000000;
@@ -223,8 +222,20 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         margin-top: 10px;
         width: 25%;
     }
-    #wrapper {
-        min-height: 100%;
-        position: relative;
+    body {
+    	margin:0;
+    	padding:0;
+    	height:100%;
     }
+    #wrapper {
+    	min-height:100%;
+    	position:relative;
+    }
+    .footer {
+    	width:100%;
+    	position:absolute;
+    	bottom:0;
+    	left:0;
+    }
+
 }
