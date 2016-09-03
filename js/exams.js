@@ -297,7 +297,7 @@ var initExamTable = function(){
 
     var row1 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Principles' >Principles</td>");
     $table.append(row1);
-    var row2 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='PFL' >PFL</td>");
+    var row2 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Marketing' >Marketing</td>");
     $table.append(row2);
     var row3 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Finance' >Finance</td>");
     $table.append(row3);
