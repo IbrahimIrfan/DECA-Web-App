@@ -1,11 +1,11 @@
 <?php
  ob_start();
  session_start();
- require_once 'http://www.irhsdeca.com/dbconnect.php';
+ require_once 'dbconnect.php';
 
 // redirect to login if not logged in
  if( !isset($_SESSION['user']) ) {
-  header("Location: http://www.irhsdeca.com/login.php");
+  header("Location: login.php");
   exit;
  }
 ?>
