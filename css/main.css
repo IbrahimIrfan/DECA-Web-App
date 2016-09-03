@@ -156,7 +156,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .content {
         padding-left: 4% !important;
         padding-right: 4% !important;
-        margin-bottom: 100px !important;
     }
     .mdl-data-table{
       white-space: normal !important;
@@ -200,11 +199,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       width: 15% !important;
     }
     .footer {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        top: 90%;
+        display: block;
+        position: relative;
+        margin-top: 25px;
         padding: 1rem;
         background-color: #000000;
         text-align: center;
