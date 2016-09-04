@@ -12,8 +12,9 @@
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
 
-$exec = false;
+$exec = true;
 
+/*
  if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laura"){
    $exec = true;
    $clusterManaging = "Principles";
@@ -42,9 +43,10 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
    $currentCluster = "Hospitality";
  }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
    $currentCluster = "Business-Admin";
- }
+ } */
 
 $currentCluster = "Finance";
+$clusterManaging = "Principles";
 
  if(isset($_POST['submit'])) {
 
@@ -168,6 +170,7 @@ $currentCluster = "Finance";
               <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster=".$clusterManaging);
 
+/*
               while ($ann = mysql_fetch_array($res_cm,, MYSQL_ASSOC)) {
                 ?>
                 <h5> clusterManaging </h5>
@@ -177,10 +180,10 @@ $currentCluster = "Finance";
                 </div>
                 <?php
               }
-
+*/
               if ($currentCluster !== $clusterManaging){
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
-
+/*
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   ?>
                   <h4> currentCluster </h4>
@@ -189,7 +192,7 @@ $currentCluster = "Finance";
                   <h5 id="ann-body"><?php echo $ann['body']; ?></h5>
                   </div>
                   <?php
-                }
+                } */
               }
             } else {
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
