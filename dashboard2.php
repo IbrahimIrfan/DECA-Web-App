@@ -44,14 +44,12 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
    $currentCluster = "Business-Admin";
  }
 
-$currentCluster == "Finance";
+$currentCluster = "Finance";
 
  if(isset($_POST['submit'])) {
 
   $title = strip_tags(trim($_POST['title']));
   $body = strip_tags(trim($_POST['body']));
-  $userId = $_SESSION['user'];
-  $date = "Example Date";
 
   $error = false;
 
@@ -61,12 +59,12 @@ $currentCluster == "Finance";
   }
 
   if (!$error){
-        $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
-        $res = mysql_query($query);
+    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
+    $res = mysql_query($query);
 
-        if ($res) {
+    if ($res) {
           //refresh clusterManaging announcements
-        }
+    }
   }
 }
 
@@ -152,8 +150,7 @@ $currentCluster == "Finance";
 
             <h4>Cluster-Wide Announcements:</h4>
 
-            <?php if ($exec) {
-              ?>
+            <?php if ($exec) {  ?>
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -167,7 +164,7 @@ $currentCluster == "Finance";
               </div>
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
               </input>
-            </form>
+             </form>
               <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster=".$clusterManaging);
 
