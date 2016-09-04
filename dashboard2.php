@@ -152,7 +152,7 @@ $clusterManaging = "Principles";
 
             <h4>Cluster-Wide Announcements:</h4>
 
-            <?php if ($exec) {  ?>
+            <?php /*if ($exec) {  ?>
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -170,7 +170,6 @@ $clusterManaging = "Principles";
               <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster=".$clusterManaging);
 
-/*
               while ($ann = mysql_fetch_array($res_cm,, MYSQL_ASSOC)) {
                 ?>
                 <h5> clusterManaging </h5>
@@ -180,10 +179,10 @@ $clusterManaging = "Principles";
                 </div>
                 <?php
               }
-*/
+
               if ($currentCluster !== $clusterManaging){
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
-/*
+
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   ?>
                   <h4> currentCluster </h4>
@@ -192,7 +191,7 @@ $clusterManaging = "Principles";
                   <h5 id="ann-body"><?php echo $ann['body']; ?></h5>
                   </div>
                   <?php
-                } */
+                }
               }
             } else {
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
@@ -207,7 +206,7 @@ $clusterManaging = "Principles";
                 <?php
               }
             }
-
+*/
               ?>
 
             </div>
