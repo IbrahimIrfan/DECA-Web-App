@@ -57,7 +57,7 @@ $clusterManaging = "Principles";
 
   if (empty($title) || empty($body)){
     $error = true;
-    $errMSG = "You must complete all fields.";
+    $msg = "You must complete all fields.";
   }
 
   if (!$error){
@@ -65,7 +65,7 @@ $clusterManaging = "Principles";
     $res = mysql_query($query);
 
     if ($res) {
-          //refresh clusterManaging announcements
+        $msg = "Successfully posted announcement";
     }
   }
 }
@@ -151,6 +151,7 @@ $clusterManaging = "Principles";
 
 
             <h4>Cluster-Wide Announcements:</h4>
+            <h4><?php echo $msg ?></h4>
 
             <?php if ($exec) {  ?>
               <form id="post_announcements" method="post">
@@ -193,7 +194,7 @@ $clusterManaging = "Principles";
                   <?php
                 }
               }
-            
+
             } else {
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
 
