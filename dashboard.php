@@ -118,6 +118,7 @@
         <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
     </div>
 </div>
+</div>
 </body>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
