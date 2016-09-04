@@ -6,7 +6,11 @@ $(document).on('ready', function() {
             $('#mobile_dropdown').fadeIn(150);
         }
     });
-    $('.content').on('click', function(){
+    $(window).click(function() {
         $('#mobile_dropdown').fadeOut(150);
+    });
+
+    $('#mobile_dropdown').click(function(event) {
+        event.stopPropagation();
     });
 });
