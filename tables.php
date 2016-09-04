@@ -17,7 +17,7 @@ $sql = "CREATE TABLE announcements (".
 "title varchar(255) NOT NULL,".
 "body text NOT NULL,".
 "cluster varchar(255) NOT NULL,".
-"datePosted DATETIME DEFAULT CURRENT_TIMESTAMP,".
+"datePosted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,".
 "PRIMARY KEY (announceId)".
 ");";
 
