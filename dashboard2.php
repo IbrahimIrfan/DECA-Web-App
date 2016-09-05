@@ -156,14 +156,14 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="title" name="title">
-                  <label class="mdl-textfield__label" for="lastname">Title</label>
+                  <label class="mdl-textfield__label" for="title">Title</label>
               </div>
               </br>
               </br>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="body" name="body">
-                  <label class="mdl-textfield__label" for="email">Body</label>
-              </div>
+              <div class="mdl-textfield mdl-js-textfield">
+               <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
+               <label class="mdl-textfield__label" for="body">Body</label>
+            </div>
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
               </input>
              </form>
