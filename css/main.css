@@ -154,6 +154,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #ann-title, #ann-body, #ann-date {
     padding-left: 15px;
 }
+#post_announcements{
+  padding: 25px;
+}
 @media screen and (max-width: 767px) {
     #cssmenu {
         display: none !important;

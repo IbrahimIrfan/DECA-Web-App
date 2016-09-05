@@ -152,7 +152,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
             <?php if ($exec) {  ?>
                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
-                <h4><?php echo $msg ?></h4>
+                <h5 style="color: red;"><?php echo $msg ?></h5>
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="title" name="title">
