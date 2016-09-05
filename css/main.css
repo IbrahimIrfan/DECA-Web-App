@@ -10,6 +10,9 @@
         margin-top: 10px;
         width: 100px;
     }
+    #submit_ann{
+      float: right;
+    }
     #fbimg {
         margin-right: 100px;
         margin-top: 10px;
@@ -61,9 +64,6 @@
     margin-left: 40%;
     margin-right: auto;
 }
-#submit_ann{
-  float: right;
-}
 a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, #table:hover {
     cursor: pointer;
 }
@@ -93,7 +93,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #homework, .announce, .profile {
     padding: 10px;
 }
-.mdl-data-table.mdl-js-data-table, #mobile_menu, #mobile_dropdown, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
+.mdl-data-table.mdl-js-data-table, #post_announcements, #mobile_menu, #mobile_dropdown, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
     -webkit-box-shadow: 0 8px 6px -6px #cacaca;
     -moz-box-shadow: 0 8px 6px -6px #cacaca;
     box-shadow: 0 8px 8px 0px #cacaca;
@@ -157,6 +157,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 @media screen and (max-width: 767px) {
     #cssmenu {
         display: none !important;
+    }
+    #submit_ann{
+      display: block;
     }
     .breadcrumb {
         font-size: 14px !important;
