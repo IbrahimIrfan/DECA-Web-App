@@ -170,7 +170,15 @@ $clusterManaging = "Principles";
               </input>
              </form>
               <?php
-              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=Principles");
+              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=".$clusterManaging);
+
+              if (!$res_cm) {
+                  $msg2 = "Could not successfully run query from DB: " . mysql_error();
+              }
+
+              if (mysql_num_rows($res_cm) == 0) {
+                $msg2 = "No rows found, nothing to print";
+              }
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
@@ -214,7 +222,7 @@ $clusterManaging = "Principles";
             }
 
               ?>
-
+<h4><?php echo $msg2; ?></h4>
             </div>
     <div class="footer">
         <img id="altlogo" src="img/logo_alt.png" align="left" />
