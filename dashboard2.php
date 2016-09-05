@@ -143,7 +143,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
       </div>
 
         <br/>
-        <br/>
 
             <?php if ($exec) {  ?>
                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
