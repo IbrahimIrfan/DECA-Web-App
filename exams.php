@@ -74,7 +74,7 @@
 
     <div class="content">
 
-<h5>These exams are seperate from the homework - they are for your practice. You still need to complete the weekly exam in <a href="dashboard.php">Dashboard.</a></h5>
+<h5>These exams are seperate from the homework - they are for your practice. You still need to complete the weekly exam in <a href="dashboard.php" style="color: black;">Dashboard.</a></h5>
 
         <div class="breadcrumb">
             <table class="breadcrumb">
@@ -87,7 +87,7 @@
 
         <h4 id="table-title"></h4>
 
-        <table class="mdl-data-table mdl-js-data-table" id="table" width="500">
+        <table class="mdl-data-table mdl-js-data-table" id="table" width="100%">
             <tbody>
 
             </tbody>
