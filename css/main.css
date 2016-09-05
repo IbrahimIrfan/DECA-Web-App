@@ -110,7 +110,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     font-weight: bolder;
 }
 .breadcrumb {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .breadcrumb tr td {
     font-weight: bold;
