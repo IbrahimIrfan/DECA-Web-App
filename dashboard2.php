@@ -15,16 +15,16 @@
 $exec = true;
 
 
- if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laura"){
+ if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
    $exec = true;
    $clusterManaging = "Principles";
  }elseif ($userRow["userEmail"] == "ezaan" || $userRow["userEmail"] == "jessica"){
    $exec = true;
    $clusterManaging = "Finance";
- }elseif ($userRow["userEmail"] == "aazib" || $userRow["userEmail"] == "melissa" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
+ }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "melissa" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
    $exec = true;
    $clusterManaging = "Marketing";
- }elseif ($userRow["userEmail"] == "amy" || $userRow["userEmail"] == "victoria"){
+ }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "victoria"){
    $exec = true;
    $clusterManaging = "Hospitality";
  }elseif ($userRow["userEmail"] == "natania" || $userRow["userEmail"] == "jennifer"){
@@ -63,11 +63,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
   if (!$error){
     $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
     $res = mysql_query($query);
-
-    if ($res) {
-        $msg = "Successfully posted announcement";
-        //refresh
-    }
   }
 }
 
