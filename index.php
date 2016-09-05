@@ -70,8 +70,10 @@
   </div>
 
 
+  <div class="content2">
 <img id="logo" src="img/logo2.png" width="22%"/>
   <img id="center-text" src="img/title.PNG" width="22%"/>
+</div>
 
 <div class="footer">
   <img id="altlogo" src="img/logo_alt.png" align="left"/>
