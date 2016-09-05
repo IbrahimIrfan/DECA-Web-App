@@ -74,6 +74,8 @@
 
     <div class="content">
 
+<h5>These exams are seperate from the homework - they are for your practice. You still need to complete the weekly exam in 'Dashboard'</h5>
+
         <div class="breadcrumb">
             <table class="breadcrumb">
                 <tr>
