@@ -66,6 +66,7 @@ $clusterManaging = "Principles";
 
     if ($res) {
         $msg = "Successfully posted announcement";
+        //refresh
     }
   }
 }
@@ -169,14 +170,14 @@ $clusterManaging = "Principles";
               </input>
              </form>
               <?php
-              $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster=".$clusterManaging);
+              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=".$clusterManaging);
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
                 <h5> clusterManaging </h5>
                 <div class="announce">
-                <h4 id="ann-title"><?php echo $ann['title']; ?></h4>
-                <h5 id="ann-body"><?php echo $ann['body']; ?></h5>
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 </div>
                 <?php
               }
