@@ -170,7 +170,7 @@ $clusterManaging = "Principles";
               </input>
              </form>
               <?php
-              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=".$clusterManaging);
+              $res_cm = mysql_query("SELECT title, body FROM announcements");
 
               if (!$res_cm) {
                   $msg2 = "Could not successfully run query from DB: " . mysql_error();
