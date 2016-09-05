@@ -169,7 +169,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
               </input>
              </form>
-              <?php
+                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
+                <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
@@ -184,6 +185,9 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               mysql_free_result($res_cm);
 
               if ($currentCluster !== $clusterManaging){
+                ?>
+                <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+                <?php
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
