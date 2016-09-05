@@ -65,7 +65,7 @@ $clusterManaging = "Principles";
     $res = mysql_query($query);
 
     if ($res) {
-        $msg = "Successfully posted announcement";
+        $msg = "Successfully posted announcement ".$title . " ". $body . " ". $clusterManaging;
         //refresh
     }
   }
