@@ -172,22 +172,13 @@ $clusterManaging = "Principles";
               <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 
-              if (!$res_cm) {
-                  $msg2 = "Could not successfully run query from DB: " . mysql_error();
-              }
-
-              if (mysql_num_rows($res_cm) == 0) {
-                $msg2 = "No rows found, nothing to print";
-              }
-
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
                 <h5> clusterManaging </h5>
                 <div class="announce">
-                <h4 id="ann-title"><?php echo $ann["cluster"]; ?></h4>
-                <h5 id="ann-body"><?php echo $clusterManaging; ?></h5>
-                <h5 id="ann-body"><?php echo $ann["title"]; ?></h5>
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
                 </div>
                 <?php
               }
