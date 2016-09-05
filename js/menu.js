@@ -9,5 +9,8 @@ $(document).on('ready', function() {
     $('.content').click(function() {
         $('#mobile_dropdown').fadeOut(150);
     });
+    $('.content2').click(function() {
+        $('#mobile_dropdown').fadeOut(150);
+    });
 
 });
