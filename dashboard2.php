@@ -185,7 +185,7 @@ $clusterManaging = "Principles";
                 <h5> clusterManaging </h5>
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $ann["cluster"]; ?></h4>
-                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h5 id="ann-body"><?php echo $clusterManaging; ?></h5>
                 </div>
                 <?php
               }
