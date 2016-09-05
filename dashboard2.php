@@ -170,7 +170,7 @@ $clusterManaging = "Principles";
               </input>
              </form>
               <?php
-              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=".$clusterManaging);
+              $res_cm = mysql_query("SELECT title, body FROM announcements WHERE cluster=Principles");
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
@@ -181,6 +181,7 @@ $clusterManaging = "Principles";
                 </div>
                 <?php
               }
+              mysql_free_result($res_cm);
 
               if ($currentCluster !== $clusterManaging){
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
@@ -194,6 +195,7 @@ $clusterManaging = "Principles";
                   </div>
                   <?php
                 }
+                mysql_free_result($res_cc);
               }
 
             } else {
@@ -208,6 +210,7 @@ $clusterManaging = "Principles";
                 </div>
                 <?php
               }
+              mysql_free_result($res_cc);
             }
 
               ?>
