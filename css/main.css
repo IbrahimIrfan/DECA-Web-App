@@ -13,6 +13,10 @@
     #submit_ann{
       float: right;
     }
+    .regionals img, .provincials img, .icdc img{
+      padding-right: 20px;
+      padding-left: 15px;
+    }
     #fbimg {
         margin-right: 100px;
         margin-top: 10px;
@@ -270,5 +274,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     #menu-logo {
         margin-left: 5px;
+    }
+    .regionals img, .provincials img, .icdc img{
+      padding-right: 10px;
+      padding-left: 10px;
     }
 }
