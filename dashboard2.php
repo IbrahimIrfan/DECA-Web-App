@@ -150,11 +150,9 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
         <br/>
 
-
-            <h4>Cluster-Wide Announcements:</h4>
-            <h4><?php echo $msg ?></h4>
-
             <?php if ($exec) {  ?>
+               <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
+                <h4><?php echo $msg ?></h4>
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -169,7 +167,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
               </input>
              </form>
-                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
                 <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 
