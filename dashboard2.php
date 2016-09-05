@@ -14,7 +14,7 @@
 
 $exec = true;
 
-/*
+
  if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laura"){
    $exec = true;
    $clusterManaging = "Principles";
@@ -32,6 +32,7 @@ $exec = true;
    $clusterManaging = "Business-Admin";
  }
 
+/*
  if ($userRow["userEventAssigned"] == "PBM" || $userRow["userEventAssigned"] == "PMK" ||$userRow["userEventAssigned"] == "PFN" || $userRow["userEventAssigned"] == "PHT"){
    $currentCluster = "Principles";
  } elseif ($userRow["userEventAssigned"] == "PFL" || $userRow["userEventAssigned"] == "ACT" ||$userRow["userEventAssigned"] == "FTDM" || $userRow["userEventAssigned"] == "BFS"){
@@ -44,9 +45,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
  }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
    $currentCluster = "Business-Admin";
  } */
+ $currentCluster = "Finance";
 
-$currentCluster = "Finance";
-$clusterManaging = "Principles";
 
  if(isset($_POST['submit'])) {
 
@@ -65,7 +65,7 @@ $clusterManaging = "Principles";
     $res = mysql_query($query);
 
     if ($res) {
-        $msg = "Successfully posted announcement ".$title . " ". $body . " ". $clusterManaging;
+        $msg = "Successfully posted announcement";
         //refresh
     }
   }
@@ -174,7 +174,6 @@ $clusterManaging = "Principles";
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
-                <h5> clusterManaging </h5>
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
@@ -185,14 +184,15 @@ $clusterManaging = "Principles";
               mysql_free_result($res_cm);
 
               if ($currentCluster !== $clusterManaging){
-                $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
+                $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   ?>
                   <h4> currentCluster </h4>
                   <div class="announce">
-                  <h4 id="ann-title"><?php echo $ann['title']; ?></h4>
-                  <h5 id="ann-body"><?php echo $ann['body']; ?></h5>
+                  <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                  <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                  <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
                   </div>
                   <?php
                 }
@@ -200,14 +200,17 @@ $clusterManaging = "Principles";
               }
 
             } else {
-              $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster=".$currentCluster);
+              ?>
+              <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+              <?php
+              $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                 ?>
-                <h4> currentCluster </h4>
                 <div class="announce">
-                <h4 id="ann-title"><?php echo $ann['title']; ?></h4>
-                <h5 id="ann-body"><?php echo $ann['body']; ?></h5>
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
                 </div>
                 <?php
               }
@@ -215,7 +218,6 @@ $clusterManaging = "Principles";
             }
 
               ?>
-<h4><?php echo $msg2; ?></h4>
             </div>
     <div class="footer">
         <img id="altlogo" src="img/logo_alt.png" align="left" />

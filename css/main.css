@@ -148,7 +148,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     padding: 15px;
     margin-top: 30px;
 }
-#ann-title, #ann-body {
+#ann-title, #ann-body, #ann-date {
     padding-left: 15px;
 }
 @media screen and (max-width: 767px) {
