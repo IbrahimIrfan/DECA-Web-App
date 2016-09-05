@@ -95,7 +95,7 @@
     <img src="img/location.png" align="left" width="50"/>
     <h5 style="margin-top: 30px;">Hamilton Convention Centre</h5><br/>
     <img src="img/date.png" align="left" width="50"/>
-    <h5 style="margin-top: 20px;">Online Exams: October 31 || Case Studies: November 8</h5><br/>
+    <h5 style="margin-top: 20px;">Exams: Oct 31, Case Studies: Nov 8</h5><br/>
     <img src="img/money.png" align="left" height="50"/>
     <h5 style="margin-top: 15px;">$TBD</h5><br/>
   </div>
