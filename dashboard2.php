@@ -170,7 +170,7 @@ $clusterManaging = "Principles";
               </input>
              </form>
               <?php
-              $res_cm = mysql_query("SELECT title, body FROM announcements");
+              $res_cm = mysql_query("SELECT cluster FROM announcements");
 
               if (!$res_cm) {
                   $msg2 = "Could not successfully run query from DB: " . mysql_error();
@@ -184,7 +184,7 @@ $clusterManaging = "Principles";
                 ?>
                 <h5> clusterManaging </h5>
                 <div class="announce">
-                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h4 id="ann-title"><?php echo $ann["cluster"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 </div>
                 <?php
