@@ -61,6 +61,9 @@
     margin-left: 40%;
     margin-right: auto;
 }
+#submit_ann{
+  float: right;
+}
 a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, #table:hover {
     cursor: pointer;
 }

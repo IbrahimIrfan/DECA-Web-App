@@ -164,7 +164,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
                <label class="mdl-textfield__label" for="body">Body</label>
             </div>
-              <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
+              <input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
               </input>
              </form>
                 <?php
@@ -175,7 +175,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
-                <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
+                <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
                 </div>
                 <?php
               }
