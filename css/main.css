@@ -303,8 +303,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     }
     .timer{
       background-color: white;
-      margin-top: 4px;
+      margin-top: 0px !important;
       margin-left: 0px !important;
+      text-align: center;
       padding-bottom: 5px;
       width: 100%;
     }
