@@ -193,11 +193,11 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-                  $data[] = $ann;
+                  $data3[] = $ann;
                 }
-                $data = array_reverse($data,true);
+                $data3 = array_reverse($data3,true);
 
-                foreach ($data as $announcement){
+                foreach ($data3 as $announcement){
                   ?>
                   <div class="announce">
                   <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
@@ -216,11 +216,11 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-                $data[] = $ann;
+                $data2[] = $ann;
               }
-              $data = array_reverse($data,true);
+              $data2 = array_reverse($data3,true);
 
-              foreach ($data as $announcement){
+              foreach ($data2 as $announcement){
                 ?>
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
