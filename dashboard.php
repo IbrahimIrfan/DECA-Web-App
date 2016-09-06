@@ -8,6 +8,12 @@
   header("Location: login.php");
   exit;
  }
+
+ $deleteId = $_GET['delId'];
+ if ($deleteId !== undefined){
+   $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+ }
+
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
@@ -166,6 +172,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
                 <div class="announce">
+                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $ann['announceId']; ?>'">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
@@ -183,6 +190,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   ?>
                   <div class="announce">
+                    <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $ann['announceId']; ?>'">
                   <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                   <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                   <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
@@ -201,6 +209,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                 ?>
                 <div class="announce">
+                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $ann['announceId']; ?>'">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
