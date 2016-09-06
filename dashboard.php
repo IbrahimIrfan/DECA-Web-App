@@ -170,11 +170,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
-                $data[] = $ann;
-              }
-              $data = array_reverse($data,true);
-
-              while ($data){
                 ?>
                 <div class="announce">
                   <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $ann['announceId']; ?>'">
@@ -193,11 +188,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-                  $data[] = $ann;
-                }
-                $data = array_reverse($data,true);
-
-                while ($data){
                   ?>
                   <div class="announce">
                   <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
@@ -216,11 +206,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-                $data[] = $ann;
-              }
-              $data = array_reverse($data,true);
-
-              while ($data){
                 ?>
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
