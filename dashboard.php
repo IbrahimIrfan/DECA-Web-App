@@ -17,7 +17,7 @@ $exec = false;
  if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
    $exec = true;
    $clusterManaging = "Principles";
- }elseif ($userRow["userEmail"] == "ezaan" || $userRow["userEmail"] == "jessica"){
+ }elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica"){
    $exec = true;
    $clusterManaging = "Finance";
  }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "melissa" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
