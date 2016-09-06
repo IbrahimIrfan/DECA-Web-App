@@ -304,6 +304,8 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     .timer{
       background-color: white;
       margin-top: 4px;
+      margin-left: 0px !important;
+      padding-bottom: 5px;
       width: 100%;
     }
 }
