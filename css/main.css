@@ -68,7 +68,7 @@
     margin-left: 40%;
     margin-right: auto;
 }
-a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, #delete_ann, #table:hover {
+a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, .delete_ann, #table:hover {
     cursor: pointer;
 }
 #center-text {
