@@ -4,6 +4,11 @@
  require_once 'dbconnect.php';
 
  if( isset($_SESSION['user']) ) {
+
+$deleteId = $_GET['delId'];
+
+?><h4><?php echo $deleteId; ?></h4><?php
+
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
@@ -131,7 +136,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
                 <div class="announce">
-                  <img id='<?php echo $ann['announceId']; ?>' class="delete_ann" src="img/x.png"/>
+                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $ann['announceId']; ?>'">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>

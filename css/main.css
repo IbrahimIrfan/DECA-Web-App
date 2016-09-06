@@ -161,6 +161,16 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #post_announcements{
   padding: 25px;
 }
+.delete_ann{
+  width: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+#ann-title{
+  display: inline-block;
+}
 @media screen and (max-width: 767px) {
     #cssmenu {
         display: none !important;
