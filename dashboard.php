@@ -11,6 +11,60 @@
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
+
+$exec = false;
+
+ if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
+   $exec = true;
+   $clusterManaging = "Principles";
+ }elseif ($userRow["userEmail"] == "ezaan" || $userRow["userEmail"] == "jessica"){
+   $exec = true;
+   $clusterManaging = "Finance";
+ }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "melissa" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
+   $exec = true;
+   $clusterManaging = "Marketing";
+ }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "victoria"){
+   $exec = true;
+   $clusterManaging = "Hospitality";
+ }elseif ($userRow["userEmail"] == "natania" || $userRow["userEmail"] == "jennifer"){
+   $exec = true;
+   $clusterManaging = "Business-Admin";
+ }
+
+/*
+ if ($userRow["userEventAssigned"] == "PBM" || $userRow["userEventAssigned"] == "PMK" ||$userRow["userEventAssigned"] == "PFN" || $userRow["userEventAssigned"] == "PHT"){
+   $currentCluster = "Principles";
+ } elseif ($userRow["userEventAssigned"] == "PFL" || $userRow["userEventAssigned"] == "ACT" ||$userRow["userEventAssigned"] == "FTDM" || $userRow["userEventAssigned"] == "BFS"){
+   $currentCluster = "Finance";
+ }elseif ($userRow["userEventAssigned"] == "BTDM" || $userRow["userEventAssigned"] == "MTDM" ||$userRow["userEventAssigned"] == "STDM" || $userRow["userEventAssigned"] == "AAM"||
+$userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"|| $userRow["userEventAssigned"] == "FMS"|| $userRow["userEventAssigned"] == "MMS"|| $userRow["userEventAssigned"] == "RMS"|| $userRow["userEventAssigned"] == "SEM"){
+  $currentCluster = "Marketing";
+ }elseif ($userRow["userEventAssigned"] == "HLM" || $userRow["userEventAssigned"] == "QSRM" ||$userRow["userEventAssigned"] == "RFSM" || $userRow["userEventAssigned"] == "HTDM"|| $userRow["userEventAssigned"] == "TTDM"){
+   $currentCluster = "Hospitality";
+ }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
+   $currentCluster = "Business-Admin";
+ } */
+ $currentCluster = "Finance";
+
+
+ if(isset($_POST['submit'])) {
+
+  $title = strip_tags(trim($_POST['title']));
+  $body = strip_tags(trim($_POST['body']));
+
+  $error = false;
+
+  if (empty($title) || empty($body)){
+    $error = true;
+    $msg = "You must complete all fields.";
+  }
+
+  if (!$error){
+    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
+    $res = mysql_query($query);
+  }
+}
+
 ?>
 
 <html>
@@ -88,30 +142,76 @@
       </div>
 
         <br/>
-        <br/>
 
-
-            <h4>Cluster-Wide Announcements:</h4>
-
-
-            <!--ANNOUNCEMENTS-->
-            <div class="announce">
-            <h4 id="ann-title">Title</h4>
-            <h5 id="ann-body">Body</h5>
+            <?php if ($exec) {  ?>
+               <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
+                <h5 style="color: red;"><?php echo $msg ?></h5>
+              <form id="post_announcements" method="post">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="title" name="title">
+                  <label class="mdl-textfield__label" for="title">Title</label>
+              </div>
+              </br>
+              </br>
+              <div class="mdl-textfield mdl-js-textfield">
+               <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
+               <label class="mdl-textfield__label" for="body">Body</label>
             </div>
-            <div class="announce">
-            <h4 id="ann-title">Title</h4>
-            <h5 id="ann-body">Body</h5>
-            </div>
-            <div class="announce">
-            <h4 id="ann-title">Title</h4>
-            <h5 id="ann-body">Body</h5>
-            </div>
-            <div class="announce">
-            <h4 id="ann-title">Title</h4>
-            <h5 id="ann-body">Body</h5>
-            </div>
+              <input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
+              </input>
+             </form>
+                <?php
+              $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 
+              while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+                ?>
+                <div class="announce">
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
+                </div>
+                <?php
+              }
+              mysql_free_result($res_cm);
+
+              if ($currentCluster !== $clusterManaging){
+                ?>
+                <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+                <?php
+                $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
+
+                while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
+                  ?>
+                  <h4> currentCluster </h4>
+                  <div class="announce">
+                  <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                  <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                  <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
+                  </div>
+                  <?php
+                }
+                mysql_free_result($res_cc);
+              }
+
+            } else {
+              ?>
+              <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+              <?php
+              $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
+
+              while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
+                ?>
+                <div class="announce">
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
+                </div>
+                <?php
+              }
+              mysql_free_result($res_cc);
+            }
+
+              ?>
             </div>
     <div class="footer">
         <img id="altlogo" src="img/logo_alt.png" align="left" />
@@ -126,7 +226,6 @@
 
 <script type="text/javascript" src="js/menu.js"></script>
               <script type="text/javascript">
-            //  var user_event_assigned = "<?php echo $_SESSION['userEventAssigned'] ?>";
               var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
               var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
 
