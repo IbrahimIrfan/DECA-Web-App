@@ -182,7 +182,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   ?>
-                  <h4> currentCluster </h4>
                   <div class="announce">
                   <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                   <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
