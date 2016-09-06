@@ -131,6 +131,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 ?>
                 <div class="announce">
+                  <img id='<?php echo $ann['announceId']; ?>' class="delete_ann" src="img/x.png"/>
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
