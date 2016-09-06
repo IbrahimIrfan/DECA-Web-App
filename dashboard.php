@@ -185,7 +185,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                   <div class="announce">
                   <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                   <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
-                  <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
+                  <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
                   </div>
                   <?php
                 }
@@ -203,7 +203,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 <div class="announce">
                 <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
-                <h5 id="ann-date"><?php echo $ann["datePosted"]; ?></h5>
+                <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
                 </div>
                 <?php
               }
