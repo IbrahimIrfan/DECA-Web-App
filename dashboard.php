@@ -177,7 +177,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               foreach ($data as $announcement){
                 ?>
                 <div class="announce">
-                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $ann['announceId']; ?>'">
+                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $announcement['announceId']; ?>'">
                 <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
@@ -193,11 +193,16 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
+                  $data[] = $ann;
+                }
+                $data = array_reverse($data,true);
+
+                foreach ($data as $announcement){
                   ?>
                   <div class="announce">
-                  <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
-                  <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
-                  <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
+                  <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
+                  <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+                  <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
                   </div>
                   <?php
                 }
@@ -211,11 +216,16 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
+                $data[] = $ann;
+              }
+              $data = array_reverse($data,true);
+
+              foreach ($data as $announcement){
                 ?>
                 <div class="announce">
-                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
-                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
-                <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
+                <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+                <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
                 </div>
                 <?php
               }
