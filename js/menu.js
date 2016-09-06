@@ -1,4 +1,7 @@
 $(document).on('ready', function() {
+    $('#menu-logo').on('click', function(){
+      window.location.href="http://www.irhsdeca.com";
+    });
     $('#menu-bars').on('click', function() {
         if ($('#mobile_dropdown').is(':visible')) {
             $('#mobile_dropdown').fadeOut(150);
