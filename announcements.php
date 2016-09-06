@@ -6,7 +6,9 @@
  if( isset($_SESSION['user']) ) {
 
 $deleteId = $_GET['delId'];
-
+if ($deleteId !== undefined){
+  $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+}
 
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
@@ -112,7 +114,6 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 
 <!--ANNOUNCEMENTS-->
 
-<h4><?php echo $deleteId; ?></h4>
             <?php if ($exec) {  ?>
                 <h5 style="color: red;"><?php echo $msg ?></h5>
               <form id="post_announcements" method="post">
