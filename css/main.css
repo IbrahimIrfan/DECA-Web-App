@@ -308,5 +308,8 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       text-align: center;
       padding-bottom: 5px;
       width: 100%;
+      -webkit-box-shadow: 0 8px 6px -6px #cacaca;
+      -moz-box-shadow: 0 8px 6px -6px #cacaca;
+      box-shadow: 0 8px 8px 0px #cacaca;
     }
 }
