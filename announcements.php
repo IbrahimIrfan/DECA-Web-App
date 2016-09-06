@@ -142,10 +142,10 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
               foreach ($data as $announcement){
                 ?>
                 <div class="announce">
-                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $annoucement['announceId']; ?>'">
-                <h4 id="ann-title"><?php echo $annoucement["title"]; ?></h4>
-                <h5 id="ann-body"><?php echo $annoucement["body"]; ?></h5>
-                <h6 id="ann-date"><?php echo $annoucement["datePosted"]; ?></h6>
+                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $announcement['announceId']; ?>'">
+                <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+                <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
                 </div>
                 <?php
               }
