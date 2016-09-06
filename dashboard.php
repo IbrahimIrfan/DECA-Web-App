@@ -135,7 +135,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
     <div class="content">
       <div class= "profile">
-        <img src="img/avatar.png" align="left" height="120"/>
+        <img src="img/avatar.png" align="left" height="140"/>
         <h3><?php echo $userRow['userFName']; echo " "; echo $userRow['userLName'] ?> </h3>
         <h4 id="event_assigned_code"></h4>
       </div>
