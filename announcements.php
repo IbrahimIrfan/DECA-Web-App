@@ -2,6 +2,36 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
+
+ if( isset($_SESSION['user']) ) {
+ // select logged in users detail
+ $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
+ $userRow=mysql_fetch_array($res);
+
+$exec = false;
+
+if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
+   $exec = true;
+ }
+
+ if(isset($_POST['submit'])) {
+
+  $title = strip_tags(trim($_POST['title']));
+  $body = strip_tags(trim($_POST['body']));
+
+  $error = false;
+
+  if (empty($title) || empty($body)){
+    $error = true;
+    $msg = "You must complete all fields.";
+  }
+
+  if (!$error){
+    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', 'Chapter')";
+    $res = mysql_query($query);
+  }
+ }
+}
 ?>
 
 
@@ -77,22 +107,38 @@
 <h4>Chapter Wide Announcements</h4>
 
 <!--ANNOUNCEMENTS-->
-<div class="announce">
-<h4 id="ann-title">Title</h4>
-<h5 id="ann-body">Body</h5>
-</div>
-<div class="announce">
-<h4 id="ann-title">Title</h4>
-<h5 id="ann-body">Body</h5>
-</div>
-<div class="announce">
-<h4 id="ann-title">Title</h4>
-<h5 id="ann-body">Body</h5>
-</div>
-<div class="announce">
-<h4 id="ann-title">Title</h4>
-<h5 id="ann-body">Body</h5>
-</div>
+
+            <?php if ($exec) {  ?>
+                <h5 style="color: red;"><?php echo $msg ?></h5>
+              <form id="post_announcements" method="post">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="title" name="title">
+                  <label class="mdl-textfield__label" for="title">Title</label>
+              </div>
+              </br>
+              </br>
+              <div class="mdl-textfield mdl-js-textfield">
+               <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
+               <label class="mdl-textfield__label" for="body">Body</label>
+            </div>
+              <input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
+              </input>
+             </form>
+                <?php
+              }
+              $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='Chapter'");
+
+              while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+                ?>
+                <div class="announce">
+                <h4 id="ann-title"><?php echo $ann["title"]; ?></h4>
+                <h5 id="ann-body"><?php echo $ann["body"]; ?></h5>
+                <h6 id="ann-date"><?php echo $ann["datePosted"]; ?></h6>
+                </div>
+                <?php
+              }
+              mysql_free_result($res_cm);
+              ?>
 
 </div>
 
