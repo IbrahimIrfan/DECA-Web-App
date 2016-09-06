@@ -135,6 +135,11 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='Chapter'");
 
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+                $data[] = $ann;
+              }
+              $data = array_reverse($data,true);
+
+              foreach ($data as $announcement){
                 ?>
                 <div class="announce">
                   <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $ann['announceId']; ?>'">
