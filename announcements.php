@@ -8,7 +8,7 @@
 $deleteId = $_GET['delId'];
 if ($deleteId !== undefined){
   $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
-  header("Location: http://irhsdeca.com/announcements.php");
+  header("Location: announcements.php");
   exit;
 }
 
