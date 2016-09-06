@@ -165,7 +165,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
   width: 20px;
   display: inline-block;
   float: right;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 5px;
 }
 #ann-title{
