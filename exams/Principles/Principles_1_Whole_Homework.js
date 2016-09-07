@@ -214,7 +214,7 @@ document.getElementById(i + 'answer').style.display = 'block';
 }
 }
 document.getElementById('score').innerHTML = 'Score: ' + score + '/100';
-window.location.href='http://www.irhsdeca.com/Principles_1_Whole_Homework.php?e_score=' + score;}$('.timer').startTimer({
+window.history.pushState('object', 'Principles Exam 1', 'http://www.irhsdeca.com/Principles_1_Whole_Homework.php?e_score=' + score);}$('.timer').startTimer({
 onComplete: function(element){
   element.addClass('complete')
 ; parseExam();
