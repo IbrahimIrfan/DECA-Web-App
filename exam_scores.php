@@ -72,21 +72,25 @@
       </ul>
   </div>
       </br>
-      
-      <?php
-       // select exams detail
-       $res=mysql_query("SELECT * FROM exams");
-       $rows=mysql_fetch_array($res);
-      $abc = mysql_fetch_array($rows)
-                      ?>
+
 
 <div class="content">
 <table class="mdl-data-table mdl-js-data-table"><thead>
 <tr><td>User ID</td><td>Cluster</td><td>Score 1</td></tr></thead><tbody>
+<?php
+
+ // select exams detail
+ $res=mysql_query("SELECT * FROM exams");
+            while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
+                ?>
                 <tr>
                 <td><?php echo $abc["userId"]; ?></td>
                 <td><?php echo $abc["cluster"]; ?></td>
                 <td><?php echo $abc["score_1"]; ?></td></tr>
+                <?php
+              }
+              mysql_free_result($res);
+              ?>
             </tbody>
 </table>
 </div>
