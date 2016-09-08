@@ -86,9 +86,10 @@
                 <td>
                   <?php
               $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-                echo $res_users["userFName"];
+              $userRow=mysql_fetch_array($res_users);
+                echo $userRow["userFName"];
                 echo " ";
-                echo $res_users["userLName"]; ?></td>
+                echo $userRow["userLName"]; ?></td>
                 <td><?php echo $abc["cluster"]; ?></td>
                 <td><?php echo $abc["score_1"]; echo " /100"; ?></td></tr>
                 <?php
