@@ -1063,6 +1063,10 @@ if ($score !== undefined){
     <h4>error</h4>
     <?php
     };
-  };
+}else{
+  ?>
+  <h4><?php echo "undefined"; ?></h4>
+  <?php
+};
 };
 ?></html>
