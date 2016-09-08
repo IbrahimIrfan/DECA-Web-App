@@ -1046,7 +1046,7 @@ firewall software. The process of updating firewall software is not related to a
 product tampering, or calculation errors.
 </h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" name="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script><script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
 <?php
-$score = "";
+if (isset($_GET["e_score"])){
 $score = $_GET["e_score"];
   ?>
   <h4><?php echo $score; ?></h4>
@@ -1067,5 +1067,6 @@ if ($score !== ""){
   ?>
   <h4><?php echo "undefined"; ?></h4>
   <?php
+};
 };
 ?></html>
