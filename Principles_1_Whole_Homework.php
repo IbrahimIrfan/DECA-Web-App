@@ -1044,4 +1044,16 @@ information (e.g., credit-card numbers) transmitted through its web site is secu
 individuals (e.g., hackers). One way to ensure online security is to maintain and continuously update its
 firewall software. The process of updating firewall software is not related to a person's physical safety,
 product tampering, or calculation errors.
-</h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script><script src="exams/Principles/Principles_1_Whole_Homework.js"></script><?php $score = $_GET["e_score"]; if ($score !== undefined){ $query = "INSERT INTO exams(userId, score_1, cluster) VALUES(".$_SESSION['user'] . ", " . $score . ", Principles)"; $res = mysql_query($query); };?></html>
+</h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script><script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
+<?php
+$score = $_GET["e_score"];
+if ($score !== undefined){
+  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES(".$_SESSION['user'] . ", " . $score . ", Principles)";
+  $res = mysql_query($query);
+  if ($res){
+    ?>
+    <h4>Inserted</h4>
+    <?php
+  }
+};
+?></html>
