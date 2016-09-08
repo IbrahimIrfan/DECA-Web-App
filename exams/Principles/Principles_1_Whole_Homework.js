@@ -221,7 +221,13 @@ function parseExam() {
     $.ajax({
         type: "POST",
         url: "http://www.irhsdeca.com/Principles_1_Whole_Homework_Server.php",
-        data: data_to_post
+        data: data_to_post,
+        success: function(){
+          console.log("success");
+        }
+        error: function(r) {
+          console.log("error " + r);
+        }
     });
 }
 $('.timer').startTimer({
