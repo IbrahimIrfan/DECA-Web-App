@@ -224,7 +224,7 @@ function parseExam() {
         data: data_to_post,
         success: function(){
           console.log("success");
-        }
+        },
         error: function(r) {
           console.log("error " + r);
         }
