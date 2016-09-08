@@ -122,6 +122,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #allTypes, #type, #cluster, #clusterClicked {
     text-decoration: underline;
 }
+#exam_scores{
+  width: 100%;
+}
 #res a {
     color: #0000b3;
     text-decoration: none;

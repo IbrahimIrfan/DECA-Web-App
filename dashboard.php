@@ -209,7 +209,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 mysql_free_result($res_cc);
               }
               ?>
-              <table class="mdl-data-table mdl-js-data-table"><thead>
+              <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
               <tr><td>User</td><td>Cluster</td><td>Score 1</td></tr></thead><tbody>
               <?php
 
