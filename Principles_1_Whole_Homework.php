@@ -1047,36 +1047,4 @@ product tampering, or calculation errors.
 </h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" name="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script>
 <script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
 
-<h4>
-<?php
-/*
-$score = $_GET["e_score"];
-  ?>
-  <h4><?php echo $score; ?></h4>
-  <?php
-if ($score !== ""){
-  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('2', '$score', 'Principles')";
-  $res = mysql_query($query);
-  if ($res){
-    ?>
-    <h4>inserted</h4>
-    <?php
-  }else{
-    ?>
-    <h4>error</h4>
-    <?php
-    };
-}else{
-  ?>
-  <h4><?php echo "undefined"; ?></h4>
-  <?php
-};
-*/
-if (isset($_POST['submit'])){
-echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-}else{
-  echo "not submitted!";
-}
-?>
-</h4>
 </html>
