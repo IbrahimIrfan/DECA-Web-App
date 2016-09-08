@@ -1050,7 +1050,7 @@ $score = $_GET["e_score"];
   ?>
   <h4><?php echo $score; ?></h4>
   <?php
-if ($score !== undefined){
+if ($score !== ""){
   $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('2', '$score', 'Principles')";
   $res = mysql_query($query);
   if ($res){
