@@ -87,7 +87,7 @@
         <h6>The competition is composed of three levels: Regionals, Provincials, and Internationals.
   Iroquois Ridge High School is part of the Hamilton + Private region, which means we compete
   at the Hamilton Convention Center in early November for the regionals component. The Private
-  just means private schools are participating. Last year, we had over 80 students in our
+  just means private schools are participating. Last year, we had over 140 students in our
   chapter for regionals, with over 60% making it to the provincial level. Out of those,
   5 students made it to the international level, otherwise known as the International Career
   Development Conference (ICDC), where they competed against students from  the US, Europe,
@@ -96,16 +96,16 @@
 
         <img src="img/image1.jpg" width="100%" />
 
-        <h6>At each level, there are two components that contribute : the written exam and the
+        <h6>At each level, there are two components that contribute: the written exam and the
     role-play case study. The written exam is a 100 question multiple choice test and every
     student takes one based on their cluster - we'll go over that in a minute. The case study,
     however, is different for every event, of which there are a lot to choose from. To find out
-     more about each event, please take a look at the Events page on this website
+     more about each event, please take a look at the <a href="events.php" style="color: black;">Events</a> page on this website
      where there is a short description and a link for resources for each event where you can
      look at past exams and case studies. The exams are also available to be taken online -
      right on this website. Once you are registered, you will have to complete one online practice exam a week,
-     which you will see in the 'Your Homework' section of the Dashboard. You can also view a list of all the
-     exams in 'Exams' and take them as many times as you wish.
+     which you will see in the 'Your Homework' section of the <a href="dashboard.php" style="color: black;">Dashboard.</a> You can also view a list of all the
+     exams in <a href="exams.php" style="color: black;">Exams</a> and take them as many times as you wish.
       The executives will also provide more information and tips during cluster meetings. Whether or not you
       advance to the next level of competitions
       depends on the total score of your written exam and case study, but this is often a form
