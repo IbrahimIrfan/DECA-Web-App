@@ -222,7 +222,7 @@ function parseExam() {
         url: "http://www.irhsdeca.com/Principles_1_Whole_Homework_Server.php",
         data: data_to_post,
         success: function(response) {
-            content.html(response);
+            console.log(response);
         }
     });
 }
