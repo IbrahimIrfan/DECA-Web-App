@@ -1051,7 +1051,7 @@ $score = $_GET["e_score"];
   <h4><?php echo $score; ?></h4>
   <?php
 if ($score !== undefined){
-  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('$_SESSION['user']', '$score', 'Principles')";
+  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('1', '$score', 'Principles')";
   $res = mysql_query($query);
   if ($res){
     ?>
@@ -1059,7 +1059,7 @@ if ($score !== undefined){
     <?php
   }else{
     ?>
-    <h4><?php echo mysql_error();?></h4>
+    <h4>error</h4>
     <?php
   }
 };
