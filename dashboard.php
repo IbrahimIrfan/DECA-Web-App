@@ -211,7 +211,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               ?>
               <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
               <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
-              <tr><td>User</td><td>Score 1</td></tr></thead><tbody>
+              <tr><td>User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td></tr></thead><tbody>
               <?php
 
                // select exams detail
@@ -226,7 +226,40 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                               echo $user_exams["userFName"];
                               echo " ";
                               echo $user_exams["userLName"]; ?></td>
-                              <td><?php echo $abc["score_1"]; echo " /100"; ?></td></tr>
+                              <td><?php
+                              if ($abc["score_1"] !== undefined){
+                                 echo $abc["score_1"]; echo "%";
+                               }else{
+                                 echo "Incomplete";
+                               } ?></td>
+                            <td><?php
+                            if ($abc["score_2"] !== undefined){
+                               echo $abc["score_2"]; echo "%";
+                             }else{
+                               echo "Incomplete";
+                             }
+                             ?></td>
+                          <td><?php
+                          if ($abc["score_3"] !== undefined){
+                             echo $abc["score_3"]; echo "%";
+                           }else{
+                             echo "Incomplete";
+                           }
+                          ?></td>
+                        <td><?php
+                        if ($abc["score_4"] !== undefined){
+                           echo $abc["score_4"]; echo "%";
+                         }else{
+                           echo "Incomplete";
+                         }
+                         ?></td>
+                      <td><?php
+                      if ($abc["score_5"] !== undefined){
+                         echo $abc["score_5"]; echo "%";
+                       }else{
+                         echo "Incomplete";
+                       }
+                        ?></td></tr>
                               <?php
                             }
                             mysql_free_result($res);
