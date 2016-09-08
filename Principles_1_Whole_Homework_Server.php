@@ -4,6 +4,7 @@
   require_once 'dbconnect.php';
 
   $score = $_POST["score"];
-  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('$_SESSION['user']', '$score', 'Principles')";
+  $UID = $_SESSION['user'];
+  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('$UID', '$score', 'Principles')";
   $res = mysql_query($query);
 ?>
