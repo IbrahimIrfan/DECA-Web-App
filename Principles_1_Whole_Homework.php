@@ -1,4 +1,4 @@
-<?php ob_start(); session_start(); require_once 'dbconnect.php'; if( !isset($_SESSION["user"]) ) {  header("Location: login.php");  exit; }; ?><html><head><title>IRHS DECA</title><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><link rel="icon" href="img/favicon.ico" sizes="16x16"><link rel="stylesheet" type="text/css" href="css/main.css"></link><meta charset='utf-8'><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/cssmenu/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css"><script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script></head><body><div id="cssmenu">  <ul><li><a href='index.php'><span>Home</span></a></li><li><a href='about.php'><span>About DECA</span></a></li><li><a href='events.php'><span>Events</span></a></li><li class='active'><a href='dashboard.php'><span>Dashboard</span></a></li>          <li><a href='announcements.php'><span>Announcements</span></a></li>  <li><a href='dates.php'><span>Schedules</span></a></li>  <li><a href='exams.php'><span>Exams</span></a></li><li class='last'><a href='logout.php?logout'><span>Logout</span></a></li></ul></div></br>  <div id='timer-label'>Time Remaining:</div><div class='timer' data-minutes-left=70></div><div class="content"><h4 style="color: red;">IRHS DECA does not own any of these exams.</h4><h4>Principles Exam 1</h4><h4 id="score" style="color: blue;"></h4><form id="myform"><h5 id='q1'>1. Torts relating to misrepresented facts about a business's goods or services may be subject to a lawsuit
+<?php ob_start(); session_start(); require_once 'dbconnect.php'; if( !isset($_SESSION["user"]) ) {  header("Location: login.php");  exit; }; ?><html><head><title>IRHS DECA</title><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><link rel="icon" href="img/favicon.ico" sizes="16x16"><link rel="stylesheet" type="text/css" href="css/main.css"></link><meta charset='utf-8'><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="css/cssmenu/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css"><script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script></head><body><div id="cssmenu">  <ul><li><a href='index.php'><span>Home</span></a></li><li><a href='about.php'><span>About DECA</span></a></li><li><a href='events.php'><span>Events</span></a></li><li class='active'><a href='dashboard.php'><span>Dashboard</span></a></li>          <li><a href='announcements.php'><span>Announcements</span></a></li>  <li><a href='dates.php'><span>Schedules</span></a></li>  <li><a href='exams.php'><span>Exams</span></a></li><li class='last'><a href='logout.php?logout'><span>Logout</span></a></li></ul></div></br>  <div id='timer-label'>Time Remaining:</div><div class='timer' data-minutes-left=70></div><div class="content"><h4 style="color: red;">IRHS DECA does not own any of these exams.</h4><h4>Principles Exam 1</h4><h4 id="score" style="color: blue;"></h4><form id="myform" method='post'><h5 id='q1'>1. Torts relating to misrepresented facts about a business's goods or services may be subject to a lawsuit
 on the basis of</h5><select class="select-style" id="_1"><option value="def" disabled selected>Select</option><option value="A">A. defamation.</option><option value="B">B. assault.</option><option value="C">C. intrusion.</option><option value="D">D. fraud.</option></select></br></br><div id="1answer" style="display: none;"><h5>Incorrect. The correct answer is D: fraud.</h5><h5>A tort is a private wrongdoing against another person. Businesses can be held responsible in a
 variety of torts. For example, suppose a business's employee intentionally provides misleading product
 information to a customer in order to make a sale. Then, the customer purchases and is injured by the
@@ -1044,14 +1044,15 @@ information (e.g., credit-card numbers) transmitted through its web site is secu
 individuals (e.g., hackers). One way to ensure online security is to maintain and continuously update its
 firewall software. The process of updating firewall software is not related to a person's physical safety,
 product tampering, or calculation errors.
-</h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script><script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
+</h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" name="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script><script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
 <?php
+if (isset($_POST['submit'])){
 $score = $_GET["e_score"];
   ?>
   <h4><?php echo $score; ?></h4>
   <?php
 if ($score !== undefined){
-  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('1', '$score', 'Principles')";
+  $query = "INSERT INTO exams(userId, score_1, cluster) VALUES('2', '$score', 'Principles')";
   $res = mysql_query($query);
   if ($res){
     ?>
@@ -1061,6 +1062,7 @@ if ($score !== undefined){
     ?>
     <h4>error</h4>
     <?php
-  }
+    };
+  };
 };
 ?></html>
