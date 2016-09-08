@@ -214,16 +214,17 @@ function parseExam() {
         }
     }
     document.getElementById('score').innerHTML = 'Score: ' + score + '/100';
-    $.ajax({
-      type: "POST",
-      url: "http://www.irhsdeca.com/Principles_1_Whole_Homework_Server.php",
-      data: {
+    var data_to_post = {
         "score": score
+    }
+    $.ajax({
+        type: "POST",
+        url: "http://www.irhsdeca.com/Principles_1_Whole_Homework_Server.php",
+        data: data_to_post
+        success: function(response) {
+            content.html(response);
         }
-      })
-      .done(function( msg ) {
-        console.log( "Data sent to the server " + msg );
-      });
+    });
 }
 $('.timer').startTimer({
     onComplete: function(element) {
