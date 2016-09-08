@@ -3,13 +3,6 @@
  session_start();
  require_once 'dbconnect.php';
 
- if( isset($_SESSION['user']) ) {
-
- // select exams detail
- $res=mysql_query("SELECT * FROM exams");
- $rows=mysql_fetch_array($res);
-
-}
 ?>
 
 
@@ -82,25 +75,21 @@
 
 
 <div class="content">
-
-  <?php
-              while ($abc = mysql_fetch_array($rows, MYSQL_ASSOC)) {
-                $data[] = $abc;
-              }
-              $data = array_reverse($data,true);
-?>
 <table class="mdl-data-table mdl-js-data-table"><thead>
 <tr><td>User ID</td><td>Cluster</td><td>Score 1</td></tr></thead><tbody>
 <?php
-              foreach ($data as $exam_row){
+
+ // select exams detail
+ $res=mysql_query("SELECT * FROM exams");
+ $rows=mysql_fetch_array($res);
+            while ($abc = mysql_fetch_array($rows, MYSQL_ASSOC)) {
                 ?>
                 <tr>
-                <td><?php echo $exam_row["userId"]; ?></td>
-                <td><?php echo $exam_row["cluster"]; ?></td>
-                <td><?php echo $exam_row["score_1"]; ?></td></tr>
+                <td><?php echo $abc["userId"]; ?></td>
+                <td><?php echo $abc["cluster"]; ?></td>
+                <td><?php echo $abc["score_1"]; ?></td></tr>
                 <?php
               }
-              mysql_free_result($rows);
               ?>
             </tbody>
 </table>
