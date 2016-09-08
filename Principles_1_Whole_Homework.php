@@ -1071,7 +1071,9 @@ if ($score !== ""){
   <?php
 };
 */
+if (isset($_POST['submit'])){
 echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
 ?>
 </h4>
 </html>
