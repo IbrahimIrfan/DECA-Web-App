@@ -208,7 +208,31 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 }
                 mysql_free_result($res_cc);
               }
+              ?>
+              <table class="mdl-data-table mdl-js-data-table"><thead>
+              <tr><td>User</td><td>Cluster</td><td>Score 1</td></tr></thead><tbody>
+              <?php
 
+               // select exams detail
+               $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
+                          while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
+                              ?>
+                              <tr>
+                              <td>
+                                <?php
+                            $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
+                            $userRow=mysql_fetch_array($res_users);
+                              echo $userRow["userFName"];
+                              echo " ";
+                              echo $userRow["userLName"]; ?></td>
+                              <td><?php echo $abc["cluster"]; ?></td>
+                              <td><?php echo $abc["score_1"]; echo " /100"; ?></td></tr>
+                              <?php
+                            }
+                            mysql_free_result($res);
+                            ?>
+                          </tbody>
+              </table><?php
             } else {
               ?>
               <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
