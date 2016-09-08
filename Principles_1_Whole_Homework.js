@@ -217,10 +217,9 @@ function parseExam() {
     var data_to_post = {
         "score": score
     }
-    console.log(data_to_post);
     $.ajax({
         type: "POST",
-        url: "http://www.irhsdeca.com/Principles_1_Whole_Homework_Server.php",
+        url: "Principles_1_Whole_Homework_Server.php",
         data: data_to_post,
         success: function(){
           console.log("success");

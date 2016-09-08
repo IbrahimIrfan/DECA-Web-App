@@ -1045,6 +1045,6 @@ individuals (e.g., hackers). One way to ensure online security is to maintain an
 firewall software. The process of updating firewall software is not related to a person's physical safety,
 product tampering, or calculation errors.
 </h5></div><input id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" name="submit"></input></form></div></body><script src="jquery-timer/jquery.simple.timer.js"></script>
-<script src="exams/Principles/Principles_1_Whole_Homework.js"></script>
+<script src="Principles_1_Whole_Homework.js"></script>
 
 </html>
