@@ -150,6 +150,63 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
 
             <?php if ($exec) {  ?>
+              <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
+              <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
+              <tr><td>User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td></tr></thead><tbody>
+              <?php
+
+               // select exams detail
+               $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
+                          while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
+                              ?>
+                              <tr>
+                              <td>
+                                <?php
+                            $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
+                            $user_exams=mysql_fetch_array($res_users);
+                              echo $user_exams["userFName"];
+                              echo " ";
+                              echo $user_exams["userLName"]; ?></td>
+                              <td><?php
+                              if ($abc["score_1"] !== undefined){
+                                 echo $abc["score_1"]; echo "%";
+                               }else{
+                                 echo "Incomplete";
+                               } ?></td>
+                            <td><?php
+                            if ($abc["score_2"] !== undefined){
+                               echo $abc["score_2"]; echo "%";
+                             }else{
+                               echo "Incomplete";
+                             }
+                             ?></td>
+                          <td><?php
+                          if ($abc["score_3"] !== undefined){
+                             echo $abc["score_3"]; echo "%";
+                           }else{
+                             echo "Incomplete";
+                           }
+                          ?></td>
+                        <td><?php
+                        if ($abc["score_4"] !== undefined){
+                           echo $abc["score_4"]; echo "%";
+                         }else{
+                           echo "Incomplete";
+                         }
+                         ?></td>
+                      <td><?php
+                      if ($abc["score_5"] !== undefined){
+                         echo $abc["score_5"]; echo "%";
+                       }else{
+                         echo "Incomplete";
+                       }
+                        ?></td></tr>
+                              <?php
+                            }
+                            mysql_free_result($res);
+                            ?>
+                          </tbody>
+              </table>
                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
                 <h5 style="color: red;"><?php echo $msg ?></h5>
               <form id="post_announcements" method="post">
@@ -208,64 +265,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                 }
                 mysql_free_result($res_cc);
               }
-              ?>
-              <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
-              <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
-              <tr><td>User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td></tr></thead><tbody>
-              <?php
 
-               // select exams detail
-               $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
-                          while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
-                              ?>
-                              <tr>
-                              <td>
-                                <?php
-                            $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-                            $user_exams=mysql_fetch_array($res_users);
-                              echo $user_exams["userFName"];
-                              echo " ";
-                              echo $user_exams["userLName"]; ?></td>
-                              <td><?php
-                              if ($abc["score_1"] !== undefined){
-                                 echo $abc["score_1"]; echo "%";
-                               }else{
-                                 echo "Incomplete";
-                               } ?></td>
-                            <td><?php
-                            if ($abc["score_2"] !== undefined){
-                               echo $abc["score_2"]; echo "%";
-                             }else{
-                               echo "Incomplete";
-                             }
-                             ?></td>
-                          <td><?php
-                          if ($abc["score_3"] !== undefined){
-                             echo $abc["score_3"]; echo "%";
-                           }else{
-                             echo "Incomplete";
-                           }
-                          ?></td>
-                        <td><?php
-                        if ($abc["score_4"] !== undefined){
-                           echo $abc["score_4"]; echo "%";
-                         }else{
-                           echo "Incomplete";
-                         }
-                         ?></td>
-                      <td><?php
-                      if ($abc["score_5"] !== undefined){
-                         echo $abc["score_5"]; echo "%";
-                       }else{
-                         echo "Incomplete";
-                       }
-                        ?></td></tr>
-                              <?php
-                            }
-                            mysql_free_result($res);
-                            ?>
-                          </tbody>
-              </table><?php
             } else {
               ?>
               <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
