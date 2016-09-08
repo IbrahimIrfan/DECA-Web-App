@@ -219,7 +219,7 @@ function parseExam() {
     }
     $.ajax({
         type: "POST",
-        url: "/Principles_1_Whole_Homework_Server.php",
+        url: "Principles_1_Whole_Homework_Server.php",
         data: data_to_post,
         success: function(r){
           console.log("success " + r);
