@@ -1057,6 +1057,10 @@ if ($score !== undefined){
     ?>
     <h4>Inserted</h4>
     <?php
+  }else{
+    ?>
+    <h4>error</h4>
+    <?php
   }
 };
 ?></html>
