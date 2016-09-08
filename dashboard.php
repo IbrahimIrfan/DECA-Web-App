@@ -211,7 +211,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               ?>
               <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
               <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
-              <tr><td>User</td><td>Cluster</td><td>Score 1</td></tr></thead><tbody>
+              <tr><td>User</td><td>Score 1</td></tr></thead><tbody>
               <?php
 
                // select exams detail
@@ -222,11 +222,10 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                               <td>
                                 <?php
                             $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-                            $userRow=mysql_fetch_array($res_users);
-                              echo $userRow["userFName"];
+                            $user_exams=mysql_fetch_array($res_users);
+                              echo $user_exams["userFName"];
                               echo " ";
-                              echo $userRow["userLName"]; ?></td>
-                              <td><?php echo $abc["cluster"]; ?></td>
+                              echo $user_exams["userLName"]; ?></td>
                               <td><?php echo $abc["score_1"]; echo " /100"; ?></td></tr>
                               <?php
                             }
