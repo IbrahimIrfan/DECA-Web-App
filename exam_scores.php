@@ -83,9 +83,14 @@
             while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
                 ?>
                 <tr>
-                <td><?php echo $abc["userId"]; ?></td>
+                <td>
+                  <?php
+              $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
+                echo $res_users["userFName"];
+                echo " ";
+                echo $res_users["userLName"]; ?></td>
                 <td><?php echo $abc["cluster"]; ?></td>
-                <td><?php echo $abc["score_1"]; ?></td></tr>
+                <td><?php echo $abc["score_1"]; echo " /100"; ?></td></tr>
                 <?php
               }
               mysql_free_result($res);
