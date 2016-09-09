@@ -5,6 +5,6 @@
 
   $score = $_POST["score"];
   $UID = $_SESSION['user'];
-  $query = "INSERT INTO exams(score_2, cluster) VALUES('$score', 'Principles') WHERE userId=$UID";
+  $query = "INSERT INTO exams(score_2, cluster) VALUES('$score', 'Principles') WHERE userId=1";
   $res = mysql_query($query);
 ?>
