@@ -221,11 +221,11 @@ function parseExam() {
         type: "POST",
         url: "Principles_2_Whole_Homework_Server.php",
         data: data_to_post,
-        success: function(r) {
-            console.log("success " + r);
+        success: function(r){
+          console.log("success " + r);
         },
         error: function(r) {
-            console.log("error " + r);
+          console.log("error " + r);
         }
     });
 }
