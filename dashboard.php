@@ -156,7 +156,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               <?php
 
                // select exams detail
-               $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
+               $res=mysql_query("SELECT * FROM exams");
+              // $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
                           while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
                               ?>
                               <tr>
