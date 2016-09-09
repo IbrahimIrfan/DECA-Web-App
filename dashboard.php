@@ -151,7 +151,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
             <?php if ($exec) {  ?>
               <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
-              <table class="mdl-data-table mdl-js-data-table" id="#exam_scores"><thead>
+              <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td>User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td></tr></thead><tbody>
               <?php
 
