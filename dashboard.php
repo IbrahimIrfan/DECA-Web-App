@@ -168,34 +168,34 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                               echo " ";
                               echo $user_exams["userLName"]; ?></td>
                               <td><?php
-                              if ($abc["score_1"] !== 0){
+                              if ($abc["score_1"] !== "0"){
                                  echo $abc["score_1"]; echo "%";
                                }else{
                                  echo "Incomplete";
                                } ?></td>
                             <td><?php
-                            if ($abc["score_2"] !== 0){
+                            if ($abc["score_2"] !== "0"){
                                echo $abc["score_2"]; echo "%";
                              }else{
                                echo "Incomplete";
                              }
                              ?></td>
                           <td><?php
-                          if ($abc["score_3"] !== 0){
+                          if ($abc["score_3"] !== "0"){
                              echo $abc["score_3"]; echo "%";
                            }else{
                              echo "Incomplete";
                            }
                           ?></td>
                         <td><?php
-                        if ($abc["score_4"] !== 0){
+                        if ($abc["score_4"] !== "0"){
                            echo $abc["score_4"]; echo "%";
                          }else{
                            echo "Incomplete";
                          }
                          ?></td>
                       <td><?php
-                      if ($abc["score_5"] !== 0){
+                      if ($abc["score_5"] !== "0"){
                          echo $abc["score_5"]; echo "%";
                        }else{
                          echo "Incomplete";
