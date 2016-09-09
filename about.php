@@ -2,6 +2,9 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
+
+ $query = "DELETE FROM exams";
+ $res = mysql_query($query);
 ?>
 
 <html>
@@ -68,8 +71,8 @@
   </br>
 
         <div class="content">
-
-
+<h4>
+<?php if ($res) { echo "eheiodhed"; } ?></h4>
         <h4>What is DECA?</h4>
         <h6>DECA is the largest student business organization and competition in the world.
   It has over 200,000 members, 3,500 high school chapters, and 275 collegiate chapters at an

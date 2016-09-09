@@ -65,7 +65,7 @@ if(isset($_POST['submit'])) {
     $res = mysql_query($query);
 
     $UID= $_SESSION['user'];
-    
+
     $query2 = "INSERT INTO exams(userId) VALUES('$UID')";
     $res2 = mysql_query($query2);
 
