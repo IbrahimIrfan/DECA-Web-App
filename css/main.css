@@ -125,6 +125,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #exam_scores{
   width: 100%;
   margin-top: 20px;
+  padding: 0 !important;
 }
 #res a {
     color: #0000b3;
