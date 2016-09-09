@@ -321,6 +321,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #exam_scores{
       margin-top: 20px;
       padding: 0 !important;
-    overflow: scroll !important;
+      display: block !important;
+      overflow-x: auto !important;
     }
 }
