@@ -386,7 +386,7 @@ $(document).on('ready', function() {
                             this.content += "<h5>Interview Time: 10 min</h5>";
                             this.content += "<h5>Only allowed for (and highly recommended to) first time DECA students</h5>";
                         } else if (currentEvent.type == "Individual") {
-                            this.content += "<h5>1 Case Study</h5>";
+                            this.content += "<h5>2 Case Studies</h5>";
                             this.content += "<h5>Preparation Time: 10 min</h5>";
                             this.content += "<h5>Interview Time: 10 min</h5>";
                             this.content += "<h5>5 Performance Indicators on Case Study</h5>";
