@@ -63,7 +63,10 @@ if(isset($_POST['submit'])) {
 
     $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
     $res = mysql_query($query);
-    
+
+    $query2 = "INSERT INTO exams(userId) VALUES('$_SESSION['user']')";
+    $res2 = mysql_query($query2);
+
     if ($res) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
