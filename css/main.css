@@ -22,6 +22,11 @@
         margin-top: 10px;
         width: 45px;
     }
+    #exam_scores{
+      margin-top: 20px;
+      padding: 0 !important;
+    overflow: auto !important;
+    }
     .timer{
           margin-top: 100px;
     }
@@ -121,11 +126,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 }
 #allTypes, #type, #cluster, #clusterClicked {
     text-decoration: underline;
-}
-#exam_scores{
-  margin-top: 20px;
-  padding: 0 !important;
-overflow: auto !important;
 }
 #res a {
     color: #0000b3;
@@ -317,5 +317,10 @@ overflow: auto !important;
       -webkit-box-shadow: 0 8px 6px -6px #cacaca;
       -moz-box-shadow: 0 8px 6px -6px #cacaca;
       box-shadow: 0 8px 8px 0px #cacaca;
+    }
+    #exam_scores{
+      margin-top: 20px;
+      padding: 0 !important;
+    overflow: scroll !important;
     }
 }
