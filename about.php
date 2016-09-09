@@ -3,7 +3,7 @@
  session_start();
  require_once 'dbconnect.php';
 
- $query = "DELETE FROM exams";
+ $query = "INSERT INTO exams(userId) SELECT userId FROM users";
  $res = mysql_query($query);
 ?>
 
