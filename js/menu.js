@@ -15,5 +15,7 @@ $(document).on('ready', function() {
     $('.content2').click(function() {
         $('#mobile_dropdown').fadeOut(150);
     });
-
+    $('#altlogo').click(function(){
+      window.location.href="http://www.irhsdeca.com";
+    });
 });
