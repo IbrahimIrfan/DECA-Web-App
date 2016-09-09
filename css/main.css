@@ -235,7 +235,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
         position: absolute;
         display: inline-block;
         margin-left: 85%;
-        bottom: 440px;
+        bottom: 90%;
     }
     #res {
         position: relative;
