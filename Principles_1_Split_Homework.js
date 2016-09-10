@@ -230,8 +230,8 @@ console.log("error " + r);
 });
 }$('.timer').startTimer({
 onComplete: function(element){
-  element.addClass('complete')
-; parseExam();
+  element.addClass('complete');
+ parseExam();
 }
 });
 $('#myform').on('submit', function(e){
