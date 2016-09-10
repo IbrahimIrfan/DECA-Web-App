@@ -228,7 +228,7 @@ error: function(r) {
 console.log("error " + r);
  }
 });
-}}$('.timer').startTimer({
+}$('.timer').startTimer({
 onComplete: function(element){
   element.addClass('complete')
 ; parseExam();
