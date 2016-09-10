@@ -25,7 +25,8 @@
     #exam_scores{
       margin-top: 20px;
       padding: 0 !important;
-    overflow: auto !important;
+      display: block !important;
+      overflow-x: auto !important;
     }
     .timer{
           margin-top: 100px;
