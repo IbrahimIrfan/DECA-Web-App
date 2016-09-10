@@ -25,7 +25,7 @@
    $_SESSION['user'] = $row['userId'];
    header("Location: dashboard.php");
   } else {
-   $errMSG = "Wrong Credentials, try again. If you forgot your password, check the confirmation email you recieved when you registered.";
+   $errMSG = "Wrong Credentials, try again.";
   }
  }
 ?>
@@ -104,6 +104,7 @@
             </br>
 
             <h5 style="color: red;"><?php echo $errMSG ?></h5>
+            <h5>Forgot password? Email us at irhsdeca2016@gmail.com with the subject "Forgot Password".</h5>
 
             <input id="submit" name="btn-login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Login">
             </input>
