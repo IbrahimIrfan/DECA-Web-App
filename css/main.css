@@ -185,6 +185,9 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     #submit_ann{
       display: block;
     }
+    #index_footer{
+      display: none !important;
+    }
     .breadcrumb {
         font-size: 14px !important;
     }

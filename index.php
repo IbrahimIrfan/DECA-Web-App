@@ -75,7 +75,7 @@
   <img id="center-text" src="img/title.PNG" width="22%"/>
 </div>
 
-<div class="footer">
+<div class="footer" id="index_footer">
   <img id="altlogo" src="img/logo_alt.png" align="left"/>
   <img id="fbimg" src="img/facebook-box.png" align="right"/>
 <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
