@@ -235,6 +235,6 @@ onComplete: function(element){
 }
 });
 $('#myform').on('submit', function(e){
-e.preventDefault();
+$('.timer').hide();e.preventDefault();
 parseExam();
 });
