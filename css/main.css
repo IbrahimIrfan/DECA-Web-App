@@ -317,6 +317,7 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
       padding-bottom: 10px;
       padding-top: 10px;
       width: 100%;
+      top: 0;
       -webkit-box-shadow: 0 8px 6px -6px #cacaca;
       -moz-box-shadow: 0 8px 6px -6px #cacaca;
       box-shadow: 0 8px 8px 0px #cacaca;
