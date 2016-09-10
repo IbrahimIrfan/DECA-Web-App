@@ -152,7 +152,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
             <?php if ($exec) {  ?>
               <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
-              <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td></tr></thead><tbody>
+              <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td></tr></thead><tbody>
               <?php
 
                // select exams detail
@@ -201,7 +201,21 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                        }else{
                          echo "-";
                        }
-                        ?></td></tr>
+                        ?></td>
+                        <td><?php
+                        if ($abc["score_6"] !== "0"){
+                           echo $abc["score_6"]; echo "%";
+                         }else{
+                           echo "-";
+                         }
+                          ?></td>
+                          <td><?php
+                          if ($abc["score_7"] !== "0"){
+                             echo $abc["score_7"]; echo "%";
+                           }else{
+                             echo "-";
+                           }
+                            ?></td></tr>
                               <?php
                             }
                             mysql_free_result($res);
