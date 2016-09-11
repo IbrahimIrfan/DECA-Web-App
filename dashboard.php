@@ -52,6 +52,28 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
  } */
  $currentCluster = "Finance";
 
+ if ($currentCluster == "Principles"){
+ $homework= "Principles_1_Whole_Homework.php";
+ }elseif ($currentCluster == "Finance") {
+   $homework= "Finance_1_Whole_Homework.php";
+ }elseif ($currentCluster == "Business-Admin") {
+   $homework= "Business-Admin_1_Whole_Homework.php";
+ }elseif ($currentCluster == "Marketing") {
+   $homework= "Marketing_1_Whole_Homework.php";
+ }elseif ($currentCluster == "Hospitality") {
+   $homework= "Hospitality_1_Whole_Homework.php";
+ }
+
+ $week = "score_1";
+
+ $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['userId']);
+ $exam_check=mysql_fetch_array($res_exam_check);
+
+ if ($exam_check[$week] == "0"){
+   $exam_status="img/complete.png";
+ }else{
+   $exam_status="img/incomplete.png";
+ }
 
  if(isset($_POST['submit'])) {
 
@@ -143,8 +165,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
         <br/>
         <div id="homework">
-        <h4>Your Weekly Homework:</h4><img id="complete" src="img/complete.png" align="right" height="35" />
-        <h5 id="exam_link"><u><a href="/Principles_1_Whole_Master.php" style="color: black;"></a></u></h5>
+        <h4>Your Weekly Homework:</h4><img id="complete" src="<?php echo $exam_status; ?>" align="right" height="35" />
+        <h5 id="exam_link"><u><a href='<?php echo $homework; ?>' style="color: black;"></a></u></h5>
       </div>
 
         <br/>
