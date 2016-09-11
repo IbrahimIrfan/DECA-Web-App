@@ -97,7 +97,7 @@
     <img src="img/date.png" align="left" width="50"/>
     <h5 style="margin-top: 20px;">Exams: Oct 31, Case Studies: Nov 8</h5><br/>
     <img src="img/money.png" align="left" height="50"/>
-    <h5 style="margin-top: 15px;">$</h5><br/>
+    <h5 style="margin-top: 15px;">TBD</h5><br/>
   </div>
 
   <div class="provincials">
@@ -107,7 +107,7 @@
     <img src="img/date.png" align="left" width="50"/>
     <h5 style="margin-top: 20px;">February 9-11, 2017</h5><br/>
     <img src="img/money.png" align="left" height="50"/>
-    <h5 style="margin-top: 15px;">$</h5><br/>
+    <h5 style="margin-top: 15px;">TBD</h5><br/>
   </div>
 
   <div class="icdc">
@@ -117,7 +117,7 @@
       <img src="img/date.png" align="left" width="50"/>
       <h5 style="margin-top: 20px;">April 24 - May 1, 2017</h5><br/>
       <img src="img/money.png" align="left" height="50"/>
-      <h5 style="margin-top: 15px;">$</h5><br/>
+      <h5 style="margin-top: 15px;">TBD</h5><br/>
   </div>
 
 
