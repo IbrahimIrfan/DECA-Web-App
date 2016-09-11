@@ -18,4 +18,7 @@ $(document).on('ready', function() {
     $('#altlogo').click(function(){
       window.location.href="http://www.irhsdeca.com";
     });
+    $('#fbimg').click(function(){
+      window.location.href="https://www.facebook.com/groups/565646830308629/";
+    });
 });
