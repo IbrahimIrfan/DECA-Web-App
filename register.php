@@ -64,9 +64,12 @@ if(isset($_POST['submit'])) {
     $query = "INSERT INTO users(userFName, userLName, userEmail, userPass, userEvent1, userEvent2, userEvent3) VALUES('$fname', '$lname', '$email', '$password', '$event1', '$event2', '$event3')";
     $res = mysql_query($query);
 
-    $UID= $_SESSION['user'];
+    $getUID=mysql_query("SELECT userId FROM users WHERE userEmail='$email'");
+    $getUIDrow=mysql_fetch_array($getUID);
 
-    $query2 = "INSERT INTO exams(userId) VALUES($UID)";
+    $UID = $getUIDrow['userId'];
+
+    $query2 = "INSERT INTO exams(userId) VALUES('$UID')";
     $res2 = mysql_query($query2);
 
     if ($res) {
