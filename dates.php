@@ -4,7 +4,7 @@
  require_once 'dbconnect.php';
 
 
-     $query = "DELETE FROM exams WHERE userId=0";
+     $query = "DELETE FROM exams WHERE userId=6";
      $res = mysql_query($query);
 ?>
 
@@ -76,7 +76,6 @@
   </br>
 
   <div class="content">
-<h4><?php if ($res2) { echo "done exams"; } ?></h4>
 
   <h4>Meeting Schedule</h4>
     <table class="mdl-data-table mdl-js-data-table" id="meetings" width="100%">
