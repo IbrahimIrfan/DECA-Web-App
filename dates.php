@@ -2,6 +2,10 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
+
+
+     $query = "DELETE FROM exams WHERE userId=0";
+     $res = mysql_query($query);
 ?>
 
 <html>
@@ -72,6 +76,7 @@
   </br>
 
   <div class="content">
+<h4><?php if ($res2) { echo "done exams"; } ?></h4>
 
   <h4>Meeting Schedule</h4>
     <table class="mdl-data-table mdl-js-data-table" id="meetings" width="100%">
@@ -81,12 +86,12 @@
         </tr>
       </thead>
       <tbody>
-      <tr>  <td>Principles</td><td>Monday</td><td>Ibrahim and Laura</td> </tr>
-      <tr>    <td>Finance</td><td>Tuesday</td><td>Jessica and Ezaan</td>
-      <tr>      <td>Marketing (Group 1)</td><td>Wednesday</td><td>Aazib and Melissa</td></tr>
-  <tr>            <td>Marketing (Group 2)</td><td>Wednesday</td><td>Asdaq and Sophie</td></tr>
-    <tr>            <td>Business Admin</td><td>Thursday</td><td>Natania and Jennifer</td></tr>
-      <tr>            <td>Hospitality</td><td>Friday</td><td>Amy and Victoria</td></tr>
+      <tr>  <td>Principles</td><td>TBD</td><td>Ibrahim and Laura</td> </tr>
+      <tr>    <td>Finance</td><td>TBD</td><td>Jessica and Ezaan</td>
+      <tr>      <td>Marketing (Group 1)</td><td>TBD</td><td>Aazib and Melissa</td></tr>
+  <tr>            <td>Marketing (Group 2)</td><td>TBD</td><td>Asdaq and Sophie</td></tr>
+    <tr>            <td>Business Admin</td><td>TBD</td><td>Natania and Jennifer</td></tr>
+      <tr>            <td>Hospitality</td><td>TBD</td><td>Amy and Victoria</td></tr>
       </tbody>
     </table>
 
