@@ -166,7 +166,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="<?php echo $exam_status; ?>" align="right" height="35" />
-        <h5 id="exam_link"><u><a href='<?php echo $homework; ?>' style="color: black;"></a></u></h5>
+        <h5 id="exam_link"><u><a href='<?php echo $homework; ?>' style="color: black;"><?php echo $currentCluster; echo " Exam";?></a></u></h5>
       </div>
 
         <br/>
@@ -387,8 +387,6 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
 
               document.getElementById('event_assigned_code').innerHTML = user_event_code;
-
-              $('#exam_link u a').html(user_event_code + " Exam");
               </script>
 
 
