@@ -2,10 +2,6 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
-
-
-     $query = "DELETE FROM exams WHERE userId > 5";
-     $res = mysql_query($query);
 ?>
 
 <html>
