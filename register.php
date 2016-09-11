@@ -73,7 +73,7 @@ if(isset($_POST['submit'])) {
       $successMSG = "Successfully registered, you may login now. Check your email for details.";
 
       // confirmation email body
-      $emailbody = "Hello " . $fname . ",<br><br>Thank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:<br><br>Event Choice 1. " . $event1 . "<br>Event Choice 2. " . $event2 . "<br>Event Choice 3. " . $event3 . "<br>Your email: " . $email . "<br><br>You will be assigned an event within the next few weeks.";
+      $emailbody = "Hi " . $fname . ",<br><br>Thank you for registering for IRHS DECA 2016/2017. Please confirm your details are as follows:<br><br>Event Choice 1. " . $event1 . "<br>Event Choice 2. " . $event2 . "<br>Event Choice 3. " . $event3 . "<br>Your email: " . $email . "<br><br>You will be assigned an event within the next few weeks.";
 
       if (strpos($event1, "partner") !== false || strpos($event2, "partner") !== false || strpos($event3, "partner") !== false){
         $emailbody = $emailbody . "<br><br>One or more of the events you selected are partner events. Reply to this email if you would like to be paired with someone or the name of your selected partner.";
