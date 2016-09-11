@@ -66,7 +66,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
  $week = "score_1";
 
- $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['userId']);
+ $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
  $exam_check=mysql_fetch_array($res_exam_check);
 
  if ($exam_check[$week] !== "0"){
