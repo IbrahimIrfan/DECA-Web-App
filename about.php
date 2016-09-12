@@ -101,8 +101,7 @@
      more about each event, please take a look at the <a href="events.php" style="color: black;">Events</a> page on this website
      where there is a short description and a link for resources for each event where you can
      look at past exams and case studies. The exams are also available to be taken online -
-     right on this website. Once you are registered, you will have to complete one online practice exam a week,
-     which you will see in the 'Your Homework' section of the <a href="dashboard.php" style="color: black;">Dashboard.</a> You can also view a list of all the
+     right on this website. Once you are registered, you can view a list of all the online
      exams in <a href="exams.php" style="color: black;">Exams</a> and take them as many times as you wish.
       The executives will also provide more information and tips during cluster meetings. Whether or not you
       advance to the next level of competitions
