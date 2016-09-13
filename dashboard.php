@@ -26,10 +26,10 @@ $exec = false;
  }elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica"){
    $exec = true;
    $clusterManaging = "Finance";
- }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "melissa" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
+ }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
    $exec = true;
    $clusterManaging = "Marketing";
- }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "victoria"){
+ }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
    $exec = true;
    $clusterManaging = "Hospitality";
  }elseif ($userRow["userEmail"] == "natania" || $userRow["userEmail"] == "jennifer"){
@@ -50,7 +50,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
  }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
    $currentCluster = "Business-Admin";
  } */
- $currentCluster = "Finance";
+ $currentCluster = "Cluster";
 
  if ($currentCluster == "Principles"){
  $homework= "Principles_1_Whole_Homework.php";
@@ -430,7 +430,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
               var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
               var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
 
-              document.getElementById('event_assigned_code').innerHTML = user_event_code;
+              document.getElementById('event_assigned_code').innerHTML = "Event TBD";
               </script>
 
 
