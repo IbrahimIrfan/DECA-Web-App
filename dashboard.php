@@ -206,9 +206,9 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                                 <tr>
                                 <td><?php echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
                                 <td><?php echo $abcd['userEmail'];  ?></td>
-                                <td><?php echo $abcd['userEvent1'];  ?></td>
-                                <td><?php echo $abcd['userEvent2'];  ?></td>
-                                <td><?php echo $abcd['userEvent3'];  ?></td></tr>
+                                <td><?php echo strtok($abcd['userEvent1'], '*');  ?></td>
+                                <td><?php echo strtok($abcd['userEvent2'], '*');  ?></td>
+                                <td><?php echo strtok($abcd['userEvent3'], '*');  ?></td></tr>
                                 <?php
                               }
                               mysql_free_result($res);
