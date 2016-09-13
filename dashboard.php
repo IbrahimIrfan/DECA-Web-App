@@ -20,7 +20,7 @@
 
 $exec = false;
 
- if ($userRow["userEmail"] == "1ibrahimifan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
+ if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
    $exec = true;
    $clusterManaging = "Principles";
  }elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica"){
