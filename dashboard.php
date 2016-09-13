@@ -195,6 +195,27 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
 
             <?php if ($exec) {  ?>
+              <h4>Current Registration Status</h4>
+              <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
+              <tr><td width="100%">Name</td><td>Email</td><td>Event 1</td><td>Event 2</td><td>Event 3</td></tr></thead><tbody>
+                <?php
+                 // select exams detail
+                 $res_users_abc=mysql_query("SELECT * FROM users");
+                            while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
+                                ?>
+                                <tr>
+                                <td><?php echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
+                                <td><?php echo $abcd['userEmail'];  ?></td>
+                                <td><?php echo $abcd['userEvent1'];  ?></td>
+                                <td><?php echo $abcd['userEvent2'];  ?></td>
+                                <td><?php echo $abcd['userEvent3'];  ?></td></tr>
+                                <?php
+                              }
+                              mysql_free_result($res);
+                              ?>
+                            </tbody>
+                            </table>
+
               <h4> Exam Scores for <?php echo $clusterManaging; ?> </h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
