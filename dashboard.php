@@ -9,8 +9,6 @@
   exit;
  }
 
-     $delete_request_abc = mysql_query("DELETE FROM users WHERE userId > 5 AND NOT userEmail='missy92009@hotmail.com' AND NOT userEmail='vswinhoe@gmail.com'");
-
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
