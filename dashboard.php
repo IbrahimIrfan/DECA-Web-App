@@ -9,6 +9,8 @@
   exit;
  }
 
+$delete_request_abcd = mysql_query("DELETE FROM users, exams WHERE userEmail='anandsinghkukreja@gmail.com'");
+
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
