@@ -254,7 +254,8 @@ if(isset($_POST['submit'])) {
                       <option value="" disabled selected>3rd Choice</option>
 
                   </select>
-
+<br>
+                                <h6>* If you select a partner event, reply to the confirmation email the name of your partner</h6>
               <br/><br/>
 
               <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
