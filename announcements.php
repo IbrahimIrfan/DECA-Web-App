@@ -16,7 +16,7 @@ if ($deleteId !== undefined){
 
 $exec = false;
 
-if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
+if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
    $exec = true;
  }
 
