@@ -233,6 +233,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                                 <?php
                             $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
                             $user_exams=mysql_fetch_array($res_users);
+                            echo $abc["userId"];
+                            echo " ";
                               echo $user_exams["userFName"];
                               echo " ";
                               echo $user_exams["userLName"]; ?></td>
