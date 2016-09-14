@@ -9,7 +9,7 @@
   exit;
  }
 
-$delete_request_abcd = mysql_query("DELETE FROM exams WHERE userId=50");
+$delete_request_abcd = mysql_query("DELETE FROM exams WHERE userId=520");
 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
