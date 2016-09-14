@@ -202,6 +202,9 @@ if(isset($_POST['submit'])) {
   </br>
 
       <div class="content">
+
+                                <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
+                                <h5 style="color: green;" id="success"> <?php echo $successMSG ?> </h5>
           <form id="reg" method='post'>
 
               <h4>Register for IRHS DECA 2016/2017</h4>
@@ -258,8 +261,6 @@ if(isset($_POST['submit'])) {
               </input>
           </form>
 
-                        <h5 style="color: red;"> <?php echo $errMSG ?> </h5>
-                        <h5 style="color: green;" id="success"> <?php echo $successMSG ?> </h5>
 
       </div>
       <div class="footer">
