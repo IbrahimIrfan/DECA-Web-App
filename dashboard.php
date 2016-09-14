@@ -26,7 +26,7 @@ $exec = false;
  }elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com"){
    $exec = true;
    $clusterManaging = "Finance";
- }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq"){
+ }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq_paracha@hotmail.com"){
    $exec = true;
    $clusterManaging = "Marketing";
  }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
