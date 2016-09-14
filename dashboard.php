@@ -195,7 +195,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
 
             <?php if ($exec) {  ?>
-              <h4>Current Registration Status:<div color="green"> <?php
+              <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
                // select exams detail
                $res_users_abc=mysql_query("SELECT * FROM users");
               echo mysql_num_rows($res_users_abc);
