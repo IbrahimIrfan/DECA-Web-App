@@ -9,8 +9,6 @@
   exit;
  }
 
-$delete_request_abcd = mysql_query("DELETE FROM exams WHERE userId=520");
-
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
@@ -197,12 +195,14 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
         <br/>
 
             <?php if ($exec) {  ?>
-              <h4>Current Registration Status</h4>
+              <h4>Current Registration Status:<div color="green"> <?php
+               // select exams detail
+               $res_users_abc=mysql_query("SELECT * FROM users");
+              echo mysql_num_rows(mysql_fetch_array($res_users_abc));
+              ?></div></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">Name</td><td>Email</td><td>Event 1</td><td>Event 2</td><td>Event 3</td></tr></thead><tbody>
                 <?php
-                 // select exams detail
-                 $res_users_abc=mysql_query("SELECT * FROM users");
                             while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
                                 ?>
                                 <tr>
