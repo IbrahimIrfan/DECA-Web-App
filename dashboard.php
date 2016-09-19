@@ -37,6 +37,11 @@ $exec = false;
    $clusterManaging = "Business-Admin";
  }
 
+ if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
+   $exec = true;
+   $clusterManaging = "N/A"
+ }
+
 /*
  if ($userRow["userEventAssigned"] == "PBM" || $userRow["userEventAssigned"] == "PMK" ||$userRow["userEventAssigned"] == "PFN" || $userRow["userEventAssigned"] == "PHT"){
    $currentCluster = "Principles";
