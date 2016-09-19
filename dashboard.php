@@ -39,7 +39,7 @@ $exec = false;
 
  if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
    $exec = true;
-   $clusterManaging = "N/A"
+   $clusterManaging = "N/A";
  }
 
 /*
