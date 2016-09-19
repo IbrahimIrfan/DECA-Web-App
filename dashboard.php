@@ -8,6 +8,8 @@
   header("Location: login.php");
   exit;
  }
+ $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=517');
+   $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=517');
 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
