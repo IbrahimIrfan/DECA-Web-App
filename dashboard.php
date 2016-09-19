@@ -38,7 +38,7 @@ $exec = false;
  }
 
  if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
-   $exec = true;
+   $admin = true;
    $clusterManaging = "N/A";
  }
 
@@ -198,7 +198,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
 
         <br/>
 
-            <?php if ($exec) {  ?>
+            <?php if ($exec || $admin) {  ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
                // select exams detail
                $res_users_abc=mysql_query("SELECT * FROM users");
@@ -338,6 +338,8 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
                             ?>
                           </tbody>
               </table>
+              <?php }
+              if ($exec && !$admin) { ?>
                <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
                 <h5 style="color: red;"><?php echo $msg ?></h5>
               <form id="post_announcements" method="post">
