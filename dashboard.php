@@ -32,7 +32,7 @@ $exec = false;
  }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
    $exec = true;
    $clusterManaging = "Hospitality";
- }elseif ($userRow["userEmail"] == "natania" || $userRow["userEmail"] == "jennifer"){
+ }elseif ($userRow["userEmail"] == "nataniaolusanya@gmail.com" || $userRow["userEmail"] == "jennifer"){
    $exec = true;
    $clusterManaging = "Business-Admin";
  }
