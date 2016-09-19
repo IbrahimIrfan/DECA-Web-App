@@ -12,14 +12,17 @@ if(isset($_POST['submit'])) {
 
    if ($res){ ?>
     <h4>Success</h4>
-<?php }
+<?php } else {?>
+ <h4><?php echo mysql_error(); ?></h4>
+<?php
+  }
 }
 ?>
 
 <html>
 <body>
 <form method="post">
-      <input type="password" id="password" name="pass">New Password:</input>
+      New Password:<input type="password" id="password" name="pass">
       <input id="submit" name="submit" type="submit" value="Update"></input>
 </form>
 </body>
