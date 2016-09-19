@@ -26,9 +26,12 @@ $exec = false;
  }elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com"){
    $exec = true;
    $clusterManaging = "Finance";
- }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com" || $userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
+ }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com"){
    $exec = true;
-   $clusterManaging = "Marketing";
+   $clusterManaging = "Marketing-Teams";
+ }elseif ($userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
+   $exec = true;
+   $clusterManaging = "Marketing-Singles";
  }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
    $exec = true;
    $clusterManaging = "Hospitality";
@@ -47,10 +50,11 @@ $exec = false;
    $currentCluster = "Principles";
  } elseif ($userRow["userEventAssigned"] == "PFL" || $userRow["userEventAssigned"] == "ACT" ||$userRow["userEventAssigned"] == "FTDM" || $userRow["userEventAssigned"] == "BFS"){
    $currentCluster = "Finance";
- }elseif ($userRow["userEventAssigned"] == "BTDM" || $userRow["userEventAssigned"] == "MTDM" ||$userRow["userEventAssigned"] == "STDM" || $userRow["userEventAssigned"] == "AAM"||
-$userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"|| $userRow["userEventAssigned"] == "FMS"|| $userRow["userEventAssigned"] == "MMS"|| $userRow["userEventAssigned"] == "RMS"|| $userRow["userEventAssigned"] == "SEM"){
-  $currentCluster = "Marketing";
- }elseif ($userRow["userEventAssigned"] == "HLM" || $userRow["userEventAssigned"] == "QSRM" ||$userRow["userEventAssigned"] == "RFSM" || $userRow["userEventAssigned"] == "HTDM"|| $userRow["userEventAssigned"] == "TTDM"){
+ }elseif ($userRow["userEventAssigned"] == "BTDM" || $userRow["userEventAssigned"] == "MTDM" ||$userRow["userEventAssigned"] == "STDM"){
+  $currentCluster = "Marketing-Teams";
+  }elseif ($userRow["userEventAssigned"] == "AAM"|| $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"|| $userRow["userEventAssigned"] == "FMS"|| $userRow["userEventAssigned"] == "MMS"|| $userRow["userEventAssigned"] == "RMS"|| $userRow["userEventAssigned"] == "SEM"){
+  $currentCluster = "Marketing-Singles";
+}elseif ($userRow["userEventAssigned"] == "HLM" || $userRow["userEventAssigned"] == "QSRM" ||$userRow["userEventAssigned"] == "RFSM" || $userRow["userEventAssigned"] == "HTDM"|| $userRow["userEventAssigned"] == "TTDM"){
    $currentCluster = "Hospitality";
  }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
    $currentCluster = "Business-Admin";
@@ -63,7 +67,7 @@ $userRow["userEventAssigned"] == "AASM"|| $userRow["userEventAssigned"] == "BSM"
    $homework= "Finance_1_Whole_Homework.php";
  }elseif ($currentCluster == "Business-Admin") {
    $homework= "Business-Admin_1_Whole_Homework.php";
- }elseif ($currentCluster == "Marketing") {
+ }elseif ($currentCluster == "Marketing-Teams" || $currentCluster == "Marketing-Singles") {
    $homework= "Marketing_1_Whole_Homework.php";
  }elseif ($currentCluster == "Hospitality") {
    $homework= "Hospitality_1_Whole_Homework.php";
