@@ -3,11 +3,16 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 
+if( !isset($_SESSION['user']) ) {
+ header("Location: login.php");
+ exit;
+}
+
 if(isset($_POST['submit'])) {
    $upass = strip_tags(trim($_POST['pass']));
 
    $password = hash('sha256', $upass);
-  $query = "UPDATE users SET password='$password' WHERE userId=".$_SESSION['user'];
+  $query = "UPDATE users SET userPass='$password' WHERE userId=".$_SESSION['user'];
   $res = mysql_query($query);
 
    if ($res){ ?>
