@@ -48,7 +48,7 @@ var events = {
                 }
             }
         }
-    },
+    },/*
     "Team Decision": {
         0: {
             "name": "Business Management and Administration",
@@ -119,7 +119,7 @@ var events = {
                 }
             }
         }
-    },
+    },*/
     "Individual": {
         0: {
             "name": "Business Management and Administration",
@@ -246,9 +246,6 @@ for (var idx in events) {
     for (var i in events[idx]) {
         for (var j in events[idx][i].events) {
           var eventLabel = '<option>' + events[idx][i].events[j].name + ' ('+events[idx][i].events[j].code+')';
-          if (events[idx][i].events[j].type == "Team Decision"){
-            eventLabel += ' * partner event';
-          }
             $('#event1').append(eventLabel);
             $('#event2').append(eventLabel);
             $('#event3').append(eventLabel);
