@@ -29,7 +29,7 @@ $exec = false;
  }elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com"){
    $exec = true;
    $clusterManaging = "Marketing-Teams";
- }elseif ($userRow["userEmail"] == "sophie" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
+ }elseif ($userRow["userEmail"] == "sohpeiwu@gmail.com" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
    $exec = true;
    $clusterManaging = "Marketing-Singles";
  }elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
