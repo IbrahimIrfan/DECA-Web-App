@@ -185,8 +185,6 @@ $exec = false;
 
     <br/>
 
-
-
     <div class="content">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="140"/>
