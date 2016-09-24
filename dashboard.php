@@ -204,7 +204,7 @@ $exec = false;
              $res_efiuwhfwuf=mysql_query("SELECT * FROM users");
              $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
 
-             for ($x = 1; $x <= 700; $x++) {
+             for ($x = 2; $x <= 700; $x++) {
                if ($userRow_efiuwhfwuf["userEventAssigned"] == "PBM" || $userRow_efiuwhfwuf["userEventAssigned"] == "PMK" ||$userRow_efiuwhfwuf["userEventAssigned"] == "PFN" || $userRow_efiuwhfwuf["userEventAssigned"] == "PHT"){
                $cluster_qqqq = "Principles";
              } elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "PFL" || $userRow_efiuwhfwuf["userEventAssigned"] == "ACT" ||$userRow_efiuwhfwuf["userEventAssigned"] == "FTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "BFS"){
