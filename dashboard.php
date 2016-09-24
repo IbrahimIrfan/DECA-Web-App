@@ -244,11 +244,7 @@ $exec = false;
                             </tbody>
                             </table>
 
-              <h4> Exam Scores for <?php echo $clusterManaging; ?><div style="color: green; display: inline;"> <?php
-                 // select exams detail
-                 $res_users_abcfejkfenfe=mysql_query("SELECT * FROM exams");
-                echo mysql_num_rows($res_users_abcfejkfenfe);
-                ?></h4>
+              <h4> Exam Scores for <?php echo $clusterManaging; ?></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
               <?php
