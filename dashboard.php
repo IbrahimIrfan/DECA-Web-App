@@ -295,6 +295,10 @@ $exec = false;
               ?>
               <h4>Success</h4>
               <?php
+            } else {
+              ?>
+              <h4>-</h4>
+              <?php
             }
             if ($exec || $admin) {
               ?>
