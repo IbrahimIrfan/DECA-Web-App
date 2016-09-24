@@ -4,7 +4,7 @@
  require_once 'dbconnect.php';
 
 
- $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=3 VALUES ('STDM')");
+ $add_event = mysql_query("INSERT INTO users(userEvent) WHERE userId=3 VALUES ('STDM')");
 
  /*
  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
