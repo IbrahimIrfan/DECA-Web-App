@@ -287,11 +287,6 @@ $exec = false;
         <br/>
 
             <?php
-
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=591");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PFL' WHERE userId=589");
-
-
             if ($exec || $admin) {
               ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php

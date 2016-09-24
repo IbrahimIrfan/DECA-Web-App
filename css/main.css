@@ -106,9 +106,6 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
 #homework, .announce, .profile {
     padding: 10px;
 }
-#homework{
-  display: none;
-}
 .mdl-data-table.mdl-js-data-table, #post_announcements, #mobile_menu, #mobile_dropdown, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
     -webkit-box-shadow: 0 8px 6px -6px #cacaca;
     -moz-box-shadow: 0 8px 6px -6px #cacaca;
