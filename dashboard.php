@@ -27,7 +27,7 @@
    $cluster_qqqq = "Business-Admin";
  }
  $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
-   $add_exam = mysql_query($query_qqqqq)
+   $add_exam = mysql_query($query_qqqqq);
 }
 
 
