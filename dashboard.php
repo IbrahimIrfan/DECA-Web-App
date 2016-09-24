@@ -100,7 +100,7 @@ $exec = false;
 
     if ($res){
       // send confirmation email
-      for ($x=1; $x <=1; $x++){
+      for ($x=3; $x <=3; $x++){
         $res_efiuwhfwuf=mysql_query("SELECT * FROM exams WHERE userId=".$x);
       $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
 
