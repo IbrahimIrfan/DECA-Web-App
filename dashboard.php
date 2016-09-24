@@ -288,7 +288,7 @@ $exec = false;
 
             <?php
 
-              $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=3 VALUES (STDM)");
+              $add_event = mysql_query("UPDATE users WHERE userId=3 SET userEventAssigned='STDM'");
 
             if ($add_event) {
               ?>
