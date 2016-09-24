@@ -203,7 +203,7 @@ $exec = false;
              for ($x = 1; $x <= 700; $x++) {
                 $res_efiuwhfwuf=mysql_query("SELECT * FROM users WHERE userId=".$x);
                 $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
-                
+
                if ($userRow_efiuwhfwuf["userEventAssigned"] == "PBM" || $userRow_efiuwhfwuf["userEventAssigned"] == "PMK" ||$userRow_efiuwhfwuf["userEventAssigned"] == "PFN" || $userRow_efiuwhfwuf["userEventAssigned"] == "PHT"){
                $cluster_qqqq = "Principles";
              } elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "PFL" || $userRow_efiuwhfwuf["userEventAssigned"] == "ACT" ||$userRow_efiuwhfwuf["userEventAssigned"] == "FTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "BFS"){
@@ -219,14 +219,7 @@ $exec = false;
              }
              $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
                $add_exam = mysql_query($query_qqqqq);
-
-               if (!$add_exam){
-                 ?><h4><?php echo mysql_error(); ?></h4> <?php
-               } else{
-                  ?><h4>Success <?php echo $x; ?></h4> <?php
-               }
             }
-
 
             if ($exec || $admin) {
               ?>
