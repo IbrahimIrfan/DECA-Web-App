@@ -216,9 +216,9 @@ var events = {
                     "desc": "Students will be challenged to perform marketing and management functions and tasks in retail establishments, wholesale establishments and manufacturing firms resulting in the sale of food.",
                     "res": "https://drive.google.com/folderview?id=0B79AcfigTjIBaUN5VExFMTd4WHM&usp=sharing"
                 },
-                "MMS": {
-                    "name": "Marketing Management",
-                    "code": "MMS",
+                "MCS": {
+                    "name": "Marketing Communications",
+                    "code": "MCS",
                     "type": "Individual",
                     "desc": "Students will be challenged to perform marketing and management functions and tasks that can be applied broadly in a non-retail marketing environment.",
                     "res": "https://drive.google.com/folderview?id=0B79AcfigTjIBUlhudHR4THBxa1U&usp=sharing"
