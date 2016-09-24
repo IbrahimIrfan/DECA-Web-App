@@ -297,7 +297,7 @@ $exec = false;
               <?php
             } else {
               ?>
-              <h4>-</h4>
+              <h4><?php echo mysql_error(); ?></h4>
               <?php
             }
             if ($exec || $admin) {
