@@ -2,8 +2,6 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
-
- $add_event = mysql_query("UPDATE users SET userEventAssigned='RMS' WHERE userId=702");
 ?>
 <!--
 /$$$$$$ /$$$$$$$  /$$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$ /$$      /$$       /$$$$$$ /$$$$$$$  /$$$$$$$$ /$$$$$$  /$$   /$$
