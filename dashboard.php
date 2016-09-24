@@ -212,7 +212,9 @@ $exec = false;
                             while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
                                 ?>
                                 <tr>
-                                <td><?php echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
+                                <td><?php
+                                echo $abcd["userId"];
+                                echo " "; echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
                                 <td><?php echo $abcd['userEmail'];  ?></td>
                                 <td><?php echo strtok($abcd['userEvent1'], '*');  ?></td>
                                 <td><?php echo strtok($abcd['userEvent2'], '*');  ?></td>
@@ -243,8 +245,6 @@ $exec = false;
                                 <?php
                             $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
                             $user_exams=mysql_fetch_array($res_users);
-                            echo $abc["userId"];
-                            echo " ";
                               echo $user_exams["userFName"];
                               echo " ";
                               echo $user_exams["userLName"]; ?></td>
