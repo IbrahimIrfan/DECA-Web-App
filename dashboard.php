@@ -288,36 +288,36 @@ $exec = false;
 
             <?php
 
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=591");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PFN' WHERE userId=590");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PHT' WHERE userId=598");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PMK' WHERE userId=640");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='BLTDM' WHERE userId=584");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='BLTDM' WHERE userId=585");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='BTDM' WHERE userId=546");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='BTDM' WHERE userId=547");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='FTDM' WHERE userId=523");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='FTDM' WHERE userId=524");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='HTDM' WHERE userId=569");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='HTDM' WHERE userId=572");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='MTDM' WHERE userId=592");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='MTDM' WHERE userId=597");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='STDM' WHERE userId=629");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='STDM' WHERE userId=630");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='TTDM' WHERE userId=606");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='TTDM' WHERE userId=607");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='HLM' WHERE userId=671");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='QSRM' WHERE userId=687");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='RFSM' WHERE userId=689");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='AAM' WHERE userId=695");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='FMS' WHERE userId=605");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='MCS' WHERE userId=618");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='RMS' WHERE userId=586");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='SEM' WHERE userId=588");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='ACT' WHERE userId=673");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='BFS' WHERE userId=554");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='PFL' WHERE userId=574");
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='HRM' WHERE userId=530");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=626");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PFN' WHERE userId=668");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PHT' WHERE userId=535");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PMK' WHERE userId=634");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='BLTDM' WHERE userId=637");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='BLTDM' WHERE userId=638");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='BTDM' WHERE userId=510");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='BTDM' WHERE userId=577");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='FTDM' WHERE userId=635");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='FTDM' WHERE userId=636");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='HTDM' WHERE userId=563");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='HTDM' WHERE userId=568");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='MTDM' WHERE userId=593");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='MTDM' WHERE userId=620");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='STDM' WHERE userId=573");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='STDM' WHERE userId=562");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='TTDM' WHERE userId=599");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='TTDM' WHERE userId=603");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='HLM' WHERE userId=566");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='QSRM' WHERE userId=663");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='RFSM' WHERE userId=655");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='AAM' WHERE userId=624");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='FMS' WHERE userId=565");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='MCS' WHERE userId=633");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='RMS' WHERE userId=532");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='SEM' WHERE userId=666");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='ACT' WHERE userId=571");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='BFS' WHERE userId=627");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PFL' WHERE userId=628");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='HRM' WHERE userId=632");
 
 
             if ($exec || $admin) {
