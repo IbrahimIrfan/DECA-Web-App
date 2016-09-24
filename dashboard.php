@@ -222,7 +222,7 @@ $exec = false;
                if (!$add_exam){
                  ?><h4><?php echo mysql_error(); ?></h4> <?php
                } else{
-                  ?><h4>Success <?php echo $userRow_efiuwhfwuf["userFName"]; ?></h4> <?php
+                  ?><h4>Success <?php echo $x; ?></h4> <?php
                }
             }
 
