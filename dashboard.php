@@ -288,7 +288,7 @@ $exec = false;
 
             <?php
 
-              $add_event = mysql_query("UPDATE users SET userEventAssigned='FTDM' WHERE userId=1");
+              $add_event = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=540");
 
             if ($add_event) {
               ?>
@@ -334,7 +334,7 @@ $exec = false;
 
                // select exams detail
                $res=mysql_query("SELECT * FROM exams");
-              // $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
+            //   $res=mysql_query("SELECT * FROM exams WHERE cluster='".$clusterManaging."'");
                           while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
                               ?>
                               <tr>
