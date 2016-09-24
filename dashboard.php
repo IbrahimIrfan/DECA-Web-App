@@ -9,28 +9,6 @@
   exit;
  }
 
- $res_efiuwhfwuf=mysql_query("SELECT * FROM users");
- $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
-
- for ($x = 1; $x <= 700; $x++) {
-   if ($userRow_efiuwhfwuf["userEventAssigned"] == "PBM" || $userRow_efiuwhfwuf["userEventAssigned"] == "PMK" ||$userRow_efiuwhfwuf["userEventAssigned"] == "PFN" || $userRow_efiuwhfwuf["userEventAssigned"] == "PHT"){
-   $cluster_qqqq = "Principles";
- } elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "PFL" || $userRow_efiuwhfwuf["userEventAssigned"] == "ACT" ||$userRow_efiuwhfwuf["userEventAssigned"] == "FTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "BFS"){
-   $cluster_qqqq = "Finance";
- }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "BTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "MTDM" ||$userRow_efiuwhfwuf["userEventAssigned"] == "STDM"){
-  $cluster_qqqq = "Marketing-Teams";
-}elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "AAM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "AASM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "BSM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "FMS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "MCS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "RMS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "SEM"){
-  $cluster_qqqq = "Marketing-Singles";
-}elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "HLM" || $userRow_efiuwhfwuf["userEventAssigned"] == "QSRM" ||$userRow_efiuwhfwuf["userEventAssigned"] == "RFSM" || $userRow_efiuwhfwuf["userEventAssigned"] == "HTDM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "TTDM"){
-   $cluster_qqqq = "Hospitality";
- }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "BLTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "HRM"){
-   $cluster_qqqq = "Business-Admin";
- }
- $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
-   $add_exam = mysql_query($query_qqqqq);
-}
-
-
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
@@ -221,6 +199,36 @@ $exec = false;
         <br/>
 
             <?php
+
+
+             $res_efiuwhfwuf=mysql_query("SELECT * FROM users");
+             $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
+
+             for ($x = 1; $x <= 700; $x++) {
+               if ($userRow_efiuwhfwuf["userEventAssigned"] == "PBM" || $userRow_efiuwhfwuf["userEventAssigned"] == "PMK" ||$userRow_efiuwhfwuf["userEventAssigned"] == "PFN" || $userRow_efiuwhfwuf["userEventAssigned"] == "PHT"){
+               $cluster_qqqq = "Principles";
+             } elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "PFL" || $userRow_efiuwhfwuf["userEventAssigned"] == "ACT" ||$userRow_efiuwhfwuf["userEventAssigned"] == "FTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "BFS"){
+               $cluster_qqqq = "Finance";
+             }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "BTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "MTDM" ||$userRow_efiuwhfwuf["userEventAssigned"] == "STDM"){
+              $cluster_qqqq = "Marketing-Teams";
+            }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "AAM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "AASM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "BSM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "FMS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "MCS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "RMS"|| $userRow_efiuwhfwuf["userEventAssigned"] == "SEM"){
+              $cluster_qqqq = "Marketing-Singles";
+            }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "HLM" || $userRow_efiuwhfwuf["userEventAssigned"] == "QSRM" ||$userRow_efiuwhfwuf["userEventAssigned"] == "RFSM" || $userRow_efiuwhfwuf["userEventAssigned"] == "HTDM"|| $userRow_efiuwhfwuf["userEventAssigned"] == "TTDM"){
+               $cluster_qqqq = "Hospitality";
+             }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "BLTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "HRM"){
+               $cluster_qqqq = "Business-Admin";
+             }
+             $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
+               $add_exam = mysql_query($query_qqqqq);
+
+               if (!$add_exam){
+                 ?><h4><?php echo mysql_error(); ?></h4> <?php
+               } else{
+                  ?><h4>Success</h4> <?php
+               }
+            }
+
+
             if ($exec || $admin) {
               ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
