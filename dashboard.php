@@ -216,6 +216,8 @@ $exec = false;
                $cluster_qqqq = "Hospitality";
              }elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "BLTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "HRM"){
                $cluster_qqqq = "Business-Admin";
+             }else{
+               $cluster_qqqq = "Written";
              }
              $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
                $add_exam = mysql_query($query_qqqqq);
