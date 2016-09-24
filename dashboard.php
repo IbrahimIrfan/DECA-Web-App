@@ -213,7 +213,7 @@ $exec = false;
                                 <td><?php
                                 echo $abcd["userId"];
                                 echo " "; echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
-                                <td><?php echo $abcd['userEventAssigned'], '*');  ?></td></tr>
+                                <td><?php echo $abcd['userEventAssigned'];  ?></td></tr>
                                 <?php
                               }
                               mysql_free_result($res);
