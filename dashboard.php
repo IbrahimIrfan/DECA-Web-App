@@ -289,7 +289,15 @@ $exec = false;
 
         <br/>
 
-            <?php if ($exec || $admin) {  ?>
+            <?php
+
+            if ($add_event) {
+              ?>
+              <h4>Success</h4>
+              <?php
+            }
+            if ($exec || $admin) {
+              ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
                // select exams detail
                $res_users_abc=mysql_query("SELECT * FROM users");
