@@ -8,7 +8,7 @@
   header("Location: login.php");
   exit;
  }
-
+/*
  $res_efiuwhfwuf=mysql_query("SELECT * FROM users");
  $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
 
@@ -27,7 +27,7 @@
    $cluster_qqqq = "Business-Admin";
  }
    $add_exam = mysql_query("UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x)
-}
+} */
 
 
  $deleteId = $_GET['delId'];
