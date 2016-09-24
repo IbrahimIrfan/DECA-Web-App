@@ -540,10 +540,10 @@ $exec = false;
 
 <script type="text/javascript" src="js/menu.js"></script>
               <script type="text/javascript">
-              var user_event_1 = "<?php echo $userRow['userEvent1']; ?>";
-              var user_event_code = user_event_1.substring(user_event_1.lastIndexOf("(")+1,user_event_1.lastIndexOf(")"));
+              var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
+              var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
 
-              document.getElementById('event_assigned_code').innerHTML = "Event TBD";
+              document.getElementById('event_assigned_code').innerHTML = user_event;
               </script>
 
 
