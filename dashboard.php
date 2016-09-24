@@ -100,11 +100,13 @@ $exec = false;
 
     if ($res){
       // send confirmation email
-      for ($x=3; $x <=3; $x++){
-        $res_efiuwhfwuf=mysql_query("SELECT * FROM exams WHERE userId=".$x);
-      $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
+      for ($x=1; $x <=3; $x++){
+        $res_eee=mysql_query("SELECT * FROM exams WHERE userId=".$x);
+      $userRow_eee=mysql_fetch_array($res_eee);
+        $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$x);
+      $userRow_eee2=mysql_fetch_array($res_eee2);
 
-      if ($userRow_efiuwhfwuf['cluster'] == $clusterManaging){
+      if ($userRow_eee['cluster'] == $clusterManaging){
       $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
       require 'PHPMailer/PHPMailerAutoload.php';
@@ -120,7 +122,7 @@ $exec = false;
       $mail->Port = 587;
 
       $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
-      $mail->addAddress($userRow_efiuwhfwuf["userEmail"]);               // recipient
+      $mail->addAddress($userRow_eee2["userEmail"]);               // recipient
 
       $mail->isHTML(true);           // Set email format to HTML
 
