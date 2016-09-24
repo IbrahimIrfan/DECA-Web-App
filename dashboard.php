@@ -205,7 +205,7 @@ $exec = false;
               echo mysql_num_rows($res_users_abc);
               ?></div></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
-              <tr><td width="100%">Name</td><td>Email</td><td>Event 1</td><td>Event 2</td><td>Event 3</td></tr></thead><tbody>
+              <tr><td width="100%">Name</td>Event</td></tr></thead><tbody>
                 <?php
                             while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
                                 ?>
@@ -213,10 +213,7 @@ $exec = false;
                                 <td><?php
                                 echo $abcd["userId"];
                                 echo " "; echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
-                                <td><?php echo $abcd['userEmail'];  ?></td>
-                                <td><?php echo strtok($abcd['userEvent1'], '*');  ?></td>
-                                <td><?php echo strtok($abcd['userEvent2'], '*');  ?></td>
-                                <td><?php echo strtok($abcd['userEvent3'], '*');  ?></td></tr>
+                                <td><?php echo $abcd['userEventAssigned'], '*');  ?></td></tr>
                                 <?php
                               }
                               mysql_free_result($res);
