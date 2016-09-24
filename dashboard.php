@@ -224,7 +224,7 @@ $exec = false;
                if (!$add_exam){
                  ?><h4><?php echo mysql_error(); ?></h4> <?php
                } else{
-                  ?><h4>Success</h4> <?php
+                  ?><h4>Success <?php echo $cluster_qqqq; ?></h4> <?php
                }
             }
 
