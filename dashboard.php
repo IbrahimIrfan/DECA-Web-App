@@ -9,6 +9,97 @@
   exit;
  }
 
+
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=3 VALUES ('STDM')");
+
+  /*
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+  $add_event = mysql_query("INSERT INTO users(userEventAssigned) WHERE userId=1 VALUES ('PBM')");
+ */
+
+
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
