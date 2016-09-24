@@ -38,11 +38,11 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 
     if ($res){
       // send confirmation email
-      for ($x=1; $x <=1; $x++){
+      for ($x=3; $x <=3; $x++){
         $res_efiuwhfwuf=mysql_query("SELECT * FROM users WHERE userId=".$x);
       $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
 
-      $emailbody = "A new DECA announcement was posted:\n\n".$title."\n".$body."\n\nMore announcements: www.irhsdeca.com/announcements.php\n\n- The IRHS DECA Team";
+      $emailbody = "A new DECA announcement was posted:<br><br>".$title."<br>".$body."<br><br>More announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
       require 'PHPMailer/PHPMailerAutoload.php';
 
