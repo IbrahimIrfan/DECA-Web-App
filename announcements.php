@@ -135,6 +135,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 
        if (!$error){
          $new_body = str_replace("'", "''", "$body");
+           $new_body = str_replace("\n", "", "$new_body");
          $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
          $res = mysql_query($query);
          if ($res){
@@ -142,7 +143,8 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
              for ($x = 1; $x <= 750; $x++) {
                $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
                $userRow_eee=mysql_fetch_array($res_eee);
-                   echo '<script>
+
+             echo '<script>
                    var data_to_post = {
                      "title": "'.$title.'",
                      "body": "'.$body.'",
@@ -160,8 +162,8 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
                    console.log("error " + r);
                     }
                   });</script>';
-              }
             }
+          }
 
             }
            } ?>
