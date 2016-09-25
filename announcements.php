@@ -117,7 +117,54 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
   </div>
       </br>
 
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+      <script type="text/javascript" src="js/menu.js"></script>
+      <?php
+      if(isset($_POST['submit'])) {
 
+       $title = strip_tags(trim($_POST['title']));
+       $body = strip_tags(trim($_POST['body']));
+
+       $error = false;
+
+       if (empty($title) || empty($body)){
+         $error = true;
+         $msg = "You must complete all fields.";
+       }
+
+       if (!$error){
+         $new_body = str_replace("'", "''", "$body");
+         $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
+         $res = mysql_query($query);
+             if ($res){
+
+                 for ($x = 1; $x <= 1; $x++) {
+                   $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
+                   $userRow_eee=mysql_fetch_array($res_eee);
+
+                       echo '<script>
+                       var data_to_post = {
+                         "title": "'.$title.'",
+                         "body": "'.$body.'",
+                         "cm": "'.$clusterManaging.'",
+                         "email": "'.$userRow_eee['userEmail'].'"
+                       }
+                       $.ajax({
+                       type: "POST",
+                       url: "email.php",
+                       data: data_to_post,
+                       success: function(r){
+                       console.log("success " + r);
+                       },
+                       error: function(r) {
+                       console.log("error " + r);
+                        }
+                      });</script>';
+                  }
+                }
+            }
+           } ?>
 <div class="content">
 <h4>Chapter Wide Announcements</h4>
 
@@ -174,53 +221,6 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 </div>
 </body>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
-<?php
-if(isset($_POST['submit'])) {
 
- $title = strip_tags(trim($_POST['title']));
- $body = strip_tags(trim($_POST['body']));
-
- $error = false;
-
- if (empty($title) || empty($body)){
-   $error = true;
-   $msg = "You must complete all fields.";
- }
-
- if (!$error){
-   $new_body = str_replace("'", "''", "$body");
-   $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
-   $res = mysql_query($query);
-       if ($res){
-
-           for ($x = 1; $x <= 1; $x++) {
-             $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
-             $userRow_eee=mysql_fetch_array($res_eee);
-
-                 echo '<script>
-                 var data_to_post = {
-                   "title": "'.$title.'",
-                   "body": "'.$body.'",
-                   "cm": "'.$clusterManaging.'",
-                   "email": "'.$userRow_eee['userEmail'].'"
-                 }
-                 $.ajax({
-                 type: "POST",
-                 url: "email.php",
-                 data: data_to_post,
-                 success: function(r){
-                 console.log("success " + r);
-                 },
-                 error: function(r) {
-                 console.log("error " + r);
-                  }
-                });</script>';
-            }
-          }
-      }
-     } ?>
 
 </html>
