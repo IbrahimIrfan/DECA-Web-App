@@ -387,24 +387,24 @@ $exec = false;
                         }
 
                         if ($currentCluster_eee == $clusterManaging){
-                            echo '<script>
-                            var data_to_post = {
-                              "title": "'.$title.'",
-                              "body": "'.$body.'",
-                              "cm": "'.$clusterManaging.'",
-                              "email": "'.$userRow_eee['userEmail'].'"
-                            }
-                            $.ajax({
-                            type: "POST",
-                            url: "email.php",
-                            data: data_to_post,
-                            success: function(r){
-                            console.log("success " + r);
-                            },
-                            error: function(r) {
-                            console.log("error " + r);
-                             }
-                           });</script>';
+                            echo '<script>'.
+                            'var data_to_post = {'.
+                              '"title": "'.$title.'",'.
+                              '"body": "'.$body.'",'.
+                              '"cm": "'.$clusterManaging.'",'.
+                              '"email": "'.$userRow_eee['userEmail'].'"'.
+                            '}'.
+                            '$.ajax({'.
+                            'type: "POST",'.
+                            'url: "email.php",'.
+                            'data: data_to_post,'.
+                            'success: function(r){'.
+                            'console.log("success " + r);'.
+                            '},'.
+                            'error: function(r) {'.
+                            'console.log("error " + r);'.
+                             '}'.
+                           '});</script>';
                        }
                      }
                    }
