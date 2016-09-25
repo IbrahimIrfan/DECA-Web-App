@@ -101,8 +101,11 @@ $exec = false;
 
     if ($res){
       $res_eee = mysql_query("SELECT * FROM users");
+      $msg = "";
 
       while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
+
+        $msg = $msg . " ". $userRow_eee["userEventAssigned"];
 
         if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
           $currentCluster_eee = "Principles";
@@ -416,7 +419,7 @@ $exec = false;
               </table>
               <?php }
               if ($exec && !$admin) { ?>
-               <h4><?php echo $clusterManaging; echo " Announcements"; ?></h4>
+               <h4><?php echo $clusterManaging; echo " Announcements "; echo $msg; ?></h4>
                 <h5 style="color: red;"><?php echo $msg ?></h5>
               <form id="post_announcements" method="post">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
