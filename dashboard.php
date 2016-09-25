@@ -9,6 +9,9 @@
   exit;
  }
 
+$delete_account = mysql_query('DELETE FROM users WHERE userId=694');
+$delete_account_2 = mysql_query('DELETE FROM exams WHERE userId=694');
+
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
