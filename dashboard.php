@@ -100,45 +100,45 @@ $exec = false;
     $res = mysql_query($query);
 
     if ($res){
-      // send confirmation email
-      for ($x=1; $x <=3; $x++){
-        $res_eee=mysql_query("SELECT * FROM exams WHERE userId=".$x);
-      $userRow_eee=mysql_fetch_array($res_eee);
-        $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$x);
-      $userRow_eee2=mysql_fetch_array($res_eee2);
 
-    //  if ($userRow_eee['cluster'] == $clusterManaging){
-      $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
+      $res_eee = mysql_query("SELECT * FROM exams");
 
-      require 'PHPMailer/PHPMailerAutoload.php';
+      while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
+          $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$userRow_eee['userId']);
+        $userRow_eee2=mysql_fetch_array($res_eee2);
 
-      $mail = new PHPMailer;
+        if ($userRow_eee['userId'] == 1){
+         $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
-      $mail->isSMTP();
-      $mail->Host = 'smtp.gmail.com';
-      $mail->SMTPAuth = true;
-      $mail->Username = 'irhsdeca2016@gmail.com';
-      $mail->Password = 'DECA2016';
-      $mail->SMTPSecure = 'tls';
-      $mail->Port = 587;
+         require 'PHPMailer/PHPMailerAutoload.php';
 
-      $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
-      $mail->addAddress($userRow_eee2["userEmail"]);               // recipient
+         $mail = new PHPMailer;
 
-      $mail->isHTML(true);           // Set email format to HTML
+         $mail->isSMTP();
+         $mail->Host = 'smtp.gmail.com';
+         $mail->SMTPAuth = true;
+         $mail->Username = 'irhsdeca2016@gmail.com';
+         $mail->Password = 'DECA2016';
+         $mail->SMTPSecure = 'tls';
+         $mail->Port = 587;
 
-      $mail->Subject = 'New DECA Announcement: '. $title;
-      $mail->Body    = $emailbody;
+         $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
+         $mail->addAddress($userRow_eee2["userEmail"]);               // recipient
 
-      if(!$mail->send()) {
-        $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
+         $mail->isHTML(true);           // Set email format to HTML
+
+         $mail->Subject = 'New DECA Announcement: '. $title;
+         $mail->Body    = $emailbody;
+
+         if(!$mail->send()) {
+           $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
+         }
+       }
       }
-  //  }
     }
 
   }
   }
-}
 
 ?>
 
