@@ -9,6 +9,9 @@
   exit;
  }
 
+$add_Event = mysql_query("UPDATE users SET userEventAssigned='HRM' WHERE userId=703");
+$add_Event2 = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=704");
+
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
