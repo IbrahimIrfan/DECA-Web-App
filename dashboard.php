@@ -98,7 +98,51 @@ $exec = false;
     $new_body = str_replace("'", "''", "$body");
     $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', '$clusterManaging')";
     $res = mysql_query($query);
-  }
+    if ($res){
+
+        for ($x = 1; $x <= 750; $x++) {
+          $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
+          $userRow_eee=mysql_fetch_array($res_eee);
+
+          if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
+            $currentCluster_eee = "Principles";
+          }elseif ($userRow_eee["userId"] == 1){
+            $currentCluster_eee = "Test";
+          }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
+            $currentCluster_eee = "Finance";
+          }elseif ($userRow_eee["userEventAssigned"] == "BTDM" || $userRow_eee["userEventAssigned"] == "MTDM" ||$userRow_eee["userEventAssigned"] == "STDM"){
+            $currentCluster_eee = "Marketing-Teams";
+          }elseif ($userRow_eee["userEventAssigned"] == "AAM"|| $userRow_eee["userEventAssigned"] == "AASM"|| $userRow_eee["userEventAssigned"] == "BSM"|| $userRow_eee["userEventAssigned"] == "FMS"|| $userRow_eee["userEventAssigned"] == "MCS"|| $userRow_eee["userEventAssigned"] == "RMS"|| $userRow_eee["userEventAssigned"] == "SEM"){
+            $currentCluster_eee = "Marketing-Singles";
+          }elseif ($userRow_eee["userEventAssigned"] == "HLM" || $userRow_eee["userEventAssigned"] == "QSRM" ||$userRow_eee["userEventAssigned"] == "RFSM" || $userRow_eee["userEventAssigned"] == "HTDM"|| $userRow_eee["userEventAssigned"] == "TTDM"){
+            $currentCluster_eee = "Hospitality";
+          }elseif ($userRow_eee["userEventAssigned"] == "BLTDM" || $userRow_eee["userEventAssigned"] == "HRM"){
+            $currentCluster_eee = "Business-Admin";
+          }
+
+          if ($currentCluster_eee == "Test"){
+              echo '<script>
+              var data_to_post = {
+                "title": "'.$title.'",
+                "body": "'.$body.'",
+                "cm": "'.$clusterManaging.'",
+                "email": "'.$userRow_eee['userEmail'].'"
+              }
+              $.ajax({
+              type: "POST",
+              url: "email.php",
+              data: data_to_post,
+              success: function(r){
+              console.log("success " + r);
+              },
+              error: function(r) {
+              console.log("error " + r);
+               }
+             });</script>';
+         }
+       }
+     }
+   }
   }
 
 ?>
