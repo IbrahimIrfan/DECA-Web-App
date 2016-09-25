@@ -107,10 +107,9 @@ $exec = false;
         $userRow_eee2=mysql_fetch_array($res_eee2);
 
         if ($res_eee2){
-          $msg = $userRow_eee['userId'];
+          $msg = $userRow_eee2['userId'];
         }
 
-        if ($userRow_eee['userId'] == 1){
          $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
          require 'PHPMailer/PHPMailerAutoload.php';
@@ -126,6 +125,8 @@ $exec = false;
          $mail->Port = 587;
 
          $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
+
+        if ($userRow_eee['userId'] == 1){
          $mail->addAddress($userRow_eee2["userEmail"]);               // recipient
 
          $mail->isHTML(true);           // Set email format to HTML
