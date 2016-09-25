@@ -240,7 +240,7 @@ $exec = false;
 
             <?php
 
-             for ($x = 1; $x <= 700; $x++) {
+             for ($x = 1; $x <= 750; $x++) {
                 $res_efiuwhfwuf=mysql_query("SELECT * FROM users WHERE userId=".$x);
                 $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
 
