@@ -107,7 +107,7 @@ $exec = false;
         $userRow_eee2=mysql_fetch_array($res_eee2);
 
         if ($res_eee2){
-          $msg = $userRow_eee2['userId'];
+          $msg = $userRow_eee['userId'];
         }
 
          $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
