@@ -106,7 +106,7 @@ $exec = false;
 
         if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
           $currentCluster_eee = "Principles";
-        }elseif ($userRow_eee["userId"] == 1 || $userRow_eee["userId"] == 3){
+        }elseif ($userRow_eee["userId"] == 1){
           $currentCluster_eee = "Test";
         }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
           $currentCluster_eee = "Finance";
