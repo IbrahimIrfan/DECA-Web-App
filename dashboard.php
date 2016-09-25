@@ -100,13 +100,13 @@ $exec = false;
 
     if ($res){
       // send confirmation email
-      for ($x=1; $x <=750; $x++){
+      for ($x=1; $x <=1; $x++){
         $res_eee=mysql_query("SELECT * FROM exams WHERE userId=".$x);
       $userRow_eee=mysql_fetch_array($res_eee);
         $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$x);
       $userRow_eee2=mysql_fetch_array($res_eee2);
 
-      if ($userRow_eee['cluster'] == $clusterManaging){
+      if ($userRow_eee['cluster'] == "Finance"){
       $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
       require 'PHPMailer/PHPMailerAutoload.php';
