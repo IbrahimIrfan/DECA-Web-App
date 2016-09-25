@@ -103,14 +103,24 @@ $exec = false;
       $res_eee = mysql_query("SELECT * FROM exams");
 
       while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
-          $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$userRow_eee['userId']);
-        $userRow_eee2=mysql_fetch_array($res_eee2);
 
-        if ($res_eee2){
-          $msg = $userRow_eee['userId'];
+        if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
+          $currentCluster_eee = "Principles";
+        } elseif ($userRow_eee["userId"] == 1){
+          $currentCluster_eee = "Test";
+        }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
+          $currentCluster_eee = "Finance";
+        }elseif ($userRow_eee["userEventAssigned"] == "BTDM" || $userRow_eee["userEventAssigned"] == "MTDM" ||$userRow_eee["userEventAssigned"] == "STDM"){
+         $currentCluster_eee = "Marketing-Teams";
+       }elseif ($userRow_eee["userEventAssigned"] == "AAM"|| $userRow_eee["userEventAssigned"] == "AASM"|| $userRow_eee["userEventAssigned"] == "BSM"|| $userRow_eee["userEventAssigned"] == "FMS"|| $userRow_eee["userEventAssigned"] == "MCS"|| $userRow_eee["userEventAssigned"] == "RMS"|| $userRow_eee["userEventAssigned"] == "SEM"){
+         $currentCluster_eee = "Marketing-Singles";
+       }elseif ($userRow_eee["userEventAssigned"] == "HLM" || $userRow_eee["userEventAssigned"] == "QSRM" ||$userRow_eee["userEventAssigned"] == "RFSM" || $userRow_eee["userEventAssigned"] == "HTDM"|| $userRow_eee["userEventAssigned"] == "TTDM"){
+          $currentCluster_eee = "Hospitality";
+        }elseif ($userRow_eee["userEventAssigned"] == "BLTDM" || $userRow_eee["userEventAssigned"] == "HRM"){
+          $currentCluster_eee = "Business-Admin";
         }
 
-        if ($userRow_eee['userId'] == 1){
+        if ($currentCluster_eee == "Test"){
           $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
           require 'PHPMailer/PHPMailerAutoload.php';
