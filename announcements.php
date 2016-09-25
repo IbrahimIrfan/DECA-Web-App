@@ -33,7 +33,8 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
   }
 
   if (!$error){
-    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', 'Chapter')";
+    $new_body = str_replace("'", "''", "$body");
+    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
     $res = mysql_query($query);
 
     if ($res){

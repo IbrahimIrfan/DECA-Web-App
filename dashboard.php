@@ -95,8 +95,8 @@ $exec = false;
   }
 
   if (!$error){
-    $body = str_replace("'", "''", "$body");
-    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
+    $new_body = str_replace("'", "''", "$body");
+    $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', '$clusterManaging')";
     $res = mysql_query($query);
 
     if ($res){
@@ -107,7 +107,7 @@ $exec = false;
         $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$x);
       $userRow_eee2=mysql_fetch_array($res_eee2);
 
-      if ($userRow_eee['cluster'] == "Finance"){
+      if ($userRow_eee['cluster'] == $clusterManaging){
       $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
       require 'PHPMailer/PHPMailerAutoload.php';
