@@ -106,7 +106,11 @@ $exec = false;
           $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$userRow_eee['userId']);
         $userRow_eee2=mysql_fetch_array($res_eee2);
 
-        if ($userRow_eee2['userId'] == 1 || $userRow_eee2['userId'] == 3){
+        if ($res_eee2){
+          $msg = $userRow_eee['userId'];
+        }
+
+        if ($userRow_eee['userId'] == 1){
          $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
          require 'PHPMailer/PHPMailerAutoload.php';
@@ -265,6 +269,7 @@ $exec = false;
             if ($exec || $admin) {
               ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
+              echo $msg;
                // select exams detail
                $res_users_abc=mysql_query("SELECT * FROM users");
               echo mysql_num_rows($res_users_abc);
