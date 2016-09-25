@@ -100,16 +100,14 @@ $exec = false;
     $res = mysql_query($query);
 
     if ($res){
-      $res_eee = mysql_query("SELECT * FROM users");
-      $msg = "";
 
-      while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
-
-        $msg = $msg . " ". $userRow_eee["userEventAssigned"];
+      for ($x = 1; $x <= 750; $x++) {
+         $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
+         $userRow_eee=mysql_fetch_array($res_eee);
 
         if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
           $currentCluster_eee = "Principles";
-        }elseif ($userRow_eee["userId"] == 1){
+        }elseif ($userRow_eee["userId"] == 1 || $userRow_eee["userId"] == 3){
           $currentCluster_eee = "Test";
         }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
           $currentCluster_eee = "Finance";
@@ -282,7 +280,6 @@ $exec = false;
             if ($exec || $admin) {
               ?>
               <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
-              echo $msg;
                // select exams detail
                $res_users_abc=mysql_query("SELECT * FROM users");
               echo mysql_num_rows($res_users_abc);
