@@ -106,7 +106,7 @@ $exec = false;
 
         if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
           $currentCluster_eee = "Principles";
-        } elseif ($userRow_eee["userId"] == 1){
+        }elseif ($userRow_eee["userId"] == 1){
           $currentCluster_eee = "Test";
         }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
           $currentCluster_eee = "Finance";
@@ -136,7 +136,7 @@ $exec = false;
           $mail->Port = 587;
 
           $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
-         $mail->addAddress($userRow_eee2["userEmail"]);               // recipient
+         $mail->addAddress($userRow_eee["userEmail"]);               // recipient
 
          $mail->isHTML(true);           // Set email format to HTML
 
