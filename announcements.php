@@ -137,32 +137,32 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
          $new_body = str_replace("'", "''", "$body");
          $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
          $res = mysql_query($query);
-             if ($res){
+         if ($res){
 
-                 for ($x = 1; $x <= 1; $x++) {
-                   $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
-                   $userRow_eee=mysql_fetch_array($res_eee);
+             for ($x = 1; $x <= 750; $x++) {
+               $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
+               $userRow_eee=mysql_fetch_array($res_eee);
+                   echo '<script>
+                   var data_to_post = {
+                     "title": "'.$title.'",
+                     "body": "'.$body.'",
+                     "cm": "Chapter",
+                     "email": "'.$userRow_eee['userEmail'].'"
+                   }
+                   $.ajax({
+                   type: "POST",
+                   url: "email.php",
+                   data: data_to_post,
+                   success: function(r){
+                   console.log("success " + r);
+                   },
+                   error: function(r) {
+                   console.log("error " + r);
+                    }
+                  });</script>';
+              }
+            }
 
-                       echo '<script>
-                       var data_to_post = {
-                         "title": "'.$title.'",
-                         "body": "'.$body.'",
-                         "cm": "'.$clusterManaging.'",
-                         "email": "'.$userRow_eee['userEmail'].'"
-                       }
-                       $.ajax({
-                       type: "POST",
-                       url: "email.php",
-                       data: data_to_post,
-                       success: function(r){
-                       console.log("success " + r);
-                       },
-                       error: function(r) {
-                       console.log("error " + r);
-                        }
-                      });</script>';
-                  }
-                }
             }
            } ?>
 <div class="content">
