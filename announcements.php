@@ -38,6 +38,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
     $res = mysql_query($query);
  }
 }
+}
 ?>
 
 <!--
