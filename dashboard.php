@@ -100,7 +100,7 @@ $exec = false;
     $res = mysql_query($query);
 
     if ($res){
-      $res_eee = mysql_query("SELECT * FROM exams");
+      $res_eee = mysql_query("SELECT * FROM users");
 
       while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
 
