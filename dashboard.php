@@ -9,9 +9,6 @@
   exit;
  }
 
-$delete_account = mysql_query('DELETE FROM users WHERE userId=694');
-$delete_account_2 = mysql_query('DELETE FROM exams WHERE userId=694');
-
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
@@ -138,7 +135,9 @@ $exec = false;
     }
     }
 
-    }
+  }else{
+    $error_ann = mysql_error();
+  }
   }
 }
 
@@ -442,7 +441,7 @@ $exec = false;
 
               if ($currentCluster !== $clusterManaging){
                 ?>
-                <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+                <h4><?php echo $currentCluster; echo " Announcements "; echo $error_ann; ?></h4>
                 <?php
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
