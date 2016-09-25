@@ -100,14 +100,13 @@ $exec = false;
     $res = mysql_query($query);
 
     if ($res){
-
       $res_eee = mysql_query("SELECT * FROM exams");
 
       while ($userRow_eee = mysql_fetch_array($res_eee, MYSQL_ASSOC)) {
           $res_eee2=mysql_query("SELECT * FROM users WHERE userId=".$userRow_eee['userId']);
         $userRow_eee2=mysql_fetch_array($res_eee2);
 
-        if ($userRow_eee['userId'] == 1){
+        if ($userRow_eee['userId'] == 1 || $userRow_eee['userId'] == 3){
          $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
 
          require 'PHPMailer/PHPMailerAutoload.php';
