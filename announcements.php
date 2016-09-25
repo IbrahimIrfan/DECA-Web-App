@@ -196,7 +196,7 @@ if(isset($_POST['submit'])) {
    $res = mysql_query($query);
        if ($res){
 
-           for ($x = 1; $x <= 3; $x++) {
+           for ($x = 1; $x <= 1; $x++) {
              $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
              $userRow_eee=mysql_fetch_array($res_eee);
 
