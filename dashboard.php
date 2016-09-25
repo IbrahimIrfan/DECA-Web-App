@@ -465,8 +465,6 @@ $exec = false;
 
           if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
             $currentCluster_eee = "Principles";
-          }elseif ($userRow_eee["userId"] == 1 || $userRow_eee["userId"] == 3){
-            $currentCluster_eee = "Test";
           }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
             $currentCluster_eee = "Finance";
           }elseif ($userRow_eee["userEventAssigned"] == "BTDM" || $userRow_eee["userEventAssigned"] == "MTDM" ||$userRow_eee["userEventAssigned"] == "STDM"){
@@ -479,7 +477,7 @@ $exec = false;
             $currentCluster_eee = "Business-Admin";
           }
 
-          if ($currentCluster_eee == "Test"){
+          if ($currentCluster_eee == $clusterManaging){
               echo '<script>
               var data_to_post = {
                 "title": "'.$title.'",
