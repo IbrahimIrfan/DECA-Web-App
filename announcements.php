@@ -36,42 +36,6 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
     $new_body = str_replace("'", "''", "$body");
     $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
     $res = mysql_query($query);
-
-    if ($res){
-      // send confirmation email
-      for ($x=1; $x <=750; $x++){
-        $res_efiuwhfwuf=mysql_query("SELECT * FROM users WHERE userId=".$x);
-      $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
-
-      $emailbody = "A new DECA Chapter announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>- The IRHS DECA Team";
-
-      require 'PHPMailer/PHPMailerAutoload.php';
-
-      $mail = new PHPMailer;
-
-      $mail->isSMTP();
-      $mail->Host = 'smtp.gmail.com';
-      $mail->SMTPAuth = true;
-      $mail->Username = 'irhsdeca2016@gmail.com';
-      $mail->Password = 'DECA2016';
-      $mail->SMTPSecure = 'tls';
-      $mail->Port = 587;
-
-      $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
-      $mail->addAddress($userRow_efiuwhfwuf["userEmail"]);               // recipient
-
-      $mail->isHTML(true);           // Set email format to HTML
-
-      $mail->Subject = 'New DECA Announcement: '. $title;
-      $mail->Body    = $emailbody;
-
-      if(!$mail->send()) {
-        $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
-      }
-    }
-
-    }
-  }
  }
 }
 ?>

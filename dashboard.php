@@ -98,60 +98,6 @@ $exec = false;
     $new_body = str_replace("'", "''", "$body");
     $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', '$clusterManaging')";
     $res = mysql_query($query);
-
-    if ($res){
-
-      for ($x = 1; $x <= 750; $x++) {
-         $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
-         $userRow_eee=mysql_fetch_array($res_eee);
-
-        if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
-          $currentCluster_eee = "Principles";
-        }elseif ($userRow_eee["userId"] == 1 || $userRow_eee["userId"] == 3){
-          $currentCluster_eee = "Test";
-        }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
-          $currentCluster_eee = "Finance";
-        }elseif ($userRow_eee["userEventAssigned"] == "BTDM" || $userRow_eee["userEventAssigned"] == "MTDM" ||$userRow_eee["userEventAssigned"] == "STDM"){
-         $currentCluster_eee = "Marketing-Teams";
-       }elseif ($userRow_eee["userEventAssigned"] == "AAM"|| $userRow_eee["userEventAssigned"] == "AASM"|| $userRow_eee["userEventAssigned"] == "BSM"|| $userRow_eee["userEventAssigned"] == "FMS"|| $userRow_eee["userEventAssigned"] == "MCS"|| $userRow_eee["userEventAssigned"] == "RMS"|| $userRow_eee["userEventAssigned"] == "SEM"){
-         $currentCluster_eee = "Marketing-Singles";
-       }elseif ($userRow_eee["userEventAssigned"] == "HLM" || $userRow_eee["userEventAssigned"] == "QSRM" ||$userRow_eee["userEventAssigned"] == "RFSM" || $userRow_eee["userEventAssigned"] == "HTDM"|| $userRow_eee["userEventAssigned"] == "TTDM"){
-          $currentCluster_eee = "Hospitality";
-        }elseif ($userRow_eee["userEventAssigned"] == "BLTDM" || $userRow_eee["userEventAssigned"] == "HRM"){
-          $currentCluster_eee = "Business-Admin";
-        }
-        $emailbody = "A new DECA ".$clusterManaging." announcement was posted:<br><br>".$title."<br><br>".$body."<br><br>More cluster-wide announcements: www.irhsdeca.com/dashboard.php<br><br>More chapter-wide announcements: www.irhsdeca.com/announcements.php<br><br>- The IRHS DECA Team";
-
-        require 'PHPMailer/PHPMailerAutoload.php';
-
-        $mail = new PHPMailer;
-
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'irhsdeca2016@gmail.com';
-        $mail->Password = 'DECA2016';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
-
-        $mail->setFrom('irhsdeca2016@gmail.com', 'IRHS DECA');
-
-                 $mail->isHTML(true);           // Set email format to HTML
-
-                 $mail->Subject = 'New DECA Announcement: '. $title;
-                 $mail->Body    = $emailbody;
-      
-        if ($currentCluster_eee == "Test"){
-
-         $mail->addAddress($userRow_eee["userEmail"]);               // recipient
-
-         if(!$mail->send()) {
-           $errMSG = 'Mailer Error: ' . $mail->ErrorInfo;
-         }
-       }
-      }
-    }
-
   }
   }
 
