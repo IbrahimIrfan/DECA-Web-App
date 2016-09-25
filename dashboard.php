@@ -95,6 +95,7 @@ $exec = false;
   }
 
   if (!$error){
+    $body = str_replace("'", "''", "$body");
     $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$body', '$clusterManaging')";
     $res = mysql_query($query);
 
@@ -135,8 +136,6 @@ $exec = false;
     }
     }
 
-  }else{
-    $error_ann = mysql_error();
   }
   }
 }
@@ -441,7 +440,7 @@ $exec = false;
 
               if ($currentCluster !== $clusterManaging){
                 ?>
-                <h4><?php echo $currentCluster; echo " Announcements "; echo $error_ann; ?></h4>
+                <h4><?php echo $currentCluster; echo " Announcements";?></h4>
                 <?php
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 
