@@ -366,7 +366,7 @@ $exec = false;
                   $res = mysql_query($query);
                   if ($res){
 
-                      for ($x = 1; $x <= 1; $x++) {
+                      for ($x = 1; $x <= 750; $x++) {
                         $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
                         $userRow_eee=mysql_fetch_array($res_eee);
 
@@ -382,9 +382,11 @@ $exec = false;
                           $currentCluster_eee = "Hospitality";
                         }elseif ($userRow_eee["userEventAssigned"] == "BLTDM" || $userRow_eee["userEventAssigned"] == "HRM"){
                           $currentCluster_eee = "Business-Admin";
+                        }else{
+                          $currentCluster_eee = "-";
                         }
 
-                        if ($currentCluster_eee == "Finance"){
+                        if ($currentCluster_eee == $clusterManaging){
                             echo '<script>
                             var data_to_post = {
                               "title": "'.$title.'",
