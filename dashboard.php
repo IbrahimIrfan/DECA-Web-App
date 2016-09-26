@@ -2,24 +2,19 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
-
 // redirect to login if not logged in
  if( !isset($_SESSION['user']) ) {
   header("Location: login.php");
   exit;
  }
-
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
  }
-
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
-
 $exec = false;
-
  if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
    $exec = true;
    $clusterManaging = "Principles";
@@ -39,12 +34,10 @@ $exec = false;
    $exec = true;
    $clusterManaging = "Business-Admin";
  }
-
  if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
    $admin = true;
    $clusterManaging = "N/A";
  }
-
  if ($userRow["userEventAssigned"] == "PBM" || $userRow["userEventAssigned"] == "PMK" ||$userRow["userEventAssigned"] == "PFN" || $userRow["userEventAssigned"] == "PHT"){
    $currentCluster = "Principles";
  } elseif ($userRow["userEventAssigned"] == "PFL" || $userRow["userEventAssigned"] == "ACT" ||$userRow["userEventAssigned"] == "FTDM" || $userRow["userEventAssigned"] == "BFS"){
@@ -58,7 +51,6 @@ $exec = false;
  }elseif ($userRow["userEventAssigned"] == "BLTDM" || $userRow["userEventAssigned"] == "HRM"){
    $currentCluster = "Business-Admin";
  }
-
  if ($currentCluster == "Principles"){
  $homework= "Principles_1_Whole_Homework.php";
  }elseif ($currentCluster == "Finance") {
@@ -70,19 +62,14 @@ $exec = false;
  }elseif ($currentCluster == "Hospitality") {
    $homework= "Hospitality_1_Whole_Homework.php";
  }
-
  $week = "score_1";
-
  $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
  $exam_check=mysql_fetch_array($res_exam_check);
-
  if ($exam_check[$week] !== "0"){
    $exam_status="img/complete.png";
  }else{
    $exam_status="img/incomplete.png";
  }
-
-
 ?>
 
 <!--
@@ -94,9 +81,6 @@ $exec = false;
  | $$  | $$  \ $$| $$  \ $$| $$  | $$| $$  | $$  | $$  | $$\  $ | $$        | $$  | $$  \ $$| $$     | $$  | $$| $$\  $$$
 /$$$$$$| $$$$$$$/| $$  | $$| $$  | $$| $$  | $$ /$$$$$$| $$ \/  | $$       /$$$$$$| $$  | $$| $$     | $$  | $$| $$ \  $$
 |______/|_______/ |__/  |__/|__/  |__/|__/  |__/|______/|__/     |__/      |______/|__/  |__/|__/     |__/  |__/|__/  \__/
-
-
-
 /$$$$$$ /$$$$$$$  /$$   /$$  /$$$$$$        /$$$$$$$  /$$$$$$$$  /$$$$$$   /$$$$$$
 |_  $$_/| $$__  $$| $$  | $$ /$$__  $$      | $$__  $$| $$_____/ /$$__  $$ /$$__  $$
  | $$  | $$  \ $$| $$  | $$| $$  \__/      | $$  \ $$| $$      | $$  \__/| $$  \ $$
@@ -105,8 +89,6 @@ $exec = false;
  | $$  | $$  \ $$| $$  | $$ /$$  \ $$      | $$  | $$| $$      | $$    $$| $$  | $$
 /$$$$$$| $$  | $$| $$  | $$|  $$$$$$/      | $$$$$$$/| $$$$$$$$|  $$$$$$/| $$  | $$
 |______/|__/  |__/|__/  |__/ \______/       |_______/ |________/ \______/ |__/  |__/
-
-
 -->
 <html>
 
@@ -181,11 +163,9 @@ $exec = false;
         <br/>
 
             <?php
-
              for ($x = 1; $x <= 750; $x++) {
                 $res_efiuwhfwuf=mysql_query("SELECT * FROM users WHERE userId=".$x);
                 $userRow_efiuwhfwuf=mysql_fetch_array($res_efiuwhfwuf);
-
                if ($userRow_efiuwhfwuf["userEventAssigned"] == "PBM" || $userRow_efiuwhfwuf["userEventAssigned"] == "PMK" ||$userRow_efiuwhfwuf["userEventAssigned"] == "PFN" || $userRow_efiuwhfwuf["userEventAssigned"] == "PHT"){
                $cluster_qqqq = "Principles";
              } elseif ($userRow_efiuwhfwuf["userEventAssigned"] == "PFL" || $userRow_efiuwhfwuf["userEventAssigned"] == "ACT" ||$userRow_efiuwhfwuf["userEventAssigned"] == "FTDM" || $userRow_efiuwhfwuf["userEventAssigned"] == "BFS"){
@@ -204,14 +184,12 @@ $exec = false;
              $query_qqqqq = "UPDATE exams SET cluster='$cluster_qqqq' WHERE userId=".$x;
                $add_exam = mysql_query($query_qqqqq);
             }
-
             if ($exec || $admin) {
               ?>
               <h4> Exam Scores for <?php echo $clusterManaging; ?></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
               <?php
-
                // select exams detail
              $res=mysql_query("SELECT * FROM exams WHERE cluster='$clusterManaging'");
                           while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
@@ -325,30 +303,23 @@ $exec = false;
               <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
               <?php
-
                if(isset($_POST['submit'])) {
-
                 $title = strip_tags(trim($_POST['title']));
                 $body = strip_tags(trim($_POST['body']));
-
                 $error = false;
-
                 if (empty($title) || empty($body)){
                   $error = true;
                   $msg = "You must complete all fields.";
                 }
-
                 if (!$error){
                   $new_body = str_replace("'", "''", "$body");
                     $new_body = str_replace("\n", "", "$new_body");
                   $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', '$clusterManaging')";
                   $res = mysql_query($query);
                   if ($res){
-
                       for ($x = 1; $x <= 750; $x++) {
                         $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
                         $userRow_eee=mysql_fetch_array($res_eee);
-
                         if ($userRow_eee["userEventAssigned"] == "PBM" || $userRow_eee["userEventAssigned"] == "PMK" ||$userRow_eee["userEventAssigned"] == "PFN" || $userRow_eee["userEventAssigned"] == "PHT"){
                           $currentCluster_eee = "Principles";
                         }elseif ($userRow_eee["userEventAssigned"] == "PFL" || $userRow_eee["userEventAssigned"] == "ACT" ||$userRow_eee["userEventAssigned"] == "FTDM" || $userRow_eee["userEventAssigned"] == "BFS"){
@@ -364,7 +335,6 @@ $exec = false;
                         }else{
                           $currentCluster_eee = "-";
                         }
-
                         if ($currentCluster_eee == $clusterManaging){
                             echo '<script>
                             var data_to_post = {
@@ -411,12 +381,10 @@ $exec = false;
              </form>
                 <?php
               $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
-
               while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                 $data[] = $ann;
               }
               $data = array_reverse($data,true);
-
               foreach ($data as $announcement){
                 ?>
                 <div class="announce">
@@ -428,18 +396,15 @@ $exec = false;
                 <?php
               }
               mysql_free_result($res_cm);
-
               if ($currentCluster !== $clusterManaging){
                 ?>
                 <h4><?php echo $currentCluster; echo " Announcements";?></h4>
                 <?php
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
-
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                   $data3[] = $ann;
                 }
                 $data3 = array_reverse($data3,true);
-
                 foreach ($data3 as $announcement){
                   ?>
                   <div class="announce">
@@ -451,18 +416,15 @@ $exec = false;
                 }
                 mysql_free_result($res_cc);
               }
-
             } else {
               ?>
               <h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
               <?php
               $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
-
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                 $data2[] = $ann;
               }
               $data2 = array_reverse($data3,true);
-
               foreach ($data2 as $announcement){
                 ?>
                 <div class="announce">
@@ -474,7 +436,6 @@ $exec = false;
               }
               mysql_free_result($res_cc);
             }
-
               ?>
             </div>
     <div class="footer">
@@ -490,7 +451,6 @@ $exec = false;
               <script type="text/javascript">
               var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
-
               document.getElementById('event_assigned_code').innerHTML = user_event;
               </script>
 
