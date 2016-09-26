@@ -221,7 +221,7 @@ $(document).on('ready', function(){
       parseExam();
         for (i = 1; i < 101; i++){
           document.getElementById(i + 'answer').style.display = 'block';
-          if (document.getElementById('q' + i).style.color == '#00cc00'){
+          if (document.getElementById('q' + i).style.color == "rgb(0, 204, 0)"){
             $("#" + i + "answer:first-child").html('Correct.');
           }
         }
