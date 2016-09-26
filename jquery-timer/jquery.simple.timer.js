@@ -214,7 +214,7 @@
   };
 })(jQuery);
 
-document.on('ready', function(){
+$(document).on('ready', function(){
   if (!($('.timer').is(":visible"))){
     for (i = 1; i < 101; i++){
       document.getElementById(i + 'answer').style.display = 'block';
