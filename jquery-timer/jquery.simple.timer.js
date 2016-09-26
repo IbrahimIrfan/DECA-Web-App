@@ -221,6 +221,9 @@ $(document).on('ready', function(){
       parseExam();
         for (i = 1; i < 101; i++){
           document.getElementById(i + 'answer').style.display = 'block';
+          if (document.getElementById('q' + i).style.display == '#00cc00'){
+            $("#" + i + "answer:first-child").html('Correct.');
+          }
         }
   });
 });
