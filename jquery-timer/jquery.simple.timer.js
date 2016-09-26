@@ -54,11 +54,11 @@
 
       timerBoxElement.on('complete', function() {
         timerBoxElement.onComplete(timerBoxElement);
-        document.getElementById(i + 'answer').style.display = 'block';
       });
 
       timerBoxElement.on('complete', function(){
         timerBoxElement.addClass('timeout');
+        document.getElementById(i + 'answer').style.display = 'block';
       });
 
       timerBoxElement.on('complete', function(){
