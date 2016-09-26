@@ -215,7 +215,7 @@ $exec = false;
                             if ($clusterManaging == "Marketing-Teams"){
                               $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
                               $user_exams=mysql_fetch_array($res_users);
-                              if ($abc["userEventAssigned"] == "BTDM" || $abc["userEventAssigned"] == "MTDM" || $abc["userEventAssigned"] == "STDM"){
+                              if ($user_exams["userEventAssigned"] == "BTDM" || $user_exams["userEventAssigned"] == "MTDM" || $user_exams["userEventAssigned"] == "STDM"){
                                 ?><tr><td><?php
                                 echo $user_exams["userFName"];
                                 echo " ";
@@ -315,7 +315,7 @@ $exec = false;
                             }elseif ($clusterManaging == "Marketing-Singles") {
                             $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
                             $user_exams=mysql_fetch_array($res_users);
-                            if ($abc["userEventAssigned"] == "AAM"|| $abc["userEventAssigned"] == "AASM"|| $abc["userEventAssigned"] == "BSM"|| $abc["userEventAssigned"] == "FMS"|| $abc["userEventAssigned"] == "MCS"|| $abc["userEventAssigned"] == "RMS"|| $abc["userEventAssigned"] == "SEM"){
+                            if ($user_exams["userEventAssigned"] == "AAM"|| $user_exams["userEventAssigned"] == "AASM"|| $user_exams["userEventAssigned"] == "BSM"|| $user_exams["userEventAssigned"] == "FMS"|| $user_exams["userEventAssigned"] == "MCS"|| $user_exams["userEventAssigned"] == "RMS"|| $user_exams["userEventAssigned"] == "SEM"){
                               ?><tr><td><?php
                               echo $user_exams["userFName"];
                               echo " ";
