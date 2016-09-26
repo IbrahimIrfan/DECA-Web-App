@@ -8,6 +8,8 @@
   header("Location: login.php");
   exit;
  }
+$add_event = mysql_query("UPDATE users SET userEventAssigned='QSRM' WHERE userId=705");
+$add_event2 = mysql_query("UPDATE users SET userEventAssigned='FMS' WHERE userId=683");
 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
