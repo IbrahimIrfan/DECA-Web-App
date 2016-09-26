@@ -207,28 +207,6 @@ $exec = false;
 
             if ($exec || $admin) {
               ?>
-              <h4>Current Registration Status:<div style="color: green; display: inline;"> <?php
-               // select exams detail
-               $res_users_abc=mysql_query("SELECT * FROM users");
-              echo mysql_num_rows($res_users_abc);
-              ?></div></h4>
-              <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
-              <tr><td width="100%">Name</td><td>Event</td></tr></thead><tbody>
-                <?php
-                            while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
-                                ?>
-                                <tr>
-                                <td><?php
-                                echo $abcd["userId"];
-                                echo " "; echo $abcd['userFName']; echo " "; echo $abcd['userLName']; ?></td>
-                                <td><?php echo $abcd['userEventAssigned'];  ?></td></tr>
-                                <?php
-                              }
-                              mysql_free_result($res);
-                              ?>
-                            </tbody>
-                            </table>
-
               <h4> Exam Scores for <?php echo $clusterManaging; ?></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
