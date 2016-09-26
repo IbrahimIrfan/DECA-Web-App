@@ -8,8 +8,11 @@
   header("Location: login.php");
   exit;
  }
-$add_Event = mysql_query("UPDATE users SET userEventAssigned='FMS' WHERE userId=651");
-$add_Event = mysql_query("UPDATE users SET userEventAssigned='BTDM' WHERE userId=558");
+
+    $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=577');
+      $delete_request_bfwefssew = mysql_query('DELETE FROM exams WHERE userId=577');
+        $delete_request_bfwefdddew = mysql_query('DELETE FROM users WHERE userId=525');
+          $delete_request_bfwssssefew = mysql_query('DELETE FROM exams WHERE userId=525');
 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
