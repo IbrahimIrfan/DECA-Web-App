@@ -215,9 +215,12 @@
 })(jQuery);
 
 $(document).on('ready', function(){
-  if (!($('.timer').is(":visible"))){
-    for (i = 1; i < 101; i++){
-      document.getElementById(i + 'answer').style.display = 'block';
-    }
-  }
+  $('#myform').on('submit', function(e) {
+      $('.timer').hide();
+      e.preventDefault();
+      parseExam();
+        for (i = 1; i < 101; i++){
+          document.getElementById(i + 'answer').style.display = 'block';
+        }
+  });
 });
