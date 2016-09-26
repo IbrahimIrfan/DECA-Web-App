@@ -8,7 +8,6 @@
 *
 */
 (function($){
-
   var timer;
 
   var Timer = function(targetElement){
@@ -58,7 +57,6 @@
 
       timerBoxElement.on('complete', function(){
         timerBoxElement.addClass('timeout');
-        document.getElementById(i + 'answer').style.display = 'block';
       });
 
       timerBoxElement.on('complete', function(){
@@ -209,10 +207,13 @@
     element.find('.hours').text(finalValues.pop() + ':');
   };
 
-
   $.fn.startTimer = function(options) {
     this.TimerObject = Timer;
     Timer.start(options, this);
     return this;
   };
+
+  if (!($('.timer').is(":visible"))){
+    document.getElementById(i + 'answer').style.display = 'block';
+  }
 })(jQuery);
