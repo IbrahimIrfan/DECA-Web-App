@@ -209,9 +209,12 @@ $exec = false;
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
               <?php
-
-             $res=mysql_query("SELECT * FROM exams WHERE cluster='$clusterManaging'");
-                          while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
+              if ($clusterManaging == "Marketing-Teams" || $clusterManaging == "Marketing-Singles"){
+               $res=mysql_query("SELECT * FROM exams WHERE cluster='Marketing'");
+             }else{
+               $res=mysql_query("SELECT * FROM exams WHERE cluster='$clusterManaging'");
+             }
+                      while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
                             if ($clusterManaging == "Marketing-Teams"){
                               $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
                               $user_exams=mysql_fetch_array($res_users);
