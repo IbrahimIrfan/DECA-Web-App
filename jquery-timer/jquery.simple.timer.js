@@ -212,8 +212,10 @@
     Timer.start(options, this);
     return this;
   };
+})(jQuery);
 
   if (!($('.timer').is(":visible"))){
-    document.getElementById(i + 'answer').style.display = 'block';
+    for (i = 1; i < 101; i++){
+      document.getElementById(i + 'answer').style.display = 'block';
+    }
   }
-})(jQuery);
