@@ -167,7 +167,7 @@ $exec = false;
 
     <br/>
 
-    <div class="content">
+    <div class="content" id="content2">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="140"/>
         <h3><?php echo $userRow['userFName']; echo " "; echo $userRow['userLName'] ?> </h3>

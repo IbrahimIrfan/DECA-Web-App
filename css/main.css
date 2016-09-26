@@ -125,6 +125,12 @@ a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger,
     font-weight: bold;
     padding-right: 10px;
 }
+#content2{
+      padding-left: 10% !important;
+      padding-right: 10% !important;
+      padding-top: 3% !important;
+      margin-bottom: 100px !important;
+}
 #allTypes, #type, #cluster, #clusterClicked {
     text-decoration: underline;
 }
