@@ -10,12 +10,12 @@
  }
 
  if( isset($_POST['btn-login']) ) {
-  $email = strip_tags(trim($_POST['email']));
+  $email = strtoupper(strip_tags(trim($_POST['email'])));
   $upass = strip_tags(trim($_POST['pass']));
 
   $password = hash('sha256', $upass); // password hashing using SHA256
 
-  $res=mysql_query("SELECT userId, userPass FROM users WHERE userEmail='$email'");
+  $res=mysql_query("SELECT userId, userPass FROM users WHERE upper(userEmail)='$email'");
 
   $row=mysql_fetch_array($res);
 
