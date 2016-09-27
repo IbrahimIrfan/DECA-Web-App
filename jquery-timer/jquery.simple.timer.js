@@ -222,7 +222,7 @@ $(document).on('ready', function(){
         for (i = 1; i < 101; i++){
           document.getElementById(i + 'answer').style.display = 'block';
           if (document.getElementById('q' + i).style.color == "rgb(0, 204, 0)"){
-            $("#" + i + "answer:first-child").html('Correct.');
+            $("#" + i + "answer h5").first().html('Correct.');
           }
         }
   });
