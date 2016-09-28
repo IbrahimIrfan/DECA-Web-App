@@ -8,9 +8,7 @@
   header("Location: login.php");
   exit;
  }
-
- $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=519');
-   $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=519');
+$add_event = mysql_query("UPDATE users SET userEventAssigned='ACT' WHERE userId=706");
 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
