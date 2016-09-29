@@ -8,7 +8,7 @@
   header("Location: login.php");
   exit;
  }
- $add_event = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=707");
+ 
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
