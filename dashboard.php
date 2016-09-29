@@ -157,7 +157,7 @@ $exec = false;
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="<?php echo $exam_status; ?>" align="right" height="35" />
-        <h5 id="exam_link"><u><a href='<?php echo $homework; ?>' style="color: black;"><?php echo $currentCluster; echo " Exam";?></a></u></h5>
+        <h5 id="exam_link"><u><a href='<?php echo $homework; echo "?UID=".$_SESSION["user"]?>' style="color: black;"><?php echo $currentCluster; echo " Exam";?></a></u></h5>
       </div>
 
         <br/>
