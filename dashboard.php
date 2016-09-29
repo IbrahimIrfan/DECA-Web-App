@@ -7,6 +7,13 @@
   header("Location: login.php");
   exit;
  }
+
+    $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=679');
+      $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=679');
+
+          $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=540');
+            $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=540');
+
  $deleteId = $_GET['delId'];
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
