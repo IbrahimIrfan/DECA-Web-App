@@ -103,6 +103,9 @@ $exec = false;
     <link rel="stylesheet" href="css/cssmenu/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-red.min.css">
+
+                  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+                  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -298,9 +301,6 @@ $exec = false;
                             ?>
                           </tbody>
               </table>
-
-              <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-              <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
               <?php
                if(isset($_POST['submit'])) {
