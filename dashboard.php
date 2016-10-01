@@ -194,7 +194,11 @@ $exec = false;
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
               <?php
                // select exams detail
+               if ($admin){
+               $res=mysql_query("SELECT * FROM exams");
+             }else{
              $res=mysql_query("SELECT * FROM exams WHERE cluster='$clusterManaging'");
+             }
                           while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
                               ?>
                               <tr>
