@@ -402,7 +402,7 @@ $exec = false;
               mysql_free_result($res_cm);
               if ($currentCluster !== $clusterManaging){
                 ?>
-                <h4><?php echo $currentCluster; echo " Announcements";?></h4>
+                <h4><?php echo mysql_error(); echo " Announcements";?></h4>
                 <?php
                 $res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
                 while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
