@@ -19,7 +19,10 @@ $exec = false;
 if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
    $exec = true;
  }
-
+ if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
+   $exec = true;
+   $admin = true;
+ }
 
  }
 
@@ -210,6 +213,31 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
                 <?php
               }
               mysql_free_result($res_cm);
+
+              if ($admin){
+                ?>
+                <h4>All Cluster Annoucnements</h4>
+                <?php
+                $res_cm = mysql_query("SELECT * FROM announcements");
+
+                while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+                  $data[] = $ann;
+                }
+                $data = array_reverse($data,true);
+
+                foreach ($data as $announcement){
+                  ?>
+                  <div class="announce">
+                  <h4 id="ann-title"><?php echo $announcement["title"]; echo "| Cluster: "; echo $announcement["cluster"];?></h4>
+                  <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+                  <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
+                  </div>
+                  <?php
+                }
+                mysql_free_result($res_cm);
+
+              }
+
               ?>
 
 </div>
