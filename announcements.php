@@ -218,7 +218,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
                 ?>
                 <h4>All Cluster Annoucnements</h4>
                 <?php
-                $res_cm = mysql_query("SELECT * FROM announcements");
+                $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster!='Chapter'");
 
                 while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
                   $data[] = $ann;
