@@ -228,7 +228,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
                 foreach ($data as $announcement){
                   ?>
                   <div class="announce">
-                  <h4 id="ann-title"><?php echo $announcement["title"]; echo "| Cluster: "; echo $announcement["cluster"];?></h4>
+                  <h4 id="ann-title"><?php echo $announcement["title"]; echo " | Cluster: "; echo $announcement["cluster"];?></h4>
                   <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
                   <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
                   </div>
