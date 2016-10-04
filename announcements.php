@@ -218,23 +218,23 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
                 ?>
                 <h4>All Cluster Annoucnements</h4>
                 <?php
-                $res_cm = mysql_query("SELECT * FROM announcements WHERE NOT cluster='Chapter'");
+                $res_cm2 = mysql_query("SELECT * FROM announcements WHERE NOT cluster='Chapter'");
 
-                while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
-                  $data[] = $ann;
+                while ($ann2 = mysql_fetch_array($res_cm2, MYSQL_ASSOC)) {
+                  $data2[] = $ann2;
                 }
-                $data = array_reverse($data,true);
+                $data2 = array_reverse($data2,true);
 
-                foreach ($data as $announcement){
+                foreach ($data2 as $announcement2){
                   ?>
                   <div class="announce">
-                  <h4 id="ann-title"><?php echo $announcement["title"]; echo " (Cluster: "; echo $announcement["cluster"]; echo ")"; ?></h4>
-                  <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
-                  <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
+                  <h4 id="ann-title"><?php echo $announcement2["title"]; echo " (Cluster: "; echo $announcement2["cluster"]; echo ")"; ?></h4>
+                  <h5 id="ann-body"><?php echo $announcement2["body"]; ?></h5>
+                  <h6 id="ann-date"><?php echo $announcement2["datePosted"]; ?></h6>
                   </div>
                   <?php
                 }
-                mysql_free_result($res_cm);
+                mysql_free_result($res_cm2);
 
               }
 
