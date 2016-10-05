@@ -466,8 +466,7 @@ $exec = false;
                 'user': user_id,
               }
 
-              $('#exam_link').on('click', function(e){
-                e.preventDefault();
+              $('#exam_link').on('click', function(){
                 $.ajax({
                   type: "POST",
                   url: "<?php echo $server_file;?>",
