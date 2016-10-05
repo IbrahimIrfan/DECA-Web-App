@@ -428,7 +428,7 @@ $exec = false;
               while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
                 $data2[] = $ann;
               }
-              $data2 = array_reverse($data3,true);
+              $data2 = array_reverse($data2,true);
               foreach ($data2 as $announcement){
                 ?>
                 <div class="announce">
