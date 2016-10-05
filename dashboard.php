@@ -160,7 +160,7 @@ $exec = false;
         <br/>
         <div id="homework">
         <h4>Your Weekly Homework:</h4><img id="complete" src="<?php echo $exam_status; ?>" align="right" height="35" />
-        <h5 id="exam_link"><u><a href='<?php echo $homework; echo "?UID=".$_SESSION["user"]?>' style="color: black;"><?php echo $currentCluster; echo " Exam";?></a></u></h5>
+        <h5 id="exam_link"><u><a href='<?php echo $homework;?>' style="color: black;"><?php echo $currentCluster; echo " Exam";?></a></u></h5>
       </div>
 
         <br/>
@@ -456,6 +456,25 @@ $exec = false;
               var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
               document.getElementById('event_assigned_code').innerHTML = user_event;
+
+              var user_id = <?php echo $_SESSION['user'] ?>
+              data_to_post = {
+                'user': user_id,
+              }
+
+              $('#exam_link').on('click', function(){
+                $.ajax({
+                  type: "POST",
+                  url: "<?php echo $homework; ?>",
+                  data: data_to_post,
+                  success: function(r) {
+                      console.log("success " + r);
+                  },
+                  error: function(r) {
+                      console.log("error " + r);
+                  }
+                })
+              });
               </script>
 
 
