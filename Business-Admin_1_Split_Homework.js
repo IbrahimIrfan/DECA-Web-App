@@ -1,5 +1,5 @@
 $.get('dashboard.php', function(data){
-console.log(data);
+userid = parseInt($(data).find('.userid_block').html());
 function parseExam() {
     window.scrollTo(0, 0);
     $('.select-style').prop('disabled', 'true');
@@ -217,7 +217,8 @@ function parseExam() {
     }
     document.getElementById('score').innerHTML = 'Score: ' + score + '/100';
     var data_to_post = {
-        "score": score
+        "score": score,
+        "user": userId,
     }
     $.ajax({
         type: "POST",
