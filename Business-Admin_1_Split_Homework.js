@@ -1,7 +1,5 @@
 $.get('dashboard.php', function(data){
-
-});
-
+console.log(data);
 function parseExam() {
     window.scrollTo(0, 0);
     $('.select-style').prop('disabled', 'true');
@@ -243,4 +241,5 @@ $('#myform').on('submit', function(e) {
     $('.timer').hide();
     e.preventDefault();
     parseExam();
+});
 });
