@@ -465,7 +465,8 @@ $exec = false;
                 'user': user_id,
               }
 
-              $('#exam_link').on('click', function(){
+              $('#exam_link').on('click', function(e){
+                e.preventDefault();
                 $.ajax({
                   type: "POST",
                   url: "<?php echo $homework; ?>",
