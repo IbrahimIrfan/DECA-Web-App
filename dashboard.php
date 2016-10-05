@@ -64,7 +64,6 @@ $exec = false;
  }
  if ($userRow['userId'] == 1){
    $homework= "Business-Admin_1_Split_Homework.php";
-   $server_file = "Business-Admin_1_Split_Homework_Server.php";
  }
  $week = "score_2";
  $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
@@ -153,7 +152,7 @@ $exec = false;
     </br>
 
     <br/>
-
+<div class='userid_block' style='display: none;'><?php echo $_SESSION['user']; ?></div>
     <div class="content">
       <div class= "profile">
         <img src="img/avatar.png" align="left" height="140"/>
@@ -461,24 +460,6 @@ $exec = false;
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
               document.getElementById('event_assigned_code').innerHTML = user_event;
 
-              var user_id = <?php echo $_SESSION['user']; ?>;
-              data_to_post = {
-                'user': user_id,
-              }
-
-              $('#exam_link').on('click', function(){
-                $.ajax({
-                  type: "POST",
-                  url: "<?php echo $server_file;?>",
-                  data: data_to_post,
-                  success: function(r) {
-                      console.log("success " + r);
-                  },
-                  error: function(r) {
-                      console.log("error " + r);
-                  }
-                })
-              });
               </script>
 
 

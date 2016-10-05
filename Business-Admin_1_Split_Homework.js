@@ -1,3 +1,7 @@
+$.get('dashboard.php', function(data){
+
+});
+
 function parseExam() {
     window.scrollTo(0, 0);
     $('.select-style').prop('disabled', 'true');
