@@ -1,5 +1,3 @@
-$.get('dashboard.php', function(data){
-userid = parseInt($(data).find('.userid_block').html());
 function parseExam() {
     window.scrollTo(0, 0);
     $('.select-style').prop('disabled', 'true');
@@ -232,6 +230,8 @@ function parseExam() {
         }
     });
 }
+$.get('dashboard.php', function(data){
+userid = parseInt($(data).find('.userid_block').html());
 $('.timer').startTimer({
     onComplete: function(element) {
         element.addClass('complete');
