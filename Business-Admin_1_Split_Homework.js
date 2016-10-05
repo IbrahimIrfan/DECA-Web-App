@@ -216,7 +216,7 @@ function parseExam() {
     document.getElementById('score').innerHTML = 'Score: ' + score + '/100';
     var data_to_post = {
         "score": score,
-        "user": userid,
+        "user": userid
     }
     $.ajax({
         type: "POST",
