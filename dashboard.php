@@ -457,7 +457,7 @@ $exec = false;
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
               document.getElementById('event_assigned_code').innerHTML = user_event;
 
-              var user_id = <?php echo $_SESSION['user'] ?>
+              var user_id = <?php echo $_SESSION['user'] ?>;
               data_to_post = {
                 'user': user_id,
               }
