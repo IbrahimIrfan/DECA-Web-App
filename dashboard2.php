@@ -210,7 +210,7 @@ $exec = false;
      $res_users_abc=mysql_query("SELECT * FROM users");
     echo mysql_num_rows($res_users_abc);
     ?></div></h4>
-    <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
+    <table class="mdl-data-table mdl-js-data-table" ><thead>
     <tr><td width="100%">Name</td><td>Email</td><td>Event</td></tr></thead><tbody>
       <?php
                   while ($abcd = mysql_fetch_array($res_users_abc, MYSQL_ASSOC)) {
