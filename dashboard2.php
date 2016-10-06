@@ -512,7 +512,7 @@ $exec = false;
 
               document.getElementById('event_assigned_code').innerHTML = user_event;
 
-              var score_count;
+              var score_count = 0;
               $('#exam_scores > tbody > tr:nth-child(2) > td:nth-child(3)').each(function(){
                 if ($(this).html() != '-'){
                   score_count +=1;
