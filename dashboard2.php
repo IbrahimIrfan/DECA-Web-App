@@ -518,7 +518,7 @@ $exec = false;
                   score_count +=1;
                 }
               });
-              $('#exam-title').html() += " " + score_count;
+              $('#exam-title').append(" " + score_count);
               </script>
 
 
