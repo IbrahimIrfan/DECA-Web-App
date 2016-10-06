@@ -12,7 +12,7 @@
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
  }
- 
+
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
@@ -228,213 +228,12 @@ $exec = false;
                   </tbody>
                   </table>
 
-              <h4> Exam Scores for <?php echo $clusterManaging; ?></h4>
+              <h4 id='examtitle'> Exam Scores for <?php echo $clusterManaging; ?></h4>
               <table class="mdl-data-table mdl-js-data-table" id="exam_scores"><thead>
               <tr><td width="100%">User</td><td>Week 1</td><td>Week 2</td><td>Week 3</td><td>Week 4</td><td>Week 5</td><td>Week 6</td><td>Week 7</td><td>Week 8</td><td>Week 9</td><td>Week 10</td><td>Week 11</td><td>Week 12</td><td>Week 13</td></tr></thead><tbody>
               <?php
                $res=mysql_query("SELECT * FROM exams");
                       while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
-                            if ($clusterManaging == "Marketing-Teams"){
-                              $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-                              $user_exams=mysql_fetch_array($res_users);
-                              if ($user_exams["userEventAssigned"] == "BTDM" || $user_exams["userEventAssigned"] == "MTDM" || $user_exams["userEventAssigned"] == "STDM"){
-                                ?><tr><td><?php
-                                echo $user_exams["userFName"];
-                                echo " ";
-                                echo $user_exams["userLName"]; ?></td>
-                                <td><?php
-                                if ($abc["score_1"] !== "0"){
-                                   echo $abc["score_1"]; echo "%";
-                                 }else{
-                                   echo "-";
-                                 } ?></td>
-                              <td><?php
-                              if ($abc["score_2"] !== "0"){
-                                 echo $abc["score_2"]; echo "%";
-                               }else{
-                                 echo "-";
-                               }
-                               ?></td>
-                              <td><?php
-                              if ($abc["score_3"] !== "0"){
-                               echo $abc["score_3"]; echo "%";
-                              }else{
-                               echo "-";
-                              }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_4"] !== "0"){
-                              echo $abc["score_4"]; echo "%";
-                              }else{
-                              echo "-";
-                              }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_5"] !== "0"){
-                              echo $abc["score_5"]; echo "%";
-                              }else{
-                              echo "-";
-                              }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_6"] !== "0"){
-                              echo $abc["score_6"]; echo "%";
-                              }else{
-                              echo "-";
-                              }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_7"] !== "0"){
-                               echo $abc["score_7"]; echo "%";
-                              }else{
-                               echo "-";
-                              }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_8"] !== "0"){
-                                 echo $abc["score_8"]; echo "%";
-                               }else{
-                                 echo "-";
-                               }
-                                ?></td>
-                                <td><?php
-                                if ($abc["score_9"] !== "0"){
-                                   echo $abc["score_9"]; echo "%";
-                                 }else{
-                                   echo "-";
-                                 }
-                                  ?></td>
-                                  <td><?php
-                                  if ($abc["score_10"] !== "0"){
-                                     echo $abc["score_10"]; echo "%";
-                                   }else{
-                                     echo "-";
-                                   }
-                                    ?></td>
-                                    <td><?php
-                                    if ($abc["score_11"] !== "0"){
-                                       echo $abc["score_11"]; echo "%";
-                                     }else{
-                                       echo "-";
-                                     }
-                                      ?></td>
-                                      <td><?php
-                                      if ($abc["score_12"] !== "0"){
-                                         echo $abc["score_12"]; echo "%";
-                                       }else{
-                                         echo "-";
-                                       }
-                                        ?></td>
-                                        <td><?php
-                                        if ($abc["score_13"] !== "0"){
-                                           echo $abc["score_13"]; echo "%";
-                                         }else{
-                                           echo "-";
-                                         }
-                                          ?></td></tr>
-                                <?php
-                              }
-                            }elseif ($clusterManaging == "Marketing-Singles") {
-                            $res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-                            $user_exams=mysql_fetch_array($res_users);
-                            if ($user_exams["userEventAssigned"] == "AAM"|| $user_exams["userEventAssigned"] == "AASM"|| $user_exams["userEventAssigned"] == "BSM"|| $user_exams["userEventAssigned"] == "FMS"|| $user_exams["userEventAssigned"] == "MCS"|| $user_exams["userEventAssigned"] == "RMS"|| $user_exams["userEventAssigned"] == "SEM"){
-                              ?><tr><td><?php
-                              echo $user_exams["userFName"];
-                              echo " ";
-                              echo $user_exams["userLName"]; ?></td>
-                              <td><?php
-                              if ($abc["score_1"] !== "0"){
-                                 echo $abc["score_1"]; echo "%";
-                               }else{
-                                 echo "-";
-                               } ?></td>
-                            <td><?php
-                            if ($abc["score_2"] !== "0"){
-                               echo $abc["score_2"]; echo "%";
-                             }else{
-                               echo "-";
-                             }
-                             ?></td>
-                          <td><?php
-                          if ($abc["score_3"] !== "0"){
-                             echo $abc["score_3"]; echo "%";
-                           }else{
-                             echo "-";
-                           }
-                          ?></td>
-                        <td><?php
-                        if ($abc["score_4"] !== "0"){
-                           echo $abc["score_4"]; echo "%";
-                         }else{
-                           echo "-";
-                         }
-                         ?></td>
-                      <td><?php
-                      if ($abc["score_5"] !== "0"){
-                         echo $abc["score_5"]; echo "%";
-                       }else{
-                         echo "-";
-                       }
-                        ?></td>
-                        <td><?php
-                        if ($abc["score_6"] !== "0"){
-                           echo $abc["score_6"]; echo "%";
-                         }else{
-                           echo "-";
-                         }
-                          ?></td>
-                          <td><?php
-                          if ($abc["score_7"] !== "0"){
-                             echo $abc["score_7"]; echo "%";
-                           }else{
-                             echo "-";
-                           }
-                            ?></td>
-                            <td><?php
-                            if ($abc["score_8"] !== "0"){
-                               echo $abc["score_8"]; echo "%";
-                             }else{
-                               echo "-";
-                             }
-                              ?></td>
-                              <td><?php
-                              if ($abc["score_9"] !== "0"){
-                                 echo $abc["score_9"]; echo "%";
-                               }else{
-                                 echo "-";
-                               }
-                                ?></td>
-                                <td><?php
-                                if ($abc["score_10"] !== "0"){
-                                   echo $abc["score_10"]; echo "%";
-                                 }else{
-                                   echo "-";
-                                 }
-                                  ?></td>
-                                  <td><?php
-                                  if ($abc["score_11"] !== "0"){
-                                     echo $abc["score_11"]; echo "%";
-                                   }else{
-                                     echo "-";
-                                   }
-                                    ?></td>
-                                    <td><?php
-                                    if ($abc["score_12"] !== "0"){
-                                       echo $abc["score_12"]; echo "%";
-                                     }else{
-                                       echo "-";
-                                     }
-                                      ?></td>
-                                      <td><?php
-                                      if ($abc["score_13"] !== "0"){
-                                         echo $abc["score_13"]; echo "%";
-                                       }else{
-                                         echo "-";
-                                       }
-                                        ?></td></tr>
-                              <?php
-                            }
-                            }else{
                               ?>
                               <tr>
                               <td>
@@ -535,7 +334,6 @@ $exec = false;
                                        }
                                         ?></td></tr>
                               <?php
-                            }
                             }
                             mysql_free_result($res);
                             ?>
@@ -713,6 +511,14 @@ $exec = false;
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
 
               document.getElementById('event_assigned_code').innerHTML = user_event;
+
+              var score_count;
+              $('#exam_scores > tbody > tr:nth-child(2) > td:nth-child(3)').each(function(){
+                if ($(this).html() != '-'){
+                  score_count +=1;
+                }
+              });
+              $('#exam-title').html() += " " + score_count;
               </script>
 
 
