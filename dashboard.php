@@ -71,9 +71,6 @@ $exec = false;
  }elseif ($currentCluster == "Hospitality") {
    $homework= "Hospitality_2_Whole_Homework.php";
  }
- if ($userRow['userId'] == 1){
-   $homework= "Business-Admin_1_Split_Homework.php";
- }
  $week = "score_2";
  $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
  $exam_check=mysql_fetch_array($res_exam_check);
