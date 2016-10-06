@@ -12,14 +12,8 @@
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
  }
 
-    $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=571');
-      $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=571');
+$add_evetfehfe = mysql_query("UPDATE users SET userEventAssigned='PBM' WHERE userId=711");
 
-      $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=657');
-        $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=657');
-
-        $delete_request_bfwefew = mysql_query('DELETE FROM users WHERE userId=566');
-          $delete_request_qqqq = mysql_query('DELETE FROM exams WHERE userId=566');
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
