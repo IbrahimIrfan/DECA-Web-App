@@ -513,16 +513,16 @@ $exec = false;
 
               document.getElementById('event_assigned_code').innerHTML = user_event;
 
-              var score_count = 0;
-              var avg = 0;
               for (i = 2; i < 15; i++){
+                            var score_count = 0;
+                            var avg = 0;
                 $('#exam_scores > tbody > tr > td:nth-child(' + i + ')').each(function(){
                   if ($(this).html() != '-'){
                     score_count+=1;
                     avg += parseInt($(this).html());
                   }
                 });
-                $('#examdata').append("Week: " + i + " Completed: " + score_count + " Avg: " + (avg/score_count).toFixed(2) + '<br>');
+                $('#examdata').append("Week: " + i-1 + " Completed: " + score_count + " Avg: " + (avg/score_count).toFixed(2) + '<br>');
               }
               </script>
 
