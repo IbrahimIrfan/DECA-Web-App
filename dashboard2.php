@@ -521,7 +521,7 @@ $exec = false;
                   avg += parseInt($(this).html());
                 }
               });
-              $('#examdata').append("Completed: " + score_count + " Avg: " + avg);
+              $('#examdata').append("Completed: " + score_count + " Avg: " + avg/score_count);
               </script>
 
 
