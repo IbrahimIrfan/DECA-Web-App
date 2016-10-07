@@ -515,13 +515,15 @@ $exec = false;
 
               var score_count = 0;
               var avg = 0;
-              $('#exam_scores > tbody > tr > td:nth-child(3)').each(function(){
-                if ($(this).html() != '-'){
-                  score_count+=1;
-                  avg += parseInt($(this).html());
-                }
-              });
-              $('#examdata').append("Completed: " + score_count + " Avg: " + avg/score_count);
+              for (i = 2; i < 15; i++){
+                $('#exam_scores > tbody > tr > td:nth-child(' + i + ')').each(function(){
+                  if ($(this).html() != '-'){
+                    score_count+=1;
+                    avg += parseInt($(this).html());
+                  }
+                });
+                $('#examdata').append("Week: " + i + " Completed: " + score_count + " Avg: " + avg/score_count + '<br>');
+              }
               </script>
 
 
