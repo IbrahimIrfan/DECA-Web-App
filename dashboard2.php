@@ -522,7 +522,7 @@ $exec = false;
                     avg += parseInt($(this).html());
                   }
                 });
-                $('#examdata').append("Week: " + i-1 + " Completed: " + score_count + " Avg: " + (avg/score_count).toFixed(2) + '<br>');
+                $('#examdata').append("Week: " + (i-1) + " Completed: " + score_count + " Avg: " + (avg/score_count).toFixed(2) + '<br>');
               }
               </script>
 
