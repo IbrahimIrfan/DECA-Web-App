@@ -124,11 +124,6 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
       <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
       <script type="text/javascript" src="js/menu.js"></script>
 
-      <script type="text/javascript">
-      $("#ann-body:contains('http')").each(function() {
-        $(this).wrapInner('<a href="' + $(this).text() + '"/>');
-      });
-      </script>
       <?php
       if(isset($_POST['submit'])) {
 
@@ -255,6 +250,13 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
 </div>
 </div>
+
+
+      <script type="text/javascript">
+      $("#ann-body:contains('http')").each(function() {
+        $(this).wrapInner('<a href="' + $(this).text() + '"/>');
+      });
+      </script>
 </body>
 
 
