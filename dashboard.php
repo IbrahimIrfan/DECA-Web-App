@@ -391,7 +391,7 @@ $exec = false;
               $data = array_reverse($data,true);
               foreach ($data as $announcement){
                 ?>
-                <div class="announce">
+                <div class="announce wordwrap">
                   <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $announcement['announceId']; ?>'">
                 <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
@@ -411,7 +411,7 @@ $exec = false;
                 $data3 = array_reverse($data3,true);
                 foreach ($data3 as $announcement){
                   ?>
-                  <div class="announce">
+                  <div class="announce wordwrap">
                   <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
                   <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
                   <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
@@ -431,7 +431,7 @@ $exec = false;
               $data2 = array_reverse($data2,true);
               foreach ($data2 as $announcement){
                 ?>
-                <div class="announce">
+                <div class="announce wordwrap">
                 <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
                 <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
                 <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
