@@ -456,7 +456,9 @@ $exec = false;
               var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
               var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
               document.getElementById('event_assigned_code').innerHTML = user_event;
-
+              $("#ann-body:contains('http')").each(function() {
+                $(this).wrapInner('<a href="' + $(this).text() + '"/>');
+              });
               </script>
 
 

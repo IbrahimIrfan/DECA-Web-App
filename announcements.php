@@ -123,6 +123,12 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
       <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
       <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
       <script type="text/javascript" src="js/menu.js"></script>
+
+      <script type="text/javascript">
+      $("#ann-body:contains('http')").each(function() {
+        $(this).wrapInner('<a href="' + $(this).text() + '"/>');
+      });
+      </script>
       <?php
       if(isset($_POST['submit'])) {
 
