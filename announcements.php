@@ -253,7 +253,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 
 </body>
 <script type="text/javascript">
-$("#h5ann-body:contains('http')").each(function() {
+$("h5#ann-body:contains('http')").each(function() {
   $(this).wrapInner('<a href="' + $(this).text() + '"/>');
 });
 </script>
