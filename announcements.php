@@ -203,7 +203,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
 
               foreach ($data as $announcement){
                 ?>
-                <div class="announce">
+                <div class="announce wordwrap">
 <?php if ($exec){ ?>
                   <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $announcement['announceId']; ?>'">
                   <?php } ?>
