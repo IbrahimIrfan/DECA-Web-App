@@ -12,7 +12,7 @@
  if ($deleteId !== undefined){
    $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
  }
- $add_event = mysql_query('UPDATE users SET userEventAssigned="PHT" WHERE userId=712');
+ $add_event = mysql_query('UPDATE users SET userEventAssigned="AAM" WHERE userId=713');
 
  // select logged in users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
