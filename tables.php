@@ -15,7 +15,7 @@
   "uploaderName varchar(30) NOT NULL,".
   "song int(11) NOT NULL ".
   " PRIMARY KEY (subId)".
- ") AUTO_INCREMENT=1 ;";
+ ") AUTO_INCREMENT=1;";
 
 $retval = mysql_query( $sql, $conn );
 if(! $retval )
