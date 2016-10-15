@@ -55,9 +55,10 @@ $data = array_reverse($data,true);
 
 foreach ($data as $announcement){
   ?>
+  <div class='clickableSong' id="<?php echo $announcement['subId'];?>">
   <h4 id="ann-title"><?php echo $announcement["uploaderName"]; ?></h4>
   <h5 id="ann-body"><?php echo $announcement["song"]; ?></h5>
-  <h5 id="ann-body"><?php echo $announcement["subId"]; ?></h5>
+</div>
   <hr/>
   <?php
 }
