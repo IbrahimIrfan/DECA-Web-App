@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
  $uplSongStr = strip_tags(trim($_POST['song']));
 
  $uplSongInt = str_replace("C", "1", $uplSongStr);
- echo $uplSongStr;
+ echo $uplSongInt;
 
 $error = false;
  if (empty($uplName) || empty($uplSongInt)){
