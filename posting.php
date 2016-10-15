@@ -33,8 +33,8 @@ $error = false;
 
 <body>
   <h4>Upload a song:</h4>
-  <input id='song' name='song'></input><br>
   <form method='post'>
+    <input id='song' name='song'></input><br>
   <input id='name' name='name'></input><br>
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
