@@ -6,15 +6,17 @@ require_once 'dbconnect.php';
 if(isset($_POST['submit'])) {
 
  $uplName = strip_tags(trim($_POST['name']));
- $uplSong = (int)$_POST['song'];
+ $uplSongStr = strip_tags(trim($_POST['song']));
+
+ $uplSongInt = str_replace("C", "1", $uplSongStr);
+ echo $uplSongStr;
 
 $error = false;
- if (empty($uplName) || empty($uplSong)){
+ if (empty($uplName) || empty($uplSongInt)){
    $error = true;
  }
  if (!$error){
-   $query = "INSERT INTO hackw(uploaderName, song) VALUES('$uplName', '$uplSong')";
-   echo $query;
+   $query = "INSERT INTO hackw(uploaderName, song) VALUES('$uplName', '$uplSongInt')";
   $res = mysql_query($query);
    if ($res) {
     echo "Done!";
@@ -30,6 +32,8 @@ $error = false;
 <html>
 
 <body>
+  <h4>Upload a song:</h4>
+  <input id='song' name='song'></input><br>
   <form method='post'>
   <input id='name' name='name'></input><br>
   <input id='song' name='song'></input><br>
