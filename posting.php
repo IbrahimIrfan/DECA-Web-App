@@ -36,6 +36,8 @@ $error = false;
 
 <body>
   <h4>Upload a song:</h4>
+
+  <h4 id='cbutton'>C</h4><br><h4 id='dbutton'>D</h4><br><h4 id='ebutton'>E</h4><br><h4 id='fbutton'>F</h4><br><h4 id='gbutton'>G</h4><br>
   <form method='post'>
     <input id='song' name='song'></input><br>
   <input id='name' name='name'></input><br>
@@ -62,6 +64,23 @@ foreach ($data as $announcement){
 mysql_free_result($res_cm);
 ?>
 
+<script type='text/javascript'>
+$('#cbutton').on('click', function(){
+  $('#song').append('C');
+});
+$('#dbutton').on('click', function(){
+  $('#song').append('D');
+});
+$('#ebutton').on('click', function(){
+  $('#song').append('E');
+});
+$('#fbutton').on('click', function(){
+  $('#song').append('F');
+});
+$('#gbutton').on('click', function(){
+  $('#song').append('G');
+});
+</script>
 </body>
 
 </html>
