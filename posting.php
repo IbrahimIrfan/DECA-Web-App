@@ -6,7 +6,7 @@ require_once 'dbconnect.php';
 if(isset($_POST['submit'])) {
 
  $uplName = strip_tags(trim($_POST['name']));
- $uplsong = strip_tags(trim($_POST['song']));
+ $uplsong = (int)strip_tags(trim($_POST['song']));
 
 $error = false;
  if (empty($uplName) || empty($uplsong)){
