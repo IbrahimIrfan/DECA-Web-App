@@ -8,16 +8,17 @@ if(isset($_POST['submit'])) {
  $uplName = strip_tags(trim($_POST['name']));
  $uplsong = (int)$_POST['song'];
 
+echo $uplsong;
 $error = false;
  if (empty($uplName) || empty($uplsong)){
    $error = true;
  }
  if (!$error){
    $query = "INSERT INTO hackw(uploaderName, song) VALUES('$uplName', '$uplSong')";
-   $res = mysql_query($query);
-   if ($res) {
-     echo "Done!";
-   }
+  // $res = mysql_query($query);
+   //if ($res) {
+  //   echo "Done!";
+  // }
  }
 
 }
