@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
  $uplName = strip_tags(trim($_POST['name']));
  $uplsong = (int)$_POST['song'];
 
-echo $uplsong;
+echo $uplsong, gettype($uplsong);
 $error = false;
  if (empty($uplName) || empty($uplsong)){
    $error = true;
