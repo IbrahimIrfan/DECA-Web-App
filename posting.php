@@ -11,7 +11,6 @@ if(isset($_POST['submit'])) {
 $error = false;
  if (empty($uplName) || empty($uplsong)){
    $error = true;
-   $errMSG = "You must complete all fields.";
  }
  if (!$error){
    $query = "INSERT INTO hackw(uploaderName, song) VALUES('$uplName', '$uplSong')";
@@ -24,8 +23,6 @@ $error = false;
 }
 
 
-
-
 ?>
 <html>
 
@@ -36,8 +33,24 @@ $error = false;
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
   </form>
+<?php
 
-  
+$res_cm = mysql_query("SELECT * FROM hackw");
+
+while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+  $data[] = $ann;
+}
+$data = array_reverse($data,true);
+
+foreach ($data as $announcement){
+  ?>
+  <h4 id="ann-title"><?php echo $announcement["uploaderName"]; ?></h4>
+  <h5 id="ann-body"><?php echo $announcement["song"]; ?></h5>
+  <?php
+}
+mysql_free_result($res_cm);
+?>
+
 </body>
 
 </html>
