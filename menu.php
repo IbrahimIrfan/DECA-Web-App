@@ -54,10 +54,11 @@ while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
 $data = array_reverse($data,true);
 
 foreach ($data as $announcement){
+  $url = 'localhost/game.html?title=' . $announcement["uploaderName"] . '&song=' . $announcement["song"];
   ?>
-  <div class='clickableSong' id="<?php echo $announcement['subId'];?>">
-  <h4 id="ann-title"><?php echo $announcement["uploaderName"]; ?></h4>
-  <h5 id="ann-body"><?php echo $announcement["song"]; ?></h5>
+  <div class='clickableSong' id="<?php echo $announcement['subId'];?>"><a href='<?php echo $url; ?>'>
+  <h4 id="title"><?php echo $announcement["uploaderName"]; ?></h4>
+  <h5 id="song"><?php echo $announcement["song"]; ?></h5></a>
 </div>
   <hr/>
   <?php
