@@ -66,20 +66,29 @@ mysql_free_result($res_cm);
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type='text/javascript'>
+var strang = ""
 $('#cbutton').on('click', function(){
-  $('#song').attr('value', 'C');
+  strang += 'C';
+      $('#song').attr('value', strang);
 });
 $('#dbutton').on('click', function(){
-  $('#song').append('D');
+    strang += 'D';
+        $('#song').attr('value', strang);
 });
 $('#ebutton').on('click', function(){
-  $('#song').append('E');
+    strang += 'E';
+        $('#song').attr('value', strang);
 });
 $('#fbutton').on('click', function(){
-  $('#song').append('F');
+  strang += 'F';
+      $('#song').attr('value', strang);
 });
 $('#gbutton').on('click', function(){
-  $('#song').append('G');
+  strang += 'G';
+      $('#song').attr('value', strang);
+});
+$('#submit').on('click', function(){
+    $('#song').attr('value', strang);
 });
 </script>
 </body>
