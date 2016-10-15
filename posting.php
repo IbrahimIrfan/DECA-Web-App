@@ -46,6 +46,7 @@ foreach ($data as $announcement){
   ?>
   <h4 id="ann-title"><?php echo $announcement["uploaderName"]; ?></h4>
   <h5 id="ann-body"><?php echo $announcement["song"]; ?></h5>
+  <h5 id="ann-body"><?php echo $announcement["subId"]; ?></h5>
   <?php
 }
 mysql_free_result($res_cm);
