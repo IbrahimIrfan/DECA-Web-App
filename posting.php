@@ -67,7 +67,7 @@ mysql_free_result($res_cm);
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type='text/javascript'>
 $('#cbutton').on('click', function(){
-  $('#song').append('C');
+  $('#song').attr('value', 'C');
 });
 $('#dbutton').on('click', function(){
   $('#song').append('D');
