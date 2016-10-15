@@ -8,6 +8,7 @@ if(isset($_POST['submit'])) {
  $uplName = strip_tags(trim($_POST['name']));
  $uplSongStr = strip_tags(trim($_POST['song']));
 echo $uplSongStr;
+echo str_replace("C", "1", $uplSongStr);
  $uplSongInt = str_replace("C", "1", $uplSongStr);
   $uplSongInt = str_replace("D", "2", $uplSongInt);
    $uplSongInt = str_replace("E", "3", $uplSongInt);
