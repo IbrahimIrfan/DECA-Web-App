@@ -15,7 +15,7 @@
  $sql = "CREATE TABLE hackwestern (" +
   "subId int(11) NOT NULL AUTO_INCREMENT," +
   "uploaderName varchar(30) NOT NULL," +
-  "song int(11) NOT NULL "
+  "song int(11) NOT NULL " +
   " PRIMARY KEY (subId)" +
  ") AUTO_INCREMENT=1 ;";
 
