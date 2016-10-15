@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
  $uplSong = (int)$_POST['song'];
 
 $error = false;
- if (empty($uplName) || empty($uplsong)){
+ if (empty($uplName) || empty($uplSong)){
    $error = true;
  }
  if (!$error){
