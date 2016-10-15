@@ -36,7 +36,6 @@ $error = false;
   <input id='song' name='song'></input><br>
   <form method='post'>
   <input id='name' name='name'></input><br>
-  <input id='song' name='song'></input><br>
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
   </form>
