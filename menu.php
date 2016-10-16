@@ -201,23 +201,23 @@ $('#play').on('click', function(){
     if (strang[i] == 'C'){
       setTimeout(function() {
           oscillator.frequency.value = 261;
-      }, 0);
+      }, 500);
     }else if (strang[i] == 'D') {
       setTimeout(function() {
           oscillator.frequency.value = 294;
-      }, 0);
+      }, 500);
     }else if (strang[i] == 'E') {
       setTimeout(function() {
           oscillator.frequency.value = 330;
-      }, 0);
+      }, 500);
     }else if (strang[i] == 'F') {
       setTimeout(function() {
           oscillator.frequency.value = 349;
-      }, 0);
+      }, 500);
     }else if (strang[i] == 'G') {
       setTimeout(function() {
           oscillator.frequency.value = 392;
-      }, 0);
+      }, 500);
     }
   }
   setTimeout(function() {
