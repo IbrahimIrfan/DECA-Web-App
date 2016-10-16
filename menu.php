@@ -212,8 +212,9 @@ function playAll () {
       i++;
       if (i < strang.length) {
          playAll();
+      }else{
+        oscillator.frequency.value = 0;
       }
-      oscillator.frequency.value = 0;
    }, 500);
 }
 
