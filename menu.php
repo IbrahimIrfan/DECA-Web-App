@@ -84,9 +84,8 @@ $errMSG = "";
   #song, #name {
       margin: 1rem;
       padding: .2rem;
-      width: 50%;
       background: transparent;
-      font-size: 2rem;
+      font-size: 1.8rem;
       word-break: break-word;
   }
 
