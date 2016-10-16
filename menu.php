@@ -33,7 +33,77 @@ $error = false;
 
 ?>
 <html>
+<head>
 
+  <style>
+  body {
+      height: 100%;
+      padding: 1rem;
+      margin: 0;
+      font-family: 'Heebo', sans-serif;
+      background-color: #F3E5F5;
+  }
+
+  .upload_song h4,
+  #submit, #home {
+      display: inline-block;
+      font-weight: bold;
+      -webkit-transition: .5s;
+      border: 2px solid #7B1FA2;
+      background-color: #9C27B0;
+      text-decoration: none;
+      color: #FAFAFA;
+      border-bottom: 5px solid #7B1FA2;
+      border-radius: 5px;
+      display: inline-block;
+      padding: 1rem 1.5rem;
+  }
+
+  .upload_song h4:hover,
+  #submit:hover, #home:hover {
+      background-color: #7B1FA2;
+      border-bottom: 5px solid #4A148C;
+      cursor: pointer;
+  }
+
+  .upload_song {
+      margin: 1rem;
+  }
+
+  .clickableSong {
+      display: inline-flex;
+      flex-wrap: wrap;
+      background-color: #E1BEE7;
+      border-bottom: 10px solid #9C27B0;
+      width: 20vw;
+      height: 20vw;
+      padding: 1rem;
+      margin: 1rem;
+  }
+  .clickableSong a {
+      text-decoration: none;
+      color:black;
+  }
+
+  #song, #name {
+      margin: 1rem;
+      padding: .2rem;
+      width: 50%;
+      background: transparent;
+      font-size: 2rem;
+  }
+
+  #submit {
+      font-size: 1rem;
+      margin: 1rem;
+  }
+  #home {
+      width:12vw;
+      font-size: 1rem;
+      padding: .5rem 1rem;
+  }
+  </style>
+</head>
 <body>
   <h4>Upload a song:</h4>
 
@@ -66,74 +136,6 @@ foreach ($data as $announcement){
 }
 mysql_free_result($res_cm);
 ?>
-<style>
-body {
-    height: 100%;
-    padding: 1rem;
-    margin: 0;
-    font-family: 'Heebo', sans-serif;
-    background-color: #F3E5F5;
-}
-
-.upload_song h4,
-#submit, #home {
-    display: inline-block;
-    font-weight: bold;
-    -webkit-transition: .5s;
-    border: 2px solid #7B1FA2;
-    background-color: #9C27B0;
-    text-decoration: none;
-    color: #FAFAFA;
-    border-bottom: 5px solid #7B1FA2;
-    border-radius: 5px;
-    display: inline-block;
-    padding: 1rem 1.5rem;
-}
-
-.upload_song h4:hover,
-#submit:hover, #home:hover {
-    background-color: #7B1FA2;
-    border-bottom: 5px solid #4A148C;
-    cursor: pointer;
-}
-
-.upload_song {
-    margin: 1rem;
-}
-
-.clickableSong {
-    display: inline-flex;
-    flex-wrap: wrap;
-    background-color: #E1BEE7;
-    border-bottom: 10px solid #9C27B0;
-    width: 20vw;
-    height: 20vw;
-    padding: 1rem;
-    margin: 1rem;
-}
-.clickableSong a {
-    text-decoration: none;
-    color:black;
-}
-
-#song, #name {
-    margin: 1rem;
-    padding: .2rem;
-    width: 50%;
-    background: transparent;
-    font-size: 2rem;
-}
-
-#submit {
-    font-size: 1rem;
-    margin: 1rem;
-}
-#home {
-    width:12vw;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-}
-</style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type='text/javascript'>
 var strang = ""
