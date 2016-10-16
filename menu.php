@@ -109,7 +109,7 @@ $error = false;
   <div class="upload_song">
     <h2>Upload a song:</h2>
 
-  <h4 id='cbutton'>C</h4><h4 id='dbutton'>D</h4><h4 id='ebutton'>E</h4><h4 id='fbutton'>F</h4><h4 id='gbutton'>G</h4><h4 id='backspace'>&#x8;</h4><br>
+  <h4 id='cbutton'>C</h4><h4 id='dbutton'>D</h4><h4 id='ebutton'>E</h4><h4 id='fbutton'>F</h4><h4 id='gbutton'>G</h4><h4 id='backspace'>&#9003;</h4><br>
 </div>
 
   <form method='post'>
