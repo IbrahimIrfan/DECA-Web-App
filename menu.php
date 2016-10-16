@@ -105,11 +105,15 @@ $error = false;
   </style>
 </head>
 <body>
-  <h4>Upload a song:</h4>
+   <a id="home" align="center" href="index.html">Home</a>
+  <div class="upload_song">
+    <h4>Upload a song:</h4>
 
   <h4 id='cbutton'>C</h4><br><h4 id='dbutton'>D</h4><br><h4 id='ebutton'>E</h4><br><h4 id='fbutton'>F</h4><br><h4 id='gbutton'>G</h4><br><h4 id='backspace'>&#x8;</h4>
+</div>
+
   <form method='post'>
-    <input id='song' name='song'></input><br>
+    <input id='song' name='song' readonly="true"></input><br>
   <input id='name' name='name'></input><br>
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
