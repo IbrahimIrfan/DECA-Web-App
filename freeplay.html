@@ -72,7 +72,7 @@
                 if (palmPos != undefined) {
                     var freq = ((palmPos + 50) + Math.abs(vibrato/10)).toFixed(2);
                     oscillator.frequency.value = freq;
-                    handString = "Frequency: " + freq;
+                    handString = "Frequency: " + freq + ' Hz';
                     for (var i = 0; i < notes.length; i++) {
                         if ((palmPos + 50) - notes[i] < 20) {
                             noteString += noteNames[i];
