@@ -10,10 +10,10 @@
  $conn = mysql_connect($host,$user,$pass);
  $dbcon = mysql_select_db($name);
 
- $sql = "CREATE TABLE hackw (".
+ $sql = "CREATE TABLE hackw2 (".
   "subId int(11) NOT NULL AUTO_INCREMENT,".
   "uploaderName varchar(60) NOT NULL,".
-  "song int(11) NOT NULL, ".
+  "song varchar(60) NOT NULL, ".
   "PRIMARY KEY (subId) ".
  ") AUTO_INCREMENT=1;";
 

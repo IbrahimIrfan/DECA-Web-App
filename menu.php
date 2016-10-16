@@ -19,7 +19,7 @@ $error = false;
    $error = true;
  }
  if (!$error){
-   $query = "INSERT INTO hackw(uploaderName, song) VALUES('$uplName', '$uplSongInt')";
+   $query = "INSERT INTO hackw2(uploaderName, song) VALUES('$uplName', '$uplSongInt')";
   $res = mysql_query($query);
    if ($res) {
     echo "Done!";
