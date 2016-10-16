@@ -1,0 +1,119 @@
+#song_title {
+    position: absolute;
+    bottom: -1rem;
+    right:2rem;
+    font-size: 3.5rem;
+    color: #4A148C;
+
+}
+
+#box {
+    background-color: #4A148C;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    height: 15vh;
+}
+
+#note {
+    -webkit-transition:.5s;
+    background-color: #7B1FA2;
+    position: absolute;
+    right: 0;
+    bottom: 15vh;
+    width: 100%;
+    margin: 0;
+    height: 15vh;
+}
+
+body {
+    margin: 0;
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    background-color: #F3E5F5;
+}
+
+h1 {
+    font-size:5rem;
+    color:#FAFAFA;
+    text-shadow: 2px 2px #4A148C;
+}
+
+#home {
+    position: absolute;
+    top:0;
+    margin:1rem;
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+h1 {
+    font-size:5rem;
+    color:#FAFAFA;
+    text-shadow: 2px 2px #4A148C;
+}
+
+a {
+    font-weight: bold;
+    width:12vw;
+    -webkit-transition: .5s;
+    border: 2px solid #7B1FA2;
+    background-color: #9C27B0;
+    text-decoration: none;
+    font-size: 2vw;
+    color:#FAFAFA;
+    border-bottom: 7px solid #7B1FA2;
+    border-radius: 5px;
+    display:inline-block;
+    margin-top:40vh;
+    margin-left:1vw;
+    margin-right:1vw;
+    padding: 1.5rem 4rem;
+}
+
+a:hover {
+    background-color: #7B1FA2;
+    border-bottom: 5px solid #4A148C;
+    cursor: pointer;
+}
+
+.lines {
+    width: 100%;
+    background-color: #7B1FA2;
+    height: 5px;
+    position: absolute;
+}
+
+.line1 {
+    bottom: 15vh;
+}
+
+.line2 {
+    bottom: 30vh;
+}
+
+.line3 {
+    bottom: 45vh;
+}
+
+.line4 {
+    bottom: 60vh;
+}
+
+.line5 {
+    bottom: 75vh;
+}
+
+.line6 {
+    bottom: 90vh;
+}
+
+#currentNote {
+    position: absolute;
+    bottom:0;
+    padding:1rem;
+    font-size: 5rem;
+    color: #4A148C;
+}

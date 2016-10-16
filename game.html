@@ -1,0 +1,236 @@
+<!DOCTYPE>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="game.css" type="text/css"></link>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="leapjs/leap-0.6.4.js"></script>
+
+    <script>
+        function getURLVar(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
+        var title = getURLVar('title');
+        var songStr = getURLVar('song');
+
+        var songNotes = [];
+        for (i = 0; i < songStr.length; i++) {
+            if (songStr[i] == 'C') {
+                songNotes.push(1);
+            } else if (songStr[i] == 'D') {
+                songNotes.push(2);
+            } else if (songStr[i] == 'E') {
+                songNotes.push(3);
+            } else if (songStr[i] == 'F') {
+                songNotes.push(4);
+            } else if (songStr[i] == 'G') {
+                songNotes.push(5);
+            }
+        }
+
+        var letters = ['C', 'D', 'E', 'F', 'G'];
+
+        var height = 0.15 * $(window).height();
+        var posNote;
+
+        var context = new(window.AudioContext || window.webkitAudioContext)();
+        var oscillator = context.createOscillator();
+        oscillator.connect(context.destination);
+
+        oscillator.frequency.value = 0;
+        oscillator.start();
+
+        var state = 'play';
+        window.onkeypress = function(e) {
+            if (e.charCode == 32) { //spacebar
+                if (state == 'play') {
+                    state = 'pausing';
+                } else {
+                    state = 'play';
+                }
+            }
+        };
+        var haveLoggedFrame = false;
+        var controller = new Leap.Controller({
+            enableGestures: true
+        });
+        var currentNote = 0;
+        var end = false;
+
+
+        controller.loop(function(frame) {
+            $('#song_title').html(title);
+            setTimeout(function() {
+                if ($('#note').css('bottom') == $('#box').css('margin-bottom') && end != true) {
+                    if (currentNote + 1 < songNotes.length) {
+                        $('#currentNote').html(letters[songNotes[currentNote] - 1]);
+                    } else {
+                        end = true;
+                    }
+                    oscillator.frequency.value = posNote;
+                    setTimeout(function() {
+                        if (end == true) {
+                            $('#box').css('background-color', 'transparent');
+                            $('#note').css('background-color', '#4CAF50');
+                            $('#currentNote').html("Done");
+                        } else {
+                            $('#box').css('background-color', '#4A148C');
+                        }
+                    }, 1000);
+                    setTimeout(function() {
+                        currentNote++;
+                        $('#note').css('bottom', songNotes[currentNote] * 15 + 'vh');
+                    }, 0);
+                }
+            }, 0);
+
+
+            var findPinchingFingerType = function(hand) {
+                var pincher;
+                var closest = 500;
+                for (var f = 1; f < 5; f++) {
+                    current = hand.fingers[f];
+                    distance = Leap.vec3.distance(hand.thumb.tipPosition, current.tipPosition);
+                    if (current != hand.thumb && distance < closest) {
+                        closest = distance;
+                        pincher = current;
+                    }
+                }
+                return pincher;
+            }
+
+            if (state == 'paused') return;
+            if (state == 'pausing') {
+                document.getElementById('out').innerHTML = "<p><b>PAUSED</b></p><div>" + frame.dump() + "</div>";
+                state = 'paused';
+            } else { // Display Hand object data
+                var handString = "";
+                var palmPos = "";
+                if (frame.hands.length > 0) {
+                    for (var i = 0; i < frame.hands.length; i++) {
+                        var hand = frame.hands[i];
+
+                        palmPos = Math.round(hand.palmPosition[1]);
+                        handString += "Hand ID: " + hand.id + "<br />";
+                        handString += "Palm position y: " + Math.round(hand.palmPosition[1]) + " mm<br />";
+                        handString += "Palm velocity y : " + Math.round(hand.palmVelocity[1]) + " mm/s<br />";
+                        handString += 'Pixel:' + (1000 - 4 * palmPos);
+                    }
+                }
+            }
+
+            var posRound = (4 * palmPos - 400);
+
+            if (posRound <= height - (height / 2)) {
+                posRound = height;
+                posNote = 261;
+            } else if (posRound > height - (height / 2) && posRound < 2 * height - (height / 2)) {
+                posRound = 2 * height;
+                posNote = 293;
+            } else if (posRound > 2 * height - (height / 2) && posRound < 3 * height - (height / 2)) {
+                posRound = 3 * height;
+                posNote = 329;
+            } else if (posRound > 3 * height - (height / 2) && posRound < 4 * height - (height / 2)) {
+                posRound = 4 * height;
+                posNote = 349;
+            } else if (posRound > 4 * height - (height / 2)) {
+                posRound = 5 * height;
+                posNote = 392;
+            }
+            $('#box').css({
+                'margin-bottom': posRound + 'px'
+            });
+            if (frame.hands.length > 0 && hand.pinchStrength > 0) {
+                var pinchingFinger = findPinchingFingerType(hand);
+                $('#box').show();
+                //  playSound(300);
+            } else {
+                oscillator.frequency.value = 0;
+                $('#box').hide();
+                $('#box').css('margin-bottom', '10000px');
+            }
+            //document.getElementById('out').innerHTML = "<p>spacebar to pause</p><div>" + handString + "</div>";
+
+            if (haveLoggedFrame == false && frame.hands[0]) {
+                console.log(frame);
+                haveLoggedFrame = true;
+            }
+        });
+
+        // Note that this means Leap is connected, but not streaming.  Use streamingStarted for that.
+        controller.on('ready', function() {
+            console.log("ready. Service version: " + controller.connection.protocol.serviceVersion);
+        });
+        controller.on('connect', function() {
+            console.log("connected with protocol v" + controller.connection.opts.requestProtocolVersion);
+        });
+        controller.on('disconnect', function() {
+            console.log("disconnect");
+        });
+        controller.on('focus', function() {
+            console.log("focus");
+        });
+        controller.on('blur', function() {
+            console.log("blur");
+        });
+        controller.on('deviceAttached', function(deviceInfo) {
+            console.log("deviceAttached", deviceInfo);
+        });
+        controller.on('deviceRemoved', function(deviceInfo) {
+            console.log("deviceRemoved", deviceInfo);
+        });
+        controller.on('deviceStreaming', function(deviceInfo) {
+            console.log("deviceStreaming", deviceInfo);
+        });
+        controller.on('deviceStopped', function(deviceInfo) {
+            console.log("deviceStopped", deviceInfo);
+        });
+        controller.on('streamingStarted', function(deviceInfo) {
+            console.log("streamingStarted", deviceInfo);
+        });
+        controller.on('streamingStopped', function(deviceInfo) {
+            console.log("streamingStopped", deviceInfo);
+        });
+        controller.on('deviceConnected', function() {
+            console.log("deviceConnected");
+        });
+        controller.on('deviceDisconnected', function() {
+            console.log("deviceDisconnected");
+        });
+        // This event is always called after other frame events, and is ideal for rendering WebGL scenes.
+        // The timestamp is from requestAnimationFrame and is when the pixels hit the screen.
+        controller.on('frameEnd', function(timestamp) {
+            //        console.log('frameEnd', timestamp);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="tint"></div>
+    <a id="home" align="center" href="index.html">Home</a>
+    <h2 id="song_title"></h2>
+
+    <div id="note"></div>
+    <div id="box"></div>
+    <div class="lines line1"></div>
+    <div class="lines line2"></div>
+    <div class="lines line3"></div>
+    <div class="lines line4"></div>
+    <div class="lines line5"></div>
+    <div class="lines line6"></div>
+    <div id="currentNote"></div>
+
+</body>
+
+</html>
