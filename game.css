@@ -1,8 +1,8 @@
 #song_title {
     position: absolute;
-    bottom: -1rem;
+    top: -2rem;
     right:2rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #4A148C;
 }
 
@@ -12,6 +12,7 @@
     left: 15rem;
     font-size: 3.5rem;
     color: #4A148C;
+    width: 100%;
 }
 
 #box {
