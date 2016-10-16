@@ -200,13 +200,21 @@ $('#play').on('click', function(){
             oscillator.frequency.value = 261; //
         }, 500);
     }else if (strang[i] == 'D') {
-          oscillator.frequency.value = 294;
+      setTimeout(function() {
+          oscillator.frequency.value = 294; //
+      }, 500);
     }else if (strang[i] == 'E') {
-          oscillator.frequency.value = 330;
+      setTimeout(function() {
+          oscillator.frequency.value = 330; //
+      }, 500);
     }else if (strang[i] == 'F') {
-          oscillator.frequency.value = 349;
+      setTimeout(function() {
+          oscillator.frequency.value = 349; //
+      }, 500);
     }else if (strang[i] == 'G') {
-          oscillator.frequency.value = 392;
+      setTimeout(function() {
+          oscillator.frequency.value = 392; //
+      }, 500);
     }
 
     setTimeout(function() {
