@@ -37,7 +37,17 @@
                 songNotes.push(5);
             }
         }
+
+        var notesString = [];
+        var noteIndex = 1;
+
         var letters = ['C', 'D', 'E', 'F', 'G'];
+        for (var note = 0; note < songNotes.length; note++) {
+            notesString.push('<span>' + letters[songNotes[note]-1] + " " + '</span>');
+        }
+        console.log(notesString);
+
+        console.log(notesString);
         var height = 0.15 * $(window).height();
         var posNote;
         var context = new(window.AudioContext || window.webkitAudioContext)();
@@ -61,11 +71,17 @@
         });
         var currentNote = 0;
         var end = false;
+        $(document).on('ready', function() {
+            $('#allNotes').html(notesString);
+        });
+
         controller.loop(function(frame) {
             $('#song_title').html(title);
             setTimeout(function() {
                 if ($('#note').css('bottom') == $('#box').css('margin-bottom') && end != true) {
+                    $('#allNotes span:nth-child(' + noteIndex + ')').css('color', '#4CAF50');
                     if (currentNote + 1 < songNotes.length) {
+                        noteIndex++;
                         $('#currentNote').html(letters[songNotes[currentNote] - 1]);
                     } else {
                         end = true;
@@ -203,7 +219,7 @@
 <body>
     <div id="tint"></div>
     <a id="home" align="center" href="index.html">Home</a>
-    <a id="songs" align="center" href="menu.php">All Songs</a>
+    <a id="songs" align="center" href="menu.html">All Songs</a>
     <h2 id="song_title"></h2>
 
     <div id="note"></div>
@@ -215,6 +231,7 @@
     <div class="lines line5"></div>
     <div class="lines line6"></div>
     <div id="currentNote"></div>
+    <div id="allNotes"></div>
 
 </body>
 

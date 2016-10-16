@@ -6,6 +6,14 @@
     color: #4A148C;
 }
 
+#allNotes {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 20rem;
+    font-size: 3.5rem;
+    color: #4A148C;
+}
+
 #box {
     background-color: #4A148C;
     position: absolute;
