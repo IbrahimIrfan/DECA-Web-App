@@ -195,7 +195,6 @@ $('#backspace').on('click', function(){
 });
 $('#play').on('click', function(){
   for (i = 0; i < strang.length; i++){
-    setTimeout(function() {
       if (strang[i] == 'C'){
           oscillator.frequency.value = 261;
     }else if (strang[i] == 'D') {
@@ -207,7 +206,6 @@ $('#play').on('click', function(){
     }else if (strang[i] == 'G') {
           oscillator.frequency.value = 392;
     }
-  }, 0);
 
     setTimeout(function() {
         oscillator.frequency.value = 0; //
