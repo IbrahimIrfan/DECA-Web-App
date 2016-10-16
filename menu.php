@@ -193,23 +193,31 @@ $('#backspace').on('click', function(){
    strang = strang.substring(0, strang.length - 1);
        $('#song').attr('value', strang);
 });
-$('#play').on('click', function(){
-  for (i = 0; i < strang.length; i++){
-        setTimeout(function() {
-      if (strang[i] == 'C'){
-          oscillator.frequency.value = 261;
-    }else if (strang[i] == 'D') {
-          oscillator.frequency.value = 294;
-    }else if (strang[i] == 'E') {
-          oscillator.frequency.value = 330;
-    }else if (strang[i] == 'F') {
-          oscillator.frequency.value = 349;
-    }else if (strang[i] == 'G') {
-          oscillator.frequency.value = 392;
-    }
-  }, 500);
 
-  }
+var i = 0;                     //  set your counter to 1
+
+function playAll () {           //  create a loop function
+   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+     if (strang[i] == 'C'){
+           oscillator.frequency.value = 261;
+     }else if (strang[i] == 'D') {
+           oscillator.frequency.value = 294;
+     }else if (strang[i] == 'E') {
+           oscillator.frequency.value = 330;
+     }else if (strang[i] == 'F') {
+           oscillator.frequency.value = 349;
+     }else if (strang[i] == 'G') {
+           oscillator.frequency.value = 392;
+     }
+      i++;                     //  increment the counter
+      if (i < strang.length) {            //  if the counter < 10, call the loop function
+         playAll();             //  ..  again which will trigger another
+      }                        //  ..  setTimeout()
+   }, 500)
+}
+
+$('#play').on('click', function(){
+  playAll();
 });
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
