@@ -118,6 +118,7 @@ $error = false;
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
   </form>
+  <div>
 <?php
 
 $res_cm = mysql_query("SELECT * FROM hackw");
@@ -130,16 +131,15 @@ $data = array_reverse($data,true);
 foreach ($data as $announcement){
   $url = 'localhost/game.html?title=' . $announcement["uploaderName"] . '&song=' . $announcement["song"];
   ?>
-  <div>
   <div class='clickableSong' id="<?php echo $announcement['subId'];?>"><a href='<?php echo $url; ?>'>
   <h4 id="title"><?php echo $announcement["uploaderName"]; ?></h4>
   <h5 id="song"><?php echo $announcement["song"]; ?></h5></a>
-</div>
 </div>
   <?php
 }
 mysql_free_result($res_cm);
 ?>
+</div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type='text/javascript'>
 var strang = ""
