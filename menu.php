@@ -142,26 +142,52 @@ mysql_free_result($res_cm);
 </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type='text/javascript'>
+var context = new(window.AudioContext || window.webkitAudioContext)();
+var oscillator = context.createOscillator();
+oscillator.connect(context.destination);
+
+oscillator.frequency.value = 0;
+oscillator.start();
 var strang = ""
 $('#cbutton').on('click', function(){
   strang += 'C';
       $('#song').attr('value', strang);
+      oscillator.frequency.value = 261;
+      setTimeout(function() {
+          oscillator.frequency.value = 0;
+      }, 500);
 });
 $('#dbutton').on('click', function(){
     strang += 'D';
         $('#song').attr('value', strang);
+        oscillator.frequency.value = 294;
+          setTimeout(function() {
+              oscillator.frequency.value = 0;
+          }, 500);
 });
 $('#ebutton').on('click', function(){
     strang += 'E';
         $('#song').attr('value', strang);
+        oscillator.frequency.value = 330;
+          setTimeout(function() {
+              oscillator.frequency.value = 0;
+          }, 500);
 });
 $('#fbutton').on('click', function(){
   strang += 'F';
       $('#song').attr('value', strang);
+      oscillator.frequency.value = 349;
+        setTimeout(function() {
+            oscillator.frequency.value = 0;
+        }, 500);
 });
 $('#gbutton').on('click', function(){
   strang += 'G';
       $('#song').attr('value', strang);
+      oscillator.frequency.value = 392;
+        setTimeout(function() {
+            oscillator.frequency.value = 0;
+        }, 500);
 });
 $('#backspace').on('click', function(){
    strang = strang.substring(0, strang.length - 1);
