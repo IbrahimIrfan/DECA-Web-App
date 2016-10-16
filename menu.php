@@ -194,10 +194,10 @@ $('#backspace').on('click', function(){
        $('#song').attr('value', strang);
 });
 
-var i = 0;                     //  set your counter to 1
+var i = 0;
 
-function playAll () {           //  create a loop function
-   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+function playAll () {
+   setTimeout(function () {
      if (strang[i] == 'C'){
            oscillator.frequency.value = 261;
      }else if (strang[i] == 'D') {
@@ -209,16 +209,16 @@ function playAll () {           //  create a loop function
      }else if (strang[i] == 'G') {
            oscillator.frequency.value = 392;
      }
-      i++;                     //  increment the counter
-      if (i < strang.length) {            //  if the counter < 10, call the loop function
-         playAll();             //  ..  again which will trigger another
-      }                        //  ..  setTimeout()
-   }, 500)
+      i++;
+      if (i < strang.length) {
+         playAll();
+      }
+   }, 500);
+   oscillator.frequency.value = 0;
 }
 
 $('#play').on('click', function(){
   playAll();
-  oscillator.frequency.value = 0;
 });
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
