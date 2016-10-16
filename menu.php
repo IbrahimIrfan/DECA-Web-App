@@ -196,7 +196,9 @@ $('#backspace').on('click', function(){
 $('#play').on('click', function(){
   for (i = 0; i < strang.length; i++){
       if (strang[i] == 'C'){
-          oscillator.frequency.value = 261;
+        setTimeout(function() {
+            oscillator.frequency.value = 261; //
+        }, 500);
     }else if (strang[i] == 'D') {
           oscillator.frequency.value = 294;
     }else if (strang[i] == 'E') {
