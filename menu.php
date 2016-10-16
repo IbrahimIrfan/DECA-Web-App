@@ -3,8 +3,6 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 
-$add = mysql_query("DELETE * FROM hackw2");
-
 if(isset($_POST['submit'])) {
 
  $uplName = strip_tags(trim($_POST['name']));
@@ -27,6 +25,9 @@ $errMSG = "";
  }
 
 }
+
+$add = mysql_query("DELETE * FROM hackw2");
+
 
 
 ?>
