@@ -213,8 +213,8 @@ function playAll () {
       if (i < strang.length) {
          playAll();
       }
+      oscillator.frequency.value = 0;
    }, 500);
-   oscillator.frequency.value = 0;
 }
 
 $('#play').on('click', function(){
