@@ -9,8 +9,10 @@ if(isset($_POST['submit'])) {
  $uplSongStr = strip_tags(trim($_POST['song']));
 
 $error = false;
+$errMSG = "";
  if (empty($uplName) || empty($uplSongStr)){
    $error = true;
+   $errMSG = "You must enter all fields";
  }
  if (!$error){
    $query = "INSERT INTO hackw2(uploaderName, song) VALUES('$uplName', '$uplSongStr')";
@@ -105,6 +107,7 @@ $error = false;
    <a id="home" align="center" href="index.html">Home</a>
   <div class="upload_song">
     <h2>Upload a song:</h2>
+    <h2><?php echo $errMSG; ?></h2>
 
   <h4 id='cbutton'>C</h4><h4 id='dbutton'>D</h4><h4 id='ebutton'>E</h4><h4 id='fbutton'>F</h4><h4 id='gbutton'>G</h4><h4 id='backspace'>&#9003;</h4><br>
 </div>
