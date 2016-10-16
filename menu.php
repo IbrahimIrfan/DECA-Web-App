@@ -75,7 +75,6 @@ $errMSG = "";
       width: 20vw;
       height: 20vw;
       padding: 1rem;
-      margin: 1rem;
   }
   .clickableSong a {
       text-decoration: none;
