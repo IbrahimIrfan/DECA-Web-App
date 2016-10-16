@@ -148,35 +148,6 @@ oscillator.connect(context.destination);
 
 oscillator.frequency.value = 0;
 oscillator.start();
-
-var audio = function(){
-  var context = new(window.AudioContext || window.webkitAudioContext)();
-  var oscillator = context.createOscillator();
-  oscillator.connect(context.destination);
-
-  oscillator.frequency.value = 0;
-  oscillator.start();
-  for (i = 0; i < strang.length; i++){
-    if (strang[i] == 'C'){
-          oscillator.frequency.value = 261;
-    }else if (strang[i] == 'D') {
-          oscillator.frequency.value = 294;
-    }else if (strang[i] == 'E') {
-          oscillator.frequency.value = 330;
-    }else if (strang[i] == 'F') {
-          oscillator.frequency.value = 349;
-    }else if (strang[i] == 'G') {
-          oscillator.frequency.value = 392;
-    }
-    setTimeout(function() {
-        oscillator.frequency.value = 0; //
-    }, 500);
-  }
-
-}
-$('#play').on('click', function(){
-  audio();
-});
 var strang = ""
 $('#cbutton').on('click', function(){
   strang += 'C';
@@ -221,6 +192,24 @@ $('#gbutton').on('click', function(){
 $('#backspace').on('click', function(){
    strang = strang.substring(0, strang.length - 1);
        $('#song').attr('value', strang);
+});
+$('#play').on('click', function(){
+  for (i = 0; i < strang.length; i++){
+    if (strang[i] == 'C'){
+          oscillator.frequency.value = 261;
+    }else if (strang[i] == 'D') {
+          oscillator.frequency.value = 294;
+    }else if (strang[i] == 'E') {
+          oscillator.frequency.value = 330;
+    }else if (strang[i] == 'F') {
+          oscillator.frequency.value = 349;
+    }else if (strang[i] == 'G') {
+          oscillator.frequency.value = 392;
+    }
+    setTimeout(function() {
+        oscillator.frequency.value = 0; //
+    }, 500);
+  }
 });
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
