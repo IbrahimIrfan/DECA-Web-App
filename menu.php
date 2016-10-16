@@ -107,9 +107,9 @@ $error = false;
 <body>
    <a id="home" align="center" href="index.html">Home</a>
   <div class="upload_song">
-    <h4>Upload a song:</h4>
+    <h2>Upload a song:</h2>
 
-  <h4 id='cbutton'>C</h4><br><h4 id='dbutton'>D</h4><br><h4 id='ebutton'>E</h4><br><h4 id='fbutton'>F</h4><br><h4 id='gbutton'>G</h4><br><h4 id='backspace'>&#x8;</h4>
+  <h4 id='cbutton'>C</h4><h4 id='dbutton'>D</h4><h4 id='ebutton'>E</h4><h4 id='fbutton'>F</h4><h4 id='gbutton'>G</h4><h4 id='backspace'>&#x8;</h4><br>
 </div>
 
   <form method='post'>
