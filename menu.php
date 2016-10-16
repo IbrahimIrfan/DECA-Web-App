@@ -195,6 +195,7 @@ $('#backspace').on('click', function(){
 });
 
 var i;
+
 function playAll () {
    setTimeout(function () {
      if (strang[i] == 'C'){
@@ -209,7 +210,7 @@ function playAll () {
            oscillator.frequency.value = 392;
      }
       i++;
-      if (i < strang.length) {
+      if (i <= strang.length) {
          playAll();
       }else{
         oscillator.frequency.value = 0;
