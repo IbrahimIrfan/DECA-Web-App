@@ -204,7 +204,7 @@ $('#play').on('click', function(){
           oscillator.frequency.value = 392;
     }
     setTimeout(function() {
-        oscillator.frequency.value = 0;
+        oscillator.frequency.value = 0; //
     }, 500);
   }
 });
