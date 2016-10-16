@@ -45,8 +45,10 @@
         for (var note = 0; note < songNotes.length; note++) {
             notesString.push('<span>' + letters[songNotes[note]-1] + " " + '</span>');
         }
-        var height = 0.15 * $(window).height();
+        console.log(notesString);
 
+        console.log(notesString);
+        var height = 0.15 * $(window).height();
         var posNote;
         var context = new(window.AudioContext || window.webkitAudioContext)();
         var oscillator = context.createOscillator();
@@ -70,8 +72,10 @@
         var currentNote = 0;
         var end = false;
         $(document).on('ready', function() {
+            if (notesString.length > 14) {
+                $('#allNotes').css('font-size', '1.5rem');
+            }
             $('#allNotes').html(notesString);
-            $('#note').css('bottom', songNotes[0] * 15 + 'vh');
         });
 
         controller.loop(function(frame) {
@@ -218,7 +222,7 @@
 <body>
     <div id="tint"></div>
     <a id="home" align="center" href="index.html">Home</a>
-    <a id="songs" align="center" href="menu.php">All Songs</a>
+    <a id="songs" align="center" href="menu.html">All Songs</a>
     <h2 id="song_title"></h2>
 
     <div id="note"></div>

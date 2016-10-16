@@ -9,7 +9,7 @@
 #allNotes {
     position: absolute;
     bottom: 1.6rem;
-    left: 20rem;
+    left: 15rem;
     font-size: 3.5rem;
     color: #4A148C;
 }
@@ -29,6 +29,7 @@
     background-color: #7B1FA2;
     position: absolute;
     right: 0;
+    bottom: 15vh;
     width: 100%;
     margin: 0;
     height: 15vh;
