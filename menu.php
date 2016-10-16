@@ -102,6 +102,9 @@ $error = false;
       font-size: 1rem;
       padding: .5rem 1rem;
   }
+  #play{
+    display: inline;
+  }
   </style>
 </head>
 <body>
@@ -113,7 +116,7 @@ $error = false;
 </div>
 
   <form method='post'>
-    <input id='song' name='song' readonly="true"></input><br>
+    <input id='song' name='song' readonly="true"></input><div id='play'>&#9654;</div><br>
   <input id='name' name='name'></input><br>
   <input id="submit" name="submit" type="submit" value="Submit">
   </input>
@@ -192,6 +195,24 @@ $('#gbutton').on('click', function(){
 $('#backspace').on('click', function(){
    strang = strang.substring(0, strang.length - 1);
        $('#song').attr('value', strang);
+});
+$('#play').on('click', function(){
+  for (i = 0; i < strang.length; i++){
+    if (strang[i] == 'C'){
+      oscillator.frequency.value = 261;
+    }else if (strang[i] == 'D') {
+      oscillator.frequency.value = 294;
+    }else if (strang[i] == 'E') {
+      oscillator.frequency.value = 330;
+    }else if (strang[i] == 'F') {
+      oscillator.frequency.value = 349;
+    }else if (strang[i] == 'G') {
+      oscillator.frequency.value = 392;
+    }
+  }
+  setTimeout(function() {
+      oscillator.frequency.value = 0;
+  }, 500);
 });
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
