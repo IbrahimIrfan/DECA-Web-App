@@ -194,7 +194,7 @@ $('#backspace').on('click', function(){
        $('#song').attr('value', strang);
 });
 
-
+var i;
 function playAll () {
    setTimeout(function () {
      if (strang[i] == 'C'){
@@ -218,7 +218,7 @@ function playAll () {
 }
 
 $('#play').on('click', function(){
-  var i = 0;
+  i = 0;
   playAll();
 });
 $('#submit').on('click', function(){
