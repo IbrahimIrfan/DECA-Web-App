@@ -195,27 +195,19 @@ $('#backspace').on('click', function(){
 });
 $('#play').on('click', function(){
   for (i = 0; i < strang.length; i++){
+        setTimeout(function() {
       if (strang[i] == 'C'){
-          setTimeout(function() {
           oscillator.frequency.value = 261;
-            }, 500);
     }else if (strang[i] == 'D') {
-        setTimeout(function() {
           oscillator.frequency.value = 294;
-          }, 500);
     }else if (strang[i] == 'E') {
-        setTimeout(function() {
           oscillator.frequency.value = 330;
-          }, 500);
     }else if (strang[i] == 'F') {
-        setTimeout(function() {
           oscillator.frequency.value = 349;
-          }, 500);
     }else if (strang[i] == 'G') {
-        setTimeout(function() {
           oscillator.frequency.value = 392;
-          }, 500);
     }
+  }, 500);
 
   }
 });
