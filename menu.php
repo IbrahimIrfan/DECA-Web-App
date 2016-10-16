@@ -28,7 +28,11 @@ $errMSG = "";
 
 $add = mysql_query("DELETE * FROM hackw2");
 
-
+if ($add) {
+ echo "Done!";
+}else{
+ echo mysql_error();
+}
 
 ?>
 <html>
