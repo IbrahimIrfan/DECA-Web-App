@@ -20,10 +20,9 @@
             }
             return (false);
         }
-
         var title = getURLVar('title');
+        title = title.replace(/%20/g, " ");
         var songStr = getURLVar('song');
-
         var songNotes = [];
         for (i = 0; i < songStr.length; i++) {
             if (songStr[i] == 'C') {
@@ -38,19 +37,14 @@
                 songNotes.push(5);
             }
         }
-
         var letters = ['C', 'D', 'E', 'F', 'G'];
-
         var height = 0.15 * $(window).height();
         var posNote;
-
         var context = new(window.AudioContext || window.webkitAudioContext)();
         var oscillator = context.createOscillator();
         oscillator.connect(context.destination);
-
         oscillator.frequency.value = 0;
         oscillator.start();
-
         var state = 'play';
         window.onkeypress = function(e) {
             if (e.charCode == 32) { //spacebar
@@ -67,8 +61,6 @@
         });
         var currentNote = 0;
         var end = false;
-
-
         controller.loop(function(frame) {
             $('#song_title').html(title);
             setTimeout(function() {
@@ -94,8 +86,6 @@
                     }, 0);
                 }
             }, 0);
-
-
             var findPinchingFingerType = function(hand) {
                 var pincher;
                 var closest = 500;
@@ -109,7 +99,6 @@
                 }
                 return pincher;
             }
-
             if (state == 'paused') return;
             if (state == 'pausing') {
                 document.getElementById('out').innerHTML = "<p><b>PAUSED</b></p><div>" + frame.dump() + "</div>";
@@ -120,7 +109,6 @@
                 if (frame.hands.length > 0) {
                     for (var i = 0; i < frame.hands.length; i++) {
                         var hand = frame.hands[i];
-
                         palmPos = Math.round(hand.palmPosition[1]);
                         handString += "Hand ID: " + hand.id + "<br />";
                         handString += "Palm position y: " + Math.round(hand.palmPosition[1]) + " mm<br />";
@@ -129,9 +117,7 @@
                     }
                 }
             }
-
             var posRound = (4 * palmPos - 400);
-
             if (posRound <= height - (height / 2)) {
                 posRound = height;
                 posNote = 261;
@@ -161,13 +147,11 @@
                 $('#box').css('margin-bottom', '10000px');
             }
             //document.getElementById('out').innerHTML = "<p>spacebar to pause</p><div>" + handString + "</div>";
-
             if (haveLoggedFrame == false && frame.hands[0]) {
                 console.log(frame);
                 haveLoggedFrame = true;
             }
         });
-
         // Note that this means Leap is connected, but not streaming.  Use streamingStarted for that.
         controller.on('ready', function() {
             console.log("ready. Service version: " + controller.connection.protocol.serviceVersion);
@@ -219,6 +203,7 @@
 <body>
     <div id="tint"></div>
     <a id="home" align="center" href="index.html">Home</a>
+    <a id="songs" align="center" href="menu.html">All Songs</a>
     <h2 id="song_title"></h2>
 
     <div id="note"></div>

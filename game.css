@@ -4,7 +4,6 @@
     right:2rem;
     font-size: 3.5rem;
     color: #4A148C;
-
 }
 
 #box {
@@ -44,6 +43,15 @@ h1 {
 #home {
     position: absolute;
     top:0;
+    margin:1rem;
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+#songs {
+    position: absolute;
+    top:0;
+    left:13rem;
     margin:1rem;
     font-size: 1rem;
     padding: .5rem;
