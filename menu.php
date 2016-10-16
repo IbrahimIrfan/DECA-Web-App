@@ -214,11 +214,11 @@ function playAll () {           //  create a loop function
          playAll();             //  ..  again which will trigger another
       }                        //  ..  setTimeout()
    }, 500)
-   oscillator.frequency.value = 0;
 }
 
 $('#play').on('click', function(){
   playAll();
+  oscillator.frequency.value = 0;
 });
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
