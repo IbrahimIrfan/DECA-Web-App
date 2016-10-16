@@ -194,9 +194,9 @@ $('#backspace').on('click', function(){
        $('#song').attr('value', strang);
 });
 $('#play').on('click', function(){
-  setTimeout(function() {
-    for (i = 0; i < strang.length; i++){
-    if (strang[i] == 'C'){
+  for (i = 0; i < strang.length; i++){
+    setTimeout(function() {
+      if (strang[i] == 'C'){
           oscillator.frequency.value = 261;
     }else if (strang[i] == 'D') {
           oscillator.frequency.value = 294;
@@ -207,13 +207,13 @@ $('#play').on('click', function(){
     }else if (strang[i] == 'G') {
           oscillator.frequency.value = 392;
     }
-  }
   }, 500);
-});
 
-setTimeout(function() {
-    oscillator.frequency.value = 0; //
-}, 500);
+    setTimeout(function() {
+        oscillator.frequency.value = 0; //
+    }, 500);
+  }
+});
 $('#submit').on('click', function(){
     $('#song').attr('value', strang);
 });
