@@ -45,10 +45,8 @@
         for (var note = 0; note < songNotes.length; note++) {
             notesString.push('<span>' + letters[songNotes[note]-1] + " " + '</span>');
         }
-        console.log(notesString);
-
-        console.log(notesString);
         var height = 0.15 * $(window).height();
+
         var posNote;
         var context = new(window.AudioContext || window.webkitAudioContext)();
         var oscillator = context.createOscillator();
@@ -73,6 +71,7 @@
         var end = false;
         $(document).on('ready', function() {
             $('#allNotes').html(notesString);
+            $('#note').css('bottom', songNotes[0] * 15 + 'vh');
         });
 
         controller.loop(function(frame) {
