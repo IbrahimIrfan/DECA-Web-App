@@ -118,7 +118,7 @@ $error = false;
   <div>
 <?php
 
-$res_cm = mysql_query("SELECT * FROM hackw");
+$res_cm = mysql_query("SELECT * FROM hackw2");
 
 while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
   $data[] = $ann;
