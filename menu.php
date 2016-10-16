@@ -87,6 +87,7 @@ $errMSG = "";
       width: 50%;
       background: transparent;
       font-size: 2rem;
+      word-break: break-word;
   }
 
   #submit {
