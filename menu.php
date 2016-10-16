@@ -194,7 +194,6 @@ $('#backspace').on('click', function(){
        $('#song').attr('value', strang);
 });
 
-var i = 0;
 
 function playAll () {
    setTimeout(function () {
@@ -219,6 +218,7 @@ function playAll () {
 }
 
 $('#play').on('click', function(){
+  var i = 0;
   playAll();
 });
 $('#submit').on('click', function(){
