@@ -42,6 +42,7 @@
     height: 0;
     width:100%;
     background-color: #7B1FA2;
+    border-top: 5px solid #4A148C;
     right:0;
 }
 
