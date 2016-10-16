@@ -207,7 +207,7 @@ $('#play').on('click', function(){
     }else if (strang[i] == 'G') {
           oscillator.frequency.value = 392;
     }
-  }, 500);
+  }, 0);
 
     setTimeout(function() {
         oscillator.frequency.value = 0; //
