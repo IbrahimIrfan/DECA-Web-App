@@ -52,17 +52,17 @@ $exec = false;
    $currentCluster = "Business-Admin";
  }
  if ($currentCluster == "Principles"){
- $homework= "Principles_3_Whole_Homework.php";
+ $homework= "Principles_4_Whole_Homework.php";
  }elseif ($currentCluster == "Finance") {
-   $homework= "Finance_4_Whole_Homework.php";
+   $homework= "Finance_5_Whole_Homework.php";
  }elseif ($currentCluster == "Business-Admin") {
-   $homework= "Business-Admin_4_Whole_Homework.php";
+   $homework= "Business-Admin_1_Split_Homework.php";
  }elseif ($currentCluster == "Marketing-Teams" || $currentCluster == "Marketing-Singles") {
-   $homework= "Marketing_3_Whole_Homework.php";
+   $homework= "Marketing_4_Whole_Homework.php";
  }elseif ($currentCluster == "Hospitality") {
-   $homework= "Hospitality_3_Whole_Homework.php";
+   $homework= "Hospitality_1_Split_Homework.php";
  }
- $week = "score_3";
+ $week = "score_4";
  $res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
  $exam_check=mysql_fetch_array($res_exam_check);
  if ($exam_check[$week] !== "0"){
