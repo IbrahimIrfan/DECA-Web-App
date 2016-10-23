@@ -102,7 +102,7 @@
 
         <br/>
 
-        <h4>How does it work?</h4>
+        <h4 id="feflwfwefbiufef">How does it work?</h4>
 
         <h6>The competition is composed of three levels: Regionals, Provincials, and Internationals.
   Iroquois Ridge High School is part of the Hamilton + Private region, which means we compete
