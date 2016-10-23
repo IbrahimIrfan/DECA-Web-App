@@ -105,7 +105,7 @@
 
     <div class="content">
 
-      <h5>2015 DECA Hamilton Regional Results</h5>
+      <h5>2015 DECA Hamilton Regional Results:</h5>
       <br>
       <br>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
