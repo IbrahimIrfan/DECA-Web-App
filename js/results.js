@@ -19,7 +19,7 @@ $('#submitEvent').on('click', function(){
     }
     scores.sort();
 
-    for (i = line.length - 1; i > -1; i--){
+    for (i = scores.length - 1; i > -1; i--){
       console.log(scores[i]);
     }
   });
