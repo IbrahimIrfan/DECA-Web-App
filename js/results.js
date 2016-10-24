@@ -4,7 +4,7 @@ $('#submitEvent').on('click', function(){
 
     var scores = []
 
-    var eventName = $('eventInput').val();
+    var eventName = $('#eventInput').val();
 
     for (i = 0; i < line.length; i++){
         if (line[i].toUpperCase() == eventName.toUpperCase()){
