@@ -117,7 +117,7 @@
       </input>
 
       <div id='results'></div>
-      <table id='resultsTable'>
+      <table id='resultsTable' class="mdl-data-table mdl-js-data-table" width='100%'>
         <tr><td>Overall</td><td>Exam</td><td>Case Study</td></tr>
       </table>
 
