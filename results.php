@@ -118,7 +118,7 @@
 
       <div id='results'></div>
       <table id='resultsTable'>
-        <tr><td>Overall</td>Exam<td></td><td>Case Study</td></tr>
+        <tr><td>Overall</td><td>Exam</td><td>Case Study</td></tr>
       </table>
 
     <div class="footer">
