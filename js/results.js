@@ -21,7 +21,7 @@ $(document).on('ready', function() {
             }
 
             function sortNumber(a, b) {
-                return a - b;
+                return a[0] - b[0];
             }
 
             scores.sort(sortNumber);
