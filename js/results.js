@@ -6,7 +6,7 @@ $('#submitEvent').on('click', function(){
 
     var eventName = $('eventInput').val();
 
-    for (i = 0; i < len(line); i++){
+    for (i = 0; i < line.length; i++){
         if (line[i].toUpperCase() == eventName.toUpperCase()){
             if (line[i+6] == 'Hamilton' || line[i+5] == 'Hamilton'){
                 if (parseInt(line[i+1]) > 15){
@@ -19,7 +19,7 @@ $('#submitEvent').on('click', function(){
     }
     scores.sort();
 
-    for (i = len(line) - 1; i > -1; i--){
+    for (i = line.length - 1; i > -1; i--){
       console.log(scores[i]);
     }
   });
