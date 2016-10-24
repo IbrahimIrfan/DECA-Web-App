@@ -110,7 +110,7 @@
       <br>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <input class="mdl-textfield__input" type="text" id="eventInput">
-      <label class="mdl-textfield__label">Event</label>
+      <label class="mdl-textfield__label">Event Code</label>
       </div>
 
       <input id="submitEvent" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Go">
