@@ -20,6 +20,7 @@ $('#submitEvent').on('click', function(){
     scores.sort();
 
     for (i = scores.length - 1; i > -1; i--){
+      $('#results').append(scores[i]);
       console.log(scores[i]);
     }
   });
