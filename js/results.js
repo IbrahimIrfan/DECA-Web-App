@@ -1,5 +1,5 @@
 $('#submitEvent').on('click', function(){
-  $.get("ftdm.txt", function(data) {
+  $.get("/js/ftdm.txt", function(data) {
     var line = data.split(" ");
 
     var scores = []
