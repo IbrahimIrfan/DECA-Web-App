@@ -10,9 +10,9 @@ $('#submitEvent').on('click', function(){
         if (line[i].toUpperCase() == eventName.toUpperCase()){
             if (line[i+6] == 'Hamilton' || line[i+5] == 'Hamilton'){
                 if (parseInt(line[i+1]) > 15){
-                    scores.append([parseInt(line[i+1]) + parseInt(line[i+2]), parseInt(line[i+1]), parseInt(line[i+2]), line[i]]);
+                    scores.push([parseInt(line[i+1]) + parseInt(line[i+2]), parseInt(line[i+1]), parseInt(line[i+2]), line[i]]);
                 }else{
-                    scores.append([parseInt(line[i+2]) + parseInt(line[i+3]), parseInt(line[i+2]), parseInt(line[i+3]), line[i]]);
+                    scores.push([parseInt(line[i+2]) + parseInt(line[i+3]), parseInt(line[i+2]), parseInt(line[i+3]), line[i]]);
                   }
                 }
         }
