@@ -20,15 +20,11 @@ $(document).on('ready', function() {
                 }
             }
 
-            function sortByKey(array, key) {
-                return array.sort(function(a, b) {
-                    var x = a[key];
-                    var y = b[key];
-                    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-                });
+            function sortNumber(a, b) {
+                return a - b;
             }
 
-            scores.sortByKey(scores, 0);
+            scores.sort(sortNumber);
 
             if (scores.length == 0) {
                 $('#resultsHeading').html('No results found.');
