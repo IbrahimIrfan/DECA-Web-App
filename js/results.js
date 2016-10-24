@@ -20,7 +20,7 @@ $('#submitEvent').on('click', function(){
     scores.sort();
 
     for (i = scores.length - 1; i > -1; i--){
-      $('#resultsTable').append('<tr>' + '<td>' + scores[i][0] + '</td>' + '<td>' + scores[i][1] + '</td>' + '<td>' + scores[i][2] + '</td>' + '<td>' + scores[i][3] + '</td>' + '</tr>');
+      $('#resultsTable').append('<tr>' + '<td>' + scores[i][0] + '</td>' + '<td>' + scores[i][1] + '</td>' + '<td>' + scores[i][2] + '</td>' + '</tr>');
       console.log(scores[i]);
     }
   });

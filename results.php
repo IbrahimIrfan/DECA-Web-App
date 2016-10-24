@@ -116,7 +116,7 @@
       <input id="submitEvent" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Go">
       </input>
 
-      <div id='results'></div>
+      <div id='resultsHeading'>Top 10 Scores (Overall)</div>
       <table id='resultsTable' class="mdl-data-table mdl-js-data-table" width='100%'>
         <tr><td>Overall</td><td>Exam</td><td>Case Study</td></tr>
       </table>
