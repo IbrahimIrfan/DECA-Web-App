@@ -21,6 +21,7 @@ $('#submitEvent').on('click', function(){
 
     if (scores.length == 0){
       $('#resultsHeading').html('No results found.');
+      $('#resultsTable').html('');
     }else{
     for (i = scores.length - 1; i > -1; i--){
       $('#resultsTable').append('<tr>' + '<td>' + scores[i][0] + '</td>' + '<td>' + scores[i][1] + '</td>' + '<td>' + scores[i][2] + '</td>' + '</tr>');
