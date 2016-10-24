@@ -14,6 +14,7 @@ $('#submitEvent').on('click', function(){
                 }else{
                     scores.append([parseInt(line[i+2]) + parseInt(line[i+3]), parseInt(line[i+2]), parseInt(line[i+3]), line[i]]);
                   }
+                }
         }
     }
     scores.sort();
