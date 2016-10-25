@@ -1,6 +1,5 @@
 $(document).on('ready', function() {
-
-    $('#submitEvent').on('click', function() {
+    var parseScores = function() {
         $.get("/js/ftdm.txt", function(data) {
             var line = data.split(" ");
 
@@ -37,6 +36,15 @@ $(document).on('ready', function() {
                 }
             }
         });
+    }
+
+    document.getElementById('eventInput').onkeydown = function(e) {
+        if (e.keyCode == 13) {
+            parseScores();
+        }
+    };
+    $('#submitEvent').on('click', function() {
+        parseScores();
     });
 
 });
