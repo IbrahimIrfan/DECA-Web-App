@@ -28,7 +28,7 @@ $(document).on('ready', function() {
 
             if (scores.length == 0) {
                 $('#resultsHeading').html('No results found.');
-                $('#resultsTable').html('');
+                $('#resultsTable').html('Top scores (ordered by overall score)');
             } else {
                 $('#resultsHeading').html('');
                 $('#resultsTable').html('<tr><td>Overall</td><td>Exam</td><td>Case Study</td></tr>');
