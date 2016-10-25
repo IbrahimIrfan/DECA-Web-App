@@ -195,9 +195,9 @@ var events = {
                     "desc": "Students will be challenged to perform marketing and management functions and tasks in retail establishments, wholesale establishments and/or manufacturing firms primarily engaged in the marketing of clothing and related articles for personal wear and adornment.",
                     "res": "https://drive.google.com/folderview?id=0B79AcfigTjIBR0dVbDJaTThkNDQ&usp=sharing"
                 },
-                "AASM": {
+                "ASM": {
                     "name": "Automative Services Marketing",
-                    "code": "AASM",
+                    "code": "ASM",
                     "type": "Individual",
                     "desc": "Students will be challenged to perform marketing and management functions and tasks related to auto dealers, service stations and related businesses or auto parts stores.",
                     "res": "https://drive.google.com/folderview?id=0B79AcfigTjIBTjVESlhCZlZTQ2c&usp=sharing"
