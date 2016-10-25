@@ -27,9 +27,9 @@ $(document).on('ready', function() {
 
             if (scores.length == 0) {
                 $('#resultsHeading').html('No results found.');
-                $('#resultsTable').html('Top scores (ordered by overall score)');
+                $('#resultsTable').html('');
             } else {
-                $('#resultsHeading').html('');
+                $('#resultsHeading').html('Top scores (ordered by overall score)');
                 $('#resultsTable').html('<tr><td>Overall</td><td>Exam</td><td>Case Study</td></tr>');
                 for (i = scores.length - 1; i > -1; i--) {
                     $('#resultsTable').append('<tr>' + '<td>' + scores[i][0] + '</td>' + '<td>' + scores[i][1] + '</td>' + '<td>' + scores[i][2] + '</td>' + '</tr>');
