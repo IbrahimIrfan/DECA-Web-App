@@ -2,12 +2,6 @@
  ob_start();
  session_start();
  require_once 'dbconnect.php';
-
- // redirect to login if not logged in
-  if( !isset($_SESSION['user']) ) {
-   header("Location: login.php");
-   exit;
-  }
 ?>
 
 <!--
