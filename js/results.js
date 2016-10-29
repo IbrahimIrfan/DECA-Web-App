@@ -9,7 +9,7 @@ $(document).on('ready', function() {
 
             for (i = 0; i < line.length; i++) {
                 if (line[i].toUpperCase() == eventName.toUpperCase()) {
-                    if (line[i + 6] == 'Hamilton' || line[i + 5] == 'Hamilton') {
+                    if (line[i + 6] == 'Private' || line[i + 5] == 'Private') {
                         if (parseInt(line[i + 1]) > 15) {
                             scores.push([parseInt(line[i + 1]) + parseInt(line[i + 2]), parseInt(line[i + 1]), parseInt(line[i + 2]), line[i]]);
                         } else {
