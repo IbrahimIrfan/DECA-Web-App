@@ -5,5 +5,4 @@ $(document).on('ready', function() {
           console.log($(data).find("h5"));
         });
     }
-
 });
