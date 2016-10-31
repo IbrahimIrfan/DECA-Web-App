@@ -144,7 +144,7 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
          $res = mysql_query($query);
          if ($res){
 
-             for ($x = 1; $x <= 750; $x++) {
+             for ($x = 6; $x <= 750; $x++) {
                $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
                $userRow_eee=mysql_fetch_array($res_eee);
 
