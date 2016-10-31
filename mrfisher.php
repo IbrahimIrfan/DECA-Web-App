@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
    $upass = strip_tags(trim($_POST['pass']));
 
    $password = hash('sha256', $upass);
-  $query = "UPDATE users SET userPass='$password' WHERE userId=590";
+  $query = "UPDATE users SET userPass='$password' WHERE userId=673";
   $res = mysql_query($query);
 
    if ($res){ ?>
