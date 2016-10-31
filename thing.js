@@ -4,7 +4,10 @@ $(document).on('ready', function() {
         $.get(file, function(data) {
             for (var j = 1; j < 100; j++){
               console.log($(data).find("#q" + j).html());
-                console.log($(data).find("#_" + j + " option").html());
+                console.log($(data).find("#_" + j + " option:nth-child(2)").html());
+                  console.log($(data).find("#_" + j + ":nth-child(3)").html());
+                    console.log($(data).find("#_" + j + ":nth-child(4)").html());
+                      console.log($(data).find("#_" + j + ":nth-child(5)").html());
                 console.log($(data).find("#" + j + "answer h5").html());
           }
         });
