@@ -45,11 +45,13 @@
 
 <div id="wrapper">
 
+<!-- Mobile menu -->
 <div id="mobile_menu">
   <img id="menu-logo" src="img/logo2.png" height="40" align="left">
   <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
 </div>
 
+<!-- Mobile dropdown -->
 <ul id="mobile_dropdown" style="display: none;">
     <li><a href='index.php'><span>Home</span></a></li>
     <li class="active"><a href='about.php'><span>About DECA</span></a></li>
@@ -57,6 +59,8 @@
     <li><a href='dashboard.php'><span>Dashboard</span></a></li>
     <li><a href='announcements.php'><span>Announcements</span></a></li>
     <li><a href='dates.php'><span>Schedules</span></a></li>
+
+<!--if user is logged in, show corresponding menus -->
     <?php if( !isset($_SESSION['user']) ) { ?>
        <li><a href='register.php'><span>Register</span></a></li>
        <li class='last'><a href='login.php'><span>Login</span></a></li>
@@ -68,6 +72,7 @@
     ?>
 </ul>
 
+<!-- desktop menu -->
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
@@ -76,6 +81,8 @@
           <li><a href='dashboard.php'><span>Dashboard</span></a></li>
           <li><a href='announcements.php'><span>Announcements</span></a></li>
           <li><a href='dates.php'><span>Schedules</span></a></li>
+
+<!--if user is logged in, show corresponding menus -->
           <?php if( !isset($_SESSION['user']) ) { ?>
              <li><a href='register.php'><span>Register</span></a></li>
              <li class='last'><a href='login.php'><span>Login</span></a></li>
@@ -170,10 +177,11 @@ Communication marks for school assignments - attire, facial expressions, body la
     </div>
 
 
+<!-- footer -->
     <div class="footer">
       <img id="altlogo" src="img/logo_alt.png" align="left"/>
       <img id="fbimg" src="img/facebook-box.png" align="right"/>
-    <h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+    <h6><a href="http://www.irhsdeca.xyz" style="color: white;">irhsdeca.com</a></h6>
     </div>
 
   </div>
