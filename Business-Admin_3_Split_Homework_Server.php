@@ -4,5 +4,5 @@ session_start();
 require_once 'dbconnect.php';
 $score = $_POST["score"];
 $UID = $_POST['user'];
-$query = "UPDATE exams SET score_7='$score', cluster='Business-Admin' WHERE userId=".$UID;
+$query = "UPDATE exams SET score_6='$score', cluster='Business-Admin' WHERE userId=".$UID;
 $res = mysql_query($query); ?>
