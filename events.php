@@ -57,11 +57,13 @@
 
   <div id="wrapper">
 
+	<!-- Mobile menu -->
   <div id="mobile_menu">
     <img id="menu-logo" src="img/logo2.png" height="40" align="left">
     <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
   </div>
 
+	<!-- Mobile dropdown -->
   <ul id="mobile_dropdown" style="display: none;">
       <li><a href='index.php'><span>Home</span></a></li>
       <li class="active"><a href='about.php'><span>About DECA</span></a></li>
@@ -80,7 +82,7 @@
       ?>
   </ul>
 
-
+<!-- desktop menu -->
   <div id='cssmenu'>
       <ul>
           <li><a href='index.php'><span>Home</span></a></li>
@@ -105,6 +107,7 @@
 
     <div class="content">
 
+		<!-- Table breadcrumbs -->
         <div class="breadcrumb">
             <table class="breadcrumb">
                 <tr>
@@ -117,6 +120,7 @@
             </table>
         </div>
 
+		<!-- Table with fancybox modal -->
         <h4 id="table-title"></h4>
 
         <table class="mdl-data-table mdl-js-data-table" id="table" width="100%">
@@ -125,10 +129,10 @@
             </tbody>
         </table>
 
-        <h4 style="color: red;">If you want to do a written event, contact Mr. Fisher or one of the executives.</h4>
     </div>
 
-
+	
+	<!-- Footer -->
     <div class="footer">
         <img id="altlogo" src="img/logo_alt.png" align="left" />
         <img id="fbimg" src="img/facebook-box.png" align="right" />

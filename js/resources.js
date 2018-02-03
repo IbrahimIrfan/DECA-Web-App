@@ -1,3 +1,7 @@
+/* 
+ * Handle the table and breadcrumb functionality
+ */
+
 $(document).on('ready', function() {
 
     var events = {
@@ -246,19 +250,20 @@ $(document).on('ready', function() {
 
     document.getElementById("table-title").innerHTML = "Select An Event Type";
 
+	// flags for each layer of depth
     var EVENT_TYPE_KEY = 'event-type',
         CLUSTER_KEY = 'cluster',
         EVENTS_KEY = 'event';
 
+	// function to redraw the table with necessary configuration
     var redrawTable = function(conf) {
+		// get values from configuration
         var datum = conf.datum;
-
         var id = conf.id;
         var currentCluster = conf.cluster;
-
         var currentType = conf.type;
-        console.log(conf);
-
+		
+		// elements
         var $table = $('#table');
         var $tableHeading = $('#table-title');
         var $allTypes = $('#allTypes');
@@ -267,9 +272,8 @@ $(document).on('ready', function() {
         var $slash1 = $("#slash1");
         var $slash2 = $("#slash2");
 
-        if (datum === EVENT_TYPE_KEY) {
+        if (datum === EVENT_TYPE_KEY) { // user is at depth 0
             $tableHeading.html("Select An Event Type");
-
             $allTypes.html('All Types');
             $type.html('');
             $slash1.attr("style", "display: none;");
@@ -278,6 +282,7 @@ $(document).on('ready', function() {
 
             $table.html('');
 
+			// three event types:
             var row1 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Principles' >Principles</td>");
             $table.append(row1);
             var row2 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Team Decision' >Team</td>");
@@ -285,6 +290,7 @@ $(document).on('ready', function() {
             var row3 = $('<tr class="tbody"/>').html("<td class=\"clickable_row\" id='Individual' >Individual</td>");
             $table.append(row3);
 
+			// if the user clicks a row, redrawTable with new configuration
             $('.clickable_row').on('click', function(e) {
                 var $elem = $(e.currentTarget);
                 var index = $elem.attr('id');
@@ -296,24 +302,27 @@ $(document).on('ready', function() {
                 });
             });
 
-        } else if (datum === CLUSTER_KEY) {
+        } else if (datum === CLUSTER_KEY) { // user is at depth 1
             var type = events[id];
 
+			// display the breadcrumbs and slashes
             $slash1.attr("style", "display: block;");
             $type.html(currentType);
-
             $cluster.html('');
             $slash2.attr("style", "display: none;");
 
+			// update the table as needed
             $tableHeading.html(currentType + " Clusters");
             $table.html('');
 
+			// add the respective rows
             for (var i in Object.keys(type)) {
                 var row = $('<tr class="tbody"/>').html("<td class=\"clickable_class\" id =\"" + i + "\"> " +
                     type[i].name + "</td>");
                 $table.append(row);
             }
 
+			// if the user clicks a row, redrawTable with new configuration
             $('.clickable_class').on('click', function(e) {
                 var $el = $(e.currentTarget);
                 var clusterClicked = type[parseInt($el.attr('id'))];
@@ -325,42 +334,50 @@ $(document).on('ready', function() {
                 });
             });
 
+			// if the user clicks the first breadcrumb, go back to depth 0
             $allTypes.on('click', function() {
                 redrawTable({
                     datum: EVENT_TYPE_KEY,
                     id: 0
                 });
             });
-        } else if (datum === EVENTS_KEY) {
+        } else if (datum === EVENTS_KEY) { // user is at max depth 2
+			// update breadcrumbs and title
             $table.html('');
-
             $slash2.attr("style", "display: block;");
             $cluster.html(currentCluster.name);
-
             $tableHeading.html(currentCluster.name + " " + currentType + " Events");
 
+			// for every event in the large json declared above, append corresponding rows
             for (var idx in currentCluster.events) {
                 var activeEvent = currentCluster.events[idx];
-
                 var row = $('<tr class="tbody"><td class="eventTrigger" code=\"' + activeEvent.code + '\">' + activeEvent.name + ' (' + activeEvent.code + ')</td></tr>');
                 $table.append(row);
             }
+
+			// if the user clicks a row, open popup
             $('.eventTrigger').on('click', function(e) {
                 var eventCode = $(e.currentTarget).attr("code");
 
+				// get respective data
                 for (var idx in currentCluster.events) {
                     if (currentCluster.events[idx].code == eventCode) {
                         var currentEvent = currentCluster.events[idx];
                     }
                 }
+
+				// fancybox modal
                 $.fancybox({
                     href: '#event_popup',
                     width: 700,
                     autoDimensions: false,
                     autoSize: false,
                     afterLoad: function() {
+						// dynamically append values based on event
                         this.inner.prepend('<h1 id=\"popup_header\">' + currentEvent.name + ' (' + currentEvent.code + ')</h1>');
                         this.content = "";
+
+						// cluster icons
                         if (currentCluster.name == "Finance") {
                             this.content += "<img id='clusterpic' src='img/finance.png'/>";
                         } else if (currentCluster.name == "Hospitality and Tourism") {
@@ -370,8 +387,11 @@ $(document).on('ready', function() {
                         } else {
                             this.content += "<img id='clusterpic' src='img/b-admin.png'/>";
                         }
+
+						// add event description
                         this.content += "<h5>" + currentEvent.desc + "</h5>";
 
+						// disclaimer
                         if (currentEvent.code == "PFL") {
                           this.content += "<h5 style='color: red;'>*This event was introduced two years ago and therefore resources are extremely limited in terms of past events.</h5>";
                             this.content += "<h5>Principles of Finance MC exam (100 Q's)</h5>";
@@ -379,6 +399,7 @@ $(document).on('ready', function() {
                             this.content += "<h5>Cluster-wide " + currentCluster.name + " MC exam (100 Q's)</h5>";
                         }
 
+						// add content for each cluster
                         if (currentEvent.type == "Principles") {
                             this.content += "<h5>Business Admin Core MC exam (100 Q's)</h5>";
                             this.content += "<h5>1 Content Interview</h5>";
@@ -397,16 +418,22 @@ $(document).on('ready', function() {
                             this.content += "<h5>Teams of 2</h5>";
                             this.content += "<h5>7 Performance Indicators on Case Study</h5>";
                         }
+
+						// add resources link
                         this.content += "<div id='res'><a target='_blank' href='" + currentEvent.res + "'><img id='folder' src='img/folder.png' width='50'/><p id='res-text'>Resources</p></a></div>";
                     }
                 });
             });
+
+			// handle breadcrumb to depth 0
             $allTypes.on('click', function() {
                 redrawTable({
                     datum: EVENT_TYPE_KEY,
                     id: 0
                 });
             });
+
+			// handle breadcrumb to depth 1
             $type.on('click', function() {
                 redrawTable({
                     datum: CLUSTER_KEY,
@@ -418,6 +445,7 @@ $(document).on('ready', function() {
         }
     };
 
+	// initial draw to depth 0
     redrawTable({
         datum: EVENT_TYPE_KEY,
         id: 0
