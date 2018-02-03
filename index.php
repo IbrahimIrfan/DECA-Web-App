@@ -48,11 +48,14 @@
 
   <div id="wrapper">
 
+ <!-- Mobile menu --> 
   <div id="mobile_menu">
     <img id="menu-logo" src="img/logo2.png" height="40" align="left">
     <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
   </div>
 
+
+ <!-- Mobile dropdown --> 
   <ul id="mobile_dropdown" style="display: none;">
       <li><a href='index.php'><span>Home</span></a></li>
       <li class="active"><a href='about.php'><span>About DECA</span></a></li>
@@ -60,6 +63,8 @@
       <li><a href='dashboard.php'><span>Dashboard</span></a></li>
       <li><a href='announcements.php'><span>Announcements</span></a></li>
       <li><a href='dates.php'><span>Schedules</span></a></li>
+
+	<!-- If user is logged in, show corresponding menus -->
       <?php if( !isset($_SESSION['user']) ) { ?>
          <li><a href='register.php'><span>Register</span></a></li>
          <li class='last'><a href='login.php'><span>Login</span></a></li>
@@ -72,6 +77,7 @@
   </ul>
 
 
+<!-- Desktop menu -->
   <div id='cssmenu'>
       <ul>
           <li class="active"><a href='index.php'><span>Home</span></a></li>
@@ -80,6 +86,8 @@
           <li><a href='dashboard.php'><span>Dashboard</span></a></li>
           <li><a href='announcements.php'><span>Announcements</span></a></li>
           <li><a href='dates.php'><span>Schedules</span></a></li>
+
+	<!-- If user is logged in, show corresponding menus -->
           <?php if( !isset($_SESSION['user']) ) { ?>
              <li><a href='register.php'><span>Register</span></a></li>
              <li class='last'><a href='login.php'><span>Login</span></a></li>
@@ -93,11 +101,14 @@
   </div>
 
 
+<!-- logo and title -->
   <div class="content2">
 <img id="logo" src="img/logo2.png" width="22%"/>
   <img id="center-text" src="img/title.PNG" width="22%"/>
 </div>
 
+
+<!-- footer -->
 <div class="footer" id="index_footer">
   <img id="altlogo" src="img/logo_alt.png" align="left"/>
   <img id="fbimg" src="img/facebook-box.png" align="right"/>

@@ -129,7 +129,6 @@
             </br>
 
             <h5 style="color: red;"><?php echo $errMSG ?></h5>
-            <h5 id="forgot_msg">Forgot password? Email us at <a href="mailto:irhsdeca2016@gmail.com?Subject=Forgot%20Password" target="_top">irhsdeca2016@gmail.com</a>.</h5>
 
             <input id="submit" name="btn-login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Login">
             </input>
