@@ -1,344 +1,416 @@
 @media screen and (min-width: 1200px) {
-    .mdl-data-table.mdl-js-data-table tr td {
-        padding: 18px !important;
-    }
-    #mobile_menu {
-        display: none;
-    }
-    #altlogo {
-        margin-left: 100px;
-        margin-top: 10px;
-        width: 100px;
-    }
-    #submit_ann{
-      float: right;
-    }
-    .regionals img, .provincials img, .icdc img{
-      padding-right: 20px;
-      padding-left: 15px;
-    }
-    #fbimg {
-        margin-right: 100px;
-        margin-top: 10px;
-        width: 45px;
-    }
-    #exam_scores{
-      margin-top: 20px;
-      padding: 0 !important;
-      display: block !important;
-      overflow-x: auto !important;
-    }
-    .timer{
-          margin-top: 100px;
-    }
-    #meetings tbody tr td, #meetings thead tr td {
-        font-size: 20px;
-    }
-    .select-style {
-        font-size: 14px;
-        -webkit-appearance: menulist-button;
-        height: 30px;
-        width: 400px;
-    }
-    #popup_header {
-        font-size: 30px;
-        margin-bottom: 30px;
-    }
-    #clusterpic {
-        width: 50;
-        position: absolute;
-        display: inline-block;
-        margin-left: 92%;
-        bottom: 88%;
-    }
-    #res {
-        position: absolute;
-        right: 1%;
-        top: 86%;
-    }
-    .footer {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        top: 90%;
-        padding: 1rem;
-        background-color: #000000;
-        text-align: center;
-        color: white;
-    }
+	.mdl-data-table.mdl-js-data-table tr td {
+		padding: 18px !important;
+	}
+
+	#mobile_menu {
+		display: none;
+	}
+
+	#altlogo {
+		margin-left: 100px;
+		margin-top: 10px;
+		width: 100px;
+	}
+
+	#submit_ann{
+		float: right;
+	}
+
+	.regionals img, .provincials img, .icdc img{
+		padding-right: 20px;
+		padding-left: 15px;
+	}
+
+	#fbimg {
+		margin-right: 100px;
+		margin-top: 10px;
+		width: 45px;
+	}
+
+	#exam_scores{
+		margin-top: 20px;
+		padding: 0 !important;
+		display: block !important;
+		overflow-x: auto !important;
+	}
+
+	.timer{
+		margin-top: 100px;
+	}
+
+	#meetings tbody tr td, #meetings thead tr td {
+		font-size: 20px;
+	}
+
+	.select-style {
+		font-size: 14px;
+		-webkit-appearance: menulist-button;
+		height: 30px;
+		width: 400px;
+	}
+
+	#popup_header {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+
+	#clusterpic {
+		width: 50;
+		position: absolute;
+		display: inline-block;
+		margin-left: 92%;
+		bottom: 88%;
+	}
+
+	#res {
+		position: absolute;
+		right: 1%;
+		top: 86%;
+	}
+
+	.footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		top: 90%;
+		padding: 1rem;
+		background-color: #000000;
+		text-align: center;
+		color: white;
+	}
 }
+
 #logo {
-    z-index: 1;
-    display: inline-block;
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
-    margin-left: 40%;
-    margin-right: auto;
+	z-index: 1;
+	display: inline-block;
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%);
+	margin-left: 40%;
+	margin-right: auto;
 }
+
 a, #fbimg, #altlogo, #allTypes, #clusterClicked, #type, #cluster, .eventTrigger, .delete_ann, #table:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
+
 #center-text {
-    z-index: 0;
-    transform: translateY(-50%);
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    padding-left: 48%;
+	z-index: 0;
+	transform: translateY(-50%);
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	padding-left: 48%;
 }
+
 .content {
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-top: 3%;
-    margin-bottom: 100px;
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 3%;
+	margin-bottom: 100px;
 }
+
 #exam_link {
-    margin-top: 40px;
-    margin-left: 10px;
-    padding-bottom: 28px;
+	margin-top: 40px;
+	margin-left: 10px;
+	padding-bottom: 28px;
 }
+
 #complete {
-    margin-top: 18px;
-    margin-right: 0px;
+	margin-top: 18px;
+	margin-right: 0px;
 }
+
 #homework, .announce, .profile {
-    padding: 10px;
+	padding: 10px;
 }
+
 .mdl-data-table.mdl-js-data-table, #post_announcements, #mobile_menu, #mobile_dropdown, .select-style, #quote-thing, #homework, .announce, .profile, .regionals, .provincials, .icdc {
-    -webkit-box-shadow: 0 8px 6px -6px #cacaca;
-    -moz-box-shadow: 0 8px 6px -6px #cacaca;
-    box-shadow: 0 8px 8px 0px #cacaca;
+	-webkit-box-shadow: 0 8px 6px -6px #cacaca;
+	-moz-box-shadow: 0 8px 6px -6px #cacaca;
+	box-shadow: 0 8px 8px 0px #cacaca;
 }
+
 .mdl-data-table.mdl-js-data-table tr td {
-    font-size: 18px;
-    text-align: left !important;
+	font-size: 18px;
+	text-align: left !important;
 }
+
 .mdl-data-table.mdl-js-data-table thead {
-    font-weight: bolder;
+	font-weight: bolder;
 }
+
 .breadcrumb {
-    margin-top: 10px;
+	margin-top: 10px;
 }
+
 .breadcrumb tr td {
-    font-weight: bold;
-    padding-right: 10px;
+	font-weight: bold;
+	padding-right: 10px;
 }
+
 #content2{
-      padding-left: 10% !important;
-      padding-right: 10% !important;
-      padding-top: 3% !important;
-      margin-bottom: 100px !important;
+	padding-left: 10% !important;
+	padding-right: 10% !important;
+	padding-top: 3% !important;
+	margin-bottom: 100px !important;
 }
+
 #allTypes, #type, #cluster, #clusterClicked {
-    text-decoration: underline;
+	text-decoration: underline;
 }
+
 #res a {
-    color: #0000b3;
-    text-decoration: none;
+	color: #0000b3;
+	text-decoration: none;
 }
+
 #folder {
-    margin-left: 7px;
+	margin-left: 7px;
 }
+
 #quote-thing {
-    padding: 20px;
+	padding: 20px;
 }
+
 .fancybox-skin {
-    padding: 30px !important;
+	padding: 30px !important;
 }
+
 #score {
-    font-weight: bold;
+	font-weight: bold;
 }
+
 #timer-label {
-    margin-top: 50px;
-    margin-left: 50px;
+	margin-top: 50px;
+	margin-left: 50px;
 }
+
 .timer {
-    margin-left: 100px;
+	margin-left: 100px;
 }
+
 .timer, #timer-label {
-    font-size: 30px;
-    color: blue;
-    position: fixed;
+	font-size: 30px;
+	color: blue;
+	position: fixed;
 }
+
 .hours, .minutes, .seconds, .timer, #timer-label {
-    display: inline-block;
+	display: inline-block;
 }
+
 .regionals, .provincials, .icdc {
-    padding: 15px;
-    margin-top: 30px;
+	padding: 15px;
+	margin-top: 30px;
 }
+
 #ann-title, #ann-body, #ann-date {
-    padding-left: 15px;
+	padding-left: 15px;
 }
+
 .wordwrap { 
-   white-space: -moz-pre-wrap; /* Firefox */
-   white-space: -pre-wrap;     /* Opera <7 */
-   white-space: -o-pre-wrap;   /* Opera 7 */
-   word-wrap: break-word;      /* IE */
+	white-space: -moz-pre-wrap; /* Firefox */
+	white-space: -pre-wrap;     /* Opera <7 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	word-wrap: break-word;      /* IE */
 }
+
 #post_announcements{
-  padding: 25px;
+	padding: 25px;
 }
+
 .delete_ann{
-  width: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 10px;
-  margin-right: 5px;
+	width: 20px;
+	display: inline-block;
+	float: right;
+	margin-top: 10px;
+	margin-right: 5px;
 }
+
 #ann-title{
-  display: inline-block;
+	display: inline-block;
 }
+
 @media screen and (max-width: 1199px) {
-    #cssmenu {
-        display: none !important;
-    }
-    #submit_ann{
-      display: block;
-    }
-    #index_footer{
-      display: none !important;
-    }
-    .breadcrumb {
-        font-size: 14px !important;
-    }
-    .content {
-        margin-top: 15px !important;
-        padding-left: 4% !important;
-        padding-right: 4% !important;
-        padding-bottom: 4% !important;
-        margin-bottom: 0px !important;
-        min-height: calc(100vh - 10%);
-    }
-    .content2 {
-        padding-left: 4% !important;
-        padding-right: 4% !important;
-        padding-bottom: 4% !important;
-        margin-bottom: 0px !important;
-        min-height: calc(100vh - 10%);
-    }
-    .mdl-data-table {
-        white-space: normal !important;
-        padding-left: 0px !important;
-        padding-bottom: 0px !important;
-        padding-top: 0px !important;
-        padding-right: 0px !important;
-    }
-    table tbody tr td, table thead tr td {
-        font-size: 105% !important;
-    }
-    .select-style {
-        font-size: 14px !important;
-        -webkit-appearance: menulist-button;
-        height: 30px;
-        width: 100%;
-    }
-    #popup_header {
-        font-size: 22px !important;
-        margin-bottom: 20px !important;
-        width: 85% !important;
-    }
-    body>div.fancybox-overlay.fancybox-overlay-fixed>div>div>div>div>h5 {
-        font-size: 15px !important;
-    }
-    fancybox-skin {
-        padding: 5px !important;
-    }
-    #clusterpic {
-        width: 36px;
-        position: absolute;
-        display: inline-block;
-        margin-left: 85%;
-        bottom: 90%;
-    }
-    #res {
-        position: relative;
-        margin-top: 5%;
-    }
-    #folder {
-        width: 50px !important;
-    }
-    .footer {
-        display: block;
-        padding: 1rem;
-        background-color: #000000;
-        text-align: center;
-        height: 12%;
-    }
-    .footer h6 {
-        display: none;
-    }
-    #fbimg {
-        margin-right: 5px;
-        margin-top: 10px;
-        height: 80%;
-    }
-    #altlogo {
-        margin-left: 2%;
-        margin-top: 10px;
-        height: 80%;
-    }
-    #mobile_menu {
-        position: absolute;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-bottom: 2%;
-        width: 100%;
-    }
-    #mobile_dropdown {
-      z-index: 999 !important;
-        display: inline-block;
-        position: absolute;
-        width: 25%;
-        margin-left: 62%;
-        background-color: white;
-        top: 5%;
-        padding: 5% !important;
-        list-style-type: none;
-    }
-    #mobile_dropdown li a {
-        color: black;
-        text-decoration: none;
-    }
-    #mobile_dropdown li a span {
-        font-size: 3.5vw;
-    }
-    #mobile_dropdown li {
-        margin-top: 10px;
-    }
-    #menu-bars {
-        margin-right: 7px;
-        margin-top: 3px;
-    }
-    #menu-logo {
-        margin-left: 5px;
-    }
-    .regionals img, .provincials img, .icdc img{
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-    #timer-label{
-      display: none;
-    }
-    .timer{
-      background-color: white;
-      margin-top: 0px !important;
-      margin-left: 0px !important;
-      text-align: center;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      width: 100%;
-      top: 0;
-      -webkit-box-shadow: 0 8px 6px -6px #cacaca;
-      -moz-box-shadow: 0 8px 6px -6px #cacaca;
-      box-shadow: 0 8px 8px 0px #cacaca;
-    }
-    #exam_scores{
-      margin-top: 20px;
-      padding: 0 !important;
-      display: block !important;
-      overflow-x: auto !important;
-    }
+	#cssmenu {
+		display: none !important;
+	}
+
+	#submit_ann{
+		display: block;
+	}
+
+	#index_footer{
+		display: none !important;
+	}
+
+	.breadcrumb {
+		font-size: 14px !important;
+	}
+
+	.content {
+		margin-top: 15px !important;
+		padding-left: 4% !important;
+		padding-right: 4% !important;
+		padding-bottom: 4% !important;
+		margin-bottom: 0px !important;
+		min-height: calc(100vh - 10%);
+	}
+
+	.content2 {
+		padding-left: 4% !important;
+		padding-right: 4% !important;
+		padding-bottom: 4% !important;
+		margin-bottom: 0px !important;
+		min-height: calc(100vh - 10%);
+	}
+
+	.mdl-data-table {
+		white-space: normal !important;
+		padding-left: 0px !important;
+		padding-bottom: 0px !important;
+		padding-top: 0px !important;
+		padding-right: 0px !important;
+	}
+
+	table tbody tr td, table thead tr td {
+		font-size: 105% !important;
+	}
+
+	.select-style {
+		font-size: 14px !important;
+		-webkit-appearance: menulist-button;
+		height: 30px;
+		width: 100%;
+	}
+
+	#popup_header {
+		font-size: 22px !important;
+		margin-bottom: 20px !important;
+		width: 85% !important;
+	}
+
+	body>div.fancybox-overlay.fancybox-overlay-fixed>div>div>div>div>h5 {
+		font-size: 15px !important;
+	}
+
+	fancybox-skin {
+		padding: 5px !important;
+	}
+
+	#clusterpic {
+		width: 36px;
+		position: absolute;
+		display: inline-block;
+		margin-left: 85%;
+		bottom: 90%;
+	}
+
+	#res {
+		position: relative;
+		margin-top: 5%;
+	}
+
+	#folder {
+		width: 50px !important;
+	}
+
+	.footer {
+		display: block;
+		padding: 1rem;
+		background-color: #000000;
+		text-align: center;
+		height: 12%;
+	}
+
+	.footer h6 {
+		display: none;
+	}
+
+	#fbimg {
+		margin-right: 5px;
+		margin-top: 10px;
+		height: 80%;
+	}
+
+	#altlogo {
+		margin-left: 2%;
+		margin-top: 10px;
+		height: 80%;
+	}
+
+	#mobile_menu {
+		position: absolute;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 2%;
+		width: 100%;
+	}
+
+	#mobile_dropdown {
+		z-index: 999 !important;
+		display: inline-block;
+		position: absolute;
+		width: 25%;
+		margin-left: 62%;
+		background-color: white;
+		top: 5%;
+		padding: 5% !important;
+		list-style-type: none;
+	}
+
+	#mobile_dropdown li a {
+		color: black;
+		text-decoration: none;
+	}
+
+	#mobile_dropdown li a span {
+		font-size: 3.5vw;
+	}
+
+	#mobile_dropdown li {
+		margin-top: 10px;
+	}
+
+	#menu-bars {
+		margin-right: 7px;
+		margin-top: 3px;
+	}
+
+	#menu-logo {
+		margin-left: 5px;
+	}
+
+	.regionals img, .provincials img, .icdc img{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	#timer-label{
+		display: none;
+	}
+
+	.timer{
+		background-color: white;
+		margin-top: 0px !important;
+		margin-left: 0px !important;
+		text-align: center;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		width: 100%;
+		top: 0;
+		-webkit-box-shadow: 0 8px 6px -6px #cacaca;
+		-moz-box-shadow: 0 8px 6px -6px #cacaca;
+		box-shadow: 0 8px 8px 0px #cacaca;
+	}
+
+	#exam_scores{
+		margin-top: 20px;
+		padding: 0 !important;
+		display: block !important;
+		overflow-x: auto !important;
+	}
 }
