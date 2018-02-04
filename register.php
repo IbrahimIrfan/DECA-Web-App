@@ -124,11 +124,13 @@ if(isset($_POST['submit'])) {
 
   <div id="wrapper">
 
+<!-- Mobile Menu -->
   <div id="mobile_menu">
 	<img id="menu-logo" src="img/logo2.png" height="40" align="left">
 	<img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
   </div>
 
+<!-- Mobile Dropdown -->
   <ul id="mobile_dropdown" style="display: none;">
 	  <li><a href='index.php'><span>Home</span></a></li>
 	  <li class="active"><a href='about.php'><span>About DECA</span></a></li>
@@ -136,6 +138,8 @@ if(isset($_POST['submit'])) {
 	  <li><a href='dashboard.php'><span>Dashboard</span></a></li>
 	  <li><a href='announcements.php'><span>Announcements</span></a></li>
 	  <li><a href='dates.php'><span>Schedules</span></a></li>
+
+	<!-- if logged in show corresponding menus-->
 	  <?php if( !isset($_SESSION['user']) ) { ?>
 		 <li><a href='register.php'><span>Register</span></a></li>
 		 <li class='last'><a href='login.php'><span>Login</span></a></li>
@@ -148,6 +152,7 @@ if(isset($_POST['submit'])) {
   </ul>
 
 
+	<!-- desktop menu -->
   <div id='cssmenu'>
 	  <ul>
 		  <li><a href='index.php'><span>Home</span></a></li>
@@ -166,6 +171,8 @@ if(isset($_POST['submit'])) {
 
 		<h5 style="color: red;"> <?php echo $errMSG ?> </h5>
 		<h5 style="color: green;" id="success"> <?php echo $successMSG ?> </h5>
+
+<!-- registration people -->
 <form id="reg" method='post'>
 
 <h4>Register for IRHS DECA 2016/2017</h4>
@@ -203,13 +210,14 @@ if(isset($_POST['submit'])) {
 	<label class="mdl-textfield__label" for="cpassword">Confirm Password</label>
 </div>
 <br>
-		<h6>* If you select a partner event, reply to the confirmation email the name of your partner</h6>
 
 <input id="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Register">
 </input>
 </form>
 
 	  </div>
+
+	<!-- footer -->
 	  <div class="footer">
 		  <img id="altlogo" src="img/logo_alt.png" align="left" />
 		  <img id="fbimg" src="img/facebook-box.png" align="right" />
