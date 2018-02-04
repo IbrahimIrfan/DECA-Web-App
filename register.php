@@ -11,16 +11,16 @@ if( isset($_SESSION['user'])!="" ){
 
 if(isset($_POST['submit'])) {
 
-	$email = strip_tags(trim($_POST['email']));
-	$upass = strip_tags(trim($_POST['pass']));
-	$ucpass = strip_tags(trim($_POST['cpass']));
-	$fname = strip_tags(trim($_POST['firstname']));
-	$lname = strip_tags(trim($_POST['lastname']));
+	$email =  mysql_real_escape_string(strip_tags(trim($_POST['email']))));
+	$upass =  mysql_real_escape_string(strip_tags(trim($_POST['pass'])));
+	$ucpass =  mysql_real_escape_string(strip_tags(trim($_POST['cpass'])));
+	$fname =  mysql_real_escape_string(strip_tags(trim($_POST['firstname'])));
+	$lname =  mysql_real_escape_string(strip_tags(trim($_POST['lastname'])));
 
 	// password encrypt using SHA256();
 	$password = hash('sha256', $upass);
 
-	// check email exist or not
+	// check email exists or not
 	$query = "SELECT userEmail FROM users WHERE userEmail='$email'";
 	$result = mysql_query($query);
 
@@ -28,32 +28,38 @@ if(isset($_POST['submit'])) {
 
 	$error = false;
 
+	// empty field handling
 	if (empty($email) || empty($upass) || empty($fname) || empty($lname)){
 		$error = true;
 		$errMSG = "You must complete all fields.";
 	}
 
+	// passwords don't match
 	if ($upass !== $ucpass){
 		$error = true;
 		$errMSG = "Passwords do not match.";
 	}
 
+	// email validation
 	if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
 		$error = true;
 		$errMSG = "Please enter valid email address.";
 	}
+
+	// email in use
 	if ($count == 1){
 		$error = true;
 		$errMSG = "Email already in use.";
 	}
 
+	// password at least length 6
 	if(strlen($upass) < 6) {
 		$error = true;
 		$errMSG = "Password must have atleast 6 characters.";
 	}
 
 	if (!$error) {
-
+		// no error, so insert into db
 		$query = "INSERT INTO users(userFName, userLName, userEmail, userPass) VALUES('$fname', '$lname', '$email', '$password')";
 		$res = mysql_query($query);
 
@@ -62,9 +68,9 @@ if(isset($_POST['submit'])) {
 
 		$UID = $getUIDrow['userId'];
 
+		// add to exams db too
 		$query2 = "INSERT INTO exams(userId) VALUES('$UID')";
 		$res2 = mysql_query($query2);
-
 
 	} else {
 		$errMSG = "Something went wrong, try again later";

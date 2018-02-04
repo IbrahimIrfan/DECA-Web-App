@@ -1,30 +1,32 @@
 <?php
- ob_start();
- session_start();
- require_once 'dbconnect.php';
+ob_start();
+session_start();
+require_once 'dbconnect.php';
 
- if( isset($_SESSION['user']) ) {
+// if user is logged in
+if( isset($_SESSION['user']) ) {
 
-$deleteId = $_GET['delId'];
-if ($deleteId !== undefined){
-  $delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+	// handle delete request
+	$deleteId = mysql_real_escape_string($_GET['delId']);
+	if ($deleteId !== undefined){
+		$delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+	}
+
+	// select logged in users detail
+	$res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
+	$userRow=mysql_fetch_array($res);
+
+	// exec emails with posting privleges
+	$exec = false;
+	if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
+		$exec = true;
+	}
+	if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
+		$exec = true;
+		$admin = true;
+	}
+
 }
-
- // select logged in users detail
- $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
- $userRow=mysql_fetch_array($res);
-
-$exec = false;
-
-if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
-   $exec = true;
- }
- if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
-   $exec = true;
-   $admin = true;
- }
-
- }
 
 
 ?>
@@ -76,170 +78,171 @@ if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == 
   <div id="wrapper">
 
   <div id="mobile_menu">
-    <img id="menu-logo" src="img/logo2.png" height="40" align="left">
-    <img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
+	<img id="menu-logo" src="img/logo2.png" height="40" align="left">
+	<img id="menu-bars" src="img/menu_bars.png" height="32" align="right">
   </div>
 
   <ul id="mobile_dropdown" style="display: none;">
-      <li><a href='index.php'><span>Home</span></a></li>
-      <li class="active"><a href='about.php'><span>About DECA</span></a></li>
-      <li><a href='events.php'><span>Events</span></a></li>
-      <li><a href='dashboard.php'><span>Dashboard</span></a></li>
-      <li><a href='announcements.php'><span>Announcements</span></a></li>
-      <li><a href='dates.php'><span>Schedules</span></a></li>
-      <?php if( !isset($_SESSION['user']) ) { ?>
-         <li><a href='register.php'><span>Register</span></a></li>
-         <li class='last'><a href='login.php'><span>Login</span></a></li>
-         <?php } else { ?>
-            <li><a href='exams.php'><span>Exams</span></a></li>
-           <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
-        <?php
-      }
-      ?>
+	  <li><a href='index.php'><span>Home</span></a></li>
+	  <li class="active"><a href='about.php'><span>About DECA</span></a></li>
+	  <li><a href='events.php'><span>Events</span></a></li>
+	  <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+	  <li><a href='announcements.php'><span>Announcements</span></a></li>
+	  <li><a href='dates.php'><span>Schedules</span></a></li>
+	  <?php if( !isset($_SESSION['user']) ) { ?>
+		 <li><a href='register.php'><span>Register</span></a></li>
+		 <li class='last'><a href='login.php'><span>Login</span></a></li>
+		 <?php } else { ?>
+			<li><a href='exams.php'><span>Exams</span></a></li>
+		   <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
+<?php
+}
+?>
   </ul>
 
 
   <div id='cssmenu'>
-      <ul>
-          <li><a href='index.php'><span>Home</span></a></li>
-          <li><a href='about.php'><span>About DECA</span></a></li>
-          <li><a href='events.php'><span>Events</span></a></li>
-          <li><a href='dashboard.php'><span>Dashboard</span></a></li>
-          <li class="active"><a href='announcements.php'><span>Announcements</span></a></li>
-          <li><a href='dates.php'><span>Schedules</span></a></li>
-          <?php if( !isset($_SESSION['user']) ) { ?>
-             <li><a href='register.php'><span>Register</span></a></li>
-             <li class='last'><a href='login.php'><span>Login</span></a></li>
-             <?php } else { ?>
-                <li><a href='exams.php'><span>Exams</span></a></li>
-               <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
-            <?php
-          }
-          ?>
-      </ul>
+	  <ul>
+		  <li><a href='index.php'><span>Home</span></a></li>
+		  <li><a href='about.php'><span>About DECA</span></a></li>
+		  <li><a href='events.php'><span>Events</span></a></li>
+		  <li><a href='dashboard.php'><span>Dashboard</span></a></li>
+		  <li class="active"><a href='announcements.php'><span>Announcements</span></a></li>
+		  <li><a href='dates.php'><span>Schedules</span></a></li>
+		  <?php if( !isset($_SESSION['user']) ) { ?>
+			 <li><a href='register.php'><span>Register</span></a></li>
+			 <li class='last'><a href='login.php'><span>Login</span></a></li>
+			 <?php } else { ?>
+				<li><a href='exams.php'><span>Exams</span></a></li>
+			   <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
+<?php
+}
+?>
+	  </ul>
   </div>
-      </br>
+	  </br>
 
-      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-      <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-      <script type="text/javascript" src="js/menu.js"></script>
+	  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+	  <script type="text/javascript" src="js/menu.js"></script>
 
-      <?php
-      if(isset($_POST['submit'])) {
+<?php
+if(isset($_POST['submit'])) {
 
-       $title = strip_tags(trim($_POST['title']));
-       $body = strip_tags(trim($_POST['body']));
+	$title = strip_tags(trim($_POST['title']));
+	$body = strip_tags(trim($_POST['body']));
 
-       $error = false;
+	$error = false;
 
-       if (empty($title) || empty($body)){
-         $error = true;
-         $msg = "You must complete all fields.";
-       }
+	if (empty($title) || empty($body)){
+		$error = true;
+		$msg = "You must complete all fields.";
+	}
 
-       if (!$error){
-         $new_body = str_replace("'", "''", "$body");
-           $new_body = str_replace("\n", "", "$new_body");
-         $query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
-         $res = mysql_query($query);
-         if ($res){
+	if (!$error){
+		$new_body = str_replace("'", "''", "$body");
+		$new_body = str_replace("\n", "", "$new_body");
+		$query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
+		$res = mysql_query($query);
+		if ($res){
 
-             for ($x = 493; $x <= 714; $x++) {
-               $res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
-               $userRow_eee=mysql_fetch_array($res_eee);
+			// 
+			for ($x = 0; $x <= -1; $x++) {
+				$res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
+				$userRow_eee=mysql_fetch_array($res_eee);
 
-             echo '<script>
-                   var data_to_post = {
-                     "title": "'.$title.'",
-                     "body": "'.$body.'",
-                     "cm": "Chapter",
-                     "email": "'.$userRow_eee['userEmail'].'"
-                   }
-                   $.ajax({
-                   type: "POST",
-                   url: "email.php",
-                   data: data_to_post,
-                   success: function(r){
-                   console.log("success " + r);
-                   },
-                   error: function(r) {
-                   console.log("error " + r);
-                    }
-                  });</script>';
-            }
-          }
+				echo '<script>
+					var data_to_post = {
+					"title": "'.$title.'",
+						"body": "'.$body.'",
+						"cm": "Chapter",
+						"email": "'.$userRow_eee['userEmail'].'"
+			}
+			$.ajax({
+			type: "POST",
+				url: "email.php",
+				data: data_to_post,
+				success: function(r){
+					console.log("success " + r);
+			},
+				error: function(r) {
+					console.log("error " + r);
+			}
+			});</script>';
+			}
+		}
 
-            }
-           } ?>
+	}
+} ?>
 <div class="content">
 <h4>Chapter Wide Announcements</h4>
 
 <!--ANNOUNCEMENTS-->
 
-            <?php if ($exec) {  ?>
-                <h5 style="color: red;"><?php echo $msg ?></h5>
-              <form id="post_announcements" method="post">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="title" name="title">
-                  <label class="mdl-textfield__label" for="title">Title</label>
-              </div>
-              </br>
-              </br>
-              <div class="mdl-textfield mdl-js-textfield">
-               <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
-               <label class="mdl-textfield__label" for="body">Body</label>
-            </div>
-              <input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
-              </input>
-             </form>
-                <?php
-              }
-              $res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='Chapter'");
+			<?php if ($exec) {  ?>
+				<h5 style="color: red;"><?php echo $msg ?></h5>
+			  <form id="post_announcements" method="post">
+			  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  <input class="mdl-textfield__input" type="text" id="title" name="title">
+				  <label class="mdl-textfield__label" for="title">Title</label>
+			  </div>
+			  </br>
+			  </br>
+			  <div class="mdl-textfield mdl-js-textfield">
+			   <textarea class="mdl-textfield__input" type="text" rows="3" id="body" name="body"></textarea>
+			   <label class="mdl-textfield__label" for="body">Body</label>
+			</div>
+			  <input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
+			  </input>
+			 </form>
+<?php
+	}
+$res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='Chapter'");
 
-              while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
-                $data[] = $ann;
-              }
-              $data = array_reverse($data,true);
+while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+	$data[] = $ann;
+}
+$data = array_reverse($data,true);
 
-              foreach ($data as $announcement){
-                ?>
-                <div class="announce wordwrap">
+foreach ($data as $announcement){
+?>
+				<div class="announce wordwrap">
 <?php if ($exec){ ?>
-                  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $announcement['announceId']; ?>'">
-                  <?php } ?>
-                <h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
-                <h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
-                <h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
-                </div>
-                <?php
-              }
-              mysql_free_result($res_cm);
+				  <img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/announcements.php?delId=<?php echo $announcement['announceId']; ?>'">
+				  <?php } ?>
+				<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
+				<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+				<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
+				</div>
+<?php
+}
+mysql_free_result($res_cm);
 
-              if ($admin){
-                ?>
-                <h4>All Cluster Annoucnements</h4>
-                <?php
-                $res_cm2 = mysql_query("SELECT * FROM announcements WHERE NOT cluster='Chapter'");
+if ($admin){
+?>
+				<h4>All Cluster Annoucnements</h4>
+<?php
+	$res_cm2 = mysql_query("SELECT * FROM announcements WHERE NOT cluster='Chapter'");
 
-                while ($ann2 = mysql_fetch_array($res_cm2, MYSQL_ASSOC)) {
-                  $data2[] = $ann2;
-                }
-                $data2 = array_reverse($data2,true);
+	while ($ann2 = mysql_fetch_array($res_cm2, MYSQL_ASSOC)) {
+		$data2[] = $ann2;
+	}
+	$data2 = array_reverse($data2,true);
 
-                foreach ($data2 as $announcement2){
-                  ?>
-                  <div class="announce wordwrap">
-                  <h4 id="ann-title"><?php echo $announcement2["title"]; echo " (Cluster: "; echo $announcement2["cluster"]; echo ")"; ?></h4>
-                  <h5 id="ann-body"><?php echo $announcement2["body"]; ?></h5>
-                  <h6 id="ann-date"><?php echo $announcement2["datePosted"]; ?></h6>
-                  </div>
-                  <?php
-                }
-                mysql_free_result($res_cm2);
+	foreach ($data2 as $announcement2){
+?>
+				  <div class="announce wordwrap">
+				  <h4 id="ann-title"><?php echo $announcement2["title"]; echo " (Cluster: "; echo $announcement2["cluster"]; echo ")"; ?></h4>
+				  <h5 id="ann-body"><?php echo $announcement2["body"]; ?></h5>
+				  <h6 id="ann-date"><?php echo $announcement2["datePosted"]; ?></h6>
+				  </div>
+<?php
+	}
+	mysql_free_result($res_cm2);
 
-              }
+}
 
-              ?>
+?>
 
 </div>
 
