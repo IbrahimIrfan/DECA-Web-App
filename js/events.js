@@ -1,3 +1,7 @@
+/*
+ * Script to populate registration form with event choices
+ */
+
 var events = {
     "Principles": {
         0: {
@@ -242,6 +246,7 @@ var events = {
     }
 };
 
+// populate labels
 for (var idx in events) {
     for (var i in events[idx]) {
         for (var j in events[idx][i].events) {

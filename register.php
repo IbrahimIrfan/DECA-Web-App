@@ -10,14 +10,14 @@ if( isset($_SESSION['user'])!="" ){
 
 
 if(isset($_POST['submit'])) {
-
+	// get and sanitize the form data
 	$email =  mysql_real_escape_string(strip_tags(trim($_POST['email']))));
 	$upass =  mysql_real_escape_string(strip_tags(trim($_POST['pass'])));
 	$ucpass =  mysql_real_escape_string(strip_tags(trim($_POST['cpass'])));
 	$fname =  mysql_real_escape_string(strip_tags(trim($_POST['firstname'])));
 	$lname =  mysql_real_escape_string(strip_tags(trim($_POST['lastname'])));
 
-	// password encrypt using SHA256();
+	// password encrypt using SHA256()
 	$password = hash('sha256', $upass);
 
 	// check email exists or not
@@ -169,6 +169,7 @@ if(isset($_POST['submit'])) {
 
 	  <div class="content">
 
+		<!-- error msg -->
 		<h5 style="color: red;"> <?php echo $errMSG ?> </h5>
 		<h5 style="color: green;" id="success"> <?php echo $successMSG ?> </h5>
 
@@ -179,6 +180,7 @@ if(isset($_POST['submit'])) {
 
 <h5>Personal Information:</h5>
 
+<!-- form -->
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	<input class="mdl-textfield__input" type="text" id="firstname" name="firstname">
 	<label class="mdl-textfield__label" for="firstname">First Name</label>
