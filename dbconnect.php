@@ -1,6 +1,6 @@
 <?php
 
-  $json = file_get_contents('http://www.irhsdeca.com/config.json');
+  $json = file_get_contents('http://www.irhsdeca.xyz/config.json');
   $details = json_decode($json, true);
 
  $host = $details["dbhost"];

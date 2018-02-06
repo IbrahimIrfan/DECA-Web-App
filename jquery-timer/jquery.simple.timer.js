@@ -225,6 +225,7 @@ function getQueryVariable(variable)
   };
 })(jQuery);
 
+// hide timer on exam submit. parse the exam and display results
 $(document).on('ready', function(){
   $('#myform').on('submit', function(e) {
       $('.timer').hide();
