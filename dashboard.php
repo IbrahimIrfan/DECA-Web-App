@@ -20,47 +20,45 @@
 			return "Principles";
 		} elseif ($val == "PFL" || $val == "ACT" ||$val == "FTDM" || $val == "BFS"){
 			return "Finance";
-		}elseif ($val == "BTDM" || $val == "MTDM" ||$val == "STDM"){
+		} elseif ($val == "BTDM" || $val == "MTDM" ||$val == "STDM"){
 			return "Marketing-Teams";
-		}elseif ($val == "AAM"|| $val == "AASM"|| $val == "BSM"|| $val == "FMS"|| $val == "MCS"|| $val == "RMS"|| $val == "SEM"){
+		} elseif ($val == "AAM"|| $val == "AASM"|| $val == "BSM"|| $val == "FMS"|| $val == "MCS"|| $val == "RMS"|| $val == "SEM"){
 			return "Marketing-Singles";
-		}elseif ($val == "HLM" || $val == "QSRM" ||$val == "RFSM" || $val == "HTDM"|| $val == "TTDM"){
+		} elseif ($val == "HLM" || $val == "QSRM" ||$val == "RFSM" || $val == "HTDM"|| $val == "TTDM"){
 			return "Hospitality";
-		}elseif ($val == "BLTDM" || $val == "HRM"){
+		} elseif ($val == "BLTDM" || $val == "HRM"){
 			return "Business-Admin";
 		}
 	}
 
 	// select logged in users detail
-	$res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
-	$userRow=mysql_fetch_array($res);
+	$res = mysql_query("SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+	$userRow = mysql_fetch_array($res);
 	$exec = false;
 
 	// assign executive privleges 
 	if ($userRow["userEmail"] == "1ibrahimirfan@gmail.com" || $userRow["userEmail"] == "laurak8981@gmail.com"){
 		$exec = true;
 		$clusterManaging = "Principles";
-	}elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com"){
+	} elseif ($userRow["userEmail"] == "e.ulhaq@hotmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com"){
 		$exec = true;
 		$clusterManaging = "Finance";
-	}elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com"){
+	} elseif ($userRow["userEmail"] == "aazihassan18@gmail.com" || $userRow["userEmail"] == "missy92009@hotmail.com"){
 		$exec = true;
 		$clusterManaging = "Marketing-Teams";
-	}elseif ($userRow["userEmail"] == "sohpeiwu@gmail.com" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
+	} elseif ($userRow["userEmail"] == "sohpeiwu@gmail.com" || $userRow["userEmail"] == "asdaq_paracha@hotmail.con"){
 		$exec = true;
 		$clusterManaging = "Marketing-Singles";
-	}elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
+	} elseif ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "vswinhoe@gmail.com"){
 		$exec = true;
 		$clusterManaging = "Hospitality";
-	}elseif ($userRow["userEmail"] == "nataniaolusanya@gmail.com" || $userRow["userEmail"] == "1zhengjen@hdsb.ca"){
+	} elseif ($userRow["userEmail"] == "nataniaolusanya@gmail.com" || $userRow["userEmail"] == "1zhengjen@hdsb.ca"){
 		$exec = true;
 		$clusterManaging = "Business-Admin";
-	}
-	if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
+	} elseif ($userRow["userEmail"] == "fisherji@hdsb.ca"){
 		$admin = true;
 		$clusterManaging = "N/A";
 	}
-
 
 	// assign a user cluster
 	$currentCluster = getCluster($userRow["userEventAssigned"]);
@@ -68,20 +66,20 @@
 	// assign homework
 	if ($currentCluster == "Principles"){
 		$homework= "Principles_6_Whole_Homework.php";
-	}elseif ($currentCluster == "Finance") {
+	} elseif ($currentCluster == "Finance") {
 		$homework= "Finance_2_Split_Homework.php";
-	}elseif ($currentCluster == "Business-Admin") {
+	} elseif ($currentCluster == "Business-Admin") {
 		$homework= "Business-Admin_3_Split_Homework.php";
-	}elseif ($currentCluster == "Marketing-Teams" || $currentCluster == "Marketing-Singles") {
+	} elseif ($currentCluster == "Marketing-Teams" || $currentCluster == "Marketing-Singles") {
 		$homework= "Marketing_1_Split_Homework.php";
-	}elseif ($currentCluster == "Hospitality") {
+	} elseif ($currentCluster == "Hospitality") {
 		$homework= "Hospitality_3_Split_Homework.php";
 	}
 
 	// assign score for the week
 	$week = "score_6";
-	$res_exam_check=mysql_query("SELECT * FROM exams WHERE userId=".$_SESSION['user']);
-	$exam_check=mysql_fetch_array($res_exam_check);
+	$res_exam_check = mysql_query("SELECT * FROM exams WHERE userId=" . $_SESSION['user']);
+	$exam_check = mysql_fetch_array($res_exam_check);
 	if ($exam_check[$week] !== "0"){
 		$exam_status="img/complete.png";
 	} else {
@@ -139,16 +137,17 @@
 				<li><a href='dashboard.php'><span>Dashboard</span></a></li>
 				<li><a href='announcements.php'><span>Announcements</span></a></li>
 				<li><a href='dates.php'><span>Schedules</span></a></li>
+				
 				<!-- Display menu according to user login -->
-				<?php if( !isset($_SESSION['user']) ) { ?>
-				<li><a href='register.php'><span>Register</span></a></li>
-				<li class='last'><a href='login.php'><span>Login</span></a></li>
+				<?php if (!isset($_SESSION['user'])) { ?>
+					<li><a href='register.php'><span>Register</span></a></li>
+					<li class='last'><a href='login.php'><span>Login</span></a></li>
 				<?php } else { ?>
-				<li><a href='exams.php'><span>Exams</span></a></li>
-				<li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
-<?php
-	}
-?>
+					<li><a href='exams.php'><span>Exams</span></a></li>
+					<li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
+				<?php
+					}
+				?>
 			</ul>
 
 			<!-- Desktop menu -->
@@ -188,19 +187,19 @@
 				</div>
 				<br/>
 
-<?php
-	// for every user
-	for ($x = 1; $x <= 101; $x++) {
-		$res_cluster = mysql_query("SELECT * FROM users WHERE userId=".$x);
-		$userRow_cluster = mysql_fetch_array($res_cluster);
-		$cluster_assign = getCluster($userRow_cluster["userEventAssigned"]);
-		$query_assign = "UPDATE exams SET cluster='$cluster_assign' WHERE userId=".$x;
-		$add_exam = mysql_query($query_assign);
-	}
+			<?php
+				// for every user
+				for ($x = 1; $x <= 101; $x++) {
+					$res_cluster = mysql_query("SELECT * FROM users WHERE userId=".$x);
+					$userRow_cluster = mysql_fetch_array($res_cluster);
+					$cluster_assign = getCluster($userRow_cluster["userEventAssigned"]);
+					$query_assign = "UPDATE exams SET cluster='$cluster_assign' WHERE userId=".$x;
+					$add_exam = mysql_query($query_assign);
+				}
 
 
-	if ($exec || $admin) {
-?>
+				if ($exec || $admin) {
+			?>
 				<!-- if the user is exec, show exam scores for the cluster -->
 				<h4> Exam Scores for <?php echo $clusterManaging; ?></h4>
 				<table class="mdl-data-table mdl-js-data-table" id="exam_scores">
