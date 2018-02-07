@@ -111,7 +111,7 @@ function parseExam() {
     // grade the exam
     var score = 0;
     for (var i in exam) {
-        if ($('#_' + i).val() == exam[i].ans) {
+        if ($('#_' + i).val() == exam[i]) {
             score++;
             document.getElementById('q' + i).style.color = '#00cc00';
         } else {
