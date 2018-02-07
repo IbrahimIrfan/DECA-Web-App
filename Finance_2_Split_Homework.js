@@ -1,208 +1,114 @@
 function parseExam() {
+    // scroll back to top on submit, disable answers and submit button
     window.scrollTo(0, 0);
     $('.select-style').prop('disabled', 'true');
     $('#submit').css('display', 'none');
-    var exam = {};
-    exam[1] = {};
-    exam[1].ans = "A";
-    exam[2] = {};
-    exam[2].ans = "B";
-    exam[3] = {};
-    exam[3].ans = "A";
-    exam[4] = {};
-    exam[4].ans = "D";
-    exam[5] = {};
-    exam[5].ans = "C";
-    exam[6] = {};
-    exam[6].ans = "A";
-    exam[7] = {};
-    exam[7].ans = "C";
-    exam[8] = {};
-    exam[8].ans = "P";
-    exam[9] = {};
-    exam[9].ans = "A";
-    exam[10] = {};
-    exam[10].ans = "A";
-    exam[11] = {};
-    exam[11].ans = "C";
-    exam[12] = {};
-    exam[12].ans = "D";
-    exam[13] = {};
-    exam[13].ans = "D";
-    exam[14] = {};
-    exam[14].ans = "B";
-    exam[15] = {};
-    exam[15].ans = "B";
-    exam[16] = {};
-    exam[16].ans = "C";
-    exam[17] = {};
-    exam[17].ans = "D";
-    exam[18] = {};
-    exam[18].ans = "B";
-    exam[19] = {};
-    exam[19].ans = "C";
-    exam[20] = {};
-    exam[20].ans = "B";
-    exam[21] = {};
-    exam[21].ans = "C";
-    exam[22] = {};
-    exam[22].ans = "D";
-    exam[23] = {};
-    exam[23].ans = "B";
-    exam[24] = {};
-    exam[24].ans = "B";
-    exam[25] = {};
-    exam[25].ans = "A";
-    exam[26] = {};
-    exam[26].ans = "C";
-    exam[27] = {};
-    exam[27].ans = "A";
-    exam[28] = {};
-    exam[28].ans = "A";
-    exam[29] = {};
-    exam[29].ans = "D";
-    exam[30] = {};
-    exam[30].ans = "A";
-    exam[31] = {};
-    exam[31].ans = "C";
-    exam[32] = {};
-    exam[32].ans = "C";
-    exam[33] = {};
-    exam[33].ans = "D";
-    exam[34] = {};
-    exam[34].ans = "C";
-    exam[35] = {};
-    exam[35].ans = "A";
-    exam[36] = {};
-    exam[36].ans = "B";
-    exam[37] = {};
-    exam[37].ans = "B";
-    exam[38] = {};
-    exam[38].ans = "D";
-    exam[39] = {};
-    exam[39].ans = "A";
-    exam[40] = {};
-    exam[40].ans = "C";
-    exam[41] = {};
-    exam[41].ans = "B";
-    exam[42] = {};
-    exam[42].ans = "B";
-    exam[43] = {};
-    exam[43].ans = "A";
-    exam[44] = {};
-    exam[44].ans = "A";
-    exam[45] = {};
-    exam[45].ans = "D";
-    exam[46] = {};
-    exam[46].ans = "C";
-    exam[47] = {};
-    exam[47].ans = "A";
-    exam[48] = {};
-    exam[48].ans = "D";
-    exam[49] = {};
-    exam[49].ans = "D";
-    exam[50] = {};
-    exam[50].ans = "C";
-    exam[51] = {};
-    exam[51].ans = "B";
-    exam[52] = {};
-    exam[52].ans = "A";
-    exam[53] = {};
-    exam[53].ans = "A";
-    exam[54] = {};
-    exam[54].ans = "D";
-    exam[55] = {};
-    exam[55].ans = "A";
-    exam[56] = {};
-    exam[56].ans = "C";
-    exam[57] = {};
-    exam[57].ans = "A";
-    exam[58] = {};
-    exam[58].ans = "A";
-    exam[59] = {};
-    exam[59].ans = "C";
-    exam[60] = {};
-    exam[60].ans = "B";
-    exam[61] = {};
-    exam[61].ans = "C";
-    exam[62] = {};
-    exam[62].ans = "B";
-    exam[63] = {};
-    exam[63].ans = "A";
-    exam[64] = {};
-    exam[64].ans = "D";
-    exam[65] = {};
-    exam[65].ans = "A";
-    exam[66] = {};
-    exam[66].ans = "B";
-    exam[67] = {};
-    exam[67].ans = "D";
-    exam[68] = {};
-    exam[68].ans = "D";
-    exam[69] = {};
-    exam[69].ans = "D";
-    exam[70] = {};
-    exam[70].ans = "A";
-    exam[71] = {};
-    exam[71].ans = "A";
-    exam[72] = {};
-    exam[72].ans = "B";
-    exam[73] = {};
-    exam[73].ans = "B";
-    exam[74] = {};
-    exam[74].ans = "B";
-    exam[75] = {};
-    exam[75].ans = "C";
-    exam[76] = {};
-    exam[76].ans = "D";
-    exam[77] = {};
-    exam[77].ans = "B";
-    exam[78] = {};
-    exam[78].ans = "B";
-    exam[79] = {};
-    exam[79].ans = "C";
-    exam[80] = {};
-    exam[80].ans = "D";
-    exam[81] = {};
-    exam[81].ans = "B";
-    exam[82] = {};
-    exam[82].ans = "D";
-    exam[83] = {};
-    exam[83].ans = "A";
-    exam[84] = {};
-    exam[84].ans = "C";
-    exam[85] = {};
-    exam[85].ans = "A";
-    exam[86] = {};
-    exam[86].ans = "B";
-    exam[87] = {};
-    exam[87].ans = "C";
-    exam[88] = {};
-    exam[88].ans = "A";
-    exam[89] = {};
-    exam[89].ans = "C";
-    exam[90] = {};
-    exam[90].ans = "C";
-    exam[91] = {};
-    exam[91].ans = "C";
-    exam[92] = {};
-    exam[92].ans = "A";
-    exam[93] = {};
-    exam[93].ans = "D";
-    exam[94] = {};
-    exam[94].ans = "D";
-    exam[95] = {};
-    exam[95].ans = "A";
-    exam[96] = {};
-    exam[96].ans = "D";
-    exam[97] = {};
-    exam[97].ans = "A";
-    exam[98] = {};
-    exam[98].ans = "P";
-    exam[99] = {};
-    exam[99].ans = "B";
-    exam[100] = {};
-    exam[100].ans = "B";
+    
+    // answer key
+    var exam = { 
+      '1': 'A',
+      '2': 'B',
+      '3': 'A',
+      '4': 'D',
+      '5': 'C',
+      '6': 'A',
+      '7': 'C',
+      '8': 'P',
+      '9': 'A',
+      '10': 'A',
+      '11': 'C',
+      '12': 'D',
+      '13': 'D',
+      '14': 'B',
+      '15': 'B',
+      '16': 'C',
+      '17': 'D',
+      '18': 'B',
+      '19': 'C',
+      '20': 'B',
+      '21': 'C',
+      '22': 'D',
+      '23': 'B',
+      '24': 'B',
+      '25': 'A',
+      '26': 'C',
+      '27': 'A',
+      '28': 'A',
+      '29': 'D',
+      '30': 'A',
+      '31': 'C',
+      '32': 'C',
+      '33': 'D',
+      '34': 'C',
+      '35': 'A',
+      '36': 'B',
+      '37': 'B',
+      '38': 'D',
+      '39': 'A',
+      '40': 'C',
+      '41': 'B',
+      '42': 'B',
+      '43': 'A',
+      '44': 'A',
+      '45': 'D',
+      '46': 'C',
+      '47': 'A',
+      '48': 'D',
+      '49': 'D',
+      '50': 'C',
+      '51': 'B',
+      '52': 'A',
+      '53': 'A',
+      '54': 'D',
+      '55': 'A',
+      '56': 'C',
+      '57': 'A',
+      '58': 'A',
+      '59': 'C',
+      '60': 'B',
+      '61': 'C',
+      '62': 'B',
+      '63': 'A',
+      '64': 'D',
+      '65': 'A',
+      '66': 'B',
+      '67': 'D',
+      '68': 'D',
+      '69': 'D',
+      '70': 'A',
+      '71': 'A',
+      '72': 'B',
+      '73': 'B',
+      '74': 'B',
+      '75': 'C',
+      '76': 'D',
+      '77': 'B',
+      '78': 'B',
+      '79': 'C',
+      '80': 'D',
+      '81': 'B',
+      '82': 'D',
+      '83': 'A',
+      '84': 'C',
+      '85': 'A',
+      '86': 'B',
+      '87': 'C',
+      '88': 'A',
+      '89': 'C',
+      '90': 'C',
+      '91': 'C',
+      '92': 'A',
+      '93': 'D',
+      '94': 'D',
+      '95': 'A',
+      '96': 'D',
+      '97': 'A',
+      '98': 'P',
+      '99': 'B',
+      '100': 'B' 
+    }
+    
+    // grade the exam
     var score = 0;
     for (var i in exam) {
         if ($('#_' + i).val() == exam[i].ans) {
@@ -213,6 +119,8 @@ function parseExam() {
             document.getElementById(i + 'answer').style.display = 'block';
         }
     }
+    
+    // update and post the score
     document.getElementById('score').innerHTML = 'Score: ' + score + '/100';
     var data_to_post = {
         "score": score,
@@ -230,17 +138,23 @@ function parseExam() {
         }
     });
 }
-$.get('dashboard.php', function(data){
-userid = parseInt($(data).find('.userid_block').html());
-$('.timer').startTimer({
-    onComplete: function(element) {
-        element.addClass('complete');
+
+$.get('dashboard.php', function(data){ 
+    // get the userId from dashboard
+    var userid = parseInt($(data).find('.userid_block').html());
+    
+    // start the timer and parseExam on complete
+    $('.timer').startTimer({
+        onComplete: function(element) {
+            element.addClass('complete');
+            parseExam();
+        }
+    });
+    
+    // hide timer and parseExam on submit
+    $('#myform').on('submit', function(e) {
+        $('.timer').hide();
+        e.preventDefault();
         parseExam();
-    }
-});
-$('#myform').on('submit', function(e) {
-    $('.timer').hide();
-    e.preventDefault();
-    parseExam();
-});
+    });
 });
