@@ -213,13 +213,6 @@
 							<td>Week 4</td>
 							<td>Week 5</td>
 							<td>Week 6</td>
-							<td>Week 7</td>
-							<td>Week 8</td>
-							<td>Week 9</td>
-							<td>Week 10</td>
-							<td>Week 11</td>
-							<td>Week 12</td>
-							<td>Week 13</td>
 						</tr>
 					</thead>
 					<tbody>
