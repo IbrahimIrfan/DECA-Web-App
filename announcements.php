@@ -1,32 +1,32 @@
 <?php
-ob_start();
-session_start();
-require_once 'dbconnect.php';
+	ob_start();
+	session_start();
+	require_once 'dbconnect.php';
 
-// if user is logged in
-if( isset($_SESSION['user']) ) {
+	// if user is logged in
+	if( isset($_SESSION['user']) ) {
 
-	// handle delete request
-	$deleteId = mysql_real_escape_string($_GET['delId']);
-	if ($deleteId !== undefined){
-		$delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+		// handle delete request
+		$deleteId = mysql_real_escape_string($_GET['delId']);
+		if ($deleteId !== undefined){
+			$delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+		}
+
+		// select logged in users detail
+		$res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
+		$userRow=mysql_fetch_array($res);
+
+		// exec emails with posting privleges
+		$exec = false;
+		if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
+			$exec = true;
+		}
+		if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
+			$exec = true;
+			$admin = true;
+		}
+
 	}
-
-	// select logged in users detail
-	$res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
-	$userRow=mysql_fetch_array($res);
-
-	// exec emails with posting privleges
-	$exec = false;
-	if ($userRow["userEmail"] == "amy.kim162@gmail.com" || $userRow["userEmail"] == "jessica.meng0402@gmail.com" || $userRow["userEmail"] == "fisherji@hdsb.ca" || $userRow["userEmail"] == "1ibrahimirfan@gmail.com"){
-		$exec = true;
-	}
-	if ($userRow["userEmail"] == "fisherji@hdsb.ca"){
-		$exec = true;
-		$admin = true;
-	}
-
-}
 
 
 ?>
@@ -109,15 +109,16 @@ if( isset($_SESSION['user']) ) {
 		  <li><a href='dashboard.php'><span>Dashboard</span></a></li>
 		  <li class="active"><a href='announcements.php'><span>Announcements</span></a></li>
 		  <li><a href='dates.php'><span>Schedules</span></a></li>
+		  
 		  <?php if( !isset($_SESSION['user']) ) { ?>
 			 <li><a href='register.php'><span>Register</span></a></li>
 			 <li class='last'><a href='login.php'><span>Login</span></a></li>
 			 <?php } else { ?>
 				<li><a href='exams.php'><span>Exams</span></a></li>
 			   <li class='last'><a href='logout.php?logout'><span>Logout</span></a></li>
-<?php
-}
-?>
+		<?php
+			}
+		?>
 	  </ul>
   </div>
 	  </br>
@@ -144,34 +145,6 @@ if(isset($_POST['submit'])) {
 		$new_body = str_replace("\n", "", "$new_body");
 		$query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', 'Chapter')";
 		$res = mysql_query($query);
-		if ($res){
-
-			// 
-			for ($x = 0; $x <= -1; $x++) {
-				$res_eee=mysql_query("SELECT * FROM users WHERE userId=".$x);
-				$userRow_eee=mysql_fetch_array($res_eee);
-
-				echo '<script>
-					var data_to_post = {
-					"title": "'.$title.'",
-						"body": "'.$body.'",
-						"cm": "Chapter",
-						"email": "'.$userRow_eee['userEmail'].'"
-			}
-			$.ajax({
-			type: "POST",
-				url: "email.php",
-				data: data_to_post,
-				success: function(r){
-					console.log("success " + r);
-			},
-				error: function(r) {
-					console.log("error " + r);
-			}
-			});</script>';
-			}
-		}
-
 	}
 } ?>
 <div class="content">
