@@ -311,13 +311,34 @@
 			if ($currentCluster !== $clusterManaging){
 		?>
 				<h4><?php echo $currentCluster; echo " Announcements";?></h4>
+			<?php
+				$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
+				while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
+					$data3[] = $ann;
+				}
+				$data3 = array_reverse($data3,true);
+				foreach ($data3 as $announcement){
+			?>
+					<div class="announce wordwrap">
+						<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
+						<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
+						<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
+					</div>
+			<?php
+				}
+				mysql_free_result($res_cc);
+			}
+		} else {
+	?>
+			<!-- Display cluster announcements -->
+			<h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
 		<?php
 			$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 			while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-				$data3[] = $ann;
+				$data2[] = $ann;
 			}
-			$data3 = array_reverse($data3,true);
-			foreach ($data3 as $announcement){
+			$data2 = array_reverse($data2,true);
+			foreach ($data2 as $announcement){
 		?>
 				<div class="announce wordwrap">
 					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
@@ -328,28 +349,7 @@
 			}
 			mysql_free_result($res_cc);
 		}
-	} else {
-?>
-		<!-- Display cluster announcements -->
-		<h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
-<?php
-	$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
-	while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-		$data2[] = $ann;
-	}
-	$data2 = array_reverse($data2,true);
-	foreach ($data2 as $announcement){
-?>
-				<div class="announce wordwrap">
-					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
-					<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
-					<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
-				</div>
-<?php
-	}
-	mysql_free_result($res_cc);
-}
-?>
+		?>
 			</div>
 
 			<!-- Footer -->
