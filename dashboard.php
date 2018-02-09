@@ -188,16 +188,6 @@
 				<br/>
 
 			<?php
-				// for every user
-				for ($x = 1; $x <= 101; $x++) {
-					$res_cluster = mysql_query("SELECT * FROM users WHERE userId=".$x);
-					$userRow_cluster = mysql_fetch_array($res_cluster);
-					$cluster_assign = getCluster($userRow_cluster["userEventAssigned"]);
-					$query_assign = "UPDATE exams SET cluster='$cluster_assign' WHERE userId=".$x;
-					$add_exam = mysql_query($query_assign);
-				}
-
-
 				if ($exec || $admin) {
 			?>
 				<!-- if the user is exec, show exam scores for the cluster -->
@@ -216,82 +206,44 @@
 					</thead>
 					<tbody>
 				<?php
-					// select exams detail
+					// select exams detail based on privleges
 					if ($admin){
 						$res = mysql_query("SELECT * FROM exams");
 					} else {
 						$res = mysql_query("SELECT * FROM exams WHERE cluster='$clusterManaging'");
 					}
+					
+					// display exam scores
 					while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
 				?>
-						<tr><td>
+						<tr><td> <!-- User name -->
+						<?php
+							$res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
+							$user_exams = mysql_fetch_array($res_users);
+							echo $user_exams["userFName"];
+							echo " ";
+							echo $user_exams["userLName"]; 
+						?>
+							
+						<!-- Display every score -->
+						<?php for ($w = 1; $w <= 6; $w++){ ?>	
+								<td>
+						<?php
+								if ($abc["score_" . $w] !== "0"){
+									echo $abc["score_" . $w]; echo "%";
+								} else {
+									echo "-";
+								}	
+						?>
+								</td>
+						<?php } ?>
+							
+						</tr>
 
-			<?php
-				$res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
-				$user_exams = mysql_fetch_array($res_users);
-				echo $user_exams["userFName"];
-				echo " ";
-				echo $user_exams["userLName"]; 
-			?>
-				</td><td>
-			<?php
-				if ($abc["score_1"] !== "0"){
-					echo $abc["score_1"]; echo "%";
-				} else {
-					echo "-";
-				} ?>
-
-			</td><td>
-
-			<?php
-				if ($abc["score_2"] !== "0"){
-					echo $abc["score_2"]; echo "%";
-				} else {
-					echo "-";
+					<?php
 				}
+				mysql_free_result($res);
 			?>
-			</td><td>
-
-			<?php
-				if ($abc["score_3"] !== "0"){
-					echo $abc["score_3"]; echo "%";
-				} else {
-					echo "-";
-				}
-			?>
-			</td><td>
-
-			<?php
-				if ($abc["score_4"] !== "0"){
-					echo $abc["score_4"]; echo "%";
-				} else {
-					echo "-";
-				}
-			?>
-			</td><td> 
-
-			<?php
-				if ($abc["score_5"] !== "0"){
-					echo $abc["score_5"]; echo "%";
-				} else {
-					echo "-";
-				}
-			?>
-			</td><td>
-
-			<?php
-				if ($abc["score_6"] !== "0"){
-					echo $abc["score_6"]; echo "%";
-				} else {
-					echo "-";
-				}
-			?>
-			</td></tr>
-
-			<?php
-		}
-		mysql_free_result($res);
-	?>
 	</tbody></table>
 
 				<!-- Handle announcement request -->
