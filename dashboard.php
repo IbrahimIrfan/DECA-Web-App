@@ -8,12 +8,6 @@
 		header("Location: login.php");
 		exit;
 	}
-	
-	// handle announcement delete
-	$deleteId = $_GET['delId'];
-	if ($deleteId !== undefined){
-		$delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
-	}
 
 	function getCluster($val){
 		if ($val == "PBM" || $val == "PMK" ||$val == "PFN" || $val == "PHT"){
@@ -62,7 +56,13 @@
 
 	// assign a user cluster
 	$currentCluster = getCluster($userRow["userEventAssigned"]);
-
+	
+	// handle announcement delete
+	$deleteId = $_GET['delId'];
+	if ($deleteId !== undefined && $exec){
+		$delete_request = mysql_query('DELETE FROM announcements WHERE announceId='.$deleteId);
+	}
+	
 	// assign homework
 	if ($currentCluster == "Principles"){
 		$homework= "Principles_6_Whole_Homework.php";
@@ -244,11 +244,12 @@
 				}
 				mysql_free_result($res);
 			?>
-	</tbody></table>
+			</tbody></table>
 
-				<!-- Handle announcement request -->
-<?php
+	<!-- Handle announcement request -->
+	<?php
 		if(isset($_POST['submit'])) {
+			// escape the data
 			$title = mysql_real_escape_string(strip_tags(trim($_POST['title'])));
 			$body = mysql_real_escape_string(strip_tags(trim($_POST['body'])));
 			$error = false;
@@ -259,7 +260,7 @@
 				$msg = "You must complete all fields.";
 			}
 			if (!$error){
-				// remove all quotations to sanitize
+				// remove all quotations to sanitize, then insert to db
 				$new_body = str_replace("'", "''", "$body");
 				$new_body = str_replace("\n", "", "$new_body");
 				$query = "INSERT INTO announcements(title, body, cluster) VALUES('$title', '$new_body', '$clusterManaging')";
@@ -267,10 +268,13 @@
 			}
 		}
 	}
+				
 	if ($exec && !$admin) { ?>
 		<!-- Show announcements for cluster managing -->
 		<h4><?php echo $clusterManaging; echo " Announcements "; echo $msg; ?></h4>
 		<h5 style="color: red;"><?php echo $msg ?></h5>
+				
+		<!-- Form to post announcements for cluster -->
 		<form id="post_announcements" method="post">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -285,46 +289,49 @@
 			<input id="submit_ann" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" value="Post">
 			</input>
 		</form>
-<?php
-		$res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
-		while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
-			$data[] = $ann;
-		}
-		$data = array_reverse($data,true);
-		foreach ($data as $announcement){
-?>
+	
+		<?php
+			// display the posted announcements for the cluster
+			$res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
+			while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
+				$data[] = $ann;
+			}
+			$data = array_reverse($data,true);
+			foreach ($data as $announcement){
+		?>
 				<div class="announce wordwrap">
 					<img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $announcement['announceId']; ?>'">
 					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
 					<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
 					<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
 				</div>
-<?php
-		}
-		mysql_free_result($res_cm);
-		if ($currentCluster !== $clusterManaging){
-?>
+		<?php
+			}
+			mysql_free_result($res_cm);
+			if ($currentCluster !== $clusterManaging){
+		?>
 				<h4><?php echo $currentCluster; echo " Announcements";?></h4>
-<?php
+		<?php
 			$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 			while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
 				$data3[] = $ann;
 			}
 			$data3 = array_reverse($data3,true);
 			foreach ($data3 as $announcement){
-?>
+		?>
 				<div class="announce wordwrap">
 					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
 					<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
 					<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
 				</div>
-<?php
+		<?php
 			}
 			mysql_free_result($res_cc);
 		}
-} else {
+	} else {
 ?>
-				<h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
+		<!-- Display cluster announcements -->
+		<h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
 <?php
 	$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 	while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
@@ -344,6 +351,8 @@
 }
 ?>
 			</div>
+
+			<!-- Footer -->
 			<div class="footer">
 				<img id="altlogo" src="img/logo_alt.png" align="left" />
 				<img id="fbimg" src="img/facebook-box.png" align="right" />
@@ -351,10 +360,12 @@
 			</div>
 		</div>
 	</body>
+
 	<script type="text/javascript" src="js/menu.js"></script>
-<script type="text/javascript">
-var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
-var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
-document.getElementById('event_assigned_code').innerHTML = user_event;
-</script>
+	<script type="text/javascript">
+		// handle the users event
+		var user_event = "<?php echo $userRow['userEventAssigned']; ?>";
+		var user_event_code = user_event.substring(user_event.lastIndexOf("(")+1,user_event.lastIndexOf(")"));
+		document.getElementById('event_assigned_code').innerHTML = user_event;
+	</script>
 </html>
