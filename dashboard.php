@@ -216,7 +216,8 @@
 					// display exam scores
 					while ($abc = mysql_fetch_array($res, MYSQL_ASSOC)) {
 				?>
-						<tr><td> <!-- User name -->
+						<tr><td> 
+						<!-- User name -->
 						<?php
 							$res_users = mysql_query("SELECT * FROM users WHERE userId=". $abc["userId"]);
 							$user_exams = mysql_fetch_array($res_users);
@@ -246,7 +247,7 @@
 			?>
 			</tbody></table>
 
-	<!-- Handle announcement request -->
+	<!-- Handle announcement post request -->
 	<?php
 		if(isset($_POST['submit'])) {
 			// escape the data
@@ -270,11 +271,10 @@
 	}
 				
 	if ($exec && !$admin) { ?>
-		<!-- Show announcements for cluster managing -->
+		<!-- Form to post announcements for cluster -->
 		<h4><?php echo $clusterManaging; echo " Announcements "; echo $msg; ?></h4>
 		<h5 style="color: red;"><?php echo $msg ?></h5>
 				
-		<!-- Form to post announcements for cluster -->
 		<form id="post_announcements" method="post">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" id="title" name="title">
@@ -291,7 +291,7 @@
 		</form>
 	
 		<?php
-			// display the posted announcements for the cluster
+			// display the posted announcements for the cluster managing
 			$res_cm = mysql_query("SELECT * FROM announcements WHERE cluster='".$clusterManaging."'");
 			while ($ann = mysql_fetch_array($res_cm, MYSQL_ASSOC)) {
 				$data[] = $ann;
@@ -308,16 +308,18 @@
 		<?php
 			}
 			mysql_free_result($res_cm);
+						   
+			// display the participating cluster as well			   
 			if ($currentCluster !== $clusterManaging){
 		?>
 				<h4><?php echo $currentCluster; echo " Announcements";?></h4>
 			<?php
 				$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 				while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-					$data3[] = $ann;
+					$data2[] = $ann;
 				}
-				$data3 = array_reverse($data3,true);
-				foreach ($data3 as $announcement){
+				$data2 = array_reverse($data3,true);
+				foreach ($data2 as $announcement){
 			?>
 					<div class="announce wordwrap">
 						<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
@@ -330,15 +332,15 @@
 			}
 		} else {
 	?>
-			<!-- Display cluster announcements -->
+			<!-- Display participating cluster announcements for non-execs -->
 			<h4><?php echo $currentCluster; echo " Announcements"; ?></h4>
 		<?php
 			$res_cc = mysql_query("SELECT * FROM announcements WHERE cluster='".$currentCluster."'");
 			while ($ann = mysql_fetch_array($res_cc, MYSQL_ASSOC)) {
-				$data2[] = $ann;
+				$data3[] = $ann;
 			}
-			$data2 = array_reverse($data2,true);
-			foreach ($data2 as $announcement){
+			$data3 = array_reverse($data2,true);
+			foreach ($data3 as $announcement){
 		?>
 				<div class="announce wordwrap">
 					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
