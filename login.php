@@ -149,7 +149,7 @@ if( isset($_POST['btn-login']) ) {
 	<div class="footer">
 		<img id="altlogo" src="img/logo_alt.png" align="left" />
 		<img id="fbimg" src="img/facebook-box.png" align="right" />
-		<h6><a href="http://www.irhsdeca.com" style="color: white;"><u>irhsdeca.com</u></a></h6>
+		<h6><a href="http://www.ibrahimirfan.com" style="color: white;"><u>Ibrahim Irfan</u></a></h6>
 	</div>
 </div>
 </body>

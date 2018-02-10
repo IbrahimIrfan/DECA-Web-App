@@ -300,7 +300,7 @@
 			foreach ($data as $announcement){
 		?>
 				<div class="announce wordwrap">
-					<img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.com/dashboard.php?delId=<?php echo $announcement['announceId']; ?>'">
+					<img class="delete_ann" src="img/x.png" onClick="self.location='http://www.irhsdeca.xyz/dashboard.php?delId=<?php echo $announcement['announceId']; ?>'">
 					<h4 id="ann-title"><?php echo $announcement["title"]; ?></h4>
 					<h5 id="ann-body"><?php echo $announcement["body"]; ?></h5>
 					<h6 id="ann-date"><?php echo $announcement["datePosted"]; ?></h6>
@@ -358,7 +358,7 @@
 			<div class="footer">
 				<img id="altlogo" src="img/logo_alt.png" align="left" />
 				<img id="fbimg" src="img/facebook-box.png" align="right" />
-				<h6><a href="http://www.irhsdeca.com" style="color: white;">irhsdeca.com</a></h6>
+				<h6><a href="http://www.ibrahimirfan.com" style="color: white;">Ibrahim Irfan</a></h6>
 			</div>
 		</div>
 	</body>

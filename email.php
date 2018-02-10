@@ -1,4 +1,5 @@
 <?php
+	// helper file to send emails
 	$title = mysql_real_escape_string($_POST['title']);
 	$body = mysql_real_escape_string($_POST['body']);
 	$email = mysql_real_escape_string($_POST['email']);
