@@ -14,8 +14,9 @@ if( isset($_POST['btn-login']) ) {
 	// get and sanitize form data
 	$email = mysql_real_escape_string(strtoupper(strip_tags(trim($_POST['email']))));
 	$upass =  mysql_real_escape_string(strip_tags(trim($_POST['pass'])));
+	$salt = mysql_query("SELECT salt FROM details");
 
-	$password = hash('sha256', $upass); // password hashing using SHA256
+	$password = hash('sha256', $upass . $salt); // password hashing using SHA256
 
 	$res=mysql_query("SELECT userId, userPass FROM users WHERE upper(userEmail)='$email'");
 

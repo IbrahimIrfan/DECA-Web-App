@@ -17,8 +17,9 @@
 		$fname =  mysql_real_escape_string(strip_tags(trim($_POST['firstname'])));
 		$lname =  mysql_real_escape_string(strip_tags(trim($_POST['lastname'])));
 
-		// password encrypt using SHA256()
-		$password = hash('sha256', $upass);
+		// password encrypt using SHA256() with salt
+		$salt = mysql_query("SELECT salt FROM details");
+		$password = hash('sha256', $upass . $salt);
 
 		// check email exists or not
 		$query = "SELECT userEmail FROM users WHERE userEmail='$email'";
